@@ -32,7 +32,7 @@
         app:tabMode="fixed"
         app:tabMaxWidth="0dp"
         app:tabSelectedTextColor="#B22222"
-        app:tabIndicatorColor="#F0FFF0"
+        app:tabIndicatorColor="#ca5f5e"
 
         >
 
