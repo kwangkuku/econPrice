@@ -1,5 +1,6 @@
 package com.promptnow.econprice.fragment.weather;
 
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -33,27 +34,34 @@ public class SecondFragment extends Fragment {
     private View rootView;
     private MyExpandableAdapter listAdapter;
 
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_secondwea, container, false);
+
+
         setView();
+
 
         return rootView;
     }
 
+
     private void setView() {
+
 
         expListView = (ExpandableListView) rootView.findViewById(R.id.expListView);
         expListView.setDivider(null);
         // preparing list data
         prepareListData();
 
-         listAdapter = new MyExpandableAdapter(getActivity(), listDataHeader, listDataChild);
+        listAdapter = new MyExpandableAdapter(getActivity(), listDataHeader, listDataChild);
         // setting list adapter
         expListView.setAdapter(listAdapter);
 
         TextView editText = (TextView) getActivity().findViewById(R.id.editText);
         Singleton.getInstance().getIndexlist().toString();
 
+        //ประกาศตัวปุ่มย้อนกลับของเรา ผูกตัวแปรไว้
         ImageView img = (ImageView) getActivity().findViewById(R.id.action);
         img.setVisibility(View.VISIBLE);
         img.setOnClickListener(new View.OnClickListener() {
@@ -61,12 +69,13 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 //กลับไปยังหน้าเลือก ถาคของเรา
                 getFragmentManager().popBackStack();
+
             }
         });
+        TextView textData = (TextView) rootView.findViewById(R.id.editText);
+        textData.setText(Singleton.getInstance().getIndexlist());
 
-//        TextView textData = (TextView) getActivity().findViewById(R.id.editText);
-//        textData.setText(Singleton.getInstance().getIndexlist());
-
+     //เราทำให้ เมื่อเรากดกลุ่มหัวอันใหญ่ แล้วลูกมันจะออกมา แล้วถ้าเรากดแีกครั้งอันที่เราเคยกดมันจะหุบ
         expListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
@@ -76,18 +85,16 @@ public class SecondFragment extends Fragment {
                         expListView.collapseGroup(i);
                     else
                         expListView.expandGroup(i);
-//                if (expListView.isGroupExpanded(i))
                 return true;
             }
         });
-
-
     }
 
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
     }
 
     private void prepareListData() {
@@ -101,7 +108,6 @@ public class SecondFragment extends Fragment {
         listDataHeader.add("ปทุมธานี");
 
         // Adding child data
-
         List<String> top250 = new ArrayList<String>();
         top250.add("34");
 
@@ -118,7 +124,6 @@ public class SecondFragment extends Fragment {
         listDataChild.put(listDataHeader.get(1), nowShowing);
         listDataChild.put(listDataHeader.get(2), comingSoon);
     }
-
 
 
 }
