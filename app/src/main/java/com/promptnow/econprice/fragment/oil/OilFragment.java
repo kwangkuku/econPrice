@@ -28,7 +28,7 @@ public class OilFragment extends Fragment implements DatePickerFragment.onSetDat
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.oil1, container, false);
+        rootView = inflater.inflate(R.layout.oil, container, false);
         setView();
         return rootView;
     }

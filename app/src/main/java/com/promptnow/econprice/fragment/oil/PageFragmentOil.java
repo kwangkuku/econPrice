@@ -34,7 +34,7 @@ public class PageFragmentOil extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.oil1, container, false);
+        View view = inflater.inflate(R.layout.oil, container, false);
 //        TextView textView = (TextView) view;
 //        textView.setText("Fragment #" + mPage);
         return view;
