@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="#ffffff"
+        android:gravity="center">
+
+        <requestFocus />
+
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:text="วันที่   :    "
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/tv_date_oil_price"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:onClick="onClick"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn"
+        android:text="ค้นหา"
+        android:textAlignment="center"
+        android:textColor="@color/color_gray"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:onClick="btnClick"
+        />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:background="#ffffff"
+        android:gravity="center">
+
+        <requestFocus />
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/oil"
+                android:layout_width="140dp"
+                android:layout_height="55dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="ประเภทน้ำมัน"
+                android:textAlignment="viewStart"
+                android:textColor="#4F4F4F"
+                android:textSize="16sp"
+                android:textStyle="normal|bold" />
+
+            <ImageView
+                android:id="@+id/logo_ptt"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="40dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ptt"
+
+                />
+
+            <ImageView
+                android:id="@+id/logo_bcp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="40dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/bcp" />
+
+            <ImageView
+                android:id="@+id/logo_shell"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="40dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/shell" />
+
+            <ImageView
+                android:id="@+id/logo_esso"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="40dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/esso" />
+        </TableRow>
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="#F0FFFF"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/txt_bensin"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="เบนซิล"
+                    android:textAlignment="viewStart"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_bs_colum1"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="30.86"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:id="@+id/tv_bs_colum2"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_bs_colum3"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_bs_colum4"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="31.31"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F0F8FF"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/txt_gassohol95"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="แก๊สโซฮอล 95"
+                    android:textAlignment="viewStart"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_gsh95_colum1"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.75"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_gsh95_colum2"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.75"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_gsh95_colum3"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_gsh95_colum4"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.75"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="#F0FFFF"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/txt_gassohol91"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="แก๊สโซฮอล 91"
+                    android:textAlignment="viewStart"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_gsh91_colum1"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.48"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_gsh91_colum2"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.48"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_gsh91_colum3"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.48"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_gsh91_colum4"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="#F0F8FF"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/txt_e20"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="E20"
+                    android:textAlignment="viewStart"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_e20_colum1"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="21.24"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_e20_colum2"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="21.24"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_e20_colum3"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="21.24"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_e20_colum4"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="#F0FFFF"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/txt_e85"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="E85"
+                    android:textAlignment="viewStart"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_e85_colum1"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="17.79"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_e85_colum2"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="17.79"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_e85_colum3"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_e85_colum4"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.29"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="#F0F8FF"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/txt_disel"
+                    android:layout_width="140dp"
+                    android:layout_height="55dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="ดีเซล"
+                    android:textAlignment="viewStart"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_ds_colum1"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="26.29"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_ds_colum2"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.29"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_ds_colum3"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.29"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_ds_colum4"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="23.75"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="normal|bold"
+
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>
+

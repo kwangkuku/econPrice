@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:layout_marginTop="20dp">
+
+    <TextView
+        android:text="ตรวจสอบราคาน้ำมัน"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_weight="0.10"
+        android:layout_marginTop="20dp"
+
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="#33FF00"/>
+
+    <TextView
+        android:text="      ตรวจสอบราคาน้ำมันล่าสุดวันนี้ เปรียบเทียบราคาน้ำมัน  และคำนวณส่วนต่างราคาน้ำมัน"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:id="@+id/textView3"
+        android:textSize="20sp"
+        android:layout_weight="0.03"
+        android:textAlignment="center"
+        android:layout_margin="30dp"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/pic_oil_price"
+        android:id="@+id/oil_price"
+        android:layout_weight="0.10"
+        android:layout_margin="20dp"/>
+
+</LinearLayout>

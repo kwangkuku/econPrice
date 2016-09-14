@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        icon="@drawable/ic_oilb"
+        id="@+id/tab_oil"
+        title="Oil"
+        barColorWhenSelected="#228B22"
+      />
+
+    <tab
+
+        icon="@drawable/ic_lotterya"
+        id="@+id/tab_lottery"
+        title="Lottery"
+        barColorWhenSelected="#B22222"
+        />
+    <tab
+
+        icon="@drawable/ic_weatherb"
+        id="@+id/tab_weather"
+        title="Weather"
+        barColorWhenSelected="#20B2AA"
+     />
+</tabs>
+

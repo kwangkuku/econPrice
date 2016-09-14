@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">EconPrice</string>
+    <string name="str_msgTrue">คุณถูกรางวัล</string>
+    <string name="str_msgFail">คุณไม่ถูกรางวัล</string>
+    <string name="btn_name">ตกลง</string>
+    <string name="from_date">ตรวจสอบย้อนหลัง</string>
+    <string name="str_msgdate">เลือกวันที่ย้อนหลัง</string>
+    <string name="app_name_lot">ตรวจผลสลากกินแบ่งรัฐบาล</string>
+    <string name="app_name_wea">พยากรณ์อากาศไทย</string>
+    <string name="app_name_oil">ตรวจสอบราคาน้ำมัน</string>
+</resources>

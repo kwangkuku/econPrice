@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:layout_margin="10dp"
+    android:id="@+id/show1"
+    >
+    <!--<ScrollView-->
+        <!--android:layout_width="378dp"-->
+        <!--android:layout_height="548dp">-->
+
+
+    <!--</ScrollView>-->
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="numberSigned"-->
+        <!--android:ems="10"-->
+        <!--android:id="@+id/editText3" />-->
+
+    <EditText
+    android:hint="ค้นหาผลสลากกินแบ่งรัฐบาล"
+        android:textColor="#a6a4a4"
+        android:gravity="center"
+        android:background="#f2f2f2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="6"
+        android:ems="6"
+        android:id="@+id/seach_num"
+        android:layout_margin="10dp"/>
+
+
+
+    <!--<TextView-->
+        <!--android:text="งวดวันที่ 1 กันยายน 2559 "-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:textSize="18dp"-->
+        <!--android:textColor="#000000"-->
+        <!--android:id="@+id/tv_date" />-->
+    <Spinner
+        android:id="@+id/spin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+
+        >
+
+    </Spinner>
+
+    <TextView
+        android:text="@string/str_msgdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="15dp"
+        android:id="@+id/tv_date_show"
+        android:layout_marginBottom="10dp"
+        />
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:text="รางวัลที่ 1"
+                android:textColor="#B22222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:id="@+id/lotto" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="45dp"
+                android:textColor="#000000"
+                android:id="@+id/lot_num" />
+            <TextView
+                android:text="เลขท้าย 2 ตัว"
+                android:textColor="#B22222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:id="@+id/lotto2" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="45dp"
+                android:textColor="#000000"
+                android:id="@+id/lot_num2" />
+
+
+
+            <TextView
+                android:text="เลขหน้า 3 ตัว"
+                android:textColor="#B22222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:id="@+id/lotto3" />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="35dp"
+                android:textColor="#000000"
+                android:id="@+id/lot_num3" />
+            <TextView
+                android:text="เลขท้าย 3 ตัว"
+                android:textColor="#B22222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:id="@+id/lotto4" />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="35dp"
+                android:textColor="#000000"
+                android:id="@+id/lot_num4" />
+            <TextView
+                android:text="รางวัลใกล้เคียงรางวัลที่ 1"
+                android:textColor="#B22222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:id="@+id/lotto5" />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="35dp"
+                android:textColor="#000000"
+                android:id="@+id/lot_num5" />
+
+            <TextView
+                android:text="รางวัลที่ 2"
+                android:textColor="#B22222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:id="@+id/lotto6" />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:id="@+id/lot_num6" />
+            <TextView
+                android:text="รางวัลที่ 3"
+                android:textColor="#B22222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:id="@+id/lotto7" />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:id="@+id/lot_num7" />
+            <TextView
+                android:text="รางวัลที่ 4"
+                android:textColor="#B22222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:id="@+id/lotto8" />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:id="@+id/lot_num8" />
+            <TextView
+                android:text="รางวัลที่ 5"
+                android:textColor="#B22222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:id="@+id/lotto9" />
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:id="@+id/lot_num9" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+</LinearLayout>

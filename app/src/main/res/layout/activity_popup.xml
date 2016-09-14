@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_shape">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_margin="20dp"
+            android:textColor="#FF0000"
+            android:textSize="20dp"
+            android:text="@string/str_msgFail" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="#D3D3D3"/>
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="121dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:textColor="#3300CC"
+            android:textSize="20dp"
+            android:text="@string/btn_name" />
+    </LinearLayout>
+</LinearLayout>
+
