@@ -30,8 +30,7 @@
         android:gravity="center"
         android:hint="ค้นหาผลสลากกินแบ่งรัฐบาล"
         android:inputType="number"
-        android:maxLength="6"
-        />
+        android:maxLength="6" />
 
 
     <!--<TextView-->
@@ -51,28 +50,30 @@
         android:layout_gravity="center"
         android:text="@string/str_msgdate"
         android:textSize="@dimen/activity_horizontal_margin" />
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="งวดวันที่"
-    android:textColor="#000000"
-    android:textSize="@dimen/activity_horizontal_margin"
 
-     />
-    <Spinner
-        android:id="@+id/spin"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center">
 
-        >
-    </Spinner>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="งวดวันที่"
+            android:textColor="#000000"
+            android:textSize="@dimen/activity_horizontal_margin"
 
-</LinearLayout>
+            />
+
+        <Spinner
+            android:id="@+id/spin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            ></Spinner>
+
+    </LinearLayout>
 
 
     <ScrollView
@@ -153,10 +154,10 @@
                 android:id="@+id/lot_num4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:textColor="#000000"
-                android:textSize="35dp"
-                android:layout_marginBottom="20dp"/>
+                android:textSize="35dp" />
 
             <TextView
                 android:id="@+id/lotto5"
