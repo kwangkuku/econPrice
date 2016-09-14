@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
@@ -45,7 +47,7 @@ public class Menu extends AppCompatActivity {
 
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             TextView tv = (TextView) findViewById(R.id.toolbar_title);
-
+            ImageView img = (ImageView) findViewById(R.id.action);
             @Override
             public void onTabSelected(@IdRes int tabId) {
 
@@ -58,7 +60,7 @@ public class Menu extends AppCompatActivity {
                     transaction.commit();
                     tv.setText("ตรวจสอบราคาน้ำมัน");
                     tv.setTextColor(Color.parseColor("#228B22"));
-
+                    img.setVisibility(View.INVISIBLE);
                     //   tv.setBackgroundColor(Color.parseColor("#FFFFF0"));
 
 
@@ -69,6 +71,7 @@ public class Menu extends AppCompatActivity {
                     transaction.commit();
                     tv.setText("ตรวจผลสลากกินแบ่งรัฐบาล");
                     tv.setTextColor(Color.parseColor("#B22222"));
+                    img.setVisibility(View.INVISIBLE);
                 } else if (tabId == R.id.tab_weather) {
                     FragmentManager manager = getSupportFragmentManager();
                     FragmentTransaction transaction = manager.beginTransaction();
@@ -76,6 +79,7 @@ public class Menu extends AppCompatActivity {
                     transaction.commit();
                     tv.setText("พยากรณ์อากาศ");
                     tv.setTextColor(Color.parseColor("#20B2AA"));
+                    img.setVisibility(View.INVISIBLE);
                 }
             }
 

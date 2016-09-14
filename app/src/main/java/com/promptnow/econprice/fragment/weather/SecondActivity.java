@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
@@ -48,6 +49,15 @@ public class SecondActivity extends Fragment {
 
     private void setView() {
 
+        ImageView img = (ImageView) getActivity().findViewById(R.id.action);
+        img.setVisibility(View.VISIBLE);
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //กลับไปยังหน้าเลือก ถาคของเรา
+                getFragmentManager().popBackStack();
+            }
+        });
 
         TextView textData = (TextView) getActivity().findViewById(R.id.editText);
 

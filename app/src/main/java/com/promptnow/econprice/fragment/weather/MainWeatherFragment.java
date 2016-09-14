@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,6 +30,9 @@ public class MainWeatherFragment extends Fragment {
 
         String[] list = {"กรุงเทพมหานครและปริมณฑล", "ภาคเหนือ", "ภาคตะวันออกเฉียงเหนือ"
                 , "ภาคกลาง", "ภาคตะวันออก", "ภาคใต้"};
+
+        ImageView action = (ImageView) getActivity().findViewById(R.id.action);
+        action.setVisibility(View.INVISIBLE);
 
         CustomAdapterr adapter = new CustomAdapterr(getActivity(), list);
 
