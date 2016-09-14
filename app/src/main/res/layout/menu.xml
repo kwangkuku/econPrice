@@ -52,7 +52,13 @@ android:id="@+id/toolbar"
         app:radius="6dp"
 
         />
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/frgMain"
+        >
+    </FrameLayout>
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
@@ -64,12 +70,6 @@ android:id="@+id/toolbar"
         app:bb_behavior="shifting|underNavbar"
         />
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        android:id="@+id/frgMain"
-        >
-    </FrameLayout>
+
 
 </RelativeLayout>

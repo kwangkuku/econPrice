@@ -30,7 +30,7 @@
         <View
             android:layout_width="wrap_content"
             android:layout_height="0.9dp"
-            android:background="#f1f1f1"/>
+            android:background="#d6d4d4"/>
         <Button
             android:id="@+id/btn_ok"
             android:layout_width="121dp"
