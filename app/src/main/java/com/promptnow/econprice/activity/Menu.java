@@ -58,6 +58,7 @@ public class Menu extends AppCompatActivity {
                     transaction.commit();
                     tv.setText("ตรวจสอบราคาน้ำมัน");
                     tv.setTextColor(Color.parseColor("#228B22"));
+
                     //   tv.setBackgroundColor(Color.parseColor("#FFFFF0"));
 
 

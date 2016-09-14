@@ -50,10 +50,10 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         spin = (Spinner) rootView.findViewById(R.id.spin);
 
         ArrayList<String> arrayList = new ArrayList<String>();
-        arrayList.add("งวดวันที่ 1 กันยายน 2559");
-        arrayList.add("งวดวันที่ 16 สิงหาคม 2559");
-        arrayList.add("งวดวันที่ 1 สิงหาคม 2559");
-        arrayList.add("งวดวันที่ 16 กรกฏาคม 2559");
+        arrayList.add("1 กันยายน 2559");
+        arrayList.add("16 สิงหาคม 2559");
+        arrayList.add("1 สิงหาคม 2559");
+        arrayList.add("16 กรกฏาคม 2559");
 
         ArrayAdapter<String> lottoAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_dropdown_item_1line, arrayList);
