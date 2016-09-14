@@ -20,35 +20,23 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
 
-
-
-
-
-
-
-
         //TH sarabran
         //Typeface myTypeface = Typeface.createFromAsset(getAssets(),"THSarabunNew.ttf");
         //TextView myTextView = (TextView)findViewById(R.id.textView2);
         //myTextView.setTypeface(myTypeface);
 
-                adapter = new MyPagerAdapter(getSupportFragmentManager());
+        adapter = new MyPagerAdapter(getSupportFragmentManager());
 
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
 
 
-        indicator = (CirclePageIndicator)findViewById(R.id.indicator);
-        indicator .setViewPager(pager);
-
-
+        indicator = (CirclePageIndicator) findViewById(R.id.indicator);
+        indicator.setViewPager(pager);
 
 
 //      pager = (ViewPager) findViewById(R.id.indicator);
-  //      pager.setAdapter(adapter);
-
-
-
+        //      pager.setAdapter(adapter);
 
 
     }
@@ -57,8 +45,6 @@ public class MainActivity extends FragmentActivity {
     public void setSelect(int position) {
         pager.setCurrentItem(position);
     }
-
-
 
 
 }

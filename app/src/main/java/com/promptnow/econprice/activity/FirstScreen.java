@@ -41,16 +41,16 @@ public class FirstScreen extends Fragment {
             public void onClick(View view) {
 //                new MyPagerAdapter(getActivity().getSupportFragmentManager()).getItem(1);
 
-                ((MainActivity)getActivity()).setSelect(1);
-        }
+                ((MainActivity) getActivity()).setSelect(1);
+            }
         });
 
 
-            Button btnClickSKIP = (Button) rootView.findViewById(R.id.skip);
+        Button btnClickSKIP = (Button) rootView.findViewById(R.id.skip);
         btnClickSKIP.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                ((MainActivity)getActivity()).setSelect(5);
+                ((MainActivity) getActivity()).setSelect(5);
             }
         });
 

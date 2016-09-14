@@ -14,11 +14,11 @@ import android.widget.TextView;
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.activity.Menu;
 
-public class NullWeatherFragment extends Fragment {
+public class MainWeatherFragment extends Fragment {
     private View rootView;
 
-    public void onCreate (Bundle savedInstanceState ) {
-        super.onCreate (savedInstanceState );
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
     }
 
@@ -44,29 +44,29 @@ public class NullWeatherFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), SecondActivity.class);
                 switch (position) {
                     case 0:
-                        ((Menu)getActivity()).setFragment(new SecondActivity());
+                        ((Menu) getActivity()).setFragment(new SecondActivity());
 
                         break;
                     case 1:
                         //intent.putExtra("indexlist", "ภาคเหนือ");
 
-                        ((Menu)getActivity()).setFragment(new SecondActivity());
+                        ((Menu) getActivity()).setFragment(new SecondActivity());
                         break;
                     case 2:
 //                        intent.putExtra("indexlist", "ภาคตะวันออกเฉียงเหนือ");
-                        ((Menu)getActivity()).setFragment(new SecondActivity());
+                        ((Menu) getActivity()).setFragment(new SecondActivity());
                         break;
                     case 3:
 //                        intent.putExtra("indexlist", "ภาคกลาง");
-                        ((Menu)getActivity()).setFragment(new SecondActivity());
+                        ((Menu) getActivity()).setFragment(new SecondActivity());
                         break;
                     case 4:
 //                       intent.putExtra("indexlist", "ภาคตะวันออก");
-                        ((Menu)getActivity()).setFragment(new SecondActivity());
+                        ((Menu) getActivity()).setFragment(new SecondActivity());
                         break;
                     case 5:
 //                        intent.putExtra("indexlist", "ภาคใต้");
-                        ((Menu)getActivity()).setFragment(new SecondActivity());
+                        ((Menu) getActivity()).setFragment(new SecondActivity());
                         break;
 
                 }

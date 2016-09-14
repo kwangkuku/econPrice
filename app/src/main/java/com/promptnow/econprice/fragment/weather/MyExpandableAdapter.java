@@ -25,9 +25,8 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
     private HashMap<String, List<String>> _listDataChild;
 
 
-
     public MyExpandableAdapter(Context context, List<String> listDataHeader,
-                               HashMap<String, List<String>> listChildData ) {
+                               HashMap<String, List<String>> listChildData) {
         this._context = context;
         this._listDataHeader = listDataHeader;
         this._listDataChild = listChildData;
@@ -65,8 +64,6 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.lblListItem);
         txtListChild.setText(childText);
-
-
 
 
         return convertView;

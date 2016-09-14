@@ -14,7 +14,7 @@ import com.promptnow.econprice.R;
  * Created by Acer on 29/8/2559.
  */
 
-public class GuideOilPriceActivity extends Fragment {
+public class GuideOilPrice extends Fragment {
     private View rootView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

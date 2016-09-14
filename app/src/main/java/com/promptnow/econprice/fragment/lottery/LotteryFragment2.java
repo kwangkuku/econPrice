@@ -1,4 +1,4 @@
-package com.promptnow.econprice.fragment.Fragment;
+package com.promptnow.econprice.fragment.lottery;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,10 +22,6 @@ import static com.promptnow.econprice.R.id.random;
 public class LotteryFragment2 extends Fragment {
     private View rootView;
 
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Nullable
     @Override
@@ -37,12 +33,11 @@ public class LotteryFragment2 extends Fragment {
     }
 
     private void settimeout() {
-        
+
     }
 
 
     private void setrandom() {
-
 
 
         Random rand = new Random();
@@ -60,22 +55,21 @@ public class LotteryFragment2 extends Fragment {
         }
 
 
-
-        for (int i = 0; i< 3; i++) {
+        for (int i = 0; i < 3; i++) {
             TextView tv2 = (TextView) rootView.findViewById(R.id.random2);
-           int random = rand.nextInt(999);
+            int random = rand.nextInt(999);
             DecimalFormat formatter = new DecimalFormat("000");
             yourFormattedString2 += formatter.format(random) + "  ";
             tv2.setText(yourFormattedString2);
-     }
+        }
 
         for (int i = 0; i < 3; i++) {
             Random rand2 = new Random();
-           TextView tv3 = (TextView) rootView.findViewById(R.id.random3);
+            TextView tv3 = (TextView) rootView.findViewById(R.id.random3);
             int random = rand2.nextInt(99);
             DecimalFormat formatter = new DecimalFormat("00");
-           yourFormattedString3 += formatter.format(random) + "  ";
-           tv3.setText(yourFormattedString3);
+            yourFormattedString3 += formatter.format(random) + "  ";
+            tv3.setText(yourFormattedString3);
 
         }
 

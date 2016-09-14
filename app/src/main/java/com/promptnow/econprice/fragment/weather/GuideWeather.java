@@ -13,7 +13,7 @@ import com.promptnow.econprice.R;
  * Created by Acer on 30/8/2559.
  */
 
-public class GuideWeatherActivity extends Fragment {
+public class GuideWeather extends Fragment {
     private View rootView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

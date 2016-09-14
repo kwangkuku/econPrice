@@ -11,31 +11,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.fragment.Fragment.LotteryFragment;
-import com.promptnow.econprice.fragment.Fragment.LotteryFragment2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NullLotteryFragment extends android.support.v4.app.Fragment {
-private View rootView;
+public class MainLotteryFragment extends android.support.v4.app.Fragment {
+    private View rootView;
 
     // Fragment TabHost as mTabHost
     //private FragmentTabHost mTabHost;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceStat) {
-         rootView = inflater.inflate(R.layout.activity_stucture_lottery, container, false);
+        rootView = inflater.inflate(R.layout.activity_stucture_lottery, container, false);
         setView();
-       // setToolbar();
-
+        // setToolbar();
 
 
         return rootView;
@@ -69,10 +62,9 @@ private View rootView;
         tabLayout.setupWithViewPager(viewPager);
     }
 
-    private List<Fragment> getFragments(){
+    private List<Fragment> getFragments() {
 
         List<Fragment> fList = new ArrayList<Fragment>();
-
 
 
         fList.add(new LotteryFragment());
@@ -80,7 +72,6 @@ private View rootView;
         fList.add(new LotteryFragment2());
 
         // fList.add(MyFragment.newInstance("Fragment 3"));
-
 
 
         return fList;

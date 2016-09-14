@@ -9,16 +9,13 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.fragment.Fragment.OilFragment;
-import com.promptnow.econprice.fragment.Fragment.OilFragment2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NullOilFragment extends Fragment {
+public class MainOilFragment extends Fragment {
     private View rootView;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -34,15 +31,13 @@ public class NullOilFragment extends Fragment {
 //    }
 
 
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       rootView = inflater.inflate(R.layout.activity_stucture_oil, container, false);
+        rootView = inflater.inflate(R.layout.activity_stucture_oil, container, false);
 
         setView();
-      //  setToolbar();
+        //  setToolbar();
         return rootView;
     }
 

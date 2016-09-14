@@ -38,6 +38,10 @@ public class View_popup extends DialogFragment {
     View.OnClickListener listenerOK;
     public onSubmitAlertDialogListener mListener;
 
+    public View_popup(String strMsg) {
+
+    }
+
     public interface onSubmitAlertDialogListener {
         void setOnSubmitAlertDialogListener();
     }
@@ -56,7 +60,7 @@ public class View_popup extends DialogFragment {
         dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setContentView(R.layout.activity_popup);
-        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(false);
         dialog.show();
 
         txt = (TextView) dialog.findViewById(R.id.txt);

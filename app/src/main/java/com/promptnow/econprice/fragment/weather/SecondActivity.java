@@ -20,11 +20,10 @@ import java.util.List;
 public class SecondActivity extends Fragment {
 
 
+    private ExpandableListView expListView;
 
-   private ExpandableListView expListView;
-
-     private List<String>listDataHeader ;
-    private  HashMap<String, List<String>>listDataChild ;
+    private List<String> listDataHeader;
+    private HashMap<String, List<String>> listDataChild;
 
     private View rootView;
 
@@ -35,14 +34,13 @@ public class SecondActivity extends Fragment {
 
 
         expListView = (ExpandableListView) rootView.findViewById(R.id.expListView);
-              expListView.setDivider(null);
+        expListView.setDivider(null);
         // preparing list data
         prepareListData();
 
-        MyExpandableAdapter listAdapter = new MyExpandableAdapter(getActivity(),listDataHeader,listDataChild);
+        MyExpandableAdapter listAdapter = new MyExpandableAdapter(getActivity(), listDataHeader, listDataChild);
         // setting list adapter
-     expListView.setAdapter(listAdapter);
-
+        expListView.setAdapter(listAdapter);
 
 
         return rootView;
@@ -51,37 +49,35 @@ public class SecondActivity extends Fragment {
     private void setView() {
 
 
-
         TextView textData = (TextView) getActivity().findViewById(R.id.editText);
 
     }
 
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
 
-        @Override
-        public void onActivityCreated(Bundle savedInstanceState) {
-            super.onActivityCreated(savedInstanceState);
-        }
-
-        private void prepareListData () {
-            listDataHeader = new ArrayList<String>();
-             listDataChild = new HashMap<String, List<String>>();
+    private void prepareListData() {
+        listDataHeader = new ArrayList<String>();
+        listDataChild = new HashMap<String, List<String>>();
 
 
-            // Adding child data
-            listDataHeader.add("นนทบุรี");
-            listDataHeader.add("สมุทปราการ");
-            listDataHeader.add("ปทุมธานี");
+        // Adding child data
+        listDataHeader.add("นนทบุรี");
+        listDataHeader.add("สมุทปราการ");
+        listDataHeader.add("ปทุมธานี");
 
-            // Adding child data
-            List<String> top250 = new ArrayList<String>();
-            top250.add("อุณหภูมอากาศปัจจุบัน");
-            top250.add("ทิศทางลม");
-            top250.add("ค่าเฉลี่ยความชื้นสัมพัทธ์");
-            top250.add("ความเร็วลม");
+        // Adding child data
+        List<String> top250 = new ArrayList<String>();
+        top250.add("อุณหภูมอากาศปัจจุบัน");
+        top250.add("ทิศทางลม");
+        top250.add("ค่าเฉลี่ยความชื้นสัมพัทธ์");
+        top250.add("ความเร็วลม");
 //
-          //List<String> top2500 = new ArrayList<String>();
-            //top2500.add("90");
+        //List<String> top2500 = new ArrayList<String>();
+        //top2500.add("90");
 //        List<String> nowShowing = new ArrayList<String>();
 //        nowShowing.add("The Conjuring");
 //        nowShowing.add("Despicable Me 2");
@@ -97,11 +93,10 @@ public class SecondActivity extends Fragment {
 //        comingSoon.add("The Canyons");
 //        comingSoon.add("Europa Report");
 
-            listDataChild.put(listDataHeader.get(0), top250 );// Header, Child data
-            //listDataChild.put(listDataHeader.get(0), top2500);
-            //listDataChild.put(listDataHeader.get(2), comingSoon);
-        }
-
+        listDataChild.put(listDataHeader.get(0), top250);// Header, Child data
+        //listDataChild.put(listDataHeader.get(0), top2500);
+        //listDataChild.put(listDataHeader.get(2), comingSoon);
+    }
 
 
 }

@@ -1,4 +1,4 @@
-package com.promptnow.econprice.fragment.Fragment;
+package com.promptnow.econprice.fragment.lottery;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,8 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.view.View_popup_false;
-import com.promptnow.econprice.view.View_popup_true;
+import com.promptnow.econprice.view.View_popup;
 
 import java.util.ArrayList;
 
@@ -24,27 +23,24 @@ import java.util.ArrayList;
  * Created by Whankung on 7/9/2559.
  */
 
-public class LotteryFragment extends Fragment implements View_popup_false.onSubmitAlertDialogListener,View_popup_true.onSubmitAlertDialogListener{
+public class LotteryFragment extends Fragment implements View_popup.onSubmitAlertDialogListener {
     private View rootView;
     EditText input;
 
-private TextView tv,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
+    private TextView tv, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9;
     private Spinner spin;
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.checklottery, container, false);
-      setView();
-       setDate();
+        setView();
+        // setDate();
         setNumber();
         LottoSpinner();
         //setContent();
-    setDummy();
+        setDummy();
 
         return rootView;
     }
@@ -52,15 +48,6 @@ private TextView tv,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
     private void LottoSpinner() {
 
         spin = (Spinner) rootView.findViewById(R.id.spin);
-        //spin.setClickable(false);
-        spin.setEnabled(false);
-
-
-
-
-
-
-
 
         ArrayList<String> arrayList = new ArrayList<String>();
         arrayList.add("งวดวันที่ 1 กันยายน 2559");
@@ -74,11 +61,6 @@ private TextView tv,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
 
 
         spin = (Spinner) rootView.findViewById(R.id.spin);
-        //spin.setClickable(false);
-        spin.setEnabled(false);
-
-
-
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView adapter, View v, int i, long lng) {
@@ -89,10 +71,7 @@ private TextView tv,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
                     setContent2();
                 } else if (i == 3) {
                     setContent3();
-
                 }
-
-
             }
 
             @Override
@@ -104,57 +83,51 @@ private TextView tv,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
     }
 
 
-
-
-
-
-
-
-
     private void setView() {
 //        รางวัลที่1
-        tv=(TextView) rootView.findViewById(R.id.lot_num);
+        tv = (TextView) rootView.findViewById(R.id.lot_num);
 //        เลขท้าย 2 ตัว
-         tv2=(TextView)rootView.findViewById(R.id.lot_num2);
+        tv2 = (TextView) rootView.findViewById(R.id.lot_num2);
 //        เลขหน้า 3 ตัว
-        tv3=(TextView) rootView.findViewById(R.id.lot_num3);
+        tv3 = (TextView) rootView.findViewById(R.id.lot_num3);
 //         เลขท้าย 3 ตัว
-        tv4=(TextView)rootView.findViewById(R.id.lot_num4);
+        tv4 = (TextView) rootView.findViewById(R.id.lot_num4);
 //        รางวัลใกล้เคียงรางวัลที่1
-       tv5=(TextView) rootView.findViewById(R.id.lot_num5);
+        tv5 = (TextView) rootView.findViewById(R.id.lot_num5);
 //        รางวัลที่2
-         tv6=(TextView)rootView.findViewById(R.id.lot_num6);
+        tv6 = (TextView) rootView.findViewById(R.id.lot_num6);
 //        รางวัลที่3
-        tv7=(TextView) rootView.findViewById(R.id.lot_num7);
+        tv7 = (TextView) rootView.findViewById(R.id.lot_num7);
 //        รางวัลที่4
-        tv8=(TextView)rootView.findViewById(R.id.lot_num8);
+        tv8 = (TextView) rootView.findViewById(R.id.lot_num8);
 //        รางวัลที่5
-         tv9=(TextView)rootView.findViewById(R.id.lot_num9);
+        tv9 = (TextView) rootView.findViewById(R.id.lot_num9);
 
 
     }
+
     private void setDummy() {
         tv.setText("254004");
         tv2.setText("33");
-        tv3.setText("254004");
-        tv4.setText("254004");
-        tv5.setText("254004");
-        tv6.setText("254004");
-        tv7.setText("254004");
-        tv8.setText("254004");
-        tv9.setText("254004");
+        tv3.setText("994 004");
+        tv4.setText("654 764");
+        tv5.setText("114505 000503");
+        tv6.setText("674107 002226 199098");
+        tv7.setText("000245 222214 110008");
+        tv8.setText("003111 034533 132999");
+        tv9.setText("276600 211111 001739");
     }
 
     private void setContent() {
-        tv.setText("254003");
-        tv2.setText("33");
-        tv3.setText("254004");
-        tv4.setText("254004");
-        tv5.setText("254004");
-        tv6.setText("254004");
-        tv7.setText("254004");
-        tv8.setText("254004");
-        tv9.setText("254004");
+        tv.setText("454567");
+        tv2.setText("01");
+        tv3.setText("558 150");
+        tv4.setText("003 151");
+        tv5.setText("114545 111503");
+        tv6.setText("222107 333226 555098");
+        tv7.setText("035655 111114 097568");
+        tv8.setText("126593 999533 464999");
+        tv9.setText("345699 154646 895739");
     }
 
     private void setContent2() {
@@ -180,33 +153,34 @@ private TextView tv,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
         tv8.setText("323393 008533 118999");
         tv9.setText("765699 111467 673739");
     }
-    private void setDate() {
-        final TextView tv_date = (TextView) rootView.findViewById(R.id.tv_date_show);
 
-tv_date.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
+//    private void setDate() {
+//        spin = (Spinner) rootView.findViewById(R.id.spin);
+//
+//        spin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//    spin.performClick();
+//
+//            }
+//        });
+//    }
 
-spin.performClick();
-    }
-});
-    }
 
+    private void setNumber() {
 
-
-   private void setNumber() {
-
-        input = (EditText)rootView.findViewById(R.id.seach_num);
+        input = (EditText) rootView.findViewById(R.id.seach_num);
         input.addTextChangedListener(watch);
 
     }
 
-    private TextWatcher watch = new TextWatcher(){
+    private TextWatcher watch = new TextWatcher() {
 
         @Override
         public void afterTextChanged(Editable arg0) {
 
         }
+
         @Override
         public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
                                       int arg3) {
@@ -215,24 +189,20 @@ spin.performClick();
 
         @Override
         public void onTextChanged(CharSequence s, int a, int b, int c) {
-        String prefix="000000";
+            String prefix = "000000";
+            String strMsg = " ";
+//TextView textView=(TextView)rootView.findViewById(R.id.txt);
+            if (s.toString().endsWith(prefix)) {
+                strMsg = getResources().getString(R.string.str_msgTrue);
+            } else if (s.toString().length() == 6) {
+                strMsg = getResources().getString(R.string.str_msgFail);
+            }
+            View_popup alertDialog = new View_popup(strMsg);
+            alertDialog.mListener = LotteryFragment.this;
+            alertDialog.show(getFragmentManager(), "");
+        }
 
-            if(s.toString().endsWith(prefix) ){
-                View_popup_true alertDialog = new View_popup_true(
-                        getResources().getString(R.string.str_msgTrue),
-                        getResources().getString(R.string.btn_name));
-                alertDialog.mListener = LotteryFragment.this;
-                alertDialog.show(getFragmentManager(), "");
-
-            }else if(s.toString().length() == 6) {
-                  View_popup_false alertDialog = new View_popup_false(
-                          getResources().getString(R.string.str_msgFail),
-                          getResources().getString(R.string.btn_name));
-                  alertDialog.mListener = LotteryFragment.this;
-                  alertDialog.show(getFragmentManager(), "");
-              }
-
-        }};
+    };
 
     @Override
     public void setOnSubmitAlertDialogListener() {

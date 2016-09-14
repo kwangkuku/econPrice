@@ -13,7 +13,7 @@ import com.promptnow.econprice.R;
  * Created by Acer on 30/8/2559.
  */
 
-public class GuideLotteryActivity extends Fragment {
+public class GuideLottery extends Fragment {
 
     private View rootView;
 

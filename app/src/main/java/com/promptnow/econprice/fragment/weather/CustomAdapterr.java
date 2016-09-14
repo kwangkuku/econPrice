@@ -20,7 +20,7 @@ public class CustomAdapterr extends BaseAdapter {
 
 
     public CustomAdapterr(Context context, String[] strName) {
-        this.mContext= context;
+        this.mContext = context;
         this.strName = strName;
 
     }
@@ -36,19 +36,18 @@ public class CustomAdapterr extends BaseAdapter {
     }
 
 
-
     public long getItemId(int position) {
         return 0;
     }
 
     public View getView(int position, View view, ViewGroup parent) {
         LayoutInflater mInflater =
-                (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        if(view == null)
+        if (view == null)
             view = mInflater.inflate(R.layout.listview_row, parent, false);
 
-        TextView textView = (TextView)view.findViewById(R.id.textView1);
+        TextView textView = (TextView) view.findViewById(R.id.textView1);
         textView.setText(strName[position]);
 
         if (position % 2 == 0) {
@@ -71,7 +70,6 @@ public class CustomAdapterr extends BaseAdapter {
 
         return view;
     }
-
 
 
 }

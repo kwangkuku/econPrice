@@ -1,4 +1,4 @@
-package com.promptnow.econprice.fragment.Fragment;
+package com.promptnow.econprice.fragment.oil;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
