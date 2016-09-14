@@ -1,10 +1,12 @@
 package com.promptnow.econprice.fragment.lottery;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +28,9 @@ import java.util.ArrayList;
 public class LotteryFragment extends Fragment implements View_popup.onSubmitAlertDialogListener {
     private View rootView;
     EditText input;
-
     private TextView tv, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9;
     private Spinner spin;
+
 
 
     @Nullable
@@ -119,7 +121,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     }
 
     private void setContent() {
-        tv.setText("454567");
+        tv.setText("209067");
         tv2.setText("01");
         tv3.setText("558 150");
         tv4.setText("003 151");
@@ -189,17 +191,23 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
         @Override
         public void onTextChanged(CharSequence s, int a, int b, int c) {
+            Log.d("log", "123");
             String prefix = "000000";
-            String strMsg = " ";
-//TextView textView=(TextView)rootView.findViewById(R.id.txt);
+            String strMsg = "";
             if (s.toString().endsWith(prefix)) {
                 strMsg = getResources().getString(R.string.str_msgTrue);
+                View_popup alertDialog = new View_popup(strMsg,"ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
             } else if (s.toString().length() == 6) {
                 strMsg = getResources().getString(R.string.str_msgFail);
+
+                View_popup alertDialog = new View_popup(strMsg,"ตกลง");
+
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
             }
-            View_popup alertDialog = new View_popup(strMsg);
-            alertDialog.mListener = LotteryFragment.this;
-            alertDialog.show(getFragmentManager(), "");
+
         }
 
     };

@@ -65,6 +65,8 @@ public class View_popup extends DialogFragment {
 
         txt = (TextView) dialog.findViewById(R.id.txt);
         btn_ok = (Button) dialog.findViewById(R.id.btn_ok);
+        txt.setText(message);
+        btn_ok.setText(msg_ok);
 
 
         btn_ok.setOnClickListener(new View.OnClickListener() {

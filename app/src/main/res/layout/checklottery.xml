@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/show1"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:orientation="vertical"
+
     android:weightSum="1">
     <!--<ScrollView-->
     <!--android:layout_width="378dp"-->
@@ -49,18 +50,29 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/str_msgdate"
-        android:textSize="15dp" />
+        android:textSize="@dimen/activity_horizontal_margin" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="งวดวันที่"
+    android:textColor="#000000"
+    android:textSize="@dimen/activity_horizontal_margin"
 
+     />
     <Spinner
         android:id="@+id/spin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
+
         >
     </Spinner>
 
-
+</LinearLayout>
 
 
     <ScrollView
@@ -80,7 +92,7 @@
                 android:layout_gravity="center"
                 android:text="รางวัลที่ 1"
                 android:textColor="#B22222"
-                android:textSize="18dp" />
+                android:textSize="@dimen/activity_horizontal_margin" />
 
             <TextView
                 android:id="@+id/lot_num"
@@ -97,7 +109,7 @@
                 android:layout_gravity="center"
                 android:text="เลขท้าย 2 ตัว"
                 android:textColor="#B22222"
-                android:textSize="18dp" />
+                android:textSize="@dimen/activity_horizontal_margin" />
 
             <TextView
 
@@ -116,7 +128,7 @@
                 android:layout_gravity="center"
                 android:text="เลขหน้า 3 ตัว"
                 android:textColor="#B22222"
-                android:textSize="18dp" />
+                android:textSize="@dimen/activity_horizontal_margin" />
 
             <TextView
 
@@ -134,7 +146,7 @@
                 android:layout_gravity="center"
                 android:text="เลขท้าย 3 ตัว"
                 android:textColor="#B22222"
-                android:textSize="18dp" />
+                android:textSize="@dimen/activity_horizontal_margin" />
 
             <TextView
 
@@ -153,7 +165,7 @@
                 android:layout_gravity="center"
                 android:text="รางวัลใกล้เคียงรางวัลที่ 1"
                 android:textColor="#B22222"
-                android:textSize="18dp" />
+                android:textSize="@dimen/activity_horizontal_margin" />
 
             <TextView
 
@@ -171,7 +183,7 @@
                 android:layout_gravity="center"
                 android:text="รางวัลที่ 2"
                 android:textColor="#B22222"
-                android:textSize="18dp" />
+                android:textSize="@dimen/activity_horizontal_margin" />
 
             <TextView
 
@@ -189,7 +201,7 @@
                 android:layout_gravity="center"
                 android:text="รางวัลที่ 3"
                 android:textColor="#B22222"
-                android:textSize="18dp" />
+                android:textSize="@dimen/activity_horizontal_margin" />
 
             <TextView
 
@@ -207,7 +219,7 @@
                 android:layout_gravity="center"
                 android:text="รางวัลที่ 4"
                 android:textColor="#B22222"
-                android:textSize="18dp" />
+                android:textSize="@dimen/activity_horizontal_margin" />
 
             <TextView
 
@@ -225,7 +237,7 @@
                 android:layout_gravity="center"
                 android:text="รางวัลที่ 5"
                 android:textColor="#B22222"
-                android:textSize="18dp" />
+                android:textSize="@dimen/activity_horizontal_margin" />
 
             <TextView
 
