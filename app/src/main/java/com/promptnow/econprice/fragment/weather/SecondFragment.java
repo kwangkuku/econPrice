@@ -2,6 +2,7 @@ package com.promptnow.econprice.fragment.weather;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.view.Singleton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by Admin on 9/9/2559.
@@ -27,27 +31,28 @@ public class SecondFragment extends Fragment {
     private HashMap<String, List<String>> listDataChild;
 
     private View rootView;
-
+    private MyExpandableAdapter listAdapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_secondwea, container, false);
         setView();
 
+        return rootView;
+    }
+
+    private void setView() {
 
         expListView = (ExpandableListView) rootView.findViewById(R.id.expListView);
         expListView.setDivider(null);
         // preparing list data
         prepareListData();
 
-        MyExpandableAdapter listAdapter = new MyExpandableAdapter(getActivity(), listDataHeader, listDataChild);
+         listAdapter = new MyExpandableAdapter(getActivity(), listDataHeader, listDataChild);
         // setting list adapter
         expListView.setAdapter(listAdapter);
 
-
-        return rootView;
-    }
-
-    private void setView() {
+        TextView editText = (TextView) getActivity().findViewById(R.id.editText);
+        Singleton.getInstance().getIndexlist().toString();
 
         ImageView img = (ImageView) getActivity().findViewById(R.id.action);
         img.setVisibility(View.VISIBLE);
@@ -59,7 +64,23 @@ public class SecondFragment extends Fragment {
             }
         });
 
-        TextView textData = (TextView) getActivity().findViewById(R.id.editText);
+//        TextView textData = (TextView) getActivity().findViewById(R.id.editText);
+//        textData.setText(Singleton.getInstance().getIndexlist());
+
+        expListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+
+                for (int i = 0; i < listAdapter.getGroupCount(); i++)
+                    if (i != groupPosition)
+                        expListView.collapseGroup(i);
+                    else
+                        expListView.expandGroup(i);
+//                if (expListView.isGroupExpanded(i))
+                return true;
+            }
+        });
+
 
     }
 
@@ -80,33 +101,24 @@ public class SecondFragment extends Fragment {
         listDataHeader.add("ปทุมธานี");
 
         // Adding child data
+
         List<String> top250 = new ArrayList<String>();
-        top250.add("อุณหภูมอากาศปัจจุบัน");
-        top250.add("ทิศทางลม");
-        top250.add("ค่าเฉลี่ยความชื้นสัมพัทธ์");
-        top250.add("ความเร็วลม");
-//
-        //List<String> top2500 = new ArrayList<String>();
-        //top2500.add("90");
-//        List<String> nowShowing = new ArrayList<String>();
-//        nowShowing.add("The Conjuring");
-//        nowShowing.add("Despicable Me 2");
-//        nowShowing.add("Turbo");
-//        nowShowing.add("Grown Ups 2");
-//        nowShowing.add("Red 2");
-//        nowShowing.add("The Wolverine");
-//
-//        List<String> comingSoon = new ArrayList<String>();
-//        comingSoon.add("2 Guns");
-//        comingSoon.add("The Smurfs 2");
-//        comingSoon.add("The Spectacular Now");
-//        comingSoon.add("The Canyons");
-//        comingSoon.add("Europa Report");
+        top250.add("34");
+
+        List<String> nowShowing = new ArrayList<String>();
+        nowShowing.add("35");
+
+        List<String> comingSoon = new ArrayList<String>();
+        comingSoon.add("47");
+
+        Log.d(TAG, "prepareListData: " + Singleton.getInstance().getIndexlist());
+
 
         listDataChild.put(listDataHeader.get(0), top250);// Header, Child data
-        //listDataChild.put(listDataHeader.get(0), top2500);
-        //listDataChild.put(listDataHeader.get(2), comingSoon);
+        listDataChild.put(listDataHeader.get(1), nowShowing);
+        listDataChild.put(listDataHeader.get(2), comingSoon);
     }
+
 
 
 }

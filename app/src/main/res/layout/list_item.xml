@@ -3,12 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="55dip"
-    android:orientation="horizontal"
-   >
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <TextView
         android:layout_weight="0.5"
         android:id="@+id/lblListItem"
+        android:text="อุณหภูมิอากาศปัจจุบัน"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/text_margin"
@@ -17,15 +21,104 @@
         android:paddingBottom="5dp"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
 
-    <TextView
-        android:layout_weight="2"
-        android:id="@+id/txt_number"
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/txt_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dip"
+            android:text=""
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="15dip"
-        android:text="43"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="0.5"
+            android:text="ทิศทางลม"
+            android:id="@+id/lblListItem1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/text_margin"
+            android:textSize="15dip"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/txt_number1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dip"
+            android:text="43"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="0.5"
+            android:text="ค่าเฉลี่ยความชื้นพื้นันธ์"
+            android:id="@+id/lblListItem2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/text_margin"
+            android:textSize="15dip"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/txt_number2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dip"
+            android:text="43"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="0.5"
+            android:text="ความเร็วลม"
+            android:id="@+id/lblListItem3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/text_margin"
+            android:textSize="15dip"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/txt_number3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dip"
+            android:text="43"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+    </LinearLayout>
+
+
+
 
 </LinearLayout>
