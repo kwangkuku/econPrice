@@ -3,6 +3,7 @@ package com.promptnow.econprice.fragment.lottery;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,16 @@ import android.widget.TextView;
 
 import com.promptnow.econprice.R;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
+import java.util.TimeZone;
 
+import static com.promptnow.econprice.R.id.date;
+import static com.promptnow.econprice.R.id.enterAlways;
 import static com.promptnow.econprice.R.id.random;
 import static com.promptnow.econprice.R.id.time;
 import static com.promptnow.econprice.R.id.tv;
@@ -26,25 +33,16 @@ public class LotteryFragment2 extends Fragment {
     private View rootView;
     private TextView tv;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.checklottery_number, container, false);
         setRandom();
-        setTime();
+        //setTime();
         return rootView;
+
     }
-
-
-
-
-//        int day = c.get(Calendar.DAY_OF_MONTH);
-//        int month = c.get(Calendar.MONTH);
-//        int year = c.get(Calendar.YEAR);
-
-
-
-
 
 
     private void setRandom() {
@@ -67,6 +65,7 @@ public class LotteryFragment2 extends Fragment {
             DecimalFormat formatter = new DecimalFormat("000");
             yourFormattedString2 += formatter.format(random) + "  ";
             tv2.setText(yourFormattedString2);
+
         }
 
         for (int i = 0; i < 3; i++) {
@@ -77,27 +76,53 @@ public class LotteryFragment2 extends Fragment {
             yourFormattedString3 += formatter.format(random) + "  ";
             tv3.setText(yourFormattedString3);
         }
+
     }
 
 
-    private void setTime() {
-        tv = (TextView) rootView.findViewById(time);
-        Calendar c = Calendar.getInstance();
-        int hour = c.get(Calendar.HOUR_OF_DAY);
-        int minutes = c.get(Calendar.MINUTE);
-        String time = hour + ":" + minutes;
+//    private void setTime() {
+//        Calendar c = Calendar.getInstance();
+//        tv = (TextView) rootView.findViewById(time);
+//        int hour = c.get(Calendar.HOUR_OF_DAY);
+//        int minutes = c.get(Calendar.MINUTE);
+//        String time = hour + ":" + minutes;
+//
+//        if (hour < 12 && hour >= 0) {
+//            tv.setText(time);
+//
+//        } else {
+//            hour -= 12;
+//            if (hour == 0) {
+//            }
+//            tv.setText(time);
+//        }
+//    }
 
-        if (hour < 12 && hour >= 0) {
-            tv.setText(time);
-        } else {
-            hour -= 12;
-            if (hour == 0) {
-                hour = 12;
-            }
-            tv.setText(time);
-        }
-    }
 }
+// tv = (TextView) rootView.findViewById(time);
+
+//        Calendar c = Calendar.getInstance();
+//        int hour = c.get(Calendar.HOUR_OF_DAY);
+//        int minutes = c.get(Calendar.MINUTE);
+//        String time = hour + ":" + minutes;
+//        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+1:00"));
+//        Date currentLocalTime = cal.getTime();
+//        DateFormat date = new SimpleDateFormat("HH:mm");
+//        // you can get seconds by adding  "...:ss" to it
+//        date.setTimeZone(TimeZone.getTimeZone("GMT+1:00"));
+//        String localTime = date.format(currentLocalTime);
+//
+//        Log.w(localTime, "1");
+//
+//        if (hour < 12 && hour >= 0) {
+//            tv.setText("122");
+//
+//        } else {
+//            hour -= 12;
+//            if (hour == 0) {
+//               setRandom();
+//            } Calendar c = Calendar.getInstance();
+//    }
 
 
 
