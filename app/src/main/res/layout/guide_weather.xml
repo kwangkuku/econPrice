@@ -14,21 +14,20 @@
         android:layout_weight="0.10"
         android:text="พยากรณ์อากาศ"
         android:textAlignment="center"
-        android:textColor="?attr/actionModeSplitBackground"
+        android:textColor="#72edf9"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_margin="30dp"
-        android:layout_weight="0.15"
-        android:text="การตรวจสอบสภาพภูมิอากาศใน 77 จังหวัด ในประเทศไทย สามารถเลือกภาคในแต่ละภาค เพื่อดูอุณภูมิในแต่ละจังหวัด"
+        android:layout_height="wrap_content"
+        android:text="การตรวจสอบสภาพภูมิอากาศใน 77จังหวัดในประเทศไทย สามารถเลือกภาคในแต่ละภาคเพื่อดูอุณภูมิในแต่ละจังหวัด"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:layout_margin="20dp"
+        android:textSize="18sp" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/weather"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="20dp"

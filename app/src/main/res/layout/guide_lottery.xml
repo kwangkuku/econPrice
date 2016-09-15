@@ -15,24 +15,28 @@
         android:text="ตรวจผลสลากกินแบ่งรัฐบาล"
         android:textAlignment="center"
         android:textColor="#CC0000"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+
+        />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_margin="30dp"
-        android:layout_weight="0.14"
-        android:text=" ตรวจผลสลากกินแบ่งรัฐบาลทั้งงวด ปัจจุบันและย้อนหลัง พร้อมกับการทำนาย เลขเด็ดล่วงหน้าในงวดต่อไป"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="ตรวจผลสลากกินแบ่งรัฐบาลทั้งงวดปัจจุบันและย้อนหลัง พร้อมกับการทำนายเลขเด็ดล่วงหน้าในงวดต่อไป"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
+
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/lottory"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="20dp"
         android:layout_weight="0.10"
-        app:srcCompat="@drawable/ic_lottery" />
+        app:srcCompat="@drawable/ic_lottory" />
 
 </LinearLayout>
