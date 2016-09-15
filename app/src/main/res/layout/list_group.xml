@@ -4,10 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="8dp"
     android:background="@color/color_gray"
-    >
+    android:orientation="horizontal"
+    android:padding="8dp">
 
     <ImageView
         android:id="@+id/img_wea"
@@ -20,19 +19,19 @@
         android:id="@+id/lblListHeader"
         android:layout_width="139dp"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:textColor="#330099"
         android:layout_gravity="center"
         android:layout_marginLeft="@dimen/text_margin"
         android:layout_weight="12.06"
-    android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft" />
+        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
+        android:textColor="#330099"
+        android:textSize="15dp" />
 
-<TextView
-    android:layout_width="42dp"
-    android:layout_height="match_parent"
-    android:text="44.5"
-    android:id="@+id/txt_num"
-    android:layout_weight="2.98" />
+    <TextView
+        android:id="@+id/txt_num"
+        android:layout_width="42dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2.98"
+        android:text="44.5" />
 
 
 </LinearLayout>

@@ -75,7 +75,7 @@ public class SecondFragment extends Fragment {
         TextView textData = (TextView) rootView.findViewById(R.id.editText);
         textData.setText(Singleton.getInstance().getIndexlist());
 
-     //เราทำให้ เมื่อเรากดกลุ่มหัวอันใหญ่ แล้วลูกมันจะออกมา แล้วถ้าเรากดแีกครั้งอันที่เราเคยกดมันจะหุบ
+        //เราทำให้ เมื่อเรากดกลุ่มหัวอันใหญ่ แล้วลูกมันจะออกมา แล้วถ้าเรากดแีกครั้งอันที่เราเคยกดมันจะหุบ
         expListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {

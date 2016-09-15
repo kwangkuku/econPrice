@@ -20,13 +20,11 @@ public class MainWeatherFragment extends Fragment {
     private View rootView;
 
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.stucture_weather, container, false);
-     setView();
-
+        setView();
 
 
         return rootView;
@@ -52,33 +50,33 @@ public class MainWeatherFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), SecondFragment.class);
                 switch (position) {
                     case 0:
-                        ((Menu)getActivity()).setFragment(new SecondFragment());
+                        ((Menu) getActivity()).setFragment(new SecondFragment());
                         Singleton.getInstance().setIndexlist(list[0]);
                         break;
                     case 1:
                         //intent.putExtra("indexlist", "ภาคเหนือ");
 
-                        ((Menu)getActivity()).setFragment(new SecondFragment());
+                        ((Menu) getActivity()).setFragment(new SecondFragment());
                         Singleton.getInstance().setIndexlist(list[1]);
                         break;
                     case 2:
 //                        intent.putExtra("indexlist", "ภาคตะวันออกเฉียงเหนือ");
-                        ((Menu)getActivity()).setFragment(new SecondFragment());
+                        ((Menu) getActivity()).setFragment(new SecondFragment());
                         Singleton.getInstance().setIndexlist(list[2]);
                         break;
                     case 3:
 //                        intent.putExtra("indexlist", "ภาคกลาง");
-                        ((Menu)getActivity()).setFragment(new SecondFragment());
+                        ((Menu) getActivity()).setFragment(new SecondFragment());
                         Singleton.getInstance().setIndexlist(list[3]);
                         break;
                     case 4:
 //                       intent.putExtra("indexlist", "ภาคตะวันออก");
-                        ((Menu)getActivity()).setFragment(new SecondFragment());
+                        ((Menu) getActivity()).setFragment(new SecondFragment());
                         Singleton.getInstance().setIndexlist(list[4]);
                         break;
                     case 5:
 //                        intent.putExtra("indexlist", "ภาคใต้");
-                        ((Menu)getActivity()).setFragment(new SecondFragment());
+                        ((Menu) getActivity()).setFragment(new SecondFragment());
                         Singleton.getInstance().setIndexlist(list[5]);
                         break;
 

@@ -27,11 +27,6 @@ public class CustomTextView extends TextView {
     }
 
 
-
-
-
-
-
     @Override
     public void setTextSize(int unit, float size) {
 

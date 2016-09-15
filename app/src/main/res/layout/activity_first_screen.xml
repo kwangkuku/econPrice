@@ -16,45 +16,44 @@
         android:background="#ffffff" />
 
     <TextView
-        android:text="แนะนำการใช้งาน"
+        android:id="@+id/tv_guide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_marginTop="180dp"
-        android:id="@+id/tv_guide"
+        android:text="แนะนำการใช้งาน"
+        android:textAlignment="center"
         android:textColor="#696969"
-        android:textSize="16sp"
-        android:textAlignment="center" />
+        android:textSize="16sp" />
 
     <Button
-        android:text=">>> SKIP"
+        android:id="@+id/skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_guide"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"
-        android:id="@+id/skip"
-        />
+        android:text=">>> SKIP" />
 
     <TextView
-        android:text="Economic Price"
+        android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
-        android:id="@+id/tv"
+        android:text="Economic Price"
+        android:textAlignment="center"
         android:textColor="#696969"
         android:textSize="18sp"
-        android:textAlignment="center"
         android:textStyle="normal|bold" />
 
     <ImageView
-        android:layout_width="match_parent"
-        app:srcCompat="@drawable/deer_"
         android:id="@+id/imageView"
-        android:layout_marginTop="180dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="180dp"
+        app:srcCompat="@drawable/deer_" />
 
 
 </RelativeLayout>

@@ -7,35 +7,34 @@
 
 
     <!--<include-->
-        <!--layout="@layout/custom_toolbar"-->
-        <!--/>-->
+    <!--layout="@layout/custom_toolbar"-->
+    <!--/>-->
 
     <!--<TextView-->
-        <!--android:text="ตรวจสอบราคาน้ำมัน"-->
-        <!--android:textSize="25dp"-->
-        <!--android:textColor="#228B22"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:gravity="center"-->
-        <!--android:id="@+id/text_lottery"-->
-        <!--android:layout_weight="0.04" />-->
+    <!--android:text="ตรวจสอบราคาน้ำมัน"-->
+    <!--android:textSize="25dp"-->
+    <!--android:textColor="#228B22"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center"-->
+    <!--android:id="@+id/text_lottery"-->
+    <!--android:layout_weight="0.04" />-->
 
     <!--<View-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:background="#DCDCDC"-->
-        <!--/>-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="#DCDCDC"-->
+    <!--/>-->
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabGravity="fill"
-        app:tabMode="fixed"
-        app:tabMaxWidth="0dp"
-        app:tabSelectedTextColor="#228B22"
         app:tabIndicatorColor="#419e41"
-        >
+        app:tabMaxWidth="0dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#228B22">
 
     </android.support.design.widget.TabLayout>
 
@@ -44,8 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="70dp"
-        android:background="@android:color/white"
-        />
+        android:background="@android:color/white" />
 
 
 </LinearLayout>
