@@ -12,7 +12,6 @@ import com.promptnow.econprice.activity.FirstScreen;
 import com.promptnow.econprice.fragment.lottery.GuideLottery;
 import com.promptnow.econprice.fragment.oil.GuideOilPrice;
 import com.promptnow.econprice.fragment.startApp.StartAfterGuideActivity;
-import com.promptnow.econprice.fragment.startApp.StartAppActivity;
 import com.promptnow.econprice.fragment.weather.GuideWeather;
 
 public  class MyPagerAdapter extends FragmentPagerAdapter {
@@ -22,7 +21,7 @@ public  class MyPagerAdapter extends FragmentPagerAdapter {
     }
 
     public int getCount() {
-        return 6;
+        return 5;
     }
 
     public Fragment getItem(int position) {
@@ -36,8 +35,6 @@ public  class MyPagerAdapter extends FragmentPagerAdapter {
             return new GuideWeather();
         else if(position == 4)
             return new StartAfterGuideActivity();
-        else if(position == 5)
-            return new StartAppActivity();
         return null;
     }
 }

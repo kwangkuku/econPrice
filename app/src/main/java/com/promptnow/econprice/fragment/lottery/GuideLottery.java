@@ -18,7 +18,7 @@ public class GuideLottery extends Fragment {
     private View rootView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.activity_guide_lottery, container, false);
+        rootView = inflater.inflate(R.layout.guide_lottery, container, false);
 
 
         setView();

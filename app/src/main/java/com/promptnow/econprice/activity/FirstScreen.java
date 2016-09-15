@@ -22,7 +22,7 @@ public class FirstScreen extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.activity_first_screen, container, false);
+        rootView = inflater.inflate(R.layout.first_screen, container, false);
 
 
         setView();
@@ -33,7 +33,7 @@ public class FirstScreen extends Fragment {
     private void setView() {
 
         ImageView image = (ImageView) rootView.findViewById(R.id.imageView);
-        image.setImageResource(R.drawable.ic_deer_);
+        image.setImageResource(R.drawable.ic_deer);
 
         TextView btnClick = (TextView) rootView.findViewById(R.id.tv_guide);
         btnClick.setOnClickListener(new View.OnClickListener() {
@@ -41,16 +41,16 @@ public class FirstScreen extends Fragment {
             public void onClick(View view) {
 //                new MyPagerAdapter(getActivity().getSupportFragmentManager()).getItem(1);
 
-                ((MainActivity) getActivity()).setSelect(1);
-            }
+                ((MainActivity)getActivity()).setSelect(1);
+        }
         });
 
 
-        Button btnClickSKIP = (Button) rootView.findViewById(R.id.skip);
+            Button btnClickSKIP = (Button) rootView.findViewById(R.id.skip);
         btnClickSKIP.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                ((MainActivity) getActivity()).setSelect(5);
+                ((MainActivity)getActivity()).setSelect(4);
             }
         });
 
@@ -59,4 +59,3 @@ public class FirstScreen extends Fragment {
 
 }
 
-//

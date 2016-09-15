@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.view.DatePickerFragment;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -149,7 +150,9 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
         show_vs1.setText("" + vs1);
         show_vs2.setText(" " + vs2);
-        tv_show_result.setText(" " + result);
+        tv_show_result.setText(new DecimalFormat("0.00").format(+ result*(-1)));
+
+        //คูณ-1เพื่อไม่ให้ติดลบ แต่ว่า ยังติดอยุ่ ไม่ออกที
     }
 
 
@@ -161,6 +164,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         int month = c.get(Calendar.MONTH);
         month += 1;
         int day = c.get(Calendar.DAY_OF_MONTH);
+
         String stringOfDate = day + "/" + month + "/" + year;
 
         tv_date_oil_vs.setText(stringOfDate);

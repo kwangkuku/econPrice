@@ -37,11 +37,6 @@
         app:pageColor="#BEBEBE"
         app:radius="6dp" />
 
-    <FrameLayout
-        android:id="@+id/frgMain"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"></FrameLayout>
 
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottomBar"
@@ -52,6 +47,12 @@
         app:bb_behavior="shifting|underNavbar"
         app:bb_inActiveTabColor="#DCDCDC"
         app:bb_tabXmlResource="@xml/bottombar_tabs_three" />
+
+    <FrameLayout
+        android:id="@+id/frgMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar" />
 
 
 </RelativeLayout>

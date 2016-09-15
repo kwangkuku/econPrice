@@ -18,7 +18,7 @@ public class GuideOilPrice extends Fragment {
     private View rootView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.activity_guide_oilprice, container, false);
+        rootView = inflater.inflate(R.layout.guide_oilprice, container, false);
 
 
         setView();

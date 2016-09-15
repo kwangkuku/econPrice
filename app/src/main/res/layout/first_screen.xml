@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:padding="20dp"
+    tools:context="com.promptnow.econprice.activity.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+
+
+        >
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_deer"
+            android:scaleType="center"
+            android:cropToPadding="false"
+            android:adjustViewBounds="false"
+
+            />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:text="Economic Price"
+            android:textAlignment="center"
+            android:textColor="#696969"
+            android:textSize="18sp"
+            android:textStyle="normal|bold" />
+
+
+        <TextView
+            android:id="@+id/tv_guide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv"
+            android:text="แนะนำการใช้งาน"
+            android:textAlignment="center"
+            android:textColor="#919090"
+            android:textSize="20sp"
+            android:layout_marginTop="50dp"
+            />
+
+        <Button
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text=" >>> SKIP "
+            android:textColor="#FF919090"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/tv_guide"
+            android:background="@drawable/bg_shape"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            />
+
+    </RelativeLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/layout"
+        />
+
+
+
+
+</RelativeLayout>
