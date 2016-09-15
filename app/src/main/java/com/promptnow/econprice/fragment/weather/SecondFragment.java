@@ -15,6 +15,7 @@ import com.promptnow.econprice.R;
 import com.promptnow.econprice.view.Singleton;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class SecondFragment extends Fragment {
 
 
         setView();
+        setDateTime();
 
 
         return rootView;
@@ -125,7 +127,29 @@ public class SecondFragment extends Fragment {
         listDataChild.put(listDataHeader.get(2), comingSoon);
     }
 
+    public void setDateTime(){
 
+    Calendar c = Calendar.getInstance();
+
+    int minutes = c.get(Calendar.MINUTE);
+    int hour = c.get(Calendar.HOUR);
+    String time = hour+":"+minutes;
+
+
+    int day = c.get(Calendar.DAY_OF_MONTH);
+    int month = c.get(Calendar.MONTH);
+    int year = c.get(Calendar.YEAR);
+    String date = day+"/"+month+"/"+year;
+
+    //assuming that you need date and time in separate textview named txt_date and txt_time.
+
+        TextView txt_date = (TextView) rootView.findViewById(R.id.txt_date);
+        TextView txt_time = (TextView) rootView.findViewById(R.id.txt_time);
+
+    txt_date.setText(date);
+    txt_time.setText(time);
+
+}
 }
 
 
