@@ -127,29 +127,29 @@ public class SecondFragment extends Fragment {
         listDataChild.put(listDataHeader.get(2), comingSoon);
     }
 
-    public void setDateTime(){
+    public void setDateTime() {
 
-    Calendar c = Calendar.getInstance();
+        Calendar c = Calendar.getInstance();
 
-    int minutes = c.get(Calendar.MINUTE);
-    int hour = c.get(Calendar.HOUR);
-    String time = hour+":"+minutes;
+        int minutes = c.get(Calendar.MINUTE);
+        int hour = c.get(Calendar.HOUR);
+        String time = hour + ":" + minutes;
 
 
-    int day = c.get(Calendar.DAY_OF_MONTH);
-    int month = c.get(Calendar.MONTH);
-    int year = c.get(Calendar.YEAR);
-    String date = day+"/"+month+"/"+year;
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        int month = c.get(Calendar.MONTH);
+        int year = c.get(Calendar.YEAR);
+        String date = day + "/" + month + "/" + year;
 
-    //assuming that you need date and time in separate textview named txt_date and txt_time.
+        //assuming that you need date and time in separate textview named txt_date and txt_time.
 
         TextView txt_date = (TextView) rootView.findViewById(R.id.txt_date);
         TextView txt_time = (TextView) rootView.findViewById(R.id.txt_time);
 
-    txt_date.setText(date);
-    txt_time.setText(time);
+        txt_date.setText(date);
+        txt_time.setText(time);
 
-}
+    }
 }
 
 
