@@ -111,7 +111,7 @@ public class SecondFragment extends Fragment {
 
         // Adding child data
         List<String> top250 = new ArrayList<String>();
-        top250.add("34");
+        top250.add("34 ");
 
         List<String> nowShowing = new ArrayList<String>();
         nowShowing.add("35");

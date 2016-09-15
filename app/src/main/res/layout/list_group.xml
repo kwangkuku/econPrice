@@ -17,21 +17,21 @@
 
     <TextView
         android:id="@+id/lblListHeader"
-        android:layout_width="139dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="@dimen/text_margin"
-        android:layout_weight="12.06"
+        android:layout_weight="1"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:textColor="#330099"
         android:textSize="15dp" />
 
     <TextView
         android:id="@+id/txt_num"
-        android:layout_width="42dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2.98"
-        android:text="44.5" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="44.5 °C" />
 
 
 </LinearLayout>
