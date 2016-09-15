@@ -34,7 +34,7 @@ public class SecondFragment extends Fragment {
 
     private View rootView;
     private MyExpandableAdapter listAdapter;
-
+    private TextView txt_time;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_secondwea, container, false);
@@ -128,14 +128,23 @@ public class SecondFragment extends Fragment {
     }
 
     public void setDateTime() {
+        TextView txt_date = (TextView) rootView.findViewById(R.id.txt_date);
+        txt_time = (TextView) rootView.findViewById(R.id.txt_time);
 
         Calendar c = Calendar.getInstance();
 
         int minutes = c.get(Calendar.MINUTE);
-        int hour = c.get(Calendar.HOUR);
-        String time = hour + ":" + minutes;
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        String time = hour + ":" +minutes;
 
-
+        if (hour < 12 && hour >= 0) {
+            txt_time.setText(time);
+        } else {
+            hour -= 12;
+            if (hour == 0) {
+            }
+            txt_time.setText(time);
+        }
         int day = c.get(Calendar.DAY_OF_MONTH);
         int month = c.get(Calendar.MONTH);
         int year = c.get(Calendar.YEAR);
@@ -143,11 +152,7 @@ public class SecondFragment extends Fragment {
 
         //assuming that you need date and time in separate textview named txt_date and txt_time.
 
-        TextView txt_date = (TextView) rootView.findViewById(R.id.txt_date);
-        TextView txt_time = (TextView) rootView.findViewById(R.id.txt_time);
-
         txt_date.setText(date);
-        txt_time.setText(time);
 
     }
 }

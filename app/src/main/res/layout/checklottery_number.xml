@@ -8,67 +8,74 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="@dimen/text_view"
         android:background="#f2f2f2"
         android:gravity="center"
         android:text="เลขเด็ดประจำวัน" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:text="เลขมงคล"
-        android:textColor="#B22222"
-        android:textSize="18dp" />
-
-    <TextView
-        android:id="@+id/random"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text=""
-        android:textColor="#000000"
-        android:textSize="35dp" />
+        android:layout_margin="@dimen/text_view"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="13dp"
-        android:gravity="center"
-        android:text="เลขท้าย 3 ตัว"
-        android:textColor="#B22222"
-        android:textSize="18dp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="เลขมงคล"
+            android:textColor="#B22222"
+            android:textSize="18dp" />
 
-    <TextView
-        android:id="@+id/random2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text=""
-        android:textColor="#000000"
-        android:textSize="35dp" />
+        <TextView
+            android:id="@+id/random"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="35dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="13dp"
-        android:gravity="center"
-        android:text="เลขท้าย 2 ตัว"
-        android:textColor="#B22222"
-        android:textSize="18dp" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:gravity="center"
+            android:text="เลขท้าย 3 ตัว"
+            android:textColor="#B22222"
+            android:textSize="18dp" />
 
-    <TextView
-        android:id="@+id/random3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text=""
-        android:textColor="#000000"
-        android:textSize="35dp" />
+        <TextView
+            android:id="@+id/random2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="35dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:gravity="center"
+            android:text="เลขท้าย 2 ตัว"
+            android:textColor="#B22222"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/random3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="35dp" />
 
 
 </LinearLayout>
