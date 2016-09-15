@@ -57,12 +57,13 @@ android:id="@+id/toolbar"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
         android:id="@+id/frgMain"
-        >
+       >
+
     </FrameLayout>
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/bottombar_height"
         android:layout_alignParentBottom="true"
         app:bb_tabXmlResource="@xml/bottombar_tabs_three"
         app:bb_activeTabColor="#DCDCDC"
