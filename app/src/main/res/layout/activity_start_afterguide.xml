@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.53"
         android:scaleType="center"
-        app:srcCompat="@drawable/tri" />
+        app:srcCompat="@drawable/ic_start" />
 
     <TextView
         android:id="@+id/textView9"

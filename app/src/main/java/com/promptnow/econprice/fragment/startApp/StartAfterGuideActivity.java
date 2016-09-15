@@ -28,7 +28,7 @@ public class StartAfterGuideActivity extends Fragment{
     private void setView() {
 
         ImageView image = (ImageView) rootView.findViewById(R.id.imageView2);
-        image.setImageResource(R.drawable.tri);
+        image.setImageResource(R.drawable.ic_start);
 
     }
 

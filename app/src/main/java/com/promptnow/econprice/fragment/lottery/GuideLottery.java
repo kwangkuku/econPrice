@@ -29,7 +29,7 @@ public class GuideLottery extends Fragment {
     private void setView() {
 
         ImageView image = (ImageView) rootView.findViewById(R.id.imageView3);
-        image.setImageResource(R.drawable.lottery);
+        image.setImageResource(R.drawable.ic_lottery);
     }
 
 }

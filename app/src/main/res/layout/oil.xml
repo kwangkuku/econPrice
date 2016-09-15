@@ -89,7 +89,7 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="40dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ptt"
+                app:srcCompat="@drawable/ic_ptt"
 
                 />
 
@@ -99,7 +99,7 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="40dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/bcp" />
+                app:srcCompat="@drawable/ic_bcp" />
 
             <ImageView
                 android:id="@+id/logo_shell"
@@ -107,7 +107,7 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="40dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/shell" />
+                app:srcCompat="@drawable/ic_shell" />
 
             <ImageView
                 android:id="@+id/logo_esso"
@@ -115,7 +115,7 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="40dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/esso" />
+                app:srcCompat="@drawable/ic_esso" />
         </TableRow>
 
 

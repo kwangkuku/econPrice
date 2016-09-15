@@ -35,6 +35,6 @@
         android:layout_height="150dp"
         android:layout_margin="20dp"
         android:layout_weight="0.10"
-        app:srcCompat="@drawable/pic_oil_price" />
+        app:srcCompat="@drawable/ic_oil_price" />
 
 </LinearLayout>

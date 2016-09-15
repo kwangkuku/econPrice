@@ -33,7 +33,7 @@ public class FirstScreen extends Fragment {
     private void setView() {
 
         ImageView image = (ImageView) rootView.findViewById(R.id.imageView);
-        image.setImageResource(R.drawable.deer_);
+        image.setImageResource(R.drawable.ic_deer_);
 
         TextView btnClick = (TextView) rootView.findViewById(R.id.tv_guide);
         btnClick.setOnClickListener(new View.OnClickListener() {

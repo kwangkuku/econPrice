@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="0.30"
-            app:srcCompat="@drawable/ptt" />
+            app:srcCompat="@drawable/ic_ptt" />
 
 
         <ImageView
@@ -94,14 +94,14 @@
             android:layout_height="80dp"
             android:layout_weight="0.30"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/vs" />
+            app:srcCompat="@drawable/ic_vs" />
 
         <ImageView
             android:id="@+id/vs2"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="0.30"
-            app:srcCompat="@drawable/shell" />
+            app:srcCompat="@drawable/ic_shell" />
     </TableRow>
 
     <TableRow

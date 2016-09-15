@@ -53,7 +53,7 @@ public class StartAppActivity extends Fragment{
     private void setView() {
 
         ImageView image = (ImageView) rootView.findViewById(R.id.logoStart);
-        image.setImageResource(R.drawable.deer);
+        image.setImageResource(R.drawable.ic_deer);
 
     }
     public void onResume() {

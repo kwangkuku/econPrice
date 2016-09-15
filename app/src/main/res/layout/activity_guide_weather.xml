@@ -33,5 +33,5 @@
         android:layout_height="150dp"
         android:layout_margin="20dp"
         android:layout_weight="0.10"
-        app:srcCompat="@drawable/weather" />
+        app:srcCompat="@drawable/ic_weather" />
 </LinearLayout>
