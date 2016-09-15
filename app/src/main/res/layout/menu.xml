@@ -47,6 +47,7 @@
         app:bb_behavior="shifting|underNavbar"
         app:bb_inActiveTabColor="#DCDCDC"
         app:bb_tabXmlResource="@xml/bottombar_tabs_three"
+        app:bb_tabletMode="false"
         />
 
     <FrameLayout
