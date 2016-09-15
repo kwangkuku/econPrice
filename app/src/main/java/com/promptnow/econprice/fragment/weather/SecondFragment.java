@@ -106,7 +106,7 @@ public class SecondFragment extends Fragment {
 
         // Adding child data
         listDataHeader.add("นนทบุรี");
-        listDataHeader.add("สมุทปราการ");
+        listDataHeader.add("สมุทรปราการ");
         listDataHeader.add("ปทุมธานี");
 
         // Adding child data
