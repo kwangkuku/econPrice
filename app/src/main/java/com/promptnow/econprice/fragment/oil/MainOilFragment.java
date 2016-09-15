@@ -34,7 +34,7 @@ public class MainOilFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.activity_stucture_oil, container, false);
+        rootView = inflater.inflate(R.layout.stucture_oil, container, false);
 
         setView();
         //  setToolbar();
