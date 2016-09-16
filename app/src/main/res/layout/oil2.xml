@@ -12,7 +12,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:background="#ffffff"
         android:gravity="center">
 
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="วันที่   :    "
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -35,9 +35,8 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:onClick="onClick"
-            android:text="08 / 09 / 2016"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:textSize="16sp" />
 
 
     </LinearLayout>
@@ -46,7 +45,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="15dp"
         android:background="#ffffff"
         android:gravity="center">
 
@@ -56,9 +55,9 @@
             android:id="@+id/txt_oil_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:padding="10dp"
             android:text="ประเภทน้ำมัน  : "
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="normal|bold" />
 
         <Spinner
@@ -66,8 +65,8 @@
             style="@style/Widget.AppCompat.Spinner.Underlined"
             android:layout_width="198dp"
             android:layout_height="match_parent"
-            android:padding="20dp"
-            android:textSize="20sp"
+            android:padding="10dp"
+            android:textSize="16sp"
 
             />
 
@@ -77,63 +76,73 @@
         android:id="@+id/tableRow1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         android:gravity="center">
 
         <ImageView
             android:id="@+id/vs1"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_weight="0.30"
-            app:srcCompat="@drawable/ic_ptt" />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_ptt"
+           />
 
 
         <ImageView
             android:id="@+id/vs"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_weight="0.30"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:scaleType="fitCenter"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/ic_vs" />
 
         <ImageView
             android:id="@+id/vs2"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_weight="0.30"
-            app:srcCompat="@drawable/ic_shell" />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="40dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_shell"
+            />
     </TableRow>
 
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center">
 
         <TextView
             android:id="@+id/show_vs1"
-            style="?android:listSeparatorTextViewStyle"
+
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="150dp"
-
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="40dp"
+            android:textSize="20sp"
+            android:background="@drawable/result_shape"
             android:textAlignment="center"
-            android:textSize="30sp" />
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/show_vs2"
-            style="?android:listSeparatorTextViewStyle"
+
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="150dp"
-
-            android:layout_marginRight="2dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
             android:textAlignment="center"
-            android:textSize="30sp" />
+            android:background="@drawable/result_shape"
+            android:textSize="20sp"
+            android:gravity="center" />
 
     </TableRow>
 
@@ -141,30 +150,31 @@
         android:id="@+id/tableRow3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="30dp"
-            android:text=" ส่วนต่าง"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:text="ส่วนต่าง"
             android:textAlignment="center"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_show_result"
-            style="?android:listSeparatorTextViewStyle"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
             android:textAlignment="center"
-            android:textSize="30sp" />
+            android:textSize="20sp"
+            android:background="@drawable/result_shape"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="40dp"
             android:text="บาท"
             android:textAlignment="center"
             android:textSize="20sp" />

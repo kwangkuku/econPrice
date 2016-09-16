@@ -4,6 +4,7 @@ import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,13 +62,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 //        });
     }
 
-//    private void setTextView() {
-//        show_vs1 = (TextView) rootView.findViewById(R.id.show_vs1);
-//        show_vs2 = (TextView) rootView.findViewById(R.id.show_vs2);
-//        tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
-//    }
-
-
     private void setOilTypeSpiner() {
         oilTypeSpinner = (Spinner) rootView.findViewById(R.id.oilTypeSpinner);
         //  oilTypeSpinner.setEnabled(false);
@@ -89,7 +83,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
             @Override
             public void onItemSelected(AdapterView adapter, View v, int i, long lng) {
-//                setResult();
+
                 if (i == 0) {
                     vs1 = 31.76;
                     vs2 = 32.21;
@@ -126,35 +120,16 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
     }
 
-//    public class DecimalFormatDemo {
-//
-//         public void customFormat(String pattern, double value ) {
-//            DecimalFormat myFormatter = new DecimalFormat(pattern);
-//            String output = myFormatter.format(value);
-//            System.out.println(value + "  " + pattern + "  " + output);
-//        }
-//
-//         public void main(String[] args) {
-//
-//            customFormat("###,###.###", 123456.789);
-//            customFormat("###.##", 123456.789);
-//            customFormat("000000.000", 123.78);
-//            customFormat("$###,###.###", 12345.67);
-//        }
-//    }
 
     private void setResult() {
-//
-//        DecimalFormat myFormatter = new DecimalFormat(vs1);
-//        Double result = myFormatter.format(vs2);
+
 
         show_vs1.setText("" + vs1);
         show_vs2.setText(" " + vs2);
-        tv_show_result.setText(new DecimalFormat("0.00").format(+ result*(-1)));
+        tv_show_result.setText(new DecimalFormat("0.00").format(+ result));
+        tv_show_result.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
 
-        //คูณ-1เพื่อไม่ให้ติดลบ แต่ว่า ยังติดอยุ่ ไม่ออกที
     }
-
 
     //Date Picker
     private void setView() {

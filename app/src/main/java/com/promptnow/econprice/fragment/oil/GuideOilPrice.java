@@ -29,7 +29,7 @@ public class GuideOilPrice extends Fragment {
     private void setView() {
 
         ImageView image = (ImageView) rootView.findViewById(R.id.oil_price);
-        image.setImageResource(R.drawable.ic_oil_price);
+        image.setImageResource(R.drawable.ic_oilprice);
 
     }
 

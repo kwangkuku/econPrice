@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    >
 
 
     <TextView
@@ -11,20 +12,22 @@
         android:layout_height="@dimen/text_view"
         android:background="#f2f2f2"
         android:gravity="center"
+        android:layout_margin="@dimen/activity_vertical_margin"
         android:text="เลขเด็ดประจำวัน" />
 
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_margin="@dimen/text_view"/>
+    <!--<TextView-->
+        <!--android:id="@+id/time"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text=""-->
+        <!--android:layout_margin="@dimen/text_view"-->
+       <!--android:layout_gravity="right"-->
+        <!--/>-->
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:gravity="center"
             android:text="เลขมงคล"
             android:textColor="#B22222"

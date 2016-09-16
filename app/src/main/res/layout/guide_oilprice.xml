@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -14,20 +13,31 @@
         android:layout_marginTop="20dp"
         android:layout_weight="0.10"
         android:text="ตรวจสอบราคาน้ำมัน"
-
         android:textAlignment="center"
         android:textColor="#33FF00"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_margin="30dp"
-        android:layout_weight="0.03"
-        android:text="      ตรวจสอบราคาน้ำมันล่าสุดวันนี้ เปรียบเทียบราคาน้ำมัน  และคำนวณส่วนต่างราคาน้ำมัน"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="ตรวจสอบราคาน้ำมันล่าสุดวันนี้"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="เปรียบเทียบและคำนวณส่วนต่างราคาน้ำมัน"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
 
     <ImageView
         android:id="@+id/oil_price"
@@ -35,6 +45,6 @@
         android:layout_height="150dp"
         android:layout_margin="20dp"
         android:layout_weight="0.10"
-        app:srcCompat="@drawable/ic_oil_price" />
+        app:srcCompat="@drawable/ic_oilprice" />
 
 </LinearLayout>

@@ -26,7 +26,7 @@ public class GuideWeather extends Fragment {
     }
 
     private void setView() {
-        ImageView image = (ImageView) rootView.findViewById(R.id.imageView4);
+        ImageView image = (ImageView) rootView.findViewById(R.id.weather);
         image.setImageResource(R.drawable.ic_weather);
     }
 
