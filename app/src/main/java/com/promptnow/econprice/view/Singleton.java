@@ -10,6 +10,7 @@ public class Singleton {
 
     private static Singleton instance;
     private static String indexlist;
+    private static Boolean firstOpenApp;
 
 //    private Singleton(){list = new ArrayList<Object>();
 //    }
@@ -28,6 +29,16 @@ public class Singleton {
         Singleton.indexlist = indexlist;
     }
 
+<<<<<<< HEAD
 
+=======
+    public  Boolean getFirstOpenApp() {
+        return firstOpenApp;
+    }
+
+    public  void setFirstOpenApp(Boolean firstOpenApp) {
+        Singleton.firstOpenApp = firstOpenApp;
+    }
+>>>>>>> origin/master
 }
 

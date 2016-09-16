@@ -33,9 +33,13 @@ public class Menu extends AppCompatActivity {
 
 
     private void setView() {
+<<<<<<< HEAD
 
 
 
+=======
+        Singleton.getInstance().setFirstOpenApp(true);
+>>>>>>> origin/master
     }
 
     public void setFragment(Fragment fragment) {
