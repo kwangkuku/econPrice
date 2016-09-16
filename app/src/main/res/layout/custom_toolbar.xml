@@ -11,7 +11,7 @@
         android:id="@+id/action"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_actionback3" />
+        app:srcCompat="@drawable/ic_actionback4" />
 
     <TextView
         android:id="@+id/toolbar_title"
