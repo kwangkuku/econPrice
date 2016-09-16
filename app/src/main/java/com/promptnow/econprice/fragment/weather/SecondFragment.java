@@ -87,6 +87,7 @@ public class SecondFragment extends Fragment {
                         expListView.collapseGroup(i);
                     else
                         expListView.expandGroup(i);
+
                 return true;
             }
         });
