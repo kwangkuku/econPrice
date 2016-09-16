@@ -42,15 +42,7 @@ public class LotteryFragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.checklottery_number, container, false);
-<<<<<<< HEAD
-//        if(Singleton.getInstance().getFirstOpenApp()){
-//            Toast.makeText(getActivity(), "Please ", Toast.LENGTH_LONG ).show();
-           setRandom();
-//            //Singleton.getInstance().setFirstOpenApp(false);
-//        }
 
-        //setTime();
-=======
         setView();
         if (Singleton.getInstance().getFirstOpenApp()) {
             setRandom();
@@ -60,7 +52,7 @@ public class LotteryFragment2 extends Fragment {
             Singleton.getInstance().setYourFormattedString3(yourFormattedString3);
         }
         setText();
->>>>>>> origin/master
+
         return rootView;
 
     }

@@ -33,19 +33,7 @@ public class Singleton {
         Singleton.indexlist = indexlist;
     }
 
-<<<<<<< HEAD
-//<<<<<<< HEAD
-//
-//=======
-//    public  Boolean getFirstOpenApp() {
-//        return firstOpenApp;
-//    }
-//
-//    public  void setFirstOpenApp(Boolean firstOpenApp) {
-//        Singleton.firstOpenApp = firstOpenApp;
-//    }
-//>>>>>>> origin/master
-=======
+
     public Boolean getFirstOpenApp() {
         return firstOpenApp;
     }
@@ -54,19 +42,19 @@ public class Singleton {
         Singleton.firstOpenApp = firstOpenApp;
     }
 
-    public  String getYourFormattedString() {
+    public String getYourFormattedString() {
         return yourFormattedString;
     }
 
-    public  void setYourFormattedString(String yourFormattedString) {
+    public void setYourFormattedString(String yourFormattedString) {
         Singleton.yourFormattedString = yourFormattedString;
     }
 
-    public  String getYourFormattedString2() {
+    public String getYourFormattedString2() {
         return yourFormattedString2;
     }
 
-    public  void setYourFormattedString2(String yourFormattedString2) {
+    public void setYourFormattedString2(String yourFormattedString2) {
         Singleton.yourFormattedString2 = yourFormattedString2;
     }
 
@@ -74,9 +62,9 @@ public class Singleton {
         return yourFormattedString3;
     }
 
-    public  void setYourFormattedString3(String yourFormattedString3) {
+    public void setYourFormattedString3(String yourFormattedString3) {
         Singleton.yourFormattedString3 = yourFormattedString3;
     }
->>>>>>> origin/master
+
 }
 
