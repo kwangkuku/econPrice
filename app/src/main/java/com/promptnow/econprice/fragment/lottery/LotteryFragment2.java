@@ -8,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.view.Singleton;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -38,7 +40,12 @@ public class LotteryFragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.checklottery_number, container, false);
-        setRandom();
+        if(Singleton.getInstance().getFirstOpenApp()){
+            Toast.makeText(getActivity(), "Please ", Toast.LENGTH_LONG ).show();
+            setRandom();
+            //Singleton.getInstance().setFirstOpenApp(false);
+        }
+
         //setTime();
         return rootView;
 

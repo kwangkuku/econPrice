@@ -10,6 +10,7 @@ public class Singleton {
 
     private static Singleton instance;
     private static String indexlist;
+    private static Boolean firstOpenApp;
 
 //    private Singleton(){list = new ArrayList<Object>();
 //    }
@@ -26,6 +27,14 @@ public class Singleton {
     }
     public void setIndexlist(String indexlist){
         Singleton.indexlist = indexlist;
+    }
+
+    public  Boolean getFirstOpenApp() {
+        return firstOpenApp;
+    }
+
+    public  void setFirstOpenApp(Boolean firstOpenApp) {
+        Singleton.firstOpenApp = firstOpenApp;
     }
 }
 
