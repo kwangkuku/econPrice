@@ -57,7 +57,7 @@
             android:id="@+id/spin"
             style="@style/Widget.AppCompat.Spinner.Underlined"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
 
             >
