@@ -43,6 +43,7 @@ public class MainWeatherFragment extends Fragment {
 
         final ListView listView = (ListView) rootView.findViewById(R.id.listView1);
         listView.setAdapter(adapter);
+        listView.setDivider(null);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view,

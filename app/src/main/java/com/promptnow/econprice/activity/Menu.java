@@ -15,6 +15,7 @@ import com.promptnow.econprice.R;
 import com.promptnow.econprice.fragment.lottery.MainLotteryFragment;
 import com.promptnow.econprice.fragment.oil.MainOilFragment;
 import com.promptnow.econprice.fragment.weather.MainWeatherFragment;
+import com.promptnow.econprice.view.Singleton;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
@@ -32,6 +33,8 @@ public class Menu extends AppCompatActivity {
 
 
     private void setView() {
+
+
 
     }
 

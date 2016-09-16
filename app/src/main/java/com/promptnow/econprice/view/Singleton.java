@@ -27,5 +27,7 @@ public class Singleton {
     public void setIndexlist(String indexlist){
         Singleton.indexlist = indexlist;
     }
+
+
 }
 

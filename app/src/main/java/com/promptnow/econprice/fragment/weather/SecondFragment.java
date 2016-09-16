@@ -52,7 +52,7 @@ public class SecondFragment extends Fragment {
 
 
         expListView = (ExpandableListView) rootView.findViewById(R.id.expListView);
-        expListView.setDivider(null);
+        expListView.setDividerHeight(2);
         // preparing list data
         prepareListData();
 
