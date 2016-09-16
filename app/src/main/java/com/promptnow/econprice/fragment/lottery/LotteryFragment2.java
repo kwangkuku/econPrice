@@ -52,7 +52,7 @@ public class LotteryFragment2 extends Fragment {
         String yourFormattedString3 = "";
 
         for (int i = 0; i < 3; i++) {
-            TextView tv = (TextView) rootView.findViewById(random);
+            TextView tv = (TextView) rootView.findViewById(R.id.random);
             int random = rand.nextInt(999);
             DecimalFormat formatter = new DecimalFormat("000");
             yourFormattedString += formatter.format(random) + "  ";
