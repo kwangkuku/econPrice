@@ -33,103 +33,68 @@ import static com.promptnow.econprice.R.id.tv;
 
 public class LotteryFragment2 extends Fragment {
     private View rootView;
-    private TextView tv;
-
+    private TextView tv, tv2, tv3;
+    private String yourFormattedString = "";
+    private String yourFormattedString2 = "";
+    private String yourFormattedString3 = "";
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.checklottery_number, container, false);
-        if(Singleton.getInstance().getFirstOpenApp()){
-            Toast.makeText(getActivity(), "Please ", Toast.LENGTH_LONG ).show();
+        setView();
+        if (Singleton.getInstance().getFirstOpenApp()) {
             setRandom();
-            //Singleton.getInstance().setFirstOpenApp(false);
+            Singleton.getInstance().setFirstOpenApp(false);
+            Singleton.getInstance().setYourFormattedString(yourFormattedString);
+            Singleton.getInstance().setYourFormattedString2(yourFormattedString2);
+            Singleton.getInstance().setYourFormattedString3(yourFormattedString3);
         }
-
-        //setTime();
+        setText();
         return rootView;
 
     }
 
 
+    private void setView() {
+        tv = (TextView) rootView.findViewById(R.id.random);
+        tv2 = (TextView) rootView.findViewById(R.id.random2);
+        tv3 = (TextView) rootView.findViewById(R.id.random3);
+    }
+
+
     private void setRandom() {
         Random rand = new Random();
-        String yourFormattedString = "";
-        String yourFormattedString2 = "";
-        String yourFormattedString3 = "";
 
         for (int i = 0; i < 3; i++) {
-            TextView tv = (TextView) rootView.findViewById(R.id.random);
             int random = rand.nextInt(999);
             DecimalFormat formatter = new DecimalFormat("000");
             yourFormattedString += formatter.format(random) + "  ";
-            tv.setText(yourFormattedString);
+
         }
 
         for (int i = 0; i < 3; i++) {
-            TextView tv2 = (TextView) rootView.findViewById(R.id.random2);
             int random = rand.nextInt(999);
             DecimalFormat formatter = new DecimalFormat("000");
             yourFormattedString2 += formatter.format(random) + "  ";
-            tv2.setText(yourFormattedString2);
 
         }
 
         for (int i = 0; i < 3; i++) {
             Random rand2 = new Random();
-            TextView tv3 = (TextView) rootView.findViewById(R.id.random3);
             int random = rand2.nextInt(99);
             DecimalFormat formatter = new DecimalFormat("00");
             yourFormattedString3 += formatter.format(random) + "  ";
-            tv3.setText(yourFormattedString3);
+
         }
-
     }
-
-
-//    private void setTime() {
-//        Calendar c = Calendar.getInstance();
-//        tv = (TextView) rootView.findViewById(time);
-//        int hour = c.get(Calendar.HOUR_OF_DAY);
-//        int minutes = c.get(Calendar.MINUTE);
-//        String time = hour + ":" + minutes;
-//
-//        if (hour < 12 && hour >= 0) {
-//            tv.setText(time);
-//
-//        } else {
-//            hour -= 12;
-//            if (hour == 0) {
-//            }
-//            tv.setText(time);
-//        }
-//    }
-
+    private void setText() {
+        tv.setText(Singleton.getInstance().getYourFormattedString());
+        tv2.setText(Singleton.getInstance().getYourFormattedString2());
+        tv3.setText(Singleton.getInstance().getYourFormattedString3());
+    }
 }
-// tv = (TextView) rootView.findViewById(time);
 
-//        Calendar c = Calendar.getInstance();
-//        int hour = c.get(Calendar.HOUR_OF_DAY);
-//        int minutes = c.get(Calendar.MINUTE);
-//        String time = hour + ":" + minutes;
-//        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+1:00"));
-//        Date currentLocalTime = cal.getTime();
-//        DateFormat date = new SimpleDateFormat("HH:mm");
-//        // you can get seconds by adding  "...:ss" to it
-//        date.setTimeZone(TimeZone.getTimeZone("GMT+1:00"));
-//        String localTime = date.format(currentLocalTime);
-//
-//        Log.w(localTime, "1");
-//
-//        if (hour < 12 && hour >= 0) {
-//            tv.setText("122");
-//
-//        } else {
-//            hour -= 12;
-//            if (hour == 0) {
-//               setRandom();
-//            } Calendar c = Calendar.getInstance();
-//    }
 
 
 
