@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -30,7 +31,6 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     EditText input;
     private TextView tv, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9;
     private Spinner spin;
-
 
 
     @Nullable
@@ -58,11 +58,10 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         arrayList.add("16 กรกฏาคม 2559");
 
         ArrayAdapter<String> lottoAdapter = new ArrayAdapter<String>(getActivity(),
+                //เปลี่ยนlayout
                 android.R.layout.simple_dropdown_item_1line, arrayList);
         spin.setAdapter(lottoAdapter);
 
-
-        spin = (Spinner) rootView.findViewById(R.id.spin);
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView adapter, View v, int i, long lng) {
@@ -196,13 +195,13 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
             String strMsg = "";
             if (s.toString().endsWith(prefix)) {
                 strMsg = getResources().getString(R.string.str_msgTrue);
-                View_popup alertDialog = new View_popup(strMsg,"ตกลง");
+                View_popup alertDialog = new View_popup(strMsg, "ตกลง");
                 alertDialog.mListener = LotteryFragment.this;
                 alertDialog.show(getFragmentManager(), "");
             } else if (s.toString().length() == 6) {
                 strMsg = getResources().getString(R.string.str_msgFail);
 
-                View_popup alertDialog = new View_popup(strMsg,"ตกลง");
+                View_popup alertDialog = new View_popup(strMsg, "ตกลง");
 
                 alertDialog.mListener = LotteryFragment.this;
                 alertDialog.show(getFragmentManager(), "");
@@ -216,6 +215,8 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     public void setOnSubmitAlertDialogListener() {
 
     }
+
+
 }
 
 
