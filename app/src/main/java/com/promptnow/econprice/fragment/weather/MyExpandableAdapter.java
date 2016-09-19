@@ -63,7 +63,11 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.txt_number);
+
         txtListChild.setText(childText);
+
+
+
 
 
         return convertView;

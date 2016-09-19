@@ -82,17 +82,24 @@ public class SecondFragment extends Fragment {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
 
-                for (int i = 0; i < listAdapter.getGroupCount(); i++)
-                    if (i != groupPosition)
-                        expListView.collapseGroup(i);
-                    else
-                        expListView.expandGroup(i);
+                if(expListView.isGroupExpanded(groupPosition)) {
+                    expListView.collapseGroup(groupPosition);
+                }
+                else {
 
-                return true;
-            }
-        });
-    }
+                    for (int i = 0; i < listAdapter.getGroupCount(); i++) {
+                        if ( groupPosition != i) {
+                            expListView.collapseGroup(i);
+                        }else{
+                            expListView.expandGroup(i);
+                        }
+                    }
+                }
+return true;
 
+                }
+            });
+}
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -113,6 +120,7 @@ public class SecondFragment extends Fragment {
         // Adding child data
         List<String> top250 = new ArrayList<String>();
         top250.add("34 ");
+
 
         List<String> nowShowing = new ArrayList<String>();
         nowShowing.add("35");
