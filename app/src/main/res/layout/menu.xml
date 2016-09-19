@@ -43,19 +43,18 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottombar_height"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         app:bb_activeTabColor="@color/colorButtombar"
         app:bb_behavior="shifting|underNavbar"
         app:bb_inActiveTabColor="@color/colorButtombar"
         app:bb_tabXmlResource="@xml/bottombar_tabs_three"
-        app:bb_tabletMode="false"
         />
 
     <FrameLayout
         android:id="@+id/frgMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-       />
+        android:layout_below="@+id/toolbar" />
 
 
 </RelativeLayout>

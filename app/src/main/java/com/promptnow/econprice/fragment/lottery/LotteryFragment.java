@@ -2,6 +2,7 @@ package com.promptnow.econprice.fragment.lottery;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.fragment.weather.CustomAdapterr;
 import com.promptnow.econprice.view.View_popup;
 
 import java.util.ArrayList;
@@ -50,16 +52,19 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
         spin = (Spinner) rootView.findViewById(R.id.spin);
 
-        ArrayList<String> arrayList = new ArrayList<String>();
-        arrayList.add("1 กันยายน 2559");
-        arrayList.add("16 สิงหาคม 2559");
-        arrayList.add("1 สิงหาคม 2559");
-        arrayList.add("16 กรกฏาคม 2559");
 
-        ArrayAdapter<String> lottoAdapter = new ArrayAdapter<String>(getActivity(),
-                //เปลี่ยนlayout
-                android.R.layout.simple_list_item_1, arrayList);
+        String[] List = {"1 กันยายน 2559","16 สิงหาคม 2559","1 สิงหาคม 2559","16 กรกฏาคม 2559"};
+        CustomAdapter lottoAdapter = new CustomAdapter(getActivity(),List);
+//        ArrayList<String> arrayList = new ArrayList<String>();
+//        arrayList.add("1 กันยายน 2559");
+//        arrayList.add("16 สิงหาคม 2559");
+//        arrayList.add("1 สิงหาคม 2559");
+//        arrayList.add("16 กรกฏาคม 2559");
+//        ArrayAdapter<String> lottoAdapter = new ArrayAdapter<String>(getActivity(),
+//                //เปลี่ยนlayout
+//                R.layout.list_item_adapter, arrayList);
         spin.setAdapter(lottoAdapter);
+        
 
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -72,6 +77,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
                 } else if (i == 3) {
                     setContent3();
                 }
+
             }
 
             @Override

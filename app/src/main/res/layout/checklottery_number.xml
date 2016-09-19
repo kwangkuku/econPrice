@@ -3,73 +3,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1"
-    >
+    android:weightSum="1">
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_view"
-        android:background="@color/color_tab_lotto"
-        android:gravity="center"
         android:layout_margin="@dimen/activity_vertical_margin"
-        android:text="เลขเด็ด" />
+        android:background="@color/color_tab_lotto"
+        android:gravity="center" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="เลขมงคล"
-            android:textColor="@color/colorRed"
-            android:textSize="18dp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="เลขมงคล"
+        android:textColor="@color/colorRed"
+        android:textSize="@dimen/text" />
 
-        <TextView
-            android:id="@+id/random"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text=""
-            android:textColor="@color/colorBlack"
-            android:textSize="35dp" />
+    <TextView
+        android:id="@+id/random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_num" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="13dp"
-            android:gravity="center"
-            android:text="เลขท้าย 3 ตัว"
-            android:textColor="@color/colorRed"
-            android:textSize="18dp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="13dp"
+        android:gravity="center"
+        android:text="เลขท้าย 3 ตัว"
+        android:textColor="@color/colorRed"
+        android:textSize="@dimen/text" />
 
-        <TextView
-            android:id="@+id/random2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text=""
-            android:textColor="@color/colorBlack"
-            android:textSize="35dp" />
+    <TextView
+        android:id="@+id/random2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_num" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="13dp"
-            android:gravity="center"
-            android:text="เลขท้าย 2 ตัว"
-            android:textColor="@color/colorRed"
-            android:textSize="18dp" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="13dp"
+        android:gravity="center"
+        android:text="เลขท้าย 2 ตัว"
+        android:textColor="@color/colorRed"
+        android:textSize="@dimen/text" />
 
-        <TextView
-            android:id="@+id/random3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text=""
-            android:textColor="@color/colorBlack"
-            android:textSize="35dp" />
+    <TextView
+        android:id="@+id/random3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_num" />
 
 
 </LinearLayout>

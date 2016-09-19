@@ -42,8 +42,8 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/bottombar_height"
-        android:background="@android:color/white" />
+        android:layout_marginBottom="@dimen/viewpager"
+        android:background="@color/color_bg" />
 
 
 </LinearLayout>

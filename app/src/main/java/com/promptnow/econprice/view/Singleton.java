@@ -15,6 +15,7 @@ public class Singleton {
     private static String yourFormattedString2 = "";
     private static String yourFormattedString3 = "";
 
+
 //    private Singleton(){list = new ArrayList<Object>();
 //    }
 

@@ -36,7 +36,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="@color/colorBlack"
         android:text="@string/str_msgdate"
         android:textSize="@dimen/activity_horizontal_margin" />
 
@@ -51,8 +50,9 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:text="งวดวันที่ :"
-            android:textColor="@color/colorGay_text"
+            android:textColor="@color/colorBlack"
             android:textSize="@dimen/text" />
+
 
         <Spinner
             android:id="@+id/spin"
@@ -61,7 +61,6 @@
             android:layout_height="match_parent"
             android:drawSelectorOnTop="true"
             android:gravity="center"
-
             >
 
         </Spinner>
