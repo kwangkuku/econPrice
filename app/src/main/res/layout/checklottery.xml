@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="#f2f2f2"
+        android:background="@color/color_tab_lotto"
         android:ems="6"
         android:gravity="center"
         android:hint="ค้นหาผลสลากกินแบ่งรัฐบาล"
