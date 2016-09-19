@@ -3,8 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ca5f5e</color>
-
-
     <color name="colorTop">#D3D3D3</color>
     <color name="colorBottom">#FFFFFF</color>
     <color name="colorGreen">#22ff00</color>
@@ -14,7 +12,6 @@
     <color name="colorBlack">#000000</color>
     <color name="colorButtombar">#DCDCDC</color>
     <color name="colorIndicator">#BEBEBE</color>
-
     <color name="colorBgBtn">#FFFFF0</color>
     <color name="color_txt_lot">#B22222</color>
     <color name="color_txt_wea">#20B2AA</color>
