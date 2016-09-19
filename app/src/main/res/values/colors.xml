@@ -9,6 +9,7 @@
     <color name="colorRed">#B22222</color>
     <color name="colorBlue">#00f2ff</color>
     <color name="colorGay">#FF888888</color>
+    <color name="colorGay_text">#707070</color>
     <color name="colorBlack">#000000</color>
     <color name="colorButtombar">#DCDCDC</color>
     <color name="colorIndicator">#BEBEBE</color>

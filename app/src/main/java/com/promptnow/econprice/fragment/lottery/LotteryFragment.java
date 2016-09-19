@@ -1,6 +1,7 @@
 package com.promptnow.econprice.fragment.lottery;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -59,7 +60,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
         ArrayAdapter<String> lottoAdapter = new ArrayAdapter<String>(getActivity(),
                 //เปลี่ยนlayout
-                android.R.layout.simple_dropdown_item_1line, arrayList);
+                android.R.layout.simple_list_item_1, arrayList);
         spin.setAdapter(lottoAdapter);
 
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -80,8 +81,11 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
             }
         });
-
     }
+
+
+
+
 
 
     private void setView() {

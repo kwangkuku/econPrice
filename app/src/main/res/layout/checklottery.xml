@@ -36,32 +36,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/colorBlack"
         android:text="@string/str_msgdate"
         android:textSize="@dimen/activity_horizontal_margin" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginBottom="4dp">
+        android:layout_marginBottom="4dp"
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="งวดวันที่ :"
-            android:textColor="#000000"
-            android:textSize="@dimen/text"
             android:padding="4dp"
-            />
+            android:text="งวดวันที่ :"
+            android:textColor="@color/colorGay_text"
+            android:textSize="@dimen/text" />
 
         <Spinner
             android:id="@+id/spin"
             style="@style/Widget.AppCompat.Spinner.Underlined"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_marginTop="4dp"
             android:drawSelectorOnTop="true"
+            android:gravity="center"
 
             >
 
