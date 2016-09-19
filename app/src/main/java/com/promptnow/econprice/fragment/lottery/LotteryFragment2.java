@@ -54,16 +54,13 @@ public class LotteryFragment2 extends Fragment {
         setText();
 
         return rootView;
-
     }
-
 
     private void setView() {
         tv = (TextView) rootView.findViewById(R.id.random);
         tv2 = (TextView) rootView.findViewById(R.id.random2);
         tv3 = (TextView) rootView.findViewById(R.id.random3);
     }
-
 
     private void setRandom() {
         Random rand = new Random();
@@ -72,14 +69,12 @@ public class LotteryFragment2 extends Fragment {
             int random = rand.nextInt(999);
             DecimalFormat formatter = new DecimalFormat("000");
             yourFormattedString += formatter.format(random) + "  ";
-
         }
 
         for (int i = 0; i < 3; i++) {
             int random = rand.nextInt(999);
             DecimalFormat formatter = new DecimalFormat("000");
             yourFormattedString2 += formatter.format(random) + "  ";
-
         }
 
         for (int i = 0; i < 3; i++) {
@@ -87,9 +82,9 @@ public class LotteryFragment2 extends Fragment {
             int random = rand2.nextInt(99);
             DecimalFormat formatter = new DecimalFormat("00");
             yourFormattedString3 += formatter.format(random) + "  ";
-
         }
     }
+
     private void setText() {
         tv.setText(Singleton.getInstance().getYourFormattedString());
         tv2.setText(Singleton.getInstance().getYourFormattedString2());

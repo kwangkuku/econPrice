@@ -19,15 +19,12 @@ public class GuideLottery extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.guide_lottery, container, false);
-
-
         setView();
 
         return rootView;
     }
 
     private void setView() {
-
         ImageView image = (ImageView) rootView.findViewById(R.id.lottory);
         image.setImageResource(R.drawable.ic_lottory);
     }

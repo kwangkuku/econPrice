@@ -38,11 +38,9 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.checklottery, container, false);
-        setView();
-        // setDate();
-        setNumber();
         LottoSpinner();
-        //setContent();
+        setView();
+        setNumber();
         setDummy();
 
         return rootView;
@@ -83,11 +81,6 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         });
     }
 
-
-
-
-
-
     private void setView() {
 //        รางวัลที่1
         tv = (TextView) rootView.findViewById(R.id.lot_num);
@@ -107,8 +100,6 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         tv8 = (TextView) rootView.findViewById(R.id.lot_num8);
 //        รางวัลที่5
         tv9 = (TextView) rootView.findViewById(R.id.lot_num9);
-
-
     }
 
     private void setDummy() {
@@ -173,10 +164,8 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
 
     private void setNumber() {
-
         input = (EditText) rootView.findViewById(R.id.seach_num);
         input.addTextChangedListener(watch);
-
     }
 
     private TextWatcher watch = new TextWatcher() {
@@ -210,17 +199,13 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
                 alertDialog.mListener = LotteryFragment.this;
                 alertDialog.show(getFragmentManager(), "");
             }
-
         }
-
     };
 
     @Override
     public void setOnSubmitAlertDialogListener() {
 
     }
-
-
 }
 
 

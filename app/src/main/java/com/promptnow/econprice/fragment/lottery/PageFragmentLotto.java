@@ -14,7 +14,6 @@ import com.promptnow.econprice.R;
 
 public class PageFragmentLotto extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
-
     private int mPage;
 
     public static PageFragmentLotto newInstance(int page) {
@@ -35,8 +34,7 @@ public class PageFragmentLotto extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.checklottery, container, false);
-//        TextView textView = (TextView) view;
-//        textView.setText("Fragment #" + mPage);
+
         return view;
     }
 }
