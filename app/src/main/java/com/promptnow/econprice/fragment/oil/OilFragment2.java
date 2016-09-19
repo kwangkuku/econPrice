@@ -14,7 +14,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.view.DatePickerFragment;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -122,8 +121,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
 
     private void setResult() {
-
-
         show_vs1.setText("" + vs1);
         show_vs2.setText(" " + vs2);
         tv_show_result.setText(new DecimalFormat("0.00").format(+ result));

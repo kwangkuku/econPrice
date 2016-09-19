@@ -7,14 +7,14 @@
     android:weightSum="1">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_header_oil_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_weight="0.10"
         android:text="ตรวจสอบราคาน้ำมัน"
         android:textAlignment="center"
-        android:textColor="#33FF00"
+        android:textColor="@color/color_green_tv_header_oil_price"
         android:textSize="24sp" />
 
     <TextView

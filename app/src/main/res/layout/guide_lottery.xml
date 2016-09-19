@@ -7,14 +7,14 @@
     android:weightSum="1">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_header_lotto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_weight="0.10"
         android:text="ตรวจผลสลากกินแบ่งรัฐบาล"
         android:textAlignment="center"
-        android:textColor="#CC0000"
+        android:textColor="@color/color_red_tv_header_lotto"
         android:textSize="24sp"
 
         />

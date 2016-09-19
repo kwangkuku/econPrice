@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="#ffffff"
+        android:background="@color/color_bg"
         android:gravity="center">
 
         <requestFocus />
@@ -29,7 +29,6 @@
 
         <TextView
             android:id="@+id/tv_date_oil_vs"
-            style="@style/Widget.AppCompat.Spinner.Underlined"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -41,12 +40,13 @@
 
     </LinearLayout>
 
+    <!--style="@style/Widget.AppCompat.Spinner.Underlined"-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="#ffffff"
+        android:background="@color/color_bg"
         android:gravity="center">
 
         <requestFocus />
@@ -94,7 +94,7 @@
         <ImageView
             android:id="@+id/vs"
             android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:scaleType="fitCenter"
@@ -122,7 +122,6 @@
 
         <TextView
             android:id="@+id/show_vs1"
-
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"

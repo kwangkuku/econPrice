@@ -11,11 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="#ffffff"
+        android:background="@color/color_bg"
         android:gravity="center">
 
         <requestFocus />
-
 
         <TextView
             android:id="@+id/date"
@@ -27,14 +26,13 @@
 
         <TextView
             android:id="@+id/tv_date_oil_price"
-            style="@style/Widget.AppCompat.Spinner.Underlined"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:onClick="onClick"
             android:textAlignment="center"
             android:textSize="18sp" />
+
 
     </LinearLayout>
 
@@ -59,7 +57,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:background="@color/color_bg"
         android:gravity="center">
 
         <TableRow
@@ -79,7 +77,7 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
                 android:text="ประเภทน้ำมัน"
-                android:textColor="#666565"
+                android:textColor="@color/color_gray_tv_oil_price"
                 android:textSize="16sp"
                 android:textStyle="normal|bold"
                 android:textAlignment="textStart" />
@@ -102,7 +100,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_bcp" />
+                app:srcCompat="@drawable/ic_bangjak" />
 
             <ImageView
                 android:id="@+id/logo_shell"
@@ -140,7 +138,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
-                android:background="#eef2ee"
+                android:background="@color/color_bg_table"
                 android:gravity="center">
 
                 <TextView
@@ -280,7 +278,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:background="#eef2ee"
+                android:background="@color/color_bg_table"
                 android:gravity="center">
 
                 <TextView
@@ -419,7 +417,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:background="#eef2ee"
+                android:background="@color/color_bg_table"
                 android:gravity="center">
 
                 <TextView

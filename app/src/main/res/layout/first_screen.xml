@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@color/color_bg"
     android:padding="20dp"
     tools:context="com.promptnow.econprice.activity.MainActivity">
 
@@ -15,7 +15,6 @@
         android:id="@+id/layout"
         android:gravity="center"
         android:layout_marginBottom="50dp"
-
 
         >
         <ImageView
@@ -36,7 +35,7 @@
             android:layout_below="@+id/imageView"
             android:text="Economic Price"
             android:textAlignment="center"
-            android:textColor="#696969"
+            android:textColor="@color/color_gray_tv_economic_price"
             android:textSize="18sp"
             android:textStyle="normal|bold" />
 
@@ -48,7 +47,7 @@
             android:layout_below="@+id/tv"
             android:text="แนะนำการใช้งาน"
             android:textAlignment="center"
-            android:textColor="#919090"
+            android:textColor="@color/color_gray_tv_guide"
             android:textSize="20sp"
             android:layout_marginTop="50dp"
             />
@@ -59,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text=" >>> SKIP "
-            android:textColor="#FF919090"
+            android:textColor="@color/color_gray_skip"
             android:layout_margin="20dp"
             android:layout_below="@+id/tv_guide"
             android:background="@drawable/bg_shape"
@@ -77,8 +76,5 @@
         android:layout_height="50dp"
         android:layout_below="@+id/layout"
         />
-
-
-
 
 </RelativeLayout>

@@ -5,8 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-
+    android:background="@color/color_bg"
     tools:context="com.promptnow.econprice.activity.MainActivity">
 
     <com.promptnow.econprice.view.CustomTextView
@@ -17,9 +16,7 @@
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
-
-
+        android:background="@color/color_bg"
         />
 
     <com.viewpagerindicator.CirclePageIndicator
@@ -29,9 +26,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
-        app:fillColor="#FF888888"
-        app:pageColor="#BEBEBE"
-
+        app:fillColor="@color/color_gray_viewpager1"
+        app:pageColor="@color/color_gray_viewpager2"
         app:radius="6dp"
 
         />
