@@ -62,7 +62,6 @@ Singleton.getInstance().setFirstOpenApp(true);
                     tv.setText("ตรวจสอบราคาน้ำมัน");
                     tv.setTextColor(Color.parseColor("#228B22"));
                     img.setVisibility(View.INVISIBLE);
-                    //   tv.setBackgroundColor(Color.parseColor("#FFFFF0"));
 
 
                 } else if (tabId == R.id.tab_lottery) {
