@@ -35,6 +35,7 @@
             android:inputType="textPersonName"
             android:onClick="onClick"
             android:textAlignment="center"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
             android:textSize="16sp" />
 
 
@@ -80,14 +81,15 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/vs1"
+            android:id="@+id/img_vs1"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="20dp"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_ptt"
+            android:background="@drawable/bg_shape"
+
            />
 
 
@@ -102,7 +104,7 @@
             app:srcCompat="@drawable/ic_vs" />
 
         <ImageView
-            android:id="@+id/vs2"
+            android:id="@+id/img_vs2"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"

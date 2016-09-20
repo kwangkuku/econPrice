@@ -1,5 +1,6 @@
 package com.promptnow.econprice.fragment.oil;
 
+import android.app.Dialog;
 import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,8 +9,11 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -29,6 +33,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     //private ArrayList<String> oil_Type = new ArrayList<String>();
     private TextView tv_date_oil_vs;
     private TextView show_vs1, show_vs2, tv_show_result;
+    //private ImageView mDialog;
+    private ImageView img_vs1,img_vs2;
     double vs1, vs2;
     double result;
 
@@ -39,17 +45,63 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         show_vs1 = (TextView) rootView.findViewById(R.id.show_vs1);
         show_vs2 = (TextView) rootView.findViewById(R.id.show_vs2);
         tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
+        img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
+        img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
 
-        //setItem();
         setView();
         setOilTypeSpiner();
-//        setResult();
-        //setTextView();
         setType();
+        setVSpopup();
+        setShowResult();
         return rootView;
 
     }
 
+    private void setVSpopup() {
+
+       img_vs1.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+//               startActivity(new Intent(getActivity(),Popup.class));
+
+               final Dialog dialog = new Dialog(getActivity());
+               dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+               dialog.setContentView(R.layout.customdialog);
+               dialog.setCancelable(true);
+
+               Button b1 = (Button)dialog.findViewById(R.id.b1);
+               b1.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View view) {
+
+                   }
+               });
+
+               Button b2 = (Button)dialog.findViewById(R.id.b2);
+               b2.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View view) {
+
+                   }
+               });
+
+               Button b3 = (Button)dialog.findViewById(R.id.b3);
+               b3.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View view) {
+
+                   }
+               });
+               dialog.show();
+           }
+       });
+
+    }
+
+    private void setShowResult() {
+
+    }
 
     private void setType() {
 //        oilTypeSpinner.setOnClickListener(new View.OnClickListener() {
@@ -123,8 +175,18 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private void setResult() {
         show_vs1.setText("" + vs1);
         show_vs2.setText(" " + vs2);
-        tv_show_result.setText(new DecimalFormat("0.00").format(+ result));
+        tv_show_result.setText(new DecimalFormat("0.00").format(+result));
         tv_show_result.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+
+
+        if (result < 0) {
+            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+        } else if (result > 0) {
+            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+        }
+
 
     }
 
@@ -148,6 +210,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             public void onClick(View v) {
                 DialogFragment newFragment = new DatePickerFragment();
                 newFragment.show(getActivity().getFragmentManager(), "Date Picker");
+
+
             }
 
         });
