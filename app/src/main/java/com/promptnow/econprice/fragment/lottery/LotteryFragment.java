@@ -17,10 +17,12 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.fragment.weather.CustomAdapterr;
+import com.promptnow.econprice.view.Singleton;
 import com.promptnow.econprice.view.View_popup;
 
 import java.util.ArrayList;
@@ -53,16 +55,10 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
 
         String[] List = {"1 กันยายน 2559", "16 สิงหาคม 2559", "1 สิงหาคม 2559", "16 กรกฏาคม 2559"};
-
-
-
         CustomAdapter lottoAdapter = new CustomAdapter(getActivity(),List);
-
         spin = (Spinner) rootView.findViewById(R.id.spin);
-        spin.setVisibility(View.VISIBLE);
-        spin.setAdapter(lottoAdapter);
+//        spin.setAdapter(lottoAdapter);
 
-//
 //        ArrayList<String> arrayList = new ArrayList<String>();
 //        arrayList.add("1 กันยายน 2559");
 //        arrayList.add("16 สิงหาคม 2559");
@@ -70,7 +66,8 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 //        arrayList.add("16 กรกฏาคม 2559");
 //        ArrayAdapter<String> lottoAdapter = new ArrayAdapter<String>(getActivity(),
 //                //เปลี่ยนlayout
-//                R.layout.list_item_adapter, arrayList);
+//               android.R.layout.simple_list_item_1, arrayList);
+        spin.setAdapter(lottoAdapter);
 
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
