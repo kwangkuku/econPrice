@@ -111,7 +111,7 @@
             android:layout_marginRight="40dp"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_shell"
+            android:background="@drawable/bg_shape"
             />
     </TableRow>
 

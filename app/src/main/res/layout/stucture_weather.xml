@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
+    android:background="@drawable/ic_bg"
 
     >
 
@@ -20,7 +21,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/viewpager"
-        android:background="@color/color_bg"
+        android:background="@drawable/ic_bg"
 
         />
 
