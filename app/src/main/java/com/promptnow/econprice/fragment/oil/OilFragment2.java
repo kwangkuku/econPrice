@@ -34,7 +34,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private TextView tv_date_oil_vs;
     private TextView show_vs1, show_vs2, tv_show_result;
     //private ImageView mDialog;
-    private ImageView img_vs1,img_vs2;
+    private ImageView img_vs1, img_vs2;
     double vs1, vs2;
     double result;
 
@@ -59,43 +59,80 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
     private void setVSpopup() {
 
-       img_vs1.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
+        img_vs1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 //               startActivity(new Intent(getActivity(),Popup.class));
 
-               final Dialog dialog = new Dialog(getActivity());
-               dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-               dialog.setContentView(R.layout.customdialog);
-               dialog.setCancelable(true);
+                final Dialog dialog = new Dialog(getActivity());
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.customdialog);
+                dialog.setCancelable(true);
 
-               Button b1 = (Button)dialog.findViewById(R.id.b1);
-               b1.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View view) {
+                Button b1 = (Button) dialog.findViewById(R.id.b1);
+                b1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
 
-                   }
-               });
+                    }
+                });
 
-               Button b2 = (Button)dialog.findViewById(R.id.b2);
-               b2.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View view) {
+                Button b2 = (Button) dialog.findViewById(R.id.b2);
+                b2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
 
-                   }
-               });
+                    }
+                });
 
-               Button b3 = (Button)dialog.findViewById(R.id.b3);
-               b3.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View view) {
+                Button b3 = (Button) dialog.findViewById(R.id.b3);
+                b3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
 
-                   }
-               });
-               dialog.show();
-           }
-       });
+                    }
+                });
+                dialog.show();
+            }
+        });
+        img_vs2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+//               startActivity(new Intent(getActivity(),Popup.class));
+
+                final Dialog dialog = new Dialog(getActivity());
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.customdialog);
+                dialog.setCancelable(true);
+
+                Button b1 = (Button) dialog.findViewById(R.id.b1);
+                b1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+
+                Button b2 = (Button) dialog.findViewById(R.id.b2);
+                b2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+
+                Button b3 = (Button) dialog.findViewById(R.id.b3);
+                b3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+                dialog.show();
+            }
+        });
 
     }
 
