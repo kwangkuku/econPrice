@@ -6,9 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+
+import static com.promptnow.econprice.R.id.spin;
 
 /**
  * Created by Admin on 8/9/2559.
@@ -46,11 +49,12 @@ public class CustomAdapter extends BaseAdapter {
                 (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
-            view = mInflater.inflate(R.layout.list_item_adapter, parent, false);
+        view = mInflater.inflate(R.layout.list_item_adapter, parent, false);
+
+
 
         TextView textView = (TextView) view.findViewById(R.id.name_spin);
         textView.setText(strName[position]);
-      //  textView.setPaintFlags(textView.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
 
 
 
