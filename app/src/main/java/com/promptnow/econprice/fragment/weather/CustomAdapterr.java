@@ -60,7 +60,6 @@ public class CustomAdapterr extends BaseAdapter {
 
         }
 
-
         View.OnClickListener yourClickListener = new View.OnClickListener() {
             public void onClick(View v) {
                 //put your desired action here

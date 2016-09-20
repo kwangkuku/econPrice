@@ -3,8 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ca5f5e</color>
-    <color name="colorTop">#D3D3D3</color>
-    <color name="colorBottom">#FFFFFF</color>
+    <color name="colorTop">#FFFFFF</color>
+    <color name="colorBottom">#D3D3D3</color>
     <color name="colorGreen">#22ff00</color>
     <color name="colorRed">#B22222</color>
     <color name="colorBlue">#00f2ff</color>
@@ -36,4 +36,5 @@
     <color name="color_red_tv_header_lotto">#CC0000</color>
     <color name="color_green_tv_header_oil_price">#33FF00</color>
     <color name="color_blue_tv_header_weather">#72edf9</color>
+
 </resources>

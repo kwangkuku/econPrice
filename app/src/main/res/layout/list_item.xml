@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="55dip"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F5F5F5">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
             android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
             android:paddingTop="5dp"
             android:text="อุณหภูมิอากาศปัจจุบัน"
-            android:textSize="15dip" />
+            android:textSize="14dip" />
 
         <TextView
             android:id="@+id/txt_number"
@@ -29,7 +30,7 @@
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
             android:text=""
-            android:textSize="15dip" />
+            android:textSize="14dip" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,7 +48,7 @@
             android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
             android:paddingTop="5dp"
             android:text="ทิศทางลม"
-            android:textSize="15dip" />
+            android:textSize="14dip" />
 
         <TextView
             android:id="@+id/txt_number1"
@@ -57,7 +58,7 @@
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
             android:text="43"
-            android:textSize="15dip" />
+            android:textSize="14dip" />
     </LinearLayout>
 
     <LinearLayout
@@ -75,7 +76,7 @@
             android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
             android:paddingTop="5dp"
             android:text="ค่าเฉลี่ยความชื้นพื้นันธ์"
-            android:textSize="15dip" />
+            android:textSize="14dip" />
 
         <TextView
             android:id="@+id/txt_number2"
@@ -85,7 +86,7 @@
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
             android:text="43"
-            android:textSize="15dip" />
+            android:textSize="14dip" />
     </LinearLayout>
 
     <LinearLayout
@@ -103,7 +104,7 @@
             android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
             android:paddingTop="5dp"
             android:text="ความเร็วลม"
-            android:textSize="15dip" />
+            android:textSize="14dip" />
 
         <TextView
             android:id="@+id/txt_number3"
@@ -113,7 +114,7 @@
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
             android:text="43"
-            android:textSize="15dip" />
+            android:textSize="14dip" />
     </LinearLayout>
 
 

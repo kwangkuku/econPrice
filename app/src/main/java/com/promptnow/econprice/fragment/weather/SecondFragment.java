@@ -144,7 +144,7 @@ return true;
 
         int minutes = c.get(Calendar.MINUTE);
         int hour = c.get(Calendar.HOUR_OF_DAY);
-        String time = hour + ":" +minutes;
+        String time = hour + ":" +minutes + " " + "น.";
 
         if (hour < 12 && hour >= 0) {
             txt_time.setText(time);
