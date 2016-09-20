@@ -25,6 +25,7 @@
     <!--OilPrice-->
     <color name="color_gray_tv_oil_price">#666565</color>
     <color name="color_gray_tv_economic_price">#696969</color>
+    <color name="result_shape">#8c8c8c</color>
     <color name="color_gray_viewpager1">#FF888888</color>
     <color name="color_gray_tv_guide">#919090</color>
     <color name="color_gray_skip">#FF919090</color>
