@@ -2,6 +2,7 @@ package com.promptnow.econprice.fragment.lottery;
 
 import android.content.Context;
 import android.graphics.Paint;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,8 @@ import android.widget.TextView;
 
 import com.promptnow.econprice.R;
 
-import static com.promptnow.econprice.R.id.spin;
+import java.util.ArrayList;
+
 
 /**
  * Created by Admin on 8/9/2559.
@@ -23,7 +25,8 @@ public class CustomAdapter extends BaseAdapter {
     String[] strName;
 
 
-    public CustomAdapter(Context context, String[] strName) {
+
+    public CustomAdapter(Context context,  String[] strName) {
         this.mContext = context;
         this.strName = strName;
 
@@ -45,11 +48,11 @@ public class CustomAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View view, ViewGroup parent) {
-        LayoutInflater mInflater =
+        LayoutInflater inflater=
                 (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
-        view = mInflater.inflate(R.layout.list_item_adapter, parent, false);
+        view = inflater.inflate(R.layout.list_item_adapter, parent, false);
 
 
 
