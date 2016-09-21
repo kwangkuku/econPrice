@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainLotteryFragment extends android.support.v4.app.Fragment {
+
     private View rootView;
     // Fragment TabHost as mTabHost
     //private FragmentTabHost mTabHost;
@@ -31,9 +32,11 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
     }
 
     private void setView() {
+
         TabLayout tabLayout;
         final ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
         tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout);
+
 //        tabLayout.addTab(tabLayout.newTab().setText("ตรวจรางวัล"));
 //        tabLayout.addTab(tabLayout.newTab().setText("เลขเด็ด"));
         viewPager.setAdapter(new SampleFragmentPagerAdapterLotto(getChildFragmentManager(),
@@ -42,10 +45,10 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
     }
 
     private List<Fragment> getFragments() {
+
         List<Fragment> fList = new ArrayList<Fragment>();
         fList.add(new LotteryFragment());
         fList.add(new LotteryFragment2());
-
         return fList;
     }
 }
