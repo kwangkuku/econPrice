@@ -41,9 +41,8 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
 
     public void setView() {
         final LinearLayout ll = (LinearLayout) rootView.findViewById(R.id.table);
-        TextView tv_date_oil_price = (TextView) rootView.findViewById(R.id.tv_date_oil_price);
-
         tv_date_oil_price = (TextView) rootView.findViewById(R.id.tv_date_oil_price);
+
         date = (TextView) rootView.findViewById(R.id.date);
         tv=(TextView) rootView.findViewById(R.id.oil);
         tv2=(TextView) rootView.findViewById(R.id.txt_bensin);
@@ -70,11 +69,14 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
         int day = c.get(Calendar.DAY_OF_MONTH);
         String stringOfDate = day + "/" + month + "/" + year;
 
+        tv_date_oil_price.setText(stringOfDate);
+
+
         tv_date_oil_price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Initialize a new date picker dialog fragment
-                android.app.DialogFragment dFragment = new DatePickerFragment();
+                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
 
                 // Show the date picker dialog fragment
                 dFragment.show(getActivity().getFragmentManager(), "Date Picker");

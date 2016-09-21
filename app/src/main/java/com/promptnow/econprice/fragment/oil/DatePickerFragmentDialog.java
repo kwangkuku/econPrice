@@ -48,7 +48,7 @@ public  class DatePickerFragmentDialog extends DialogFragment implements DatePic
 
         // Format the date using style and locale
         DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT);
-        String formattedDate = df.format(chosenDate);
+        String formattedDate = day+"/"+ (month+1)+"/"+ year;
 
         // Display the chosen date to app interface
         tv_date_oil_price.setText(formattedDate);

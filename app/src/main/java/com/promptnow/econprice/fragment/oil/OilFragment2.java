@@ -1,11 +1,8 @@
 package com.promptnow.econprice.fragment.oil;
 
 import android.app.Dialog;
-<<<<<<< HEAD
-=======
 import android.app.DialogFragment;
 import android.graphics.Typeface;
->>>>>>> origin/master
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -22,9 +19,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.view.DatePickerFragment;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by Whankung on 7/9/2559.
@@ -231,8 +230,6 @@ public class OilFragment2 extends Fragment {
 
     }
 
-<<<<<<< HEAD
-=======
     //Date Picker
     private void setView() {
         tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
@@ -277,7 +274,7 @@ public class OilFragment2 extends Fragment {
         tv_date_oil_vs.setText(year + month + day);
     }
 
->>>>>>> origin/master
+
 
 }
 
