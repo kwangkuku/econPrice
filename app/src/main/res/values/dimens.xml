@@ -4,6 +4,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="text">18dp</dimen>
+    <dimen name="text2">20dp</dimen>
     <dimen name="text_view">30dp</dimen>
     <dimen name="text_num">35dp</dimen>
     <dimen name="activity_margin">40dp</dimen>
