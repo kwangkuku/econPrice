@@ -119,14 +119,14 @@ return true;
 
         // Adding child data
         List<String> top250 = new ArrayList<String>();
-        top250.add("34 ");
+        top250.add("34°C");
 
 
         List<String> nowShowing = new ArrayList<String>();
-        nowShowing.add("35");
+        nowShowing.add("35°C");
 
         List<String> comingSoon = new ArrayList<String>();
-        comingSoon.add("47");
+        comingSoon.add("47°C");
 
         Log.d(TAG, "prepareListData: " + Singleton.getInstance().getIndexlist());
 
@@ -156,6 +156,7 @@ return true;
         }
         int day = c.get(Calendar.DAY_OF_MONTH);
         int month = c.get(Calendar.MONTH);
+        month += 1;
         int year = c.get(Calendar.YEAR);
         String date = day + "/" + month + "/" + year;
 
