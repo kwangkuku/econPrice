@@ -1,9 +1,11 @@
 package com.promptnow.econprice.fragment.lottery;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.View;
 
 import java.util.List;
 
@@ -21,7 +23,6 @@ public class SampleFragmentPagerAdapterLotto extends FragmentPagerAdapter {
     public SampleFragmentPagerAdapterLotto(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
         this.fragments = fragments;
-
     }
 
     @Override

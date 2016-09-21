@@ -1,5 +1,6 @@
 package com.promptnow.econprice.fragment.lottery;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -33,7 +34,8 @@ import static com.promptnow.econprice.R.id.tv;
 
 public class LotteryFragment2 extends Fragment {
     private View rootView;
-    private TextView tv, tv2, tv3;
+    private Typeface font;
+    private TextView tv, tv2, tv3,tv4,tv5,tv6;
     private String yourFormattedString = "";
     private String yourFormattedString2 = "";
     private String yourFormattedString3 = "";
@@ -60,6 +62,21 @@ public class LotteryFragment2 extends Fragment {
         tv = (TextView) rootView.findViewById(R.id.random);
         tv2 = (TextView) rootView.findViewById(R.id.random2);
         tv3 = (TextView) rootView.findViewById(R.id.random3);
+//        เลขมงคล
+        tv4 = (TextView) rootView.findViewById(R.id.num1);
+//        เลขท้าย 3ตัว
+        tv5 = (TextView) rootView.findViewById(R.id.num2);
+//        เลขท้าย 2ตัว
+        tv6 = (TextView) rootView.findViewById(R.id.num3);
+
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        tv.setTypeface(font);
+        tv2.setTypeface(font);
+        tv3.setTypeface(font);
+        tv4.setTypeface(font);
+        tv5.setTypeface(font);
+        tv6.setTypeface(font);
+
     }
 
     private void setRandom() {
