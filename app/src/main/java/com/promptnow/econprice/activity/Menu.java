@@ -1,6 +1,7 @@
 package com.promptnow.econprice.activity;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
@@ -19,7 +20,10 @@ import com.promptnow.econprice.view.Singleton;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
+import static java.security.AccessController.getContext;
+
 public class Menu extends AppCompatActivity {
+    private Typeface font;
 
 
     @Override
@@ -33,8 +37,10 @@ public class Menu extends AppCompatActivity {
 
 
     private void setView() {
-Singleton.getInstance().setFirstOpenApp(true);
-}
+        Singleton.getInstance().setFirstOpenApp(true);
+        font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
+
+    }
 
     public void setFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
@@ -49,6 +55,7 @@ Singleton.getInstance().setFirstOpenApp(true);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             TextView tv = (TextView) findViewById(R.id.toolbar_title);
             ImageView img = (ImageView) findViewById(R.id.action);
+
             @Override
             public void onTabSelected(@IdRes int tabId) {
 
@@ -61,8 +68,8 @@ Singleton.getInstance().setFirstOpenApp(true);
                     transaction.commit();
                     tv.setText("ตรวจสอบราคาน้ำมัน");
                     tv.setTextColor(Color.parseColor("#228B22"));
+                    tv.setTypeface(font);
                     img.setVisibility(View.INVISIBLE);
-
 
                 } else if (tabId == R.id.tab_lottery) {
                     FragmentManager manager = getSupportFragmentManager();

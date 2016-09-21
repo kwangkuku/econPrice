@@ -2,6 +2,7 @@ package com.promptnow.econprice.view;
 
 import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -16,19 +17,19 @@ import com.promptnow.econprice.R;
 
 /**
  * Created by Admin on 30/8/2559.
- *
+ * <p>
  * //This code is used to call a View_popup.
- *
+ * <p>
  * View_popup alertDialog = new View_popup(
  * getResources().getString(R.string.str_msgFail),
- *  getResources().getString(R.string.btn_name));
- *  alertDialog.mListener = (Class).this;
- *  alertDialog.show(getFragmentManager(), "");
+ * getResources().getString(R.string.btn_name));
+ * alertDialog.mListener = (Class).this;
+ * alertDialog.show(getFragmentManager(), "");
  * );
  */
 
 public class View_popup extends DialogFragment {
-
+    private Typeface font;
     private TextView txt;
     private String message;
     private TextView btn_ok;
@@ -36,6 +37,7 @@ public class View_popup extends DialogFragment {
     private Dialog dialog;
 
     View.OnClickListener listenerOK;
+
     public onSubmitAlertDialogListener mListener;
 
     public View_popup(String strMsg) {
@@ -48,12 +50,13 @@ public class View_popup extends DialogFragment {
 
 
     public View_popup(String message, String button1) {
+
         this.message = message;
         msg_ok = button1;
     }
 
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
@@ -67,7 +70,8 @@ public class View_popup extends DialogFragment {
         btn_ok = (Button) dialog.findViewById(R.id.btn_ok);
         txt.setText(message);
         btn_ok.setText(msg_ok);
-
+        txt.setTypeface(font);
+        btn_ok.setTypeface(font);
 
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override

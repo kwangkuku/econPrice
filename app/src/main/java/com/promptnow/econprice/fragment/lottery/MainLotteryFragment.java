@@ -1,6 +1,7 @@
 package com.promptnow.econprice.fragment.lottery;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -30,12 +31,11 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
     }
 
     private void setView() {
-
         TabLayout tabLayout;
         final ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
         tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("ตรวจรางวัล"));
-        tabLayout.addTab(tabLayout.newTab().setText("เลขเด็ด"));
+//        tabLayout.addTab(tabLayout.newTab().setText("ตรวจรางวัล"));
+//        tabLayout.addTab(tabLayout.newTab().setText("เลขเด็ด"));
         viewPager.setAdapter(new SampleFragmentPagerAdapterLotto(getChildFragmentManager(),
                 getFragments()));
         tabLayout.setupWithViewPager(viewPager);

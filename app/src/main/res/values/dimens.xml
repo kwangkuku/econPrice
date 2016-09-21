@@ -4,9 +4,12 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="text">18dp</dimen>
-    <dimen name="text2">20dp</dimen>
-    <dimen name="text_view">30dp</dimen>
-    <dimen name="text_num">35dp</dimen>
+    <dimen name="popup2">20dp</dimen>
+    <dimen name="text2">22dp</dimen>
+    <dimen name="popup">26dp</dimen>
+    <dimen name="text_view">28dp</dimen>
+    <dimen name="tabbar">32dp</dimen>
+    <dimen name="text_num">36dp</dimen>
     <dimen name="activity_margin">40dp</dimen>
     <dimen name="viewpager">60dp</dimen>
     <dimen name="bottombar_height">64dp</dimen>
