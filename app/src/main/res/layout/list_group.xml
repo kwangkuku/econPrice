@@ -4,34 +4,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/color_gray"
+    android:background="#FFFFFF"
     android:orientation="horizontal"
-    android:padding="8dp">
+    android:padding="8dp"
+    >
 
     <ImageView
         android:id="@+id/img_wea"
         android:layout_width="30dp"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/ic_lightning" />
+        app:srcCompat="@drawable/ic_lightning"
 
+        />
 
     <TextView
         android:id="@+id/lblListHeader"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="@dimen/text_margin"
-        android:layout_weight="1"
+        android:layout_gravity="left"
+        android:layout_marginLeft="-32dp"
+        android:layout_weight="0.78"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:textColor="#330099"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:text="gg"/>
 
     <TextView
         android:id="@+id/txt_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="44.5 °C" />
+        android:text="44.5°C" />
 
 
 </LinearLayout>
