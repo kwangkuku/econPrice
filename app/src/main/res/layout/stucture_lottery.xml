@@ -33,7 +33,8 @@
         app:tabIndicatorColor="@color/colorAccent"
         app:tabMaxWidth="0dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/colorRed">
+        app:tabSelectedTextColor="@color/colorRed"
+        app:tabBackground="@color/color_bg">
 
     </android.support.design.widget.TabLayout>
 

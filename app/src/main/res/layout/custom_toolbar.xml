@@ -3,7 +3,7 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ecebeb"
+    android:background="@color/colorBottom"
     android:minHeight="?attr/actionBarSize"
     app:titleTextColor="@android:color/white">
 <RelativeLayout
