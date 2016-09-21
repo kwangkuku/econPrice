@@ -133,7 +133,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 //         รางวัลที่5
         tv20 = (TextView) rootView.findViewById(R.id.lotto9);
 
-
+//        เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         seach.setTypeface(font);
         tv.setTypeface(font);

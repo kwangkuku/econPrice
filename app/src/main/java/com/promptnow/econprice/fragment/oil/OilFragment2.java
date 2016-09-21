@@ -2,6 +2,7 @@ package com.promptnow.econprice.fragment.oil;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -29,9 +30,10 @@ import java.util.Calendar;
 
 public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDateListener {
     private View rootView;
+    private Typeface font;
     private Spinner oilTypeSpinner;
     //private ArrayList<String> oil_Type = new ArrayList<String>();
-    private TextView tv_date_oil_vs;
+    private TextView tv_date_oil_vs,tv,tv2,tv3,tv4;
     private TextView show_vs1, show_vs2, tv_show_result;
     //private ImageView mDialog;
     private ImageView img_vs1, img_vs2;
@@ -230,6 +232,18 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     //Date Picker
     private void setView() {
         tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
+        tv = (TextView) rootView.findViewById(R.id.date);
+        tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
+        tv3 = (TextView) rootView.findViewById(R.id.tv3);
+        tv4 = (TextView) rootView.findViewById(R.id.bath);
+
+        //        เปลี่ยน font
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        tv.setTypeface(font);
+        tv2.setTypeface(font);
+        tv3.setTypeface(font);
+        tv4.setTypeface(font);
+
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);

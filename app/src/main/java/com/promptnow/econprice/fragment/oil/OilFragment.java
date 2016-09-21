@@ -4,6 +4,7 @@ package com.promptnow.econprice.fragment.oil;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -22,9 +23,8 @@ import java.util.Calendar;
 
 public class OilFragment extends android.support.v4.app.DialogFragment implements DatePickerDialog.OnDateSetListener {
     private View rootView;
-    private TextView tv_date_oil_price;
-
-
+    private Typeface font;
+    private TextView tv_date_oil_price, date,tv,tv2,tv3,tv4,tv5,tv6,tv7;
     public DatePickerFragment.onSetDateListener mListener;
     private String stringOfDate;
 
@@ -58,6 +58,25 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
     private void setView() {
         tv_date_oil_price = (TextView) rootView.findViewById(R.id.tv_date_oil_price);
+        date = (TextView) rootView.findViewById(R.id.date);
+        tv=(TextView) rootView.findViewById(R.id.oil);
+        tv2=(TextView) rootView.findViewById(R.id.txt_bensin);
+        tv3=(TextView) rootView.findViewById(R.id.txt_gassohol95);
+        tv4=(TextView) rootView.findViewById(R.id.txt_gassohol91);
+        tv5=(TextView) rootView.findViewById(R.id.txt_e20);
+        tv6=(TextView) rootView.findViewById(R.id.txt_e85);
+        tv7=(TextView) rootView.findViewById(R.id.txt_disel);
+//        เปลี่ยน font
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        date.setTypeface(font);
+        tv.setTypeface(font);
+        tv2.setTypeface(font);
+        tv3.setTypeface(font);
+        tv4.setTypeface(font);
+        tv5.setTypeface(font);
+        tv6.setTypeface(font);
+        tv7.setTypeface(font);
+
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);

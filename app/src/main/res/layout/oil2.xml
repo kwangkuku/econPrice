@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="วันที่   :    "
-            android:textSize="16sp"
+            android:textSize="24dp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="ประเภทน้ำมัน  : "
-            android:textSize="16sp"
+            android:textSize="24dp"
             android:textStyle="normal|bold" />
 
         <Spinner
@@ -135,7 +135,6 @@
 
         <TextView
             android:id="@+id/show_vs2"
-
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="40dp"
@@ -155,13 +154,14 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/tv3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="20dp"
             android:text="ส่วนต่าง"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/tv_show_result"
@@ -172,13 +172,14 @@
             android:background="@drawable/result_shape"/>
 
         <TextView
+            android:id="@+id/bath"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="40dp"
             android:text="บาท"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="24dp" />
 
     </TableRow>
 </LinearLayout>
