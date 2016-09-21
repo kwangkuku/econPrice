@@ -21,6 +21,8 @@
         android:layout_weight="0.27"
         android:text="เริ่มต้นใช้งาน"
         android:textAlignment="center"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:onClick="ClickStart"
+        />
 
 </LinearLayout>

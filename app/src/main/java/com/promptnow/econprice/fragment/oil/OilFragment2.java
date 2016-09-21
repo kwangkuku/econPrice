@@ -19,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.view.DatePickerFragment;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ import java.util.Calendar;
  * Created by Whankung on 7/9/2559.
  */
 
-public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDateListener {
+public class OilFragment2 extends Fragment {
     private View rootView;
     private Typeface font;
     private Spinner oilTypeSpinner;
@@ -50,7 +51,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
 
-        setView();
+        //setView();
         setOilTypeSpiner();
         setType();
         setVSpopup();
@@ -272,6 +273,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
         tv_date_oil_vs.setText(year + month + day);
     }
+
 
 
 }
