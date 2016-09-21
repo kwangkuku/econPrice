@@ -1,7 +1,6 @@
 package com.promptnow.econprice.fragment.oil;
 
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,13 +20,12 @@ import com.promptnow.econprice.R;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 /**
  * Created by Whankung on 7/9/2559.
  */
 
-public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDateListener {
+public class OilFragment2 extends Fragment {
     private View rootView;
     private Spinner oilTypeSpinner;
     //private ArrayList<String> oil_Type = new ArrayList<String>();
@@ -48,7 +46,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
 
-        setView();
+        //setView();
         setOilTypeSpiner();
         setType();
         setVSpopup();
@@ -225,38 +223,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         }
 
 
-    }
-
-    //Date Picker
-    private void setView() {
-        tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        month += 1;
-        int day = c.get(Calendar.DAY_OF_MONTH);
-
-        String stringOfDate = day + "/" + month + "/" + year;
-
-        tv_date_oil_vs.setText(stringOfDate);
-        tv_date_oil_vs.setOnClickListener(new View.OnClickListener()
-
-        {
-            //call Date Picker
-            @Override
-            public void onClick(View v) {
-                DialogFragment newFragment = new DatePickerFragment();
-                newFragment.show(getActivity().getFragmentManager(), "Date Picker");
-
-
-            }
-
-        });
-    }
-
-    public void setDate(int year, int month, int day) {
-
-        tv_date_oil_vs.setText(year + month + day);
     }
 
 
