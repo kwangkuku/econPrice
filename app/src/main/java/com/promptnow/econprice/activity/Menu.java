@@ -38,6 +38,7 @@ public class Menu extends AppCompatActivity {
 
     private void setView() {
         Singleton.getInstance().setFirstOpenApp(true);
+//                เปลี่ยน font
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
 
     }

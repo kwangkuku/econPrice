@@ -56,7 +56,9 @@ public class View_popup extends DialogFragment {
     }
 
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+//                เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+
         dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
@@ -70,6 +72,7 @@ public class View_popup extends DialogFragment {
         btn_ok = (Button) dialog.findViewById(R.id.btn_ok);
         txt.setText(message);
         btn_ok.setText(msg_ok);
+//                เปลี่ยน font
         txt.setTypeface(font);
         btn_ok.setTypeface(font);
 

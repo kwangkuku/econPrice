@@ -1,6 +1,11 @@
 package com.promptnow.econprice.fragment.oil;
 
 import android.app.Dialog;
+<<<<<<< HEAD
+=======
+import android.app.DialogFragment;
+import android.graphics.Typeface;
+>>>>>>> origin/master
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,9 +32,10 @@ import java.util.ArrayList;
 
 public class OilFragment2 extends Fragment {
     private View rootView;
+    private Typeface font;
     private Spinner oilTypeSpinner;
     //private ArrayList<String> oil_Type = new ArrayList<String>();
-    private TextView tv_date_oil_vs;
+    private TextView tv_date_oil_vs,tv,tv2,tv3,tv4;
     private TextView show_vs1, show_vs2, tv_show_result;
     //private ImageView mDialog;
     private ImageView img_vs1, img_vs2;
@@ -225,6 +231,53 @@ public class OilFragment2 extends Fragment {
 
     }
 
+<<<<<<< HEAD
+=======
+    //Date Picker
+    private void setView() {
+        tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
+        tv = (TextView) rootView.findViewById(R.id.date);
+        tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
+        tv3 = (TextView) rootView.findViewById(R.id.tv3);
+        tv4 = (TextView) rootView.findViewById(R.id.bath);
+
+        //        เปลี่ยน font
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        tv.setTypeface(font);
+        tv2.setTypeface(font);
+        tv3.setTypeface(font);
+        tv4.setTypeface(font);
+
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        month += 1;
+        int day = c.get(Calendar.DAY_OF_MONTH);
+
+        String stringOfDate = day + "/" + month + "/" + year;
+
+        tv_date_oil_vs.setText(stringOfDate);
+        tv_date_oil_vs.setOnClickListener(new View.OnClickListener()
+
+        {
+            //call Date Picker
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new DatePickerFragment();
+                newFragment.show(getActivity().getFragmentManager(), "Date Picker");
+
+
+            }
+
+        });
+    }
+
+    public void setDate(int year, int month, int day) {
+
+        tv_date_oil_vs.setText(year + month + day);
+    }
+
+>>>>>>> origin/master
 
 }
 

@@ -68,7 +68,7 @@ public class LotteryFragment2 extends Fragment {
         tv5 = (TextView) rootView.findViewById(R.id.num2);
 //        เลขท้าย 2ตัว
         tv6 = (TextView) rootView.findViewById(R.id.num3);
-
+//        เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         tv.setTypeface(font);
         tv2.setTypeface(font);

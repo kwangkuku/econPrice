@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="วันที่   :    "
-            android:textSize="16sp"
+            android:textSize="24dp"
             android:textStyle="normal|bold" />
 
         <TextView
@@ -81,7 +81,7 @@
                 android:gravity="center"
                 android:text="ประเภทน้ำมัน"
                 android:textColor="@color/color_gray_tv_oil_price"
-                android:textSize="16sp"
+                android:textSize="24dp"
                 android:textStyle="normal|bold"
                 android:textAlignment="textStart" />
 
@@ -153,7 +153,7 @@
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
                     android:text="เบนซิล"
-                    android:textSize="16sp"
+                    android:textSize="24dp"
                     android:textStyle="normal|bold"
                     android:textAlignment="viewStart" />
 
@@ -223,7 +223,7 @@
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
                     android:text="โซฮอล์95"
-                    android:textSize="16sp"
+                    android:textSize="24dp"
                     android:textStyle="normal|bold"
                     android:textAlignment="viewStart" />
 
@@ -293,7 +293,7 @@
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
                     android:text="โซฮอล์91"
-                    android:textSize="16sp"
+                    android:textSize="24dp"
                     android:textStyle="normal|bold"
                     android:textAlignment="viewStart" />
 
@@ -362,7 +362,7 @@
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
                     android:text="E20"
-                    android:textSize="16sp"
+                    android:textSize="24dp"
                     android:textStyle="normal|bold"
                     android:textAlignment="viewStart" />
 
@@ -432,7 +432,7 @@
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
                     android:text="E85"
-                    android:textSize="16sp"
+                    android:textSize="24dp"
                     android:textStyle="normal|bold"
                     android:textAlignment="viewStart" />
 
@@ -501,7 +501,7 @@
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
                     android:text="ดีเซล"
-                    android:textSize="16sp"
+                    android:textSize="24dp"
                     android:textStyle="normal|bold"
                     android:textAlignment="viewStart" />
 

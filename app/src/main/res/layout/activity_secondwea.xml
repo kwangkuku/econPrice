@@ -17,7 +17,7 @@
         android:text="กรุงเทพมหานครและปริมณฑล"
         android:background="#F5F5F5"
         android:textColor="@color/bb_darkBackgroundColor"
-        android:textSize="20dp"
+        android:textSize="28dp"
        />
 
     <LinearLayout
@@ -30,7 +30,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/text_margin"
-            android:text="อัพเดพ"
+            android:text="อัพเดท"
+            android:textSize="18dp"
+            android:id="@+id/update"
             />
 
         <TextView
