@@ -1,12 +1,14 @@
 package com.promptnow.econprice.fragment.weather;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,21 +22,20 @@ import java.util.HashMap;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+import static com.promptnow.econprice.R.id.editText;
 
 /**
  * Created by Admin on 9/9/2559.
  */
 public class SecondFragment extends Fragment {
 
-
+    private Typeface font;
     private ExpandableListView expListView;
-
     private List<String> listDataHeader;
     private HashMap<String, List<String>> listDataChild;
-
     private View rootView;
     private MyExpandableAdapter listAdapter;
-    private TextView txt_time;
+    private TextView txt_time,textData,update,edittext;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_secondwea, container, false);
@@ -60,7 +61,7 @@ public class SecondFragment extends Fragment {
         // setting list adapter
         expListView.setAdapter(listAdapter);
 
-        TextView editText = (TextView) getActivity().findViewById(R.id.editText);
+
         Singleton.getInstance().getIndexlist().toString();
 
         //ประกาศตัวปุ่มย้อนกลับของเรา ผูกตัวแปรไว้
@@ -74,8 +75,21 @@ public class SecondFragment extends Fragment {
 
             }
         });
-        TextView textData = (TextView) rootView.findViewById(R.id.editText);
-        textData.setText(Singleton.getInstance().getIndexlist());
+//          textData = (TextView) rootView.findViewById(R.id.editText);
+//        textData.setText(Singleton.getInstance().getIndexlist());
+
+        edittext = (TextView) rootView.findViewById(R.id.editText);
+        edittext.setText(Singleton.getInstance().getIndexlist());
+
+
+//font
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        edittext.setTypeface(font);
+//        textData.setTypeface(font);
+        update = (TextView) rootView.findViewById(R.id.update);
+        update.setTypeface(font);
+
+
 
         //เราทำให้ เมื่อเรากดกลุ่มหัวอันใหญ่ แล้วลูกมันจะออกมา แล้วถ้าเรากดแีกครั้งอันที่เราเคยกดมันจะหุบ
         expListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
@@ -134,6 +148,9 @@ return true;
         listDataChild.put(listDataHeader.get(0), top250);// Header, Child data
         listDataChild.put(listDataHeader.get(1), nowShowing);
         listDataChild.put(listDataHeader.get(2), comingSoon);
+
+
+
     }
 
     public void setDateTime() {
@@ -163,6 +180,8 @@ return true;
         //assuming that you need date and time in separate textview named txt_date and txt_time.
 
         txt_date.setText(date);
+
+
 
     }
 }
