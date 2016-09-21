@@ -24,7 +24,6 @@ public class FirstScreen extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.first_screen, container, false);
 
-
         setView();
 
         return rootView;
@@ -39,8 +38,6 @@ public class FirstScreen extends Fragment {
         btnClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                new MyPagerAdapter(getActivity().getSupportFragmentManager()).getItem(1);
-
                 ((MainActivity)getActivity()).setSelect(1);
         }
         });
