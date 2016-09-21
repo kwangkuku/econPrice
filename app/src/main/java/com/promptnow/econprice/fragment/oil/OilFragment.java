@@ -68,13 +68,6 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
         tv_date_oil_price.setText(stringOfDate);
         tv_date_oil_price.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        tv_date_oil_price.setOnClickListener(new View.OnClickListener() {
 
 
                                                  @Override
