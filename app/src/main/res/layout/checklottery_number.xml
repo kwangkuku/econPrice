@@ -3,15 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:paddingBottom="6dp">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/text_view"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:background="@color/color_tab_lotto"
-        android:gravity="center" />
+
 
     <TextView
         android:id="@+id/num1"
