@@ -31,13 +31,22 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
     public interface onSetDateListener {
 
         void setDate(int year, int month, int day);
+
+        
+
+
+
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.oil, container, false);
+
         setView();
+
         return rootView;
     }
+
+
 
     public void setView() {
         final LinearLayout ll = (LinearLayout) rootView.findViewById(R.id.table);
@@ -87,7 +96,16 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
 
 
     }
-}
+
+
+
+
+
+
+    }
+
+
+
 
 
 
