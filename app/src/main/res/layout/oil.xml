@@ -68,14 +68,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
-            android:gravity="center">
+            android:gravity="center"
+
+            >
 
             <TextView
                 android:id="@+id/oil"
                 android:layout_width="85dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
@@ -83,6 +85,7 @@
                 android:textColor="@color/color_gray_tv_oil_price"
                 android:textSize="24dp"
                 android:textStyle="normal|bold"
+
                 android:textAlignment="textStart" />
 
             <ImageView
@@ -94,6 +97,7 @@
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_ptt"
 
+
                 />
 
             <ImageView
@@ -103,7 +107,8 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_bangjak" />
+                app:srcCompat="@drawable/ic_bangjak"
+               />
 
             <ImageView
                 android:id="@+id/logo_shell"
@@ -112,7 +117,8 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_shell" />
+                app:srcCompat="@drawable/ic_shell"
+                />
 
             <ImageView
                 android:id="@+id/logo_esso"
@@ -121,7 +127,8 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_esso" />
+                app:srcCompat="@drawable/ic_esso"
+                />
         </TableRow>
 
 
