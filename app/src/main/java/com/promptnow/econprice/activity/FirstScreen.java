@@ -1,5 +1,6 @@
 package com.promptnow.econprice.activity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,8 @@ import com.promptnow.econprice.R;
  */
 
 public class FirstScreen extends Fragment {
+    private Typeface font;
+
     private View rootView;
 
     @Nullable
@@ -34,7 +37,13 @@ public class FirstScreen extends Fragment {
         ImageView image = (ImageView) rootView.findViewById(R.id.imageView);
         image.setImageResource(R.drawable.ic_deer);
 
+        TextView econp = (TextView) rootView.findViewById(R.id.tv);
         TextView btnClick = (TextView) rootView.findViewById(R.id.tv_guide);
+//        เปลี่ยนfont
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        econp.setTypeface(font);
+        btnClick.setTypeface(font);
+
         btnClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
