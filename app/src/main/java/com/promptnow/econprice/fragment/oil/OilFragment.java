@@ -30,7 +30,6 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
     private int year;
     private int month;
     private int day;
-
     private String stringOfDate;
 
 
@@ -43,10 +42,17 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.oil, container, false);
-
+        setResetText();
         setView();
 
         return rootView;
+    }
+
+    private void setResetText() {
+
+
+
+
     }
 
 
