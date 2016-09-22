@@ -61,6 +61,7 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
         }
 
+
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.txt_number);
 
@@ -105,10 +106,10 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.list_group, null);
         }
-
+        Typeface font = Typeface.createFromAsset(_context.getAssets(), "tmedium.ttf");
         TextView lblListHeader = (TextView) convertView
                 .findViewById(R.id.lblListHeader);
-        lblListHeader.setTypeface(null);
+        lblListHeader.setTypeface(font);
         lblListHeader.setText(headerTitle);
 
         return convertView;

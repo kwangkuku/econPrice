@@ -18,15 +18,9 @@
         android:gravity="center|left"
         android:text="Text"
         android:textColor="#000066"
-        android:textSize="18sp" />
+        android:textSize="24sp" />
 
-    <ImageView
-        android:id="@+id/action"
-        android:layout_width="40dp"
-        android:layout_height="match_parent"
 
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

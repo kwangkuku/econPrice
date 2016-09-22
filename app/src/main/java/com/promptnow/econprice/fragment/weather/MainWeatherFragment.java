@@ -2,6 +2,7 @@ package com.promptnow.econprice.fragment.weather;
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,8 @@ import android.widget.ListView;
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.activity.Menu;
 import com.promptnow.econprice.view.Singleton;
+
+import static java.security.AccessController.getContext;
 
 public class MainWeatherFragment extends Fragment {
     private View rootView;
@@ -43,6 +46,8 @@ public class MainWeatherFragment extends Fragment {
 
         final ListView listView = (ListView) rootView.findViewById(R.id.listView1);
         listView.setAdapter(adapter);
+
+
 //        listView.setDividerHeight(2);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

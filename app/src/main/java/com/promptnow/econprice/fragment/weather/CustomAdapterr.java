@@ -10,6 +10,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.fragment.lottery.CustomAdapter;
+
+import static java.security.AccessController.getContext;
 
 /**
  * Created by Admin on 8/9/2559.
@@ -42,18 +45,22 @@ public class CustomAdapterr extends BaseAdapter {
         return 0;
     }
 
+
     public View getView(int position, View view, ViewGroup parent) {
         LayoutInflater mInflater =
                 (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-//        Typeface font = Typeface.createFromAsset(getAssets(),  "tmedium.ttf");
 
         if (view == null)
             view = mInflater.inflate(R.layout.listview_row, parent, false);
-
         TextView textView = (TextView) view.findViewById(R.id.textView1);
+
+        Typeface font = Typeface.createFromAsset(mContext.getAssets(), "tmedium.ttf");
+        textView.setTypeface(font);
+
+
         textView.setText(strName[position]);
-//        textView.setTypeface(font);
+
 
         if (position % 2 == 0) {
 
@@ -73,15 +80,13 @@ public class CustomAdapterr extends BaseAdapter {
         };
 
 
-
-
-
         return view;
     }
 
-
-
-
+//
+//    public AssetManager getAssets() {
+//        return getAssets();
+//    }
 }
 
 
