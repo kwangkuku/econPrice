@@ -17,7 +17,7 @@ import com.promptnow.econprice.R;
 
 public class GuideWeather extends Fragment {
     private Typeface font;
-    private TextView tv1,tv2;
+    private TextView tv1,tv2,tv3;
     private View rootView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,11 +32,13 @@ public class GuideWeather extends Fragment {
     private void setView() {
         tv1=(TextView)rootView.findViewById(R.id.color_blue_tv_header_weather);
         tv2=(TextView)rootView.findViewById(R.id.textView8);
+        tv3=(TextView)rootView.findViewById(R.id.textView9);
 
 //       เปลี่ยนfont
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         tv1.setTypeface(font);
         tv2.setTypeface(font);
+        tv3.setTypeface(font);
 
         ImageView image = (ImageView) rootView.findViewById(R.id.weather);
         image.setImageResource(R.drawable.ic_weather);

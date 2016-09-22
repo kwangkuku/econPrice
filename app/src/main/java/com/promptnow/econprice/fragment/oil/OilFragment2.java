@@ -2,6 +2,7 @@ package com.promptnow.econprice.fragment.oil;
 
 import android.app.Dialog;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -32,7 +33,8 @@ public class OilFragment2 extends Fragment {
     private Spinner oilTypeSpinner;
     private TextView tv_date_oil_vs, tv, tv2, tv3, tv4;
     private TextView show_vs1, show_vs2, tv_show_result;
-    private ImageView img_vs1, img_vs2;
+    private ImageView img_vs1, img_vs2, b1, b2, b3;
+    private Image ic_ptt;
     double vs1, vs2;
     double result;
 
@@ -45,6 +47,10 @@ public class OilFragment2 extends Fragment {
         tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
+        b1 = (ImageView) rootView.findViewById(R.id.b1);
+        b2 = (ImageView) rootView.findViewById(R.id.b2);
+        b3 = (ImageView) rootView.findViewById(R.id.b3);
+
 
         setView();
         setOilTypeSpiner();
@@ -72,6 +78,7 @@ public class OilFragment2 extends Fragment {
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
 
                     }
                 });

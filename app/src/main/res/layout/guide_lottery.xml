@@ -20,15 +20,25 @@
         />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:text="ตรวจผลสลากกินแบ่งรัฐบาลทั้งงวดปัจจุบันและย้อนหลัง พร้อมกับการทำนายเลขเด็ดล่วงหน้าในงวดต่อไป"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:text="ตรวจผลสลากกินแบ่งรัฐบาลทั้งงวดปัจจุบันและย้อนหลัง"
         android:textAlignment="center"
-        android:textSize="24dp" />
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="พร้อมกับการทำนายเลขเด็ดล่วงหน้าในงวดต่อไป"
+        android:textAlignment="center"
+        android:textSize="22dp" />
 
 
     <ImageView

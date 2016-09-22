@@ -21,10 +21,10 @@ import java.util.Calendar;
 
 public class OilFragment extends android.support.v4.app.DialogFragment {
     private View rootView;
-
     private Typeface font;
     private TextView tv_date_oil_price, date,tv,tv2,tv3,tv4,tv5,tv6,tv7;
     public DatePickerFragment.onSetDateListener mListener;
+
     private String stringOfDate;
 
 
