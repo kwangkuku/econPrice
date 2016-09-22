@@ -19,12 +19,16 @@ import java.util.Date;
 
 public  class DatePickerFragmentDialog extends DialogFragment implements DatePickerDialog.OnDateSetListener{
 
+
+    static final Calendar calendar = Calendar.getInstance();
+    static int  year = calendar.get(Calendar.YEAR);
+    static int month = calendar.get(Calendar.MONTH);
+    static int day = calendar.get(Calendar.DAY_OF_MONTH);
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
-        final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+
 
             /*
                 Initialize a new DatePickerDialog
@@ -38,6 +42,10 @@ public  class DatePickerFragmentDialog extends DialogFragment implements DatePic
 
     public void onDateSet(DatePicker view, int year, int month, int day){
         // Do something with the chosen date
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
         TextView tv_date_oil_price = (TextView) getActivity().findViewById(R.id.tv_date_oil_price);
         TextView tv_date_oil_vs = (TextView) getActivity().findViewById(R.id.tv_date_oil_vs);
 

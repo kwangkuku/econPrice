@@ -22,8 +22,14 @@ import java.util.Calendar;
 public class OilFragment extends android.support.v4.app.DialogFragment {
     private View rootView;
     private Typeface font;
-    private TextView tv_date_oil_price, date,tv,tv2,tv3,tv4,tv5,tv6,tv7;
+    private TextView tv_date_oil_price, date, tv, tv2, tv3, tv4, tv5, tv6, tv7;
+    private int selectedYear;
+    private int selectedMonth;
+    private int selectedDay;
     public DatePickerFragment.onSetDateListener mListener;
+    private int year;
+    private int month;
+    private int day;
 
     private String stringOfDate;
 
@@ -31,10 +37,6 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
     public interface onSetDateListener {
 
         void setDate(int year, int month, int day);
-
-
-        
-
 
 
     }
@@ -48,7 +50,6 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
     }
 
 
-
     public void setView() {
         final LinearLayout ll = (LinearLayout) rootView.findViewById(R.id.table);
         tv_date_oil_price = (TextView) rootView.findViewById(R.id.tv_date_oil_price);
@@ -56,13 +57,13 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
 
 //        เปลี่ยน font
         date = (TextView) rootView.findViewById(R.id.date);
-        tv=(TextView) rootView.findViewById(R.id.oil);
-        tv2=(TextView) rootView.findViewById(R.id.txt_bensin);
-        tv3=(TextView) rootView.findViewById(R.id.txt_gassohol95);
-        tv4=(TextView) rootView.findViewById(R.id.txt_gassohol91);
-        tv5=(TextView) rootView.findViewById(R.id.txt_e20);
-        tv6=(TextView) rootView.findViewById(R.id.txt_e85);
-        tv7=(TextView) rootView.findViewById(R.id.txt_disel);
+        tv = (TextView) rootView.findViewById(R.id.oil);
+        tv2 = (TextView) rootView.findViewById(R.id.txt_bensin);
+        tv3 = (TextView) rootView.findViewById(R.id.txt_gassohol95);
+        tv4 = (TextView) rootView.findViewById(R.id.txt_gassohol91);
+        tv5 = (TextView) rootView.findViewById(R.id.txt_e20);
+        tv6 = (TextView) rootView.findViewById(R.id.txt_e85);
+        tv7 = (TextView) rootView.findViewById(R.id.txt_disel);
 //        เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         date.setTypeface(font);
@@ -75,10 +76,10 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
         tv7.setTypeface(font);
 
         final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
+        year = c.get(Calendar.YEAR);
+        month = c.get(Calendar.MONTH);
         month += 1;
-        int day = c.get(Calendar.DAY_OF_MONTH);
+        day = c.get(Calendar.DAY_OF_MONTH);
         String stringOfDate = day + "/" + month + "/" + year;
 
         tv_date_oil_price.setText(stringOfDate);
@@ -92,6 +93,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
 
                 // Show the date picker dialog fragment
                 dFragment.show(getActivity().getFragmentManager(), "Date Picker");
+
             }
         });
 
@@ -99,11 +101,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
     }
 
 
-
-
-
-
-    }
+}
 
 
 

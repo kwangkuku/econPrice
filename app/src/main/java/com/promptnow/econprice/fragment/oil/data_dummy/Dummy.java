@@ -1,5 +1,7 @@
 package com.promptnow.econprice.fragment.oil.data_dummy;
 
+import com.promptnow.econprice.R;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +24,7 @@ public class Dummy {
     public List<String> esso = new ArrayList<>(Arrays.asList("21.29","23.12","24.11","21.61","-","23.09"));
 
 
-
+    public List<Integer> popup = new ArrayList<>(Arrays.asList( R.drawable.ic_ptt, R.drawable.ic_bangjak, R.drawable.ic_shell, R.drawable.ic_esso));
 
 
 
