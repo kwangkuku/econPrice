@@ -115,11 +115,7 @@ return true;
             });
 }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
-    }
 
     private void prepareListData() {
         listDataHeader = new ArrayList<String>();
@@ -133,14 +129,14 @@ return true;
 
         // Adding child data
         List<String> top250 = new ArrayList<String>();
-        top250.add("34°C");
+        top250.add("44.5°C");
 
 
         List<String> nowShowing = new ArrayList<String>();
-        nowShowing.add("35°C");
+        nowShowing.add("44.5°C");
 
         List<String> comingSoon = new ArrayList<String>();
-        comingSoon.add("47°C");
+        comingSoon.add("44.5°C");
 
         Log.d(TAG, "prepareListData: " + Singleton.getInstance().getIndexlist());
 

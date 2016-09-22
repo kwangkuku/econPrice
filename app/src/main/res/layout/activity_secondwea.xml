@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="กรุงเทพมหานครและปริมณฑล"
-        android:background="#F5F5F5"
+
         android:textColor="@color/bb_darkBackgroundColor"
         android:textSize="28dp"
        />
