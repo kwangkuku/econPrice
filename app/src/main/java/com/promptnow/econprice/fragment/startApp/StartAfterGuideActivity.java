@@ -1,6 +1,7 @@
 package com.promptnow.econprice.fragment.startApp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.promptnow.econprice.activity.Menu;
 
 public class StartAfterGuideActivity extends Fragment {
     private View rootView;
+    private Typeface font;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,6 +36,9 @@ public class StartAfterGuideActivity extends Fragment {
 
 
         TextView ClickStart = (TextView) rootView.findViewById(R.id.textView9);
+//        เปลี่ยนfont
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        ClickStart.setTypeface(font);
         ClickStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

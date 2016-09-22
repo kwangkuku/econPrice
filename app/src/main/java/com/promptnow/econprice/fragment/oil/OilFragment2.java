@@ -51,7 +51,7 @@ public class OilFragment2 extends Fragment {
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
 
-        //setView();
+        setView();
         setOilTypeSpiner();
         setType();
         setVSpopup();
