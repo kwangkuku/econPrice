@@ -7,28 +7,33 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.View;
 
+import com.promptnow.econprice.activity.MainActivity;
+
 import java.util.List;
 
 /**
  * Created by Whankung on 7/9/2559.
  */
 
-public class SampleFragmentPagerAdapterLotto extends FragmentPagerAdapter {
-
+public class SampleFragmentPagerAdapterLotto extends FragmentPagerAdapter  {
+    private Typeface font;
     final int PAGE_COUNT = 2;
-    private String tabTitles[] = new String[]{"ตรวจรางวัล", "เลขเด็ด"};
+    private String  tabTitles[]= {"ตรวจรางวัล", "เลขเด็ด"};
     private Context context;
     private List<Fragment> fragments;
 
 
 
+
     public SampleFragmentPagerAdapterLotto(FragmentManager fm, List<Fragment> fragments) {
+
         super(fm);
         this.fragments = fragments;
     }
 
     @Override
     public Fragment getItem(int position) {
+
 
         return this.fragments.get(position);
 
@@ -44,8 +49,10 @@ public class SampleFragmentPagerAdapterLotto extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
 
+
         // Generate title based on item position
         return tabTitles[position];
+
     }
 }
 

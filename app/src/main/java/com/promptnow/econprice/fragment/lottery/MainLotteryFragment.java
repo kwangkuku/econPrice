@@ -1,6 +1,7 @@
 package com.promptnow.econprice.fragment.lottery;
 
 
+import android.app.TabActivity;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainLotteryFragment extends android.support.v4.app.Fragment {
-    //private Typeface font;
+    private Typeface font;
     private View rootView;
     // Fragment TabHost as mTabHost
     //private FragmentTabHost mTabHost;
@@ -32,7 +33,7 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
     }
 
     private void setView() {
-      //  font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+    font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         TabLayout tabLayout;
         final ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
          tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout);
@@ -42,6 +43,8 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
         viewPager.setAdapter(new SampleFragmentPagerAdapterLotto(getChildFragmentManager(),
                 getFragments()));
         tabLayout.setupWithViewPager(viewPager);
+
+
     }
 
     private List<Fragment> getFragments() {

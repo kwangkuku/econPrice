@@ -1,5 +1,6 @@
 package com.promptnow.econprice.fragment.lottery;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.promptnow.econprice.R;
 public class PageFragmentLotto extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
+    private String  tabTitles[]= {"ตรวจรางวัล", "เลขเด็ด"};
 
     public static PageFragmentLotto newInstance(int page) {
         Bundle args = new Bundle();
@@ -34,6 +36,7 @@ public class PageFragmentLotto extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.checklottery, container, false);
+        
 
         return view;
     }
