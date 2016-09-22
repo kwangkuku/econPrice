@@ -19,7 +19,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/viewpager"
-        android:background="#F0FFF0"
+        android:background="#FFFFFF"
 
         />
 

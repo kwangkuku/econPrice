@@ -1,6 +1,8 @@
 package com.promptnow.econprice.fragment.weather;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,11 +46,14 @@ public class CustomAdapterr extends BaseAdapter {
         LayoutInflater mInflater =
                 (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+//        Typeface font = Typeface.createFromAsset(getAssets(),  "tmedium.ttf");
+
         if (view == null)
             view = mInflater.inflate(R.layout.listview_row, parent, false);
 
         TextView textView = (TextView) view.findViewById(R.id.textView1);
         textView.setText(strName[position]);
+//        textView.setTypeface(font);
 
         if (position % 2 == 0) {
 
@@ -56,7 +61,7 @@ public class CustomAdapterr extends BaseAdapter {
 
         } else {
 
-            view.setBackgroundResource(R.color.colorBottom);
+            view.setBackgroundResource(R.color.color_bg_table);
 
         }
 
@@ -67,8 +72,14 @@ public class CustomAdapterr extends BaseAdapter {
             }
         };
 
+
+
+
+
         return view;
     }
+
+
 
 
 }
