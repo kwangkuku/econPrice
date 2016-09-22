@@ -23,7 +23,7 @@
             android:id="@+id/date"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="         วันที่   : "
+            android:text="          วันที่  : "
             android:textSize="24dp"
             android:textAlignment="textStart"
             android:textStyle="normal|bold" />
@@ -88,11 +88,13 @@
             android:id="@+id/img_vs1"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:padding="5dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="20dp"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
-            android:background="@drawable/bg_shape"
+            android:background="@drawable/bg_img_button"
+            app:srcCompat="@drawable/ic_ptt"
 
            />
 
@@ -111,11 +113,13 @@
             android:id="@+id/img_vs2"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:padding="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="40dp"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
-            android:background="@drawable/bg_shape"
+            android:background="@drawable/bg_img_button"
+            app:srcCompat="@drawable/ic_bangjak"
             />
     </TableRow>
 

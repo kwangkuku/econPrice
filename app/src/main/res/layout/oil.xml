@@ -39,22 +39,6 @@
 
     </LinearLayout>
 
-    <!--<Button-->
-    <!--android:id="@+id/btn_search"-->
-    <!--android:layout_width="200dp"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@+id/tv_date_oil_price"-->
-    <!--android:layout_gravity="center"-->
-    <!--android:layout_marginTop="30dp"-->
-    <!--android:background="@drawable/btn"-->
-    <!--android:onClick="btnClick"-->
-    <!--android:text="ค้นหา"-->
-    <!--android:textAlignment="center"-->
-    <!--android:textColor="@color/color_gray"-->
-    <!--android:textSize="15sp"-->
-    <!--android:textStyle="bold"-->
-
-    <!--/>-->
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -67,7 +51,7 @@
             android:id="@+id/tableRow1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
 
             >

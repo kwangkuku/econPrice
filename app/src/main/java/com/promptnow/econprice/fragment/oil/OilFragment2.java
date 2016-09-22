@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -69,7 +68,7 @@ public class OilFragment2 extends Fragment {
                 dialog.setContentView(R.layout.customdialog);
                 dialog.setCancelable(true);
 
-                Button b1 = (Button) dialog.findViewById(R.id.b1);
+                ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -77,7 +76,7 @@ public class OilFragment2 extends Fragment {
                     }
                 });
 
-                Button b2 = (Button) dialog.findViewById(R.id.b2);
+                ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
                 b2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -85,7 +84,7 @@ public class OilFragment2 extends Fragment {
                     }
                 });
 
-                Button b3 = (Button) dialog.findViewById(R.id.b3);
+                ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
                 b3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -106,7 +105,7 @@ public class OilFragment2 extends Fragment {
                 dialog.setContentView(R.layout.customdialog);
                 dialog.setCancelable(true);
 
-                Button b1 = (Button) dialog.findViewById(R.id.b1);
+                ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -114,7 +113,7 @@ public class OilFragment2 extends Fragment {
                     }
                 });
 
-                Button b2 = (Button) dialog.findViewById(R.id.b2);
+                ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
                 b2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -122,7 +121,7 @@ public class OilFragment2 extends Fragment {
                     }
                 });
 
-                Button b3 = (Button) dialog.findViewById(R.id.b3);
+                ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
                 b3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
