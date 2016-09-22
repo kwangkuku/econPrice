@@ -14,10 +14,12 @@ import java.util.List;
  */
 
 public class SampleFragmentPagerAdapterLotto extends FragmentPagerAdapter {
+
     final int PAGE_COUNT = 2;
     private String tabTitles[] = new String[]{"ตรวจรางวัล", "เลขเด็ด"};
     private Context context;
     private List<Fragment> fragments;
+
 
 
     public SampleFragmentPagerAdapterLotto(FragmentManager fm, List<Fragment> fragments) {
@@ -41,6 +43,7 @@ public class SampleFragmentPagerAdapterLotto extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
+
         // Generate title based on item position
         return tabTitles[position];
     }
