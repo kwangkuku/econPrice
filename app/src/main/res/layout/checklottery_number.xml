@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1"
-    android:paddingBottom="6dp">
+    android:weightSum="1">
 
 
 
@@ -14,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="30dp"
         android:text="เลขมงคล"
         android:textColor="@color/colorRed"
         android:textSize="28dp" />
