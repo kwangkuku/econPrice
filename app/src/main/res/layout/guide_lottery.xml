@@ -15,7 +15,7 @@
         android:text="ตรวจผลสลากกินแบ่งรัฐบาล"
         android:textAlignment="center"
         android:textColor="@color/color_red_tv_header_lotto"
-        android:textSize="24sp"
+        android:textSize="32dp"
 
         />
 
@@ -28,7 +28,7 @@
         android:layout_marginRight="15dp"
         android:text="ตรวจผลสลากกินแบ่งรัฐบาลทั้งงวดปัจจุบันและย้อนหลัง พร้อมกับการทำนายเลขเด็ดล่วงหน้าในงวดต่อไป"
         android:textAlignment="center"
-        android:textSize="18sp" />
+        android:textSize="24dp" />
 
 
     <ImageView
