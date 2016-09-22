@@ -1,7 +1,6 @@
 package com.promptnow.econprice.fragment.oil;
 
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,7 +18,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.view.DatePickerFragment;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -33,10 +31,8 @@ public class OilFragment2 extends Fragment {
     private View rootView;
     private Typeface font;
     private Spinner oilTypeSpinner;
-    //private ArrayList<String> oil_Type = new ArrayList<String>();
-    private TextView tv_date_oil_vs,tv,tv2,tv3,tv4;
+    private TextView tv_date_oil_vs, tv, tv2, tv3, tv4;
     private TextView show_vs1, show_vs2, tv_show_result;
-    //private ImageView mDialog;
     private ImageView img_vs1, img_vs2;
     double vs1, vs2;
     double result;
@@ -51,7 +47,7 @@ public class OilFragment2 extends Fragment {
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
 
-        //setView();
+        setView();
         setOilTypeSpiner();
         setType();
         setVSpopup();
@@ -233,6 +229,8 @@ public class OilFragment2 extends Fragment {
     //Date Picker
     private void setView() {
         tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
+
+        //        เปลี่ยน font
         tv = (TextView) rootView.findViewById(R.id.date);
         tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
         tv3 = (TextView) rootView.findViewById(R.id.tv3);
@@ -250,31 +248,29 @@ public class OilFragment2 extends Fragment {
         int month = c.get(Calendar.MONTH);
         month += 1;
         int day = c.get(Calendar.DAY_OF_MONTH);
-
         String stringOfDate = day + "/" + month + "/" + year;
 
         tv_date_oil_vs.setText(stringOfDate);
-        tv_date_oil_vs.setOnClickListener(new View.OnClickListener()
 
-        {
-            //call Date Picker
+
+        tv_date_oil_vs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment newFragment = new DatePickerFragment();
-                newFragment.show(getActivity().getFragmentManager(), "Date Picker");
+                // Initialize a new date picker dialog fragment
+                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
 
-
+                // Show the date picker dialog fragment
+                dFragment.show(getActivity().getFragmentManager(), "Date Picker");
             }
-
         });
+
+
     }
-
-    public void setDate(int year, int month, int day) {
-
-        tv_date_oil_vs.setText(year + month + day);
-    }
-
-
-
 }
+
+
+
+
+
+
 

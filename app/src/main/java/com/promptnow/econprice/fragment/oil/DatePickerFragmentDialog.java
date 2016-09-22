@@ -39,6 +39,7 @@ public  class DatePickerFragmentDialog extends DialogFragment implements DatePic
     public void onDateSet(DatePicker view, int year, int month, int day){
         // Do something with the chosen date
         TextView tv_date_oil_price = (TextView) getActivity().findViewById(R.id.tv_date_oil_price);
+        TextView tv_date_oil_vs = (TextView) getActivity().findViewById(R.id.tv_date_oil_vs);
 
         // Create a Date variable/object with user chosen date
         Calendar cal = Calendar.getInstance();
@@ -52,6 +53,7 @@ public  class DatePickerFragmentDialog extends DialogFragment implements DatePic
 
         // Display the chosen date to app interface
         tv_date_oil_price.setText(formattedDate);
+        tv_date_oil_vs.setText(formattedDate);
     }
 }
 

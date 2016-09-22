@@ -43,6 +43,8 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
         final LinearLayout ll = (LinearLayout) rootView.findViewById(R.id.table);
         tv_date_oil_price = (TextView) rootView.findViewById(R.id.tv_date_oil_price);
 
+
+//        เปลี่ยน font
         date = (TextView) rootView.findViewById(R.id.date);
         tv=(TextView) rootView.findViewById(R.id.oil);
         tv2=(TextView) rootView.findViewById(R.id.txt_bensin);
