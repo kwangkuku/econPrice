@@ -23,7 +23,7 @@
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="วันที่   :    "
+            android:text="วันที่   : "
             android:textSize="24dp"
             android:textStyle="normal|bold" />
 
@@ -32,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="@color/color_gray_tv_oil_price"
             android:inputType="textPersonName"
             android:onClick="onClick"
             android:textAlignment="center"
@@ -64,7 +65,7 @@
         <Spinner
             android:id="@+id/oilTypeSpinner"
             style="@style/Widget.AppCompat.Spinner.Underlined"
-            android:layout_width="198dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:textSize="16sp"

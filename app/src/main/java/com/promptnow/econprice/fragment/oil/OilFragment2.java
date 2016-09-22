@@ -162,7 +162,7 @@ public class OilFragment2 extends Fragment {
 
 
         ArrayAdapter<String> oilAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_dropdown_item_1line, arrayList);
+                android.R.layout.simple_list_item_1, arrayList);
         oilTypeSpinner.setAdapter(oilAdapter);
 
 
