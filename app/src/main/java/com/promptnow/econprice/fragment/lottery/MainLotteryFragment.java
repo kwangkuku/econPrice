@@ -17,9 +17,10 @@ import com.promptnow.econprice.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainLotteryFragment extends android.support.v4.app.Fragment {
+public class MainLotteryFragment extends android.support.v4.app.Fragment  {
     private Typeface font;
     private View rootView;
+
     // Fragment TabHost as mTabHost
     //private FragmentTabHost mTabHost;
 
@@ -37,12 +38,19 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
         TabLayout tabLayout;
         final ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
          tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout);
-
+//
 //        tabLayout.addTab(tabLayout.newTab().setText("ตรวจรางวัล"));
 //        tabLayout.addTab(tabLayout.newTab().setText("เลขเด็ด"));
         viewPager.setAdapter(new SampleFragmentPagerAdapterLotto(getChildFragmentManager(),
                 getFragments()));
         tabLayout.setupWithViewPager(viewPager);
+
+//        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+//            TabLayout.Tab tab = tabLayout.getTabAt(i);
+//
+//            tab.setCustomView(SampleFragmentPagerAdapterLotto.getTabView(i));
+//        }
+
 
 
     }
@@ -54,6 +62,7 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
         fList.add(new LotteryFragment2());
         return fList;
     }
+
 }
 
 

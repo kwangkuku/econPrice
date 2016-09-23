@@ -55,17 +55,17 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     }
 
     private void LottoSpinner() {
-//        String[] List = {"1 กันยายน 2559", "16 สิงหาคม 2559", "1 สิงหาคม 2559", "16 กรกฏาคม 2559"};
-//        CustomAdapter lottoAdapter = new CustomAdapter(getActivity(),List);
+        String[] List = {"1/9/2016", "16/8/2016", "1/8/2016", "16/7/2016"};
+        CustomAdapter lottoAdapter = new CustomAdapter(getActivity(),List);
         spin = (Spinner) rootView.findViewById(R.id.spin);
-        ArrayList<String> arrayList = new ArrayList<String>();
-        arrayList.add("1/9/2016");
-        arrayList.add("16/8/2016");
-        arrayList.add("1/8/2016");
-        arrayList.add("16/7/2016");
-        ArrayAdapter<String> lottoAdapter = new ArrayAdapter<String>(getActivity(),
-                //เปลี่ยนlayout
-                android.R.layout.simple_list_item_1, arrayList);
+//        ArrayList<String> arrayList = new ArrayList<String>();
+//        arrayList.add("1/9/2016");
+//        arrayList.add("16/8/2016");
+//        arrayList.add("1/8/2016");
+//        arrayList.add("16/7/2016");
+//        ArrayAdapter<String> lottoAdapter = new ArrayAdapter<String>(getActivity(),
+//                //เปลี่ยนlayout
+//                android.R.layout.simple_list_item_1, arrayList);
         spin.setAdapter(lottoAdapter);
 
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.promptnow.econprice.R;
 
@@ -16,7 +17,8 @@ import com.promptnow.econprice.R;
 public class PageFragmentLotto extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
-    private String  tabTitles[]= {"ตรวจรางวัล", "เลขเด็ด"};
+    private String tabTitles[] = {"ตรวจรางวัล", "เลขเด็ด"};
+
 
     public static PageFragmentLotto newInstance(int page) {
         Bundle args = new Bundle();
@@ -24,20 +26,26 @@ public class PageFragmentLotto extends Fragment {
         PageFragmentLotto fragment = new PageFragmentLotto();
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt(ARG_PAGE);
+
     }
 
-    @Override
+   // @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.checklottery, container, false);
+                             Bundle savedInstanceState,int position) {
+       // View view = inflater.inflate(R.layout.checklottery, container, false);
 
-
+       View view = inflater.inflate(R.layout.custom_tab, null);
+        Typeface font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        TextView tv = (TextView) view.findViewById(R.id.textView);
+        tv.setText(tabTitles[position]);
+        tv.setTypeface(font);
         return view;
     }
 }
