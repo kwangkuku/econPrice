@@ -40,15 +40,15 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
 
     }
 
+
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.oil, container, false);
-//        setResetText();
+
         setView();
+
 
         return rootView;
     }
-
-  
 
 
     public void setView() {
@@ -81,7 +81,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
         month = c.get(Calendar.MONTH);
         month += 1;
         day = c.get(Calendar.DAY_OF_MONTH);
-        String stringOfDate = day + "/" + month + "/" + year;
+        stringOfDate = day + "/" + month + "/" + year;
 
         tv_date_oil_price.setText(stringOfDate);
 
@@ -100,7 +100,6 @@ public class OilFragment extends android.support.v4.app.DialogFragment {
 
 
     }
-
 
 }
 
