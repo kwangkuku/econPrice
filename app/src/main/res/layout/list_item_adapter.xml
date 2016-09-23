@@ -5,29 +5,22 @@
     android:orientation="horizontal"
     >
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="2dp"
-        android:gravity="center"
-        >
+
+
         <TextView
             android:id="@+id/name_spin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="@color/colorBlack"
-            android:textSize="18dp"
-            android:layout_marginBottom="14dp"
-           />
-        <View
-
+            android:textColor="@color/color_gray_tv_oil_price"
+            android:textSize="24dp"
             android:layout_width="match_parent"
-            android:layout_height="0.9dp"
-            android:background="#d6d4d4"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:gravity="center_vertical"
+            android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+            android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall"
+            />
+
+
 
 
 </LinearLayout>
