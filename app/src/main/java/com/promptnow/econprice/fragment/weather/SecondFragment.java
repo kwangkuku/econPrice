@@ -35,7 +35,7 @@ public class SecondFragment extends Fragment {
     private HashMap<String, List<String>> listDataChild;
     private View rootView;
     private MyExpandableAdapter listAdapter;
-    private TextView txt_time,textData,update,edittext;
+    private TextView txt_time,textData,update,edittext,lblListItem ;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_secondwea, container, false);
@@ -54,13 +54,13 @@ public class SecondFragment extends Fragment {
 
         expListView = (ExpandableListView) rootView.findViewById(R.id.expListView);
         expListView.setDividerHeight(2);
+
         // preparing list data
         prepareListData();
 
         listAdapter = new MyExpandableAdapter(getActivity(), listDataHeader, listDataChild);
         // setting list adapter
         expListView.setAdapter(listAdapter);
-
 
         Singleton.getInstance().getIndexlist().toString();
 
