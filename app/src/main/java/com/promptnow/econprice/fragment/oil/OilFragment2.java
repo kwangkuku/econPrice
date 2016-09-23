@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.fragment.lottery.CustomAdapter;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -158,17 +159,18 @@ public class OilFragment2 extends Fragment {
     private void setOilTypeSpiner() {
         oilTypeSpinner = (Spinner) rootView.findViewById(R.id.oilTypeSpinner);
         //  oilTypeSpinner.setEnabled(false);
-
-        ArrayList<String> arrayList = new ArrayList<String>();
-        arrayList.add("เบนซิล 95");
-        arrayList.add("แก๊สโซฮอล์ 95");
-        arrayList.add("E20");
-        arrayList.add("E85");
-        arrayList.add("ดีเซล");
-
-
-        ArrayAdapter<String> oilAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1, arrayList);
+        String[] List = {"เบนซิล 95", "แก๊สโซฮอล์ 95", "E20", "E85","ดีเซล"};
+        CustomAdapterOil oilAdapter = new CustomAdapterOil(getActivity(),List);
+//        ArrayList<String> arrayList = new ArrayList<String>();
+//        arrayList.add("เบนซิล 95");
+//        arrayList.add("แก๊สโซฮอล์ 95");
+//        arrayList.add("E20");
+//        arrayList.add("E85");
+//        arrayList.add("ดีเซล");
+//
+//
+//        ArrayAdapter<String> oilAdapter = new ArrayAdapter<String>(getActivity(),
+//                android.R.layout.simple_list_item_1, arrayList);
         oilTypeSpinner.setAdapter(oilAdapter);
 
 

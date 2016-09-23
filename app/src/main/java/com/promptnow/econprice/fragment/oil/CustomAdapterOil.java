@@ -1,33 +1,28 @@
-package com.promptnow.econprice.fragment.lottery;
+package com.promptnow.econprice.fragment.oil;
 
 import android.content.Context;
-import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-
-import java.util.ArrayList;
 
 
 /**
  * Created by Admin on 8/9/2559.
  */
 
-public class CustomAdapter extends BaseAdapter {
+public class CustomAdapterOil extends BaseAdapter {
 
     Context mContext;
     String[] strName;
 
 
 
-    public CustomAdapter(Context context,  String[] strName) {
+    public CustomAdapterOil(Context context, String[] strName) {
         this.mContext = context;
         this.strName = strName;
 
