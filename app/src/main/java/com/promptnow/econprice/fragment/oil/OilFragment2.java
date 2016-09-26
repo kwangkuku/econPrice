@@ -19,6 +19,8 @@ import android.widget.TextView;
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
 
+import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
+
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
@@ -89,6 +91,7 @@ public class OilFragment2 extends Fragment {
                 dialog.setContentView(R.layout.custom_dialog);
                 dialog.setCancelable(true);
 
+<<<<<<< HEAD
 
                 img_vs1.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -109,6 +112,9 @@ public class OilFragment2 extends Fragment {
                 b3.setImageResource(Dummy.newInstance().popup.get(3));
 
 
+=======
+                final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
+>>>>>>> origin/master
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -120,6 +126,12 @@ public class OilFragment2 extends Fragment {
                         img_vs1.setImageResource(Dummy.newInstance().popup.get(1));
                         img_vs2.setImageResource(Dummy.newInstance().popup.get(0));
 
+                        img_vs1.setImageResource(Dummy.newInstance().popup.get(1));
+                        img_vs2.setImageResource(Dummy.newInstance().popup.get(0));
+//
+//                        b1.setImageResource(Dummy.newInstance().popup.get(0));
+//                        b1.setImageResource(Dummy.newInstance().popup.get(2));
+//                        b1.setImageResource(Dummy.newInstance().popup.get(3));
 
                         dialog.dismiss();
                     }
@@ -131,7 +143,11 @@ public class OilFragment2 extends Fragment {
                     public void onClick(View view) {
                         img_vs1.setImageResource(R.drawable.ic_shell);
                         dialog.dismiss();
+<<<<<<< HEAD
                         //   img_vs2.setImageResource(R.drawable.ic_bangjak);
+=======
+                        img_vs2.setImageResource(R.drawable.ic_bangjak);
+>>>>>>> origin/master
 
                     }
                 });
@@ -164,7 +180,10 @@ public class OilFragment2 extends Fragment {
                     public void onClick(View view) {
                         img_vs2.setImageResource(R.drawable.ic_bangjak);
                         dialog.dismiss();
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 
                     }
                 });
@@ -315,11 +334,11 @@ public class OilFragment2 extends Fragment {
         tv_date_oil_vs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Initialize a new date picker dialog fragment
-                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
-
-                // Show the date picker dialog fragment
-                dFragment.show(getActivity().getFragmentManager(), "Date Picker");
+//                // Initialize a new date picker dialog fragment
+//                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
+//
+//                // Show the date picker dialog fragment
+//                dFragment.show(getActivity().getFragmentManager(), "Date Picker");
             }
         });
 
