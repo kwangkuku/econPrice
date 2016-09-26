@@ -17,10 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-<<<<<<< HEAD
-=======
 import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
->>>>>>> a8b6c179572c718698c797aaefea3d43ab4036ce
 
 import java.text.DecimalFormat;
 import java.util.Calendar;
