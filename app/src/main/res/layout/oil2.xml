@@ -39,7 +39,7 @@
             android:onClick="onClick"
             android:textAlignment="textStart"
             style="@style/Widget.AppCompat.Spinner.Underlined"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
 
     </LinearLayout>
