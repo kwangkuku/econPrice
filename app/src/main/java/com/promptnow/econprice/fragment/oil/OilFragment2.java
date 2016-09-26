@@ -89,10 +89,10 @@ public class OilFragment2 extends Fragment {
 
                         img_vs1.setImageResource(Dummy.newInstance().popup.get(1));
                         img_vs2.setImageResource(Dummy.newInstance().popup.get(0));
-////
-// //                       b1.setImageResource(Dummy.newInstance().popup.get(0));
-//  //                      b1.setImageResource(Dummy.newInstance().popup.get(2));
-// //                       b1.setImageResource(Dummy.newInstance().popup.get(3));
+//
+ //                       b1.setImageResource(Dummy.newInstance().popup.get(0));
+  //                      b1.setImageResource(Dummy.newInstance().popup.get(2));
+ //                       b1.setImageResource(Dummy.newInstance().popup.get(3));
 
                         dialog.dismiss();
                     }
