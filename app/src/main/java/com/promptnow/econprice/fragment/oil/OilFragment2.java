@@ -17,10 +17,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-<<<<<<< HEAD
-=======
+
 import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
->>>>>>> a8b6c179572c718698c797aaefea3d43ab4036ce
 
 import java.text.DecimalFormat;
 import java.util.Calendar;
@@ -281,11 +279,11 @@ public class OilFragment2 extends Fragment {
         tv_date_oil_vs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Initialize a new date picker dialog fragment
-                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
-
-                // Show the date picker dialog fragment
-                dFragment.show(getActivity().getFragmentManager(), "Date Picker");
+//                // Initialize a new date picker dialog fragment
+//                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
+//
+//                // Show the date picker dialog fragment
+//                dFragment.show(getActivity().getFragmentManager(), "Date Picker");
             }
         });
 
