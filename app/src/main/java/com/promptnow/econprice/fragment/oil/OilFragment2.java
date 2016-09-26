@@ -17,9 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-
 import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
-
 
 import java.text.DecimalFormat;
 import java.util.Calendar;
@@ -52,6 +50,15 @@ public class OilFragment2 extends Fragment {
         b2 = (ImageView) rootView.findViewById(R.id.b2);
         b3 = (ImageView) rootView.findViewById(R.id.b3);
 
+//        GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
+//
+//
+//        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+//
+//            }
+//        });
+
 
         setView();
         setOilTypeSpiner();
@@ -72,7 +79,7 @@ public class OilFragment2 extends Fragment {
 
                 final Dialog dialog = new Dialog(getActivity());
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.customdialog);
+                dialog.setContentView(R.layout.custom_dialog);
                 dialog.setCancelable(true);
 
                 final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
@@ -82,10 +89,10 @@ public class OilFragment2 extends Fragment {
 
                         img_vs1.setImageResource(Dummy.newInstance().popup.get(1));
                         img_vs2.setImageResource(Dummy.newInstance().popup.get(0));
-//
-//                        b1.setImageResource(Dummy.newInstance().popup.get(0));
-//                        b1.setImageResource(Dummy.newInstance().popup.get(2));
-//                        b1.setImageResource(Dummy.newInstance().popup.get(3));
+////
+// //                       b1.setImageResource(Dummy.newInstance().popup.get(0));
+//  //                      b1.setImageResource(Dummy.newInstance().popup.get(2));
+// //                       b1.setImageResource(Dummy.newInstance().popup.get(3));
 
                         dialog.dismiss();
                     }
@@ -121,7 +128,7 @@ public class OilFragment2 extends Fragment {
 
                 final Dialog dialog = new Dialog(getActivity());
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.customdialog);
+                dialog.setContentView(R.layout.custom_dialog);
                 dialog.setCancelable(true);
 
                 ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
