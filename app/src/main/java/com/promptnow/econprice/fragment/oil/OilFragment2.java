@@ -46,6 +46,13 @@ public class OilFragment2 extends Fragment {
         tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
+
+//
+//        GridView gridview = (GridView) this.getActivity().findViewById(R.id.gridview);
+//        //  gridview.setAdapter(new CustomAdapter(this.getActivity()));
+//
+//        gridview.setAdapter(new CustomAdapter(rootView.getContext()));
+
         b1 = (ImageView) rootView.findViewById(R.id.b1);
         b2 = (ImageView) rootView.findViewById(R.id.b2);
         b3 = (ImageView) rootView.findViewById(R.id.b3);
@@ -82,23 +89,43 @@ public class OilFragment2 extends Fragment {
                 dialog.setContentView(R.layout.custom_dialog);
                 dialog.setCancelable(true);
 
+
+                img_vs1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.show();
+
+                    }
+                });
+
+
                 final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
+                b1.setImageResource(Dummy.newInstance().popup.get(1));
+
+                final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+                b2.setImageResource(Dummy.newInstance().popup.get(2));
+
+                final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
+                b3.setImageResource(Dummy.newInstance().popup.get(3));
+
+
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+//
+                        //b1.setImageResource(Dummy.newInstance().popup.get(1));
+//                        b2.setImageResource(Dummy.newInstance().popup.get(2));
+//                        b3.setImageResource(Dummy.newInstance().popup.get(3));
 
                         img_vs1.setImageResource(Dummy.newInstance().popup.get(1));
                         img_vs2.setImageResource(Dummy.newInstance().popup.get(0));
-//
- //                       b1.setImageResource(Dummy.newInstance().popup.get(0));
-  //                      b1.setImageResource(Dummy.newInstance().popup.get(2));
- //                       b1.setImageResource(Dummy.newInstance().popup.get(3));
+
 
                         dialog.dismiss();
                     }
                 });
 
-                ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+                // ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
                 b2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -109,7 +136,7 @@ public class OilFragment2 extends Fragment {
                     }
                 });
 
-                ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
+                // ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
                 b3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -137,6 +164,7 @@ public class OilFragment2 extends Fragment {
                     public void onClick(View view) {
                         img_vs2.setImageResource(R.drawable.ic_bangjak);
                         dialog.dismiss();
+
 
                     }
                 });
