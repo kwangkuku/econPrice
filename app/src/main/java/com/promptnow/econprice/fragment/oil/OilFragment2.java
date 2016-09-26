@@ -12,16 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.fragment.lottery.CustomAdapter;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -79,7 +76,7 @@ public class OilFragment2 extends Fragment {
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        img_vs1.setImageResource(R.drawable.ic_bangjak);
 
                     }
                 });
@@ -88,6 +85,7 @@ public class OilFragment2 extends Fragment {
                 b2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        img_vs1.setImageResource(R.drawable.ic_shell);
 
                     }
                 });
@@ -96,7 +94,7 @@ public class OilFragment2 extends Fragment {
                 b3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        img_vs1.setImageResource(R.drawable.ic_esso);
                     }
                 });
                 dialog.show();
@@ -117,6 +115,7 @@ public class OilFragment2 extends Fragment {
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        img_vs1.setImageResource(R.drawable.ic_bangjak);
 
                     }
                 });
@@ -125,6 +124,7 @@ public class OilFragment2 extends Fragment {
                 b2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        img_vs1.setImageResource(R.drawable.ic_shell);
 
                     }
                 });
@@ -133,7 +133,7 @@ public class OilFragment2 extends Fragment {
                 b3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        img_vs1.setImageResource(R.drawable.ic_esso);
                     }
                 });
                 dialog.show();
@@ -159,8 +159,8 @@ public class OilFragment2 extends Fragment {
     private void setOilTypeSpiner() {
         oilTypeSpinner = (Spinner) rootView.findViewById(R.id.oilTypeSpinner);
         //  oilTypeSpinner.setEnabled(false);
-        String[] List = {"เบนซิล 95", "แก๊สโซฮอล์ 95", "E20", "E85","ดีเซล"};
-        CustomAdapterOil oilAdapter = new CustomAdapterOil(getActivity(),List);
+        String[] List = {"เบนซิล 95", "แก๊สโซฮอล์ 95", "E20", "E85", "ดีเซล"};
+        CustomAdapterOil oilAdapter = new CustomAdapterOil(getActivity(), List);
 //        ArrayList<String> arrayList = new ArrayList<String>();
 //        arrayList.add("เบนซิล 95");
 //        arrayList.add("แก๊สโซฮอล์ 95");
