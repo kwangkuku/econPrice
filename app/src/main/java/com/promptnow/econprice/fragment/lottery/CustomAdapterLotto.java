@@ -20,14 +20,14 @@ import java.util.ArrayList;
  * Created by Admin on 8/9/2559.
  */
 
-public class CustomAdapter extends BaseAdapter {
+public class CustomAdapterLotto extends BaseAdapter {
 
     Context mContext;
     String[] strName;
 
 
 
-    public CustomAdapter(Context context,  String[] strName) {
+    public CustomAdapterLotto(Context context, String[] strName) {
         this.mContext = context;
         this.strName = strName;
 

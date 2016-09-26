@@ -1,7 +1,6 @@
 package com.promptnow.econprice.fragment.weather;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.fragment.lottery.CustomAdapter;
-
-import static java.security.AccessController.getContext;
 
 /**
  * Created by Admin on 8/9/2559.

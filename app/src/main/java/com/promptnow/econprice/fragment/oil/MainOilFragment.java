@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.fragment.lottery.SampleFragmentPagerAdapterLotto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +52,7 @@ public class MainOilFragment extends Fragment {
         viewPager.setAdapter(new SampleFragmentPagerAdapterOil(getChildFragmentManager(),
                 getFragments()));
         tabLayout.setupWithViewPager(viewPager);
+        SampleFragmentPagerAdapterOil.applyFontedTab(getActivity().getApplicationContext(),viewPager,tabLayout);
     }
 
     private List<Fragment> getFragments() {

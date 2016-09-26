@@ -1,9 +1,5 @@
 package com.promptnow.econprice.fragment.lottery;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,20 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.fragment.weather.CustomAdapterr;
-import com.promptnow.econprice.view.Singleton;
 import com.promptnow.econprice.view.View_popup;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Whankung on 7/9/2559.
@@ -56,7 +44,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
     private void LottoSpinner() {
         String[] List = {"1/9/2016", "16/8/2016", "1/8/2016", "16/7/2016"};
-        CustomAdapter lottoAdapter = new CustomAdapter(getActivity(),List);
+        CustomAdapterLotto lottoAdapter = new CustomAdapterLotto(getActivity(),List);
         spin = (Spinner) rootView.findViewById(R.id.spin);
 //        ArrayList<String> arrayList = new ArrayList<String>();
 //        arrayList.add("1/9/2016");
@@ -156,6 +144,9 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         tv18.setTypeface(font);
         tv19.setTypeface(font);
         tv20.setTypeface(font);
+
+
+
 
     }
 

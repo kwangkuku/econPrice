@@ -17,7 +17,7 @@ import com.promptnow.econprice.R;
 public class PageFragmentLotto extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
-    private String tabTitles[] = {"ตรวจรางวัล", "เลขเด็ด"};
+
 
 
     public static PageFragmentLotto newInstance(int page) {
@@ -36,16 +36,4 @@ public class PageFragmentLotto extends Fragment {
 
     }
 
-   // @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState,int position) {
-       // View view = inflater.inflate(R.layout.checklottery, container, false);
-
-       View view = inflater.inflate(R.layout.custom_tab, null);
-        Typeface font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
-        TextView tv = (TextView) view.findViewById(R.id.textView);
-        tv.setText(tabTitles[position]);
-        tv.setTypeface(font);
-        return view;
-    }
 }
