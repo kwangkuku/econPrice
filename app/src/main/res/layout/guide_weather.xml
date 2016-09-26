@@ -34,8 +34,9 @@
         android:layout_height="wrap_content"
         android:text="สามารถเลือกภาคในแต่ละภาคเพื่อดูอุณภูมิในแต่ละจังหวัด"
         android:textAlignment="center"
-        android:layout_marginLeft="34dp"
-        android:layout_marginRight="34dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="15dp"
         android:textSize="22sp" />
 
 
