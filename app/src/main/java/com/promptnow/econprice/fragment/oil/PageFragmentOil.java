@@ -17,7 +17,7 @@ public class PageFragmentOil extends Fragment {
 
     private int mPage;
 
-    public static PageFragmentOil newInstance(int page) {
+    public static PageFragmentOil getInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
         PageFragmentOil fragment = new PageFragmentOil();

@@ -79,83 +79,83 @@ public class DatePickerFragmentDialog extends DialogFragment implements DatePick
 
             // Row1
             TextView tv_bs_colum1 = (TextView) getActivity().findViewById(R.id.tv_bs_colum1);
-            tv_bs_colum1.setText(Dummy.newInstance().ptt_day_10.get(0) + " ");
+            tv_bs_colum1.setText(Dummy.getInstance().ptt_day_10.get(0) + " ");
 
             TextView tv_bs_colum2 = (TextView) getActivity().findViewById(R.id.tv_bs_colum2);
-            tv_bs_colum2.setText(Dummy.newInstance().bangjak_day_10.get(0) + " ");
+            tv_bs_colum2.setText(Dummy.getInstance().bangjak_day_10.get(0) + " ");
 
             TextView tv_bs_colum3 = (TextView) getActivity().findViewById(R.id.tv_bs_colum3);
-            tv_bs_colum3.setText(Dummy.newInstance().shell_day_10.get(0) + " ");
+            tv_bs_colum3.setText(Dummy.getInstance().shell_day_10.get(0) + " ");
 
             TextView tv_bs_colum4 = (TextView) getActivity().findViewById(R.id.tv_bs_colum4);
-            tv_bs_colum4.setText(Dummy.newInstance().esso_day_10.get(0) + " ");
+            tv_bs_colum4.setText(Dummy.getInstance().esso_day_10.get(0) + " ");
 
             // Row2
             TextView tv_gsh95_colum1 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum1);
-            tv_gsh95_colum1.setText(Dummy.newInstance().ptt_day_10.get(1) + " ");
+            tv_gsh95_colum1.setText(Dummy.getInstance().ptt_day_10.get(1) + " ");
 
             TextView tv_gsh95_colum2 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum2);
-            tv_gsh95_colum2.setText(Dummy.newInstance().bangjak_day_10.get(1) + " ");
+            tv_gsh95_colum2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " ");
 
             TextView tv_gsh95_colum3 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum3);
-            tv_gsh95_colum3.setText(Dummy.newInstance().shell_day_10.get(1) + " ");
+            tv_gsh95_colum3.setText(Dummy.getInstance().shell_day_10.get(1) + " ");
 
             TextView tv_gsh95_colum4 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum4);
-            tv_gsh95_colum4.setText(Dummy.newInstance().esso_day_10.get(1) + " ");
+            tv_gsh95_colum4.setText(Dummy.getInstance().esso_day_10.get(1) + " ");
 
             //Row3
             TextView tv_gsh91_colum1 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum1);
-            tv_gsh91_colum1.setText(Dummy.newInstance().ptt_day_10.get(2) + " ");
+            tv_gsh91_colum1.setText(Dummy.getInstance().ptt_day_10.get(2) + " ");
 
             TextView tv_gsh91_colum2 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum2);
-            tv_gsh91_colum2.setText(Dummy.newInstance().bangjak_day_10.get(2) + " ");
+            tv_gsh91_colum2.setText(Dummy.getInstance().bangjak_day_10.get(2) + " ");
 
             TextView tv_gsh91_colum3 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum3);
-            tv_gsh91_colum3.setText(Dummy.newInstance().shell_day_10.get(2) + " ");
+            tv_gsh91_colum3.setText(Dummy.getInstance().shell_day_10.get(2) + " ");
 
             TextView tv_gsh91_colum4 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum4);
-            tv_gsh91_colum4.setText(Dummy.newInstance().esso_day_10.get(2) + " ");
+            tv_gsh91_colum4.setText(Dummy.getInstance().esso_day_10.get(2) + " ");
 
 
             // Row4
             TextView tv_e20_colum1 = (TextView) getActivity().findViewById(R.id.tv_e20_colum1);
-            tv_e20_colum1.setText(Dummy.newInstance().ptt_day_10.get(3) + " ");
+            tv_e20_colum1.setText(Dummy.getInstance().ptt_day_10.get(3) + " ");
 
             TextView tv_e20_colum2 = (TextView) getActivity().findViewById(R.id.tv_e20_colum2);
-            tv_e20_colum2.setText(Dummy.newInstance().bangjak_day_10.get(3) + " ");
+            tv_e20_colum2.setText(Dummy.getInstance().bangjak_day_10.get(3) + " ");
 
             TextView tv_e20_colum3 = (TextView) getActivity().findViewById(R.id.tv_e20_colum3);
-            tv_e20_colum3.setText(Dummy.newInstance().shell_day_10.get(3) + " ");
+            tv_e20_colum3.setText(Dummy.getInstance().shell_day_10.get(3) + " ");
 
             TextView tv_e20_colum4 = (TextView) getActivity().findViewById(R.id.tv_e20_colum4);
-            tv_e20_colum4.setText(Dummy.newInstance().esso_day_10.get(3) + " ");
+            tv_e20_colum4.setText(Dummy.getInstance().esso_day_10.get(3) + " ");
 
             //Row5
             TextView tv_e85_colum1 = (TextView) getActivity().findViewById(R.id.tv_e85_colum1);
-            tv_e85_colum1.setText(Dummy.newInstance().ptt_day_10.get(4) + " ");
+            tv_e85_colum1.setText(Dummy.getInstance().ptt_day_10.get(4) + " ");
 
             TextView tv_e85_colum2 = (TextView) getActivity().findViewById(R.id.tv_e85_colum2);
-            tv_e85_colum2.setText(Dummy.newInstance().bangjak_day_10.get(4) + " ");
+            tv_e85_colum2.setText(Dummy.getInstance().bangjak_day_10.get(4) + " ");
 
             TextView tv_e85_colum3 = (TextView) getActivity().findViewById(R.id.tv_e85_colum3);
-            tv_e85_colum3.setText(Dummy.newInstance().shell_day_10.get(4) + " ");
+            tv_e85_colum3.setText(Dummy.getInstance().shell_day_10.get(4) + " ");
 
             TextView tv_e85_colum4 = (TextView) getActivity().findViewById(R.id.tv_e85_colum4);
-            tv_e85_colum4.setText(Dummy.newInstance().esso_day_10.get(4) + " ");
+            tv_e85_colum4.setText(Dummy.getInstance().esso_day_10.get(4) + " ");
 
             //Row6
 
             TextView tv_ds_colum1 = (TextView) getActivity().findViewById(R.id.tv_disel_colum1);
-            tv_ds_colum1.setText(Dummy.newInstance().ptt_day_10.get(5) + " ");
+            tv_ds_colum1.setText(Dummy.getInstance().ptt_day_10.get(5) + " ");
 
             TextView tv_ds_colum2 = (TextView) getActivity().findViewById(R.id.tv_disel_colum2);
-            tv_ds_colum2.setText(Dummy.newInstance().bangjak_day_10.get(5) + " ");
+            tv_ds_colum2.setText(Dummy.getInstance().bangjak_day_10.get(5) + " ");
 
             TextView tv_ds_colum3 = (TextView) getActivity().findViewById(R.id.tv_disel_colum3);
-            tv_ds_colum3.setText(Dummy.newInstance().shell_day_10.get(5) + " ");
+            tv_ds_colum3.setText(Dummy.getInstance().shell_day_10.get(5) + " ");
 
             TextView tv_ds_colum4 = (TextView) getActivity().findViewById(R.id.tv_disel_colum4);
-            tv_ds_colum4.setText(Dummy.newInstance().esso_day_10.get(5) + " ");
+            tv_ds_colum4.setText(Dummy.getInstance().esso_day_10.get(5) + " ");
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -186,83 +186,83 @@ public class DatePickerFragmentDialog extends DialogFragment implements DatePick
 
             // Row1
             TextView tv_bs_colum1 = (TextView) getActivity().findViewById(R.id.tv_bs_colum1);
-            tv_bs_colum1.setText(Dummy.newInstance().ptt_day_18.get(0) + " ");
+            tv_bs_colum1.setText(Dummy.getInstance().ptt_day_18.get(0) + " ");
 
             TextView tv_bs_colum2 = (TextView) getActivity().findViewById(R.id.tv_bs_colum2);
-            tv_bs_colum2.setText(Dummy.newInstance().bangjak_day_18.get(0) + " ");
+            tv_bs_colum2.setText(Dummy.getInstance().bangjak_day_18.get(0) + " ");
 
             TextView tv_bs_colum3 = (TextView) getActivity().findViewById(R.id.tv_bs_colum3);
-            tv_bs_colum3.setText(Dummy.newInstance().shell_day_18.get(0) + " ");
+            tv_bs_colum3.setText(Dummy.getInstance().shell_day_18.get(0) + " ");
 
             TextView tv_bs_colum4 = (TextView) getActivity().findViewById(R.id.tv_bs_colum4);
-            tv_bs_colum4.setText(Dummy.newInstance().esso_day_18.get(0) + " ");
+            tv_bs_colum4.setText(Dummy.getInstance().esso_day_18.get(0) + " ");
 
             // Row2
             TextView tv_gsh95_colum1 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum1);
-            tv_gsh95_colum1.setText(Dummy.newInstance().ptt_day_18.get(1) + " ");
+            tv_gsh95_colum1.setText(Dummy.getInstance().ptt_day_18.get(1) + " ");
 
             TextView tv_gsh95_colum2 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum2);
-            tv_gsh95_colum2.setText(Dummy.newInstance().bangjak_day_18.get(1) + " ");
+            tv_gsh95_colum2.setText(Dummy.getInstance().bangjak_day_18.get(1) + " ");
 
             TextView tv_gsh95_colum3 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum3);
-            tv_gsh95_colum3.setText(Dummy.newInstance().shell_day_18.get(1) + " ");
+            tv_gsh95_colum3.setText(Dummy.getInstance().shell_day_18.get(1) + " ");
 
             TextView tv_gsh95_colum4 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum4);
-            tv_gsh95_colum4.setText(Dummy.newInstance().esso_day_18.get(1) + " ");
+            tv_gsh95_colum4.setText(Dummy.getInstance().esso_day_18.get(1) + " ");
 
             //Row3
             TextView tv_gsh91_colum1 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum1);
-            tv_gsh91_colum1.setText(Dummy.newInstance().ptt_day_18.get(2) + " ");
+            tv_gsh91_colum1.setText(Dummy.getInstance().ptt_day_18.get(2) + " ");
 
             TextView tv_gsh91_colum2 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum2);
-            tv_gsh91_colum2.setText(Dummy.newInstance().bangjak_day_18.get(2) + " ");
+            tv_gsh91_colum2.setText(Dummy.getInstance().bangjak_day_18.get(2) + " ");
 
             TextView tv_gsh91_colum3 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum3);
-            tv_gsh91_colum3.setText(Dummy.newInstance().shell_day_18.get(2) + " ");
+            tv_gsh91_colum3.setText(Dummy.getInstance().shell_day_18.get(2) + " ");
 
             TextView tv_gsh91_colum4 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum4);
-            tv_gsh91_colum4.setText(Dummy.newInstance().esso_day_18.get(2) + " ");
+            tv_gsh91_colum4.setText(Dummy.getInstance().esso_day_18.get(2) + " ");
 
 
             // Row4
             TextView tv_e20_colum1 = (TextView) getActivity().findViewById(R.id.tv_e20_colum1);
-            tv_e20_colum1.setText(Dummy.newInstance().ptt_day_18.get(3) + " ");
+            tv_e20_colum1.setText(Dummy.getInstance().ptt_day_18.get(3) + " ");
 
             TextView tv_e20_colum2 = (TextView) getActivity().findViewById(R.id.tv_e20_colum2);
-            tv_e20_colum2.setText(Dummy.newInstance().bangjak_day_18.get(3) + " ");
+            tv_e20_colum2.setText(Dummy.getInstance().bangjak_day_18.get(3) + " ");
 
             TextView tv_e20_colum3 = (TextView) getActivity().findViewById(R.id.tv_e20_colum3);
-            tv_e20_colum3.setText(Dummy.newInstance().shell_day_18.get(3) + " ");
+            tv_e20_colum3.setText(Dummy.getInstance().shell_day_18.get(3) + " ");
 
             TextView tv_e20_colum4 = (TextView) getActivity().findViewById(R.id.tv_e20_colum4);
-            tv_e20_colum4.setText(Dummy.newInstance().esso_day_18.get(3) + " ");
+            tv_e20_colum4.setText(Dummy.getInstance().esso_day_18.get(3) + " ");
 
             //Row5
             TextView tv_e85_colum1 = (TextView) getActivity().findViewById(R.id.tv_e85_colum1);
-            tv_e85_colum1.setText(Dummy.newInstance().ptt_day_18.get(4) + " ");
+            tv_e85_colum1.setText(Dummy.getInstance().ptt_day_18.get(4) + " ");
 
             TextView tv_e85_colum2 = (TextView) getActivity().findViewById(R.id.tv_e85_colum2);
-            tv_e85_colum2.setText(Dummy.newInstance().bangjak_day_18.get(4) + " ");
+            tv_e85_colum2.setText(Dummy.getInstance().bangjak_day_18.get(4) + " ");
 
             TextView tv_e85_colum3 = (TextView) getActivity().findViewById(R.id.tv_e85_colum3);
-            tv_e85_colum3.setText(Dummy.newInstance().shell_day_18.get(4) + " ");
+            tv_e85_colum3.setText(Dummy.getInstance().shell_day_18.get(4) + " ");
 
             TextView tv_e85_colum4 = (TextView) getActivity().findViewById(R.id.tv_e85_colum4);
-            tv_e85_colum4.setText(Dummy.newInstance().esso_day_18.get(4) + " ");
+            tv_e85_colum4.setText(Dummy.getInstance().esso_day_18.get(4) + " ");
 
             //Row6
 
             TextView tv_ds_colum1 = (TextView) getActivity().findViewById(R.id.tv_disel_colum1);
-            tv_ds_colum1.setText(Dummy.newInstance().ptt_day_18.get(5) + " ");
+            tv_ds_colum1.setText(Dummy.getInstance().ptt_day_18.get(5) + " ");
 
             TextView tv_ds_colum2 = (TextView) getActivity().findViewById(R.id.tv_disel_colum2);
-            tv_ds_colum2.setText(Dummy.newInstance().bangjak_day_18.get(5) + " ");
+            tv_ds_colum2.setText(Dummy.getInstance().bangjak_day_18.get(5) + " ");
 
             TextView tv_ds_colum3 = (TextView) getActivity().findViewById(R.id.tv_disel_colum3);
-            tv_ds_colum3.setText(Dummy.newInstance().shell_day_18.get(5) + " ");
+            tv_ds_colum3.setText(Dummy.getInstance().shell_day_18.get(5) + " ");
 
             TextView tv_ds_colum4 = (TextView) getActivity().findViewById(R.id.tv_disel_colum4);
-            tv_ds_colum4.setText(Dummy.newInstance().esso_day_18.get(05) + " ");
+            tv_ds_colum4.setText(Dummy.getInstance().esso_day_18.get(05) + " ");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Oil VS Price
@@ -292,83 +292,83 @@ public class DatePickerFragmentDialog extends DialogFragment implements DatePick
 
             // Row1
             TextView tv_bs_colum1 = (TextView) getActivity().findViewById(R.id.tv_bs_colum1);
-            tv_bs_colum1.setText(Dummy.newInstance().ptt_day_27.get(0) + " ");
+            tv_bs_colum1.setText(Dummy.getInstance().ptt_day_27.get(0) + " ");
 
             TextView tv_bs_colum2 = (TextView) getActivity().findViewById(R.id.tv_bs_colum2);
-            tv_bs_colum2.setText(Dummy.newInstance().bangjak_day_27.get(0) + " ");
+            tv_bs_colum2.setText(Dummy.getInstance().bangjak_day_27.get(0) + " ");
 
             TextView tv_bs_colum3 = (TextView) getActivity().findViewById(R.id.tv_bs_colum3);
-            tv_bs_colum3.setText(Dummy.newInstance().shell_day_27.get(0) + " ");
+            tv_bs_colum3.setText(Dummy.getInstance().shell_day_27.get(0) + " ");
 
             TextView tv_bs_colum4 = (TextView) getActivity().findViewById(R.id.tv_bs_colum4);
-            tv_bs_colum4.setText(Dummy.newInstance().esso_day_27.get(0) + " ");
+            tv_bs_colum4.setText(Dummy.getInstance().esso_day_27.get(0) + " ");
 
             // Row2
             TextView tv_gsh95_colum1 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum1);
-            tv_gsh95_colum1.setText(Dummy.newInstance().ptt_day_27.get(1) + " ");
+            tv_gsh95_colum1.setText(Dummy.getInstance().ptt_day_27.get(1) + " ");
 
             TextView tv_gsh95_colum2 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum2);
-            tv_gsh95_colum2.setText(Dummy.newInstance().bangjak_day_27.get(1) + " ");
+            tv_gsh95_colum2.setText(Dummy.getInstance().bangjak_day_27.get(1) + " ");
 
             TextView tv_gsh95_colum3 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum3);
-            tv_gsh95_colum3.setText(Dummy.newInstance().shell_day_27.get(1) + " ");
+            tv_gsh95_colum3.setText(Dummy.getInstance().shell_day_27.get(1) + " ");
 
             TextView tv_gsh95_colum4 = (TextView) getActivity().findViewById(R.id.tv_gsh95_colum4);
-            tv_gsh95_colum4.setText(Dummy.newInstance().esso_day_27.get(1) + " ");
+            tv_gsh95_colum4.setText(Dummy.getInstance().esso_day_27.get(1) + " ");
 
             //Row3
             TextView tv_gsh91_colum1 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum1);
-            tv_gsh91_colum1.setText(Dummy.newInstance().ptt_day_27.get(2) + " ");
+            tv_gsh91_colum1.setText(Dummy.getInstance().ptt_day_27.get(2) + " ");
 
             TextView tv_gsh91_colum2 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum2);
-            tv_gsh91_colum2.setText(Dummy.newInstance().bangjak_day_27.get(2) + " ");
+            tv_gsh91_colum2.setText(Dummy.getInstance().bangjak_day_27.get(2) + " ");
 
             TextView tv_gsh91_colum3 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum3);
-            tv_gsh91_colum3.setText(Dummy.newInstance().shell_day_27.get(2) + " ");
+            tv_gsh91_colum3.setText(Dummy.getInstance().shell_day_27.get(2) + " ");
 
             TextView tv_gsh91_colum4 = (TextView) getActivity().findViewById(R.id.tv_gsh91_colum4);
-            tv_gsh91_colum4.setText(Dummy.newInstance().esso_day_27.get(2) + " ");
+            tv_gsh91_colum4.setText(Dummy.getInstance().esso_day_27.get(2) + " ");
 
 
             // Row4
             TextView tv_e20_colum1 = (TextView) getActivity().findViewById(R.id.tv_e20_colum1);
-            tv_e20_colum1.setText(Dummy.newInstance().ptt_day_27.get(3) + " ");
+            tv_e20_colum1.setText(Dummy.getInstance().ptt_day_27.get(3) + " ");
 
             TextView tv_e20_colum2 = (TextView) getActivity().findViewById(R.id.tv_e20_colum2);
-            tv_e20_colum2.setText(Dummy.newInstance().bangjak_day_27.get(3) + " ");
+            tv_e20_colum2.setText(Dummy.getInstance().bangjak_day_27.get(3) + " ");
 
             TextView tv_e20_colum3 = (TextView) getActivity().findViewById(R.id.tv_e20_colum3);
-            tv_e20_colum3.setText(Dummy.newInstance().shell_day_27.get(3) + " ");
+            tv_e20_colum3.setText(Dummy.getInstance().shell_day_27.get(3) + " ");
 
             TextView tv_e20_colum4 = (TextView) getActivity().findViewById(R.id.tv_e20_colum4);
-            tv_e20_colum4.setText(Dummy.newInstance().esso_day_27.get(3) + " ");
+            tv_e20_colum4.setText(Dummy.getInstance().esso_day_27.get(3) + " ");
 
             //Row5
             TextView tv_e85_colum1 = (TextView) getActivity().findViewById(R.id.tv_e85_colum1);
-            tv_e85_colum1.setText(Dummy.newInstance().ptt_day_27.get(4) + " ");
+            tv_e85_colum1.setText(Dummy.getInstance().ptt_day_27.get(4) + " ");
 
             TextView tv_e85_colum2 = (TextView) getActivity().findViewById(R.id.tv_e85_colum2);
-            tv_e85_colum2.setText(Dummy.newInstance().bangjak_day_27.get(4) + " ");
+            tv_e85_colum2.setText(Dummy.getInstance().bangjak_day_27.get(4) + " ");
 
             TextView tv_e85_colum3 = (TextView) getActivity().findViewById(R.id.tv_e85_colum3);
-            tv_e85_colum3.setText(Dummy.newInstance().shell_day_27.get(4) + " ");
+            tv_e85_colum3.setText(Dummy.getInstance().shell_day_27.get(4) + " ");
 
             TextView tv_e85_colum4 = (TextView) getActivity().findViewById(R.id.tv_e85_colum4);
-            tv_e85_colum4.setText(Dummy.newInstance().esso_day_27.get(4) + " ");
+            tv_e85_colum4.setText(Dummy.getInstance().esso_day_27.get(4) + " ");
 
             //Row6
 
             TextView tv_ds_colum1 = (TextView) getActivity().findViewById(R.id.tv_disel_colum1);
-            tv_ds_colum1.setText(Dummy.newInstance().ptt_day_27.get(5) + " ");
+            tv_ds_colum1.setText(Dummy.getInstance().ptt_day_27.get(5) + " ");
 
             TextView tv_ds_colum2 = (TextView) getActivity().findViewById(R.id.tv_disel_colum2);
-            tv_ds_colum2.setText(Dummy.newInstance().bangjak_day_27.get(5) + " ");
+            tv_ds_colum2.setText(Dummy.getInstance().bangjak_day_27.get(5) + " ");
 
             TextView tv_ds_colum3 = (TextView) getActivity().findViewById(R.id.tv_disel_colum3);
-            tv_ds_colum3.setText(Dummy.newInstance().shell_day_27.get(5) + " ");
+            tv_ds_colum3.setText(Dummy.getInstance().shell_day_27.get(5) + " ");
 
             TextView tv_ds_colum4 = (TextView) getActivity().findViewById(R.id.tv_disel_colum4);
-            tv_ds_colum4.setText(Dummy.newInstance().esso_day_27.get(5) + " ");
+            tv_ds_colum4.setText(Dummy.getInstance().esso_day_27.get(5) + " ");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Oil VS Price
