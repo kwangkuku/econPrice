@@ -12,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="30dp"
         android:background="@color/color_bg"
         android:gravity="center">
@@ -20,7 +22,7 @@
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="วันที่   :    "
+            android:text="วันที่   :  "
             android:textSize="24dp"
             android:textStyle="normal|bold" />
 
@@ -50,8 +52,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:gravity="center">
 
@@ -131,9 +133,9 @@
                 android:id="@+id/tableRow2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:background="@color/color_bg_table"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="center">
 
                 <TextView
@@ -142,8 +144,8 @@
                     android:layout_height="50dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="เบนซิล"
-                    android:textAlignment="center"
+                    android:text="  เบนซิล"
+                    android:textAlignment="textStart"
                     android:textSize="24dp"
                     android:textStyle="normal|bold" />
 
@@ -155,8 +157,7 @@
                     android:gravity="center"
                     android:text="31.76"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum2"
@@ -166,8 +167,7 @@
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum3"
@@ -177,8 +177,7 @@
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum4"
@@ -188,359 +187,307 @@
                     android:gravity="center"
                     android:text="32.21"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/txt_gassohol95"
-                    android:layout_width="85dp"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="โซฮอล์95"
-                    android:textAlignment="viewStart"
+                    android:text="  โซฮอล์95"
+                    android:textAlignment="textStart"
                     android:textSize="24dp"
                     android:textStyle="normal|bold" />
 
                 <TextView
                     android:id="@+id/tv_gsh95_colum1"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="24.38"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh95_colum2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="24.85"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh95_colum3"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh95_colum4"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="24.65"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
             </TableRow>
-
             <TableRow
                 android:id="@+id/tableRow4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:background="@color/color_bg_table"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/txt_gassohol91"
-                    android:layout_width="85dp"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="โซฮอล์91"
-                    android:textAlignment="viewStart"
+                    android:text="  โซฮอล์91"
+                    android:textAlignment="textStart"
                     android:textSize="24dp"
                     android:textStyle="normal|bold" />
 
                 <TextView
                     android:id="@+id/tv_gsh91_colum1"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="22.14"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh91_colum2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="23.75"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh91_colum3"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="22.14"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh91_colum4"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/txt_e20"
-                    android:layout_width="85dp"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="E20"
-                    android:textAlignment="viewStart"
+                    android:text="  E20"
+                    android:textAlignment="textStart"
                     android:textSize="24dp"
                     android:textStyle="normal|bold" />
 
                 <TextView
                     android:id="@+id/tv_e20_colum1"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="23.75"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_e20_colum2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="23.75"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_e20_colum3"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_e20_colum4"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="25.11"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-                android:background="@color/color_bg_table"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/txt_e85"
-                    android:layout_width="85dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:text="E85"
-                    android:textAlignment="viewStart"
-                    android:textSize="24dp"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:id="@+id/tv_e85_colum1"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:gravity="center"
-                    android:text="17.99"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:id="@+id/tv_e85_colum2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:gravity="center"
-                    android:text="23.75"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:id="@+id/tv_e85_colum3"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:gravity="center"
-                    android:text="18.32"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:id="@+id/tv_e85_colum4"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:gravity="center"
-                    android:text="-"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/color_bg_table"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center">
 
+                <TextView
+                    android:id="@+id/txt_e85"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="  E85"
+                    android:textAlignment="textStart"
+                    android:textSize="24dp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:id="@+id/tv_e85_colum1"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="17.99"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_e85_colum2"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="23.75"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_e85_colum3"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="18.32"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_e85_colum4"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/txt_disel"
-                    android:layout_width="85dp"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="ดีเซล"
-                    android:textAlignment="viewStart"
+                    android:text="  ดีเซล"
+                    android:textAlignment="textStart"
                     android:textSize="24dp"
                     android:textStyle="normal|bold" />
 
                 <TextView
                     android:id="@+id/tv_disel_colum1"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="24.19"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_disel_colum2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="24.25"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_disel_colum3"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="24.62"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_disel_colum4"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="24.65"
                     android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal|bold" />
+                    android:textSize="14sp" />
             </TableRow>
 
         </TableLayout>
