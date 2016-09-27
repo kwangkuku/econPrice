@@ -185,7 +185,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
     private void setData(String date) {
         String d = date.substring(0, 2);
-        
+
 //       String d = date.substring(0, 2); ใช้ในกรณีที่วันที่มีค่าเป็น 23/1/2016 9 หลัก
 // แต่ถ้าเป็น case ที่        วันที่มีค่าเป็น 8/1/2016  8 หลัก จะใช้   String d = date.substring(0, ๅ);
 
