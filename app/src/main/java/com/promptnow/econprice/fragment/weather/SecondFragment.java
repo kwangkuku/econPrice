@@ -55,6 +55,7 @@ public class SecondFragment extends Fragment {
         expListView = (ExpandableListView) rootView.findViewById(R.id.expListView);
         expListView.setDividerHeight(2);
 
+
         // preparing list data
         prepareListData();
 
@@ -154,10 +155,15 @@ return true;
         txt_time = (TextView) rootView.findViewById(R.id.txt_time);
 
         Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(System.currentTimeMillis());
 
         int minutes = c.get(Calendar.MINUTE);
         int hour = c.get(Calendar.HOUR_OF_DAY);
-        String time = hour + ":" +minutes + " " + "น.";
+        String curTime = String.format("%02d:%02d", hour, minutes);
+     String time = curTime  +" "+ "น.";
+
+
+
 
         if (hour < 12 && hour >= 0) {
             txt_time.setText(time);
@@ -180,6 +186,7 @@ return true;
 
 
     }
+
 }
 
 
