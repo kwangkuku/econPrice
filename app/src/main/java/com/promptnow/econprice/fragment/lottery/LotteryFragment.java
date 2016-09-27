@@ -214,6 +214,8 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     private void setNumber() {
         input = (EditText) rootView.findViewById(R.id.seach_num);
         input.addTextChangedListener(watch);
+        input.clearFocus();
+
     }
 
     private TextWatcher watch = new TextWatcher() {
