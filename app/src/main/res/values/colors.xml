@@ -20,8 +20,8 @@
     <color name="color_txt_oil">#228B22</color>
     <color name="color_gray">#fdfdfd</color>
     <color name="color_tab_lotto">#f2f2f2</color>
-
-
+    <color name="seach_num_lot">#f2f2f2</color>
+    <color name="text_hint">#aeadad</color>
 
     <!--OilPrice-->
     <color name="color_gray_tv_oil_price">#666565</color>
