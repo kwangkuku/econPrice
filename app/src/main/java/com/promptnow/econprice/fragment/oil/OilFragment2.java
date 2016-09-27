@@ -15,12 +15,13 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.promptnow.econprice.R;
+<<<<<<< HEAD
 import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
 
+=======
+>>>>>>> origin/master
 import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
-
 import java.text.DecimalFormat;
 import java.util.Calendar;
 

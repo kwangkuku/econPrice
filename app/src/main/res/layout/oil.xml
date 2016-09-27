@@ -15,8 +15,6 @@
         android:background="@color/color_bg"
         android:gravity="center">
 
-
-
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
@@ -41,7 +39,7 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_bg"
         android:gravity="center">
@@ -50,10 +48,17 @@
             android:id="@+id/tableRow1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+<<<<<<< HEAD
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="20dp"
+=======
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+>>>>>>> origin/master
             android:gravity="center">
 
 
@@ -61,10 +66,13 @@
                 android:id="@+id/oil"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+<<<<<<< HEAD
+=======
+                android:layout_gravity="right"
+>>>>>>> origin/master
                 android:layout_weight="0.15"
                 android:gravity="center"
                 android:text="ประเภทน้ำมัน"
-                android:textAlignment="textStart"
                 android:textColor="@color/color_gray_tv_oil_price"
                 android:textSize="24dp"
                 android:textStyle="normal|bold"
@@ -76,15 +84,22 @@
                 android:id="@+id/logo_ptt"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+<<<<<<< HEAD
                 android:gravity="center"
                 android:layout_weight="0.2"
                 app:srcCompat="@drawable/ic_ptt"
                 />
+=======
+                android:layout_weight="0.2"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_ptt" />
+>>>>>>> origin/master
 
             <ImageView
                 android:id="@+id/logo_bcp"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+<<<<<<< HEAD
                 android:gravity="center"
                 android:layout_weight="0.2"
                 app:srcCompat="@drawable/ic_bangjak" />
@@ -108,13 +123,34 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             app:srcCompat="@drawable/ic_shell" />
+=======
+                android:layout_weight="0.2"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_bangjak" />
 
-        <ImageView
+>>>>>>> origin/master
+
+
+
+
+            <ImageView
+                android:id="@+id/logo_shell"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_shell" />
+
+            <ImageView
                 android:id="@+id/logo_esso"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="0.2"
+<<<<<<< HEAD
                android:gravity="center"
+=======
+                android:gravity="center"
+>>>>>>> origin/master
                 app:srcCompat="@drawable/ic_esso" />
 
         </TableRow>
@@ -125,28 +161,45 @@
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+   >
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+<<<<<<< HEAD
         >
+=======
+            >
+>>>>>>> origin/master
 
             <TableRow
                 android:id="@+id/tableRow2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+<<<<<<< HEAD
                 android:background="@color/color_bg_table"
                 android:layout_marginLeft="60dp"
                 android:layout_marginRight="20dp"
                 android:gravity="center"
                 >
+=======
+                android:layout_marginBottom="9dp"
+                android:layout_marginTop="9dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="20dp">
+>>>>>>> origin/master
 
                 <TextView
                     android:id="@+id/txt_bensin"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+<<<<<<< HEAD
                     android:layout_weight="0.1"
+=======
+                    android:layout_weight="0.15"
+>>>>>>> origin/master
                     android:gravity="center"
                     android:text="เบนซิล"
                     android:textSize="24dp"
@@ -156,7 +209,12 @@
                     android:id="@+id/tv_bs_colum1"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+<<<<<<< HEAD
                     android:layout_weight="0.25"
+=======
+                    android:layout_gravity="right"
+                    android:layout_weight="0.2"
+>>>>>>> origin/master
                     android:gravity="center"
                     android:layout_gravity="right"
                     android:text="31.76"
@@ -167,7 +225,12 @@
                     android:id="@+id/tv_bs_colum2"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+<<<<<<< HEAD
                     android:layout_weight="0.25"
+=======
+                    android:layout_weight="0.2"
+                    android:layout_gravity="right"
+>>>>>>> origin/master
                     android:gravity="center"
                     android:text="-"
                     android:textSize="14sp"
@@ -175,9 +238,16 @@
 
                 <TextView
                     android:id="@+id/tv_bs_colum3"
+<<<<<<< HEAD
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_weight="0.25"
+=======
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="0.2"
+>>>>>>> origin/master
                     android:gravity="center"
                     android:text="-"
                     android:textSize="14sp"
@@ -187,10 +257,17 @@
                     android:id="@+id/tv_bs_colum4"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+<<<<<<< HEAD
                     android:layout_weight="0.25"
                     android:gravity="center"
                     android:text="32.21"
 
+=======
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="32.21"
+                  android:layout_gravity="right"
+>>>>>>> origin/master
                     android:textSize="14sp"
                     android:textStyle="normal|bold" />
             </TableRow>
