@@ -2,7 +2,6 @@ package com.promptnow.econprice.fragment.oil;
 
 import android.app.Dialog;
 import android.graphics.Typeface;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -32,8 +31,7 @@ public class OilFragment2 extends Fragment {
     private Spinner oilTypeSpinner;
     private TextView tv_date_oil_vs, tv, tv2, tv3, tv4;
     private TextView show_vs1, show_vs2, tv_show_result;
-    private ImageView img_vs1, img_vs2, b1, b2, b3;
-    private Image ic_ptt;
+    private ImageView img_vs1, img_vs2 ;
     double vs1, vs2;
     double result;
 
@@ -48,18 +46,13 @@ public class OilFragment2 extends Fragment {
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
 
 
-//
 //        GridView gridview = (GridView) this.getActivity().findViewById(R.id.gridview);
-//        //  gridview.setAdapter(new CustomAdapter(this.getActivity()));
+//        gridview.setAdapter(new CustomAdapter(this.getActivity()));
 //
 //        gridview.setAdapter(new CustomAdapter(rootView.getContext()));
 
-        b1 = (ImageView) rootView.findViewById(R.id.b1);
-        b2 = (ImageView) rootView.findViewById(R.id.b2);
-        b3 = (ImageView) rootView.findViewById(R.id.b3);
 
 //        GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
-//
 //
 //        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -81,7 +74,6 @@ public class OilFragment2 extends Fragment {
         img_vs1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//               startActivity(new Intent(getActivity(),Popup.class));
                 final Dialog dialog = new Dialog(getActivity());
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.custom_dialog);
@@ -127,7 +119,7 @@ public class OilFragment2 extends Fragment {
                     }
                 });
 
-            
+
                 b2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
