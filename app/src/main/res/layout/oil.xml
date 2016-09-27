@@ -15,12 +15,10 @@
         android:background="@color/color_bg"
         android:gravity="center">
 
-
-
         <TextView
             android:id="@+id/date"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="วันที่   :    "
             android:textSize="24dp"
             android:textStyle="normal|bold" />
@@ -50,19 +48,21 @@
             android:id="@+id/tableRow1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_marginLeft="@dimen/text_view"
-            android:layout_marginRight="10dp">
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
 
 
             <TextView
                 android:id="@+id/oil"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_gravity="right"
                 android:layout_weight="0.15"
                 android:gravity="center"
                 android:text="ประเภทน้ำมัน"
-                android:textAlignment="textStart"
                 android:textColor="@color/color_gray_tv_oil_price"
                 android:textSize="24dp"
                 android:textStyle="normal|bold"
@@ -74,37 +74,28 @@
                 android:id="@+id/logo_ptt"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:gravity="center"
                 android:layout_weight="0.2"
-                app:srcCompat="@drawable/ic_ptt"
-                />
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_ptt" />
 
             <ImageView
                 android:id="@+id/logo_bcp"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:gravity="center"
                 android:layout_weight="0.2"
+                android:gravity="center"
                 app:srcCompat="@drawable/ic_bangjak" />
 
 
-        <ImageView
-            android:id="@+id/logo_shell"
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="0"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            app:srcCompat="@drawable/ic_shell" />
+
 
 
             <ImageView
                 android:id="@+id/logo_shell"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:gravity="center"
                 android:layout_weight="0.2"
+                android:gravity="center"
                 app:srcCompat="@drawable/ic_shell" />
 
             <ImageView
@@ -112,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="0.2"
-               android:gravity="center"
+                android:gravity="center"
                 app:srcCompat="@drawable/ic_esso" />
 
         </TableRow>
@@ -123,80 +114,75 @@
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            >
 
             <TableRow
                 android:id="@+id/tableRow2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:background="@color/color_bg_table"
-                android:gravity="center">
+                android:layout_marginBottom="9dp"
+                android:layout_marginTop="9dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="20dp">
 
                 <TextView
                     android:id="@+id/txt_bensin"
-                    android:layout_width="85dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.15"
                     android:gravity="center"
                     android:text="เบนซิล"
-                    android:textAlignment="viewStart"
                     android:textSize="24dp"
                     android:textStyle="normal|bold" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum1"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="31.76"
-                    android:textAlignment="center"
                     android:textSize="14sp"
                     android:textStyle="normal|bold" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
+                    android:layout_gravity="right"
                     android:gravity="center"
                     android:text="-"
-                    android:textAlignment="center"
                     android:textSize="14sp"
                     android:textStyle="normal|bold" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum3"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="-"
-                    android:textAlignment="center"
                     android:textSize="14sp"
                     android:textStyle="normal|bold" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum4"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.2"
                     android:gravity="center"
                     android:text="32.21"
-                    android:textAlignment="center"
+                    android:layout_gravity="right"
                     android:textSize="14sp"
                     android:textStyle="normal|bold" />
             </TableRow>

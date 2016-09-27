@@ -23,9 +23,9 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
         android:text="ตรวจผลสลากกินแบ่งรัฐบาล"
         android:textAlignment="center"
         android:textSize="22dp" />
@@ -44,9 +44,9 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="15dp"
         android:text="พร้อมกับการทำนายเลขเด็ดล่วงหน้าในงวดต่อไป"
         android:textAlignment="center"
         android:textSize="22dp" />

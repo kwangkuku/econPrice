@@ -2,7 +2,6 @@ package com.promptnow.econprice.fragment.oil;
 
 import android.app.Dialog;
 import android.graphics.Typeface;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,8 +14,10 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
+
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
@@ -30,8 +31,7 @@ public class OilFragment2 extends Fragment {
     private Spinner oilTypeSpinner;
     private TextView tv_date_oil_vs, tv, tv2, tv3, tv4;
     private TextView show_vs1, show_vs2, tv_show_result;
-    private ImageView img_vs1, img_vs2, b1, b2, b3;
-    private Image ic_ptt;
+    private ImageView img_vs1, img_vs2 ;
     double vs1, vs2;
     double result;
 
@@ -44,10 +44,21 @@ public class OilFragment2 extends Fragment {
         tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
-        b1 = (ImageView) rootView.findViewById(R.id.b1);
-        b2 = (ImageView) rootView.findViewById(R.id.b2);
-        b3 = (ImageView) rootView.findViewById(R.id.b3);
 
+
+//        GridView gridview = (GridView) this.getActivity().findViewById(R.id.gridview);
+//        gridview.setAdapter(new CustomAdapter(this.getActivity()));
+//
+//        gridview.setAdapter(new CustomAdapter(rootView.getContext()));
+
+
+//        GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
+//
+//        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+//
+//            }
+//        });
 
         setView();
         setOilTypeSpiner();
@@ -63,21 +74,42 @@ public class OilFragment2 extends Fragment {
         img_vs1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-//               startActivity(new Intent(getActivity(),Popup.class));
-
                 final Dialog dialog = new Dialog(getActivity());
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.customdialog);
+                dialog.setContentView(R.layout.custom_dialog);
                 dialog.setCancelable(true);
 
+                img_vs1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.show();
+
+                    }
+                });
+
+
                 final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
+                b1.setImageResource(Dummy.newInstance().popup.get(0));
+
+                final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+                b2.setImageResource(Dummy.newInstance().popup.get(1));
+
+                final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
+                b3.setImageResource(Dummy.newInstance().popup.get(2));
+
+                final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
+                b4.setImageResource(Dummy.newInstance().popup.get(3));
+
+
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-                        img_vs1.setImageResource(Dummy.newInstance().popup.get(1));
-                        img_vs2.setImageResource(Dummy.newInstance().popup.get(0));
+                        img_vs1.setImageResource(Dummy.newInstance().popup.get(0));
+//                        img_vs2.setImageResource(Dummy.newInstance().popup.get(0));
+//
+//                        img_vs1.setImageResource(Dummy.newInstance().popup.get(1));
+//                        img_vs2.setImageResource(Dummy.newInstance().popup.get(0));
 //
 //                        b1.setImageResource(Dummy.newInstance().popup.get(0));
 //                        b1.setImageResource(Dummy.newInstance().popup.get(2));
@@ -87,70 +119,102 @@ public class OilFragment2 extends Fragment {
                     }
                 });
 
-                ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+
                 b2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        img_vs1.setImageResource(R.drawable.ic_shell);
+                        img_vs1.setImageResource(Dummy.newInstance().popup.get(1));
                         dialog.dismiss();
-                        img_vs2.setImageResource(R.drawable.ic_bangjak);
+                        //   img_vs2.setImageResource(R.drawable.ic_bangjak);
+
+                        // img_vs2.setImageResource(R.drawable.ic_bangjak);
+
 
                     }
                 });
 
-                ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
                 b3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        img_vs1.setImageResource(R.drawable.ic_esso);
+                        img_vs1.setImageResource(Dummy.newInstance().popup.get(2));
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+
+                b4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        img_vs1.setImageResource(Dummy.newInstance().popup.get(3));
                         dialog.dismiss();
                     }
                 });
                 dialog.show();
             }
         });
+
+
         img_vs2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-//               startActivity(new Intent(getActivity(),Popup.class));
-
                 final Dialog dialog = new Dialog(getActivity());
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.customdialog);
+                dialog.setContentView(R.layout.custom_dialog);
                 dialog.setCancelable(true);
 
-                ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
+
+                final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
+                b1.setImageResource(Dummy.newInstance().popup.get(0));
+
+                final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+                b2.setImageResource(Dummy.newInstance().popup.get(1));
+
+                final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
+                b3.setImageResource(Dummy.newInstance().popup.get(2));
+
+                final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
+                b4.setImageResource(Dummy.newInstance().popup.get(3));
+
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        img_vs2.setImageResource(R.drawable.ic_bangjak);
+                        img_vs2.setImageResource(Dummy.newInstance().popup.get(0));
                         dialog.dismiss();
 
                     }
                 });
 
-                ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+
                 b2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        img_vs2.setImageResource(R.drawable.ic_shell);
+                        img_vs2.setImageResource(Dummy.newInstance().popup.get(1));
                         dialog.dismiss();
 
                     }
                 });
 
-                ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
+
                 b3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        img_vs2.setImageResource(R.drawable.ic_esso);
+                        img_vs2.setImageResource(Dummy.newInstance().popup.get(2));
+                        dialog.dismiss();
+                    }
+                });
+
+
+                b4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        img_vs2.setImageResource(Dummy.newInstance().popup.get(3));
                         dialog.dismiss();
                     }
                 });
                 dialog.show();
             }
         });
+
 
     }
 

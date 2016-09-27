@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+
+    <!--<GridView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/gridview"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:columnWidth="120dp"-->
+    <!--android:gravity="center"-->
+    <!--android:horizontalSpacing="4dp"-->
+    <!--android:numColumns="3"-->
+    <!--android:verticalSpacing="4dp" />-->
+
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/b1"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_img_button"
+            android:padding="4dp"
+            android:scaleType="fitCenter"
+
+
+            />
+
+        <ImageView
+            android:id="@+id/b2"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_img_button"
+            android:padding="4dp"
+            android:scaleType="fitCenter"
+
+
+            />
+
+        <ImageView
+            android:id="@+id/b3"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_img_button"
+            android:padding="4dp"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/b4"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_img_button"
+            android:padding="4dp"
+            android:scaleType="fitCenter" />
+
+        />
+    </TableRow>
+
+</RelativeLayout>
+
+
