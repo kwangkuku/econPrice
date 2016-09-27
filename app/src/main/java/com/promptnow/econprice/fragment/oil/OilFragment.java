@@ -53,10 +53,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.oil, container, false);
-
         setView();
-
-
         return rootView;
     }
 

@@ -26,12 +26,12 @@
 
         <ImageView
             android:id="@+id/b1"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/bg_img_button"
-            android:padding="5dp"
+            android:padding="4dp"
             android:scaleType="fitCenter"
 
 
@@ -39,12 +39,12 @@
 
         <ImageView
             android:id="@+id/b2"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/bg_img_button"
-            android:padding="5dp"
+            android:padding="4dp"
             android:scaleType="fitCenter"
 
 
@@ -52,15 +52,25 @@
 
         <ImageView
             android:id="@+id/b3"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/bg_img_button"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
+            android:padding="4dp"
+            android:scaleType="fitCenter" />
 
-            />
+        <ImageView
+            android:id="@+id/b4"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_img_button"
+            android:padding="4dp"
+            android:scaleType="fitCenter" />
+
+        />
     </TableRow>
 
 </RelativeLayout>
