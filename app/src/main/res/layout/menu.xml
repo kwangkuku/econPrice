@@ -46,7 +46,11 @@
         app:bb_activeTabColor="@color/colorButtombar"
         app:bb_behavior="shifting|underNavbar"
         app:bb_inActiveTabColor="@color/colorButtombar"
-        app:bb_tabXmlResource="@xml/bottombar_tabs_three" />
+        app:bb_tabXmlResource="@xml/bottombar_tabs_three"
+
+
+
+      />
 
     <FrameLayout
         android:id="@+id/frgMain"

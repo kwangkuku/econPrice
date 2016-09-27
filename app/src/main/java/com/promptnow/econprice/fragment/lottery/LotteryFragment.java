@@ -1,15 +1,22 @@
 package com.promptnow.econprice.fragment.lottery;
 
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -17,6 +24,8 @@ import android.widget.TextView;
 
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.view.View_popup;
+
+import java.io.Closeable;
 
 /**
  * Created by Whankung on 7/9/2559.
@@ -44,7 +53,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
     private void LottoSpinner() {
         String[] List = {"1/9/2016", "16/8/2016", "1/8/2016", "16/7/2016"};
-        CustomAdapterLotto lottoAdapter = new CustomAdapterLotto(getActivity(),List);
+        CustomAdapterLotto lottoAdapter = new CustomAdapterLotto(getActivity(), List);
         spin = (Spinner) rootView.findViewById(R.id.spin);
 //        ArrayList<String> arrayList = new ArrayList<String>();
 //        arrayList.add("1/9/2016");
@@ -146,8 +155,6 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         tv20.setTypeface(font);
 
 
-
-
     }
 
     private void setDummy() {
@@ -216,7 +223,26 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         input.addTextChangedListener(watch);
         input.clearFocus();
 
+
+        input.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+
+                } else {
+                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
+                }
+
+            }
+        });
+
     }
+
+
+
 
     private TextWatcher watch = new TextWatcher() {
 
@@ -255,6 +281,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     public void setOnSubmitAlertDialogListener() {
 
     }
+
 
 }
 

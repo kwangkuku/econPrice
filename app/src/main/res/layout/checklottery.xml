@@ -20,7 +20,8 @@
         android:gravity="center"
         android:hint="ค้นหาผลสลากกินแบ่งรัฐบาล"
         android:inputType="number"
-        android:maxLength="6" />
+        android:maxLength="6"
+        android:focusableInTouchMode="true" />
 
 
     <TextView
@@ -30,7 +31,8 @@
         android:layout_gravity="center"
         android:text="@string/str_msgdate"
         android:textColor="@color/colorBlack"
-        android:textSize="@dimen/text_view" />
+        android:textSize="@dimen/text_view"
+        />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
