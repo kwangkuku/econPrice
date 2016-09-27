@@ -64,7 +64,7 @@ public class MainOilFragment extends Fragment {
 
         fList.add(new OilFragment2());
 
-        // fList.add(MyFragment.newInstance("Fragment 3"));
+        // fList.add(MyFragment.getInstance("Fragment 3"));
 
 
         return fList;
