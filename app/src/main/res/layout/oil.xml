@@ -89,17 +89,16 @@
                 android:layout_weight="0.2"
                 app:srcCompat="@drawable/ic_bangjak" />
 
-<<<<<<< HEAD
-            <ImageView
-                android:id="@+id/logo_shell"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:layout_weight="0.2"
-                app:srcCompat="@drawable/ic_shell" />
+            <!--<ImageView-->
+                <!--android:id="@+id/logo_shell"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_weight="0.2"-->
+                <!--app:srcCompat="@drawable/ic_shell" />-->
 
-            <ImageView
-=======
+            <!--<ImageView-->
+            
         <ImageView
             android:id="@+id/logo_shell"
             android:layout_width="30dp"
@@ -111,7 +110,6 @@
             app:srcCompat="@drawable/ic_shell" />
 
         <ImageView
->>>>>>> origin/master
                 android:id="@+id/logo_esso"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
