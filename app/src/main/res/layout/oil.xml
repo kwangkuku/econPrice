@@ -87,15 +87,7 @@
                 app:srcCompat="@drawable/ic_bangjak" />
 
 
-        <ImageView
-            android:id="@+id/logo_shell"
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="0"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            app:srcCompat="@drawable/ic_shell" />
+
 
 
             <ImageView
