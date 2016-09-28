@@ -15,6 +15,7 @@ import com.promptnow.econprice.R;
  * Created by Acer on 30/8/2559.
  */
 
+// splash screen lottery
 public class GuideLottery extends Fragment {
     private Typeface font;
     private TextView tv1, tv2, tv3, tv4, tv5;

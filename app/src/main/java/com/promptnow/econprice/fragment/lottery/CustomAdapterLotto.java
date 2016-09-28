@@ -20,6 +20,8 @@ import java.util.ArrayList;
  * Created by Admin on 8/9/2559.
  */
 
+
+// Custom Spinner
 public class CustomAdapterLotto extends BaseAdapter {
 
     Context mContext;

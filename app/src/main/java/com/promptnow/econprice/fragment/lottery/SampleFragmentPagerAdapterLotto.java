@@ -54,14 +54,12 @@ public class SampleFragmentPagerAdapterLotto extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-
         // Generate title based on item position
-
         return tabTitles[position];
 
     }
 
-
+// เปลี่ยน font tab
     public static void applyFontedTab(Context activity, ViewPager viewPager, TabLayout tabLayout) {
         Typeface font =Typeface.createFromAsset(activity.getAssets(), "tmedium.ttf");
         for (int i = 0; i < viewPager.getAdapter().getCount(); i++) {

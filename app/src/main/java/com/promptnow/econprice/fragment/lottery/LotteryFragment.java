@@ -25,6 +25,7 @@ import com.promptnow.econprice.view.View_popup;
  * Created by Whankung on 7/9/2559.
  */
 
+// หน้าตรวจรางวัล
 public class LotteryFragment extends Fragment implements View_popup.onSubmitAlertDialogListener {
     private View rootView;
     EditText input, seach;
@@ -214,6 +215,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
 
     private void setNumber() {
+//        แถบค้นหาผลสลากกินแบ่งรัฐบาล
         input = (EditText) rootView.findViewById(R.id.seach_num);
         input.addTextChangedListener(watch);
         input.clearFocus();
@@ -242,10 +244,13 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
         }
 
+//            pop up
         @Override
         public void onTextChanged(CharSequence s, int a, int b, int c) {
             Log.d("log", "123");
+//            ตัวเลขถูกรางวัล
             String prefix = "000000";
+
             String strMsg = "";
             if (s.toString().endsWith(prefix)) {
                 strMsg = getResources().getString(R.string.str_msgTrue);
@@ -266,7 +271,6 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     public void setOnSubmitAlertDialogListener() {
 
     }
-
 
 }
 

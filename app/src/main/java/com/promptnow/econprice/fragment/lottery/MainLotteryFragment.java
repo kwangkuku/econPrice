@@ -45,6 +45,7 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
     }
 
     private void setView() {
+//        เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
 
         final ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
