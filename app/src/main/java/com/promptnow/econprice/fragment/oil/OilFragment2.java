@@ -46,6 +46,13 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     double vs1_day_18 = 31.56, vs2_day_18 = 29.91;
     double vs1_day_27 = 26.77, vs2_day_27 = 26.56;
     double result;
+    //popup
+    double vs1_ptt = 10, vs2_ptt = 10;
+    double vs1_bangjak = 20, vs2_bangjak = 20;
+    double vs1_shell = 30, vs2_shell = 30;
+    double vs1_esso = 40, vs2_esso = 40;
+    double result_vs_popup;
+
 
     @Nullable
     @Override
@@ -151,7 +158,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     }
 
     private void setData(String date) {
-        // reset text กดปฏิทินแล้วเปลี่ยนค่าที่ไหน
+        // reset text กดปฏิทินแล้วเปลี่ยนค่าที่ไหนบ้าง
 
         String d = date.substring(0, 2);
 
@@ -190,7 +197,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             show_vs2.setText("" + vs2_day_27);
 
             result = vs1_day_27 - vs2_day_27;
-            
+
             tv_show_result.setText("" + result);
             tv_show_result.setText(new DecimalFormat("0.00").format(+result));
             if (result < 0) {
@@ -220,6 +227,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     public void onClick(View view) {
                         dialog.show();
 
+
                     }
                 });
 
@@ -242,6 +250,12 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     public void onClick(View view) {
 
                         img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
+                        show_vs1.setText("" + vs1_ptt);
+
+                        tv_show_result.setText("" + result_vs_popup);
+                        tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
+
+
 //                        img_vs2.setImageResource(Dummy.getInstance().popup.get(0));
 //
 //                        img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
@@ -252,7 +266,9 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 //                        b1.setImageResource(Dummy.getInstance().popup.get(3));
 
                         dialog.dismiss();
+
                     }
+
                 });
 
 
@@ -260,6 +276,9 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     @Override
                     public void onClick(View view) {
                         img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
+                        show_vs1.setText("" + vs1_bangjak);
+                        tv_show_result.setText("" + result_vs_popup);
+                        tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
                         dialog.dismiss();
                         //   img_vs2.setImageResource(R.drawable.ic_bangjak);
 
@@ -273,6 +292,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     @Override
                     public void onClick(View view) {
                         img_vs1.setImageResource(Dummy.getInstance().popup.get(2));
+                        show_vs1.setText("" + vs1_shell);
+                        tv_show_result.setText("" + result_vs_popup);
                         dialog.dismiss();
                     }
                 });
@@ -282,6 +303,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     @Override
                     public void onClick(View view) {
                         img_vs1.setImageResource(Dummy.getInstance().popup.get(3));
+                        show_vs1.setText("" + vs1_esso);
+                        tv_show_result.setText("" + result_vs_popup);
                         dialog.dismiss();
                     }
                 });
@@ -315,6 +338,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     @Override
                     public void onClick(View view) {
                         img_vs2.setImageResource(Dummy.getInstance().popup.get(0));
+                        show_vs2.setText("" + vs2_ptt);
+                        tv_show_result.setText("" + result_vs_popup);
                         dialog.dismiss();
 
                     }
@@ -325,6 +350,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     @Override
                     public void onClick(View view) {
                         img_vs2.setImageResource(Dummy.getInstance().popup.get(1));
+                        show_vs2.setText("" + vs2_bangjak);
+                        tv_show_result.setText("" + result_vs_popup);
                         dialog.dismiss();
 
                     }
@@ -335,6 +362,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     @Override
                     public void onClick(View view) {
                         img_vs2.setImageResource(Dummy.getInstance().popup.get(2));
+                        show_vs2.setText("" + vs2_shell);
+                        tv_show_result.setText("" + result_vs_popup);
                         dialog.dismiss();
                     }
                 });
@@ -344,10 +373,13 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     @Override
                     public void onClick(View view) {
                         img_vs2.setImageResource(Dummy.getInstance().popup.get(3));
+                        show_vs2.setText("" + vs2_esso);
+                        tv_show_result.setText("" + result_vs_popup);
                         dialog.dismiss();
                     }
                 });
                 dialog.show();
+
             }
         });
 
@@ -373,16 +405,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         //  oilTypeSpinner.setEnabled(false);
         String[] List = {"เบนซิล 95", "แก๊สโซฮอล์ 95", "E20", "E85", "ดีเซล"};
         CustomAdapterOil oilAdapter = new CustomAdapterOil(getActivity(), List);
-//        ArrayList<String> arrayList = new ArrayList<String>();
-//        arrayList.add("เบนซิล 95");
-//        arrayList.add("แก๊สโซฮอล์ 95");
-//        arrayList.add("E20");
-//        arrayList.add("E85");
-//        arrayList.add("ดีเซล");
-//
-//
-//        ArrayAdapter<String> oilAdapter = new ArrayAdapter<String>(getActivity(),
-//                android.R.layout.simple_list_item_1, arrayList);
         oilTypeSpinner.setAdapter(oilAdapter);
 
 
