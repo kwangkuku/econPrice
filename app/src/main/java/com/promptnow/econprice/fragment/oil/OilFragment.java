@@ -40,10 +40,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
     private int month;
     private int day;
     private String stringOfDate;
-    double vs1_day_10 = 23.45, vs2_day_10 = 25.77;
-    double vs1_day_18 = 31.56, vs2_day_18 = 29.91;
-    double vs1_day_27 = 26.77, vs2_day_27 = 26.56;
-    double result;
+
 
     public interface onSetDateListener {
 
@@ -127,11 +124,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         tv_date_oil_price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Initialize a new date picker dialog fragment
-//                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
-//
-//                // Show the date picker dialog fragment
-//                dFragment.show(getActivity().getFragmentManager(), "Date Picker");
+
                 showDatePikkerDialog();
 
             }
@@ -230,8 +223,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_ds_colum4.setText(Dummy.getInstance().esso_day_10.get(5) + " ");
 
 
-        }
-        if (d.equals("18")) {
+        } else if (d.equals("18")) {
 
             // Row1
             tv_bs_colum1.setText(Dummy.getInstance().ptt_day_18.get(0) + " ");
@@ -270,11 +262,8 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_ds_colum4.setText(Dummy.getInstance().esso_day_18.get(05) + " ");
 
 
+        } else if (d.equals("27")) {
 
-
-        }
-
-        if (d.equals("27")) {
 
             // Row1
             tv_bs_colum1.setText(Dummy.getInstance().ptt_day_27.get(0) + " ");

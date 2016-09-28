@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
+import com.promptnow.econprice.view.DatePickerFragment;
+import com.promptnow.econprice.view.UtilCalendar;
 
 import java.text.DecimalFormat;
 import java.util.Calendar;
@@ -25,40 +27,30 @@ import java.util.Calendar;
  * Created by Whankung on 7/9/2559.
  */
 
-public class OilFragment2 extends Fragment {
+public class OilFragment2 extends Fragment  implements DatePickerFragment.onSetDateListener{
     private View rootView;
     private Typeface font;
     private Spinner oilTypeSpinner;
     private TextView tv_date_oil_vs, tv, tv2, tv3, tv4;
     private TextView show_vs1, show_vs2, tv_show_result;
-    private ImageView img_vs1, img_vs2 ;
+    private ImageView img_vs1, img_vs2;
+    private int year;
+    private int month;
+    private int day;
     double vs1, vs2;
+    private int selectedYear;
+    private int selectedMonth;
+    private int selectedDay;
+    public DatePickerFragment.onSetDateListener mListener;
+    double vs1_day_10 = 23.45, vs2_day_10 = 25.77;
+    double vs1_day_18 = 31.56, vs2_day_18 = 29.91;
+    double vs1_day_27 = 26.77, vs2_day_27 = 26.56;
     double result;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.oil2, container, false);
-        show_vs1 = (TextView) rootView.findViewById(R.id.show_vs1);
-        show_vs2 = (TextView) rootView.findViewById(R.id.show_vs2);
-        tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
-        img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
-        img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
-
-
-//        GridView gridview = (GridView) this.getActivity().findViewById(R.id.gridview);
-//        gridview.setAdapter(new CustomAdapter(this.getActivity()));
-//
-//        gridview.setAdapter(new CustomAdapter(rootView.getContext()));
-
-
-//        GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
-//
-//        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-//
-//            }
-//        });
 
         setView();
         setOilTypeSpiner();
@@ -68,6 +60,120 @@ public class OilFragment2 extends Fragment {
         return rootView;
 
     }
+
+    //Date Picker
+    private void setView() {
+        tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
+        show_vs1 = (TextView) rootView.findViewById(R.id.show_vs1);
+        show_vs2 = (TextView) rootView.findViewById(R.id.show_vs2);
+        tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
+        img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
+        img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
+
+
+        //        เปลี่ยน font
+        tv = (TextView) rootView.findViewById(R.id.date);
+        tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
+        tv3 = (TextView) rootView.findViewById(R.id.tv3);
+        tv4 = (TextView) rootView.findViewById(R.id.bath);
+
+        //        เปลี่ยน font
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        tv.setTypeface(font);
+        tv2.setTypeface(font);
+        tv3.setTypeface(font);
+        tv4.setTypeface(font);
+
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        month += 1;
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        String stringOfDate = day + "/" + month + "/" + year;
+
+        tv_date_oil_vs.setText(stringOfDate);
+        setCurrentDate();
+
+
+        tv_date_oil_vs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePikkerDialog();
+
+            }
+
+
+        });
+
+
+    }
+
+    private void showDatePikkerDialog() {
+        DatePickerFragment picker = new DatePickerFragment(getActivity(), day, month, year);
+        picker.mListener = OilFragment2.this;
+        picker.show(getActivity().getFragmentManager(), "");
+
+    }
+
+
+    private void setCurrentDate() {
+        final Calendar c = UtilCalendar.getInstance();
+        year = c.get(Calendar.YEAR);
+        month = c.get(Calendar.MONTH);  //0;
+        day = c.get(Calendar.DAY_OF_MONTH); //1;
+    }
+
+
+    public void setDate(int day, int month, int year, String date, String dateFormat) {
+        final Calendar c = Calendar.getInstance();
+        Boolean isTrue = false;
+        if (year >= c.get(Calendar.YEAR)) {
+            if (month < c.get(Calendar.MONTH)) {
+                isTrue = true;
+            } else if (month == c.get(Calendar.MONTH)) {
+                if (day <= c.get(Calendar.DATE)) {
+                    isTrue = true;
+                }
+            }
+        } else {
+            isTrue = true;
+        }
+        if (isTrue) {
+            this.year = year;
+            this.month = month;
+            this.day = day;
+//            str_fromdate = dateFormat.substring(6,10)+dateFormat.substring(3,5)+dateFormat.substring(0,2);
+//            UtilLog.i("Boom", str_fromdate);
+            tv_date_oil_vs.setText(date);
+            setData(date);
+
+        }
+    }
+
+    private void setData(String date) {
+        // reset text กดปฏิทินแล้วเปลี่ยนค่าที่ไหน
+        String d = date.substring(0, 2);
+        if (d.equals("10")) {
+            show_vs1.setText("" + vs1_day_10);
+            show_vs2.setText("" + vs2_day_10);
+
+            result = vs1_day_10 - vs2_day_10;
+
+            tv_show_result.setText("" + result);
+            tv_show_result.setText(new DecimalFormat("0.00").format(+result));
+            if (result < 0) {
+                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+            } else if (result > 0) {
+                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+            }
+
+        }
+        }
+
+
+
 
     private void setVSpopup() {
 
@@ -310,46 +416,7 @@ public class OilFragment2 extends Fragment {
 
     }
 
-    //Date Picker
-    private void setView() {
-        tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
 
-        //        เปลี่ยน font
-        tv = (TextView) rootView.findViewById(R.id.date);
-        tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
-        tv3 = (TextView) rootView.findViewById(R.id.tv3);
-        tv4 = (TextView) rootView.findViewById(R.id.bath);
-
-        //        เปลี่ยน font
-        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
-        tv.setTypeface(font);
-        tv2.setTypeface(font);
-        tv3.setTypeface(font);
-        tv4.setTypeface(font);
-
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        month += 1;
-        int day = c.get(Calendar.DAY_OF_MONTH);
-        String stringOfDate = day + "/" + month + "/" + year;
-
-        tv_date_oil_vs.setText(stringOfDate);
-
-
-        tv_date_oil_vs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                // Initialize a new date picker dialog fragment
-//                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
-//
-//                // Show the date picker dialog fragment
-//                dFragment.show(getActivity().getFragmentManager(), "Date Picker");
-            }
-        });
-
-
-    }
 }
 
 
