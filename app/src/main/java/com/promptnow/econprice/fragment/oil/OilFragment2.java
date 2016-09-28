@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.TypedValue;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,12 +47,15 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     double vs1_day_18 = 31.56, vs2_day_18 = 29.91;
     double vs1_day_27 = 26.77, vs2_day_27 = 26.56;
     double result_change_spinner_and_datepicker;
-    //popup
-    double vs1_ptt = 10, vs2_ptt = 10;
-    double vs1_bangjak = 20, vs2_bangjak = 20;
-    double vs1_shell = 30, vs2_shell = 30;
-    double vs1_esso = 40, vs2_esso = 40;
+    
     double result_vs_popup;
+    //ผู้ใช้เลือกค่าใน pop-up ตัวไหน
+    private String check_click_popup = "1"; //ฝั่งขวา img_vs1 = 1 ; ฝั่งซ้าย img_vs2 = 2;
+    private String check_choice_popup1 = "1"; //ค่าแรก ptt = 1; ค่าที่สอง bangjak = 2; ค่าที่สาม shell = 3; ค่าที่สี่ esso = 4;  ซ้าย
+    private String check_choice_popup2 = "1"; // ขวา
+    //
+    private TextView textView5;
+    //
 
 
     @Nullable
@@ -63,10 +66,16 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         setView();
         setOilTypeSpiner();
         setVSpopup();
-        //setShowResult();
+        setShowResult();
+        setCompair();
         return rootView;
 
     }
+
+    private void setShowResult() {
+
+    }
+
 
     //Date Picker
     private void setView() {
@@ -76,6 +85,9 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
+
+        //
+        textView5 = (TextView) rootView.findViewById(R.id.textView5);
 
 
         //        เปลี่ยน font
@@ -111,7 +123,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
 
         });
-
+        show_vs1.setText("31.76");
+        show_vs2.setText("33.33");
 
     }
 
@@ -152,168 +165,167 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 //            str_fromdate = dateFormat.substring(6,10)+dateFormat.substring(3,5)+dateFormat.substring(0,2);
 //            UtilLog.i("Boom", str_fromdate);
             tv_date_oil_vs.setText(date);
-            setData(date);
+
+            setData(date, oilTypeSpinner.getSelectedItemPosition());
 
         }
     }
 
-    private void setData(String date) {
+    private void setData(String date, Integer spinner_oil_type) {
         // reset text กดปฏิทินแล้วเปลี่ยนค่าที่ไหนบ้าง
 
-        String d = date.substring(0, 2);
+        String day[] = date.split("/");
+        Log.d("show result", day[0]);
+        Log.d("show spinner", spinner_oil_type.toString());
 
-        if (d.equals("10")) {
-            show_vs1.setText("" + vs1_day_10);
-            show_vs2.setText("" + vs2_day_10);
 
-            result_change_spinner_and_datepicker = vs1_day_10 - vs2_day_10;
+        Log.d("Show Day", day[0]);
+        Log.d("Show Month", day[1]);
+        Log.d("Show Year", day[2]);
 
-            tv_show_result.setText("" + result_change_spinner_and_datepicker);
-            tv_show_result.setText(new DecimalFormat("0.00").format(+result_change_spinner_and_datepicker));
-            if (result_change_spinner_and_datepicker < 0) {
-                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-            } else if (result_change_spinner_and_datepicker > 0) {
-                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+        if ((day[0].equals("10")) && (spinner_oil_type == 0)) {
+
+            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
+                if (check_choice_popup1.equals("1")) { //เลือกอะไรใน pop-up
+                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //เอาค่ามาแสดง
+                }
+
+
             }
 
-        } else if (d.equals("18")) {
-            show_vs1.setText("" + vs1_day_18);
-            show_vs2.setText("" + vs2_day_18);
-            result_change_spinner_and_datepicker = vs1_day_18 - vs2_day_18;
+            if (check_click_popup.equals("2")) { //right
+                if (check_choice_popup2.equals("4"))
+                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(0) + " ");
 
-            tv_show_result.setText("" + result_change_spinner_and_datepicker);
-            tv_show_result.setText(new DecimalFormat("0.00").format(+result_change_spinner_and_datepicker));
-            if (result_change_spinner_and_datepicker < 0) {
-                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-            } else if (result_change_spinner_and_datepicker > 0) {
-                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-            }
-        } else if (d.equals("27")) {
-            show_vs1.setText("" + vs1_day_27);
-            show_vs2.setText("" + vs2_day_27);
-
-            result_change_spinner_and_datepicker = vs1_day_27 - vs2_day_27;
-
-            tv_show_result.setText("" + result_change_spinner_and_datepicker);
-            tv_show_result.setText(new DecimalFormat("0.00").format(+result_change_spinner_and_datepicker));
-            if (result_change_spinner_and_datepicker < 0) {
-                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-            } else if (result_change_spinner_and_datepicker > 0) {
-                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
             }
 
+
+            setCompair();
+
+        } //else if () {
+
+      //  }
+
+    }
+
+    private void setCompair() {
+        double vs1 = Double.parseDouble(show_vs1.getText().toString());
+        double vs2 = Double.parseDouble(show_vs2.getText().toString());
+
+        tv_show_result.setText(Double.toString(vs1 - vs2));
+
+        Log.d("Show ", show_vs1.getText().toString());
+        Log.d("Show ", show_vs2.getText().toString());
+        Log.d("Show ", String.valueOf(vs1 - vs2));
+
+
+        if (result_change_spinner_and_datepicker < 0) {
+            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+        } else if (result_change_spinner_and_datepicker > 0) {
+            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
         }
+
     }
 
 
     private void setVSpopup() {
 
         img_vs1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Dialog dialog = new Dialog(getActivity());
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.custom_dialog);
-                dialog.setCancelable(true);
+                                       @Override
+                                       public void onClick(View view) {
 
-                img_vs1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.show();
+                                           final Dialog dialog = new Dialog(getActivity());
+                                           dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                           dialog.setContentView(R.layout.custom_dialog);
+                                           dialog.setCancelable(true);
 
-
-                    }
-                });
+                                           final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
+                                           b1.setImageResource(Dummy.getInstance().popup.get(0));
 
 
-                final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
-                b1.setImageResource(Dummy.getInstance().popup.get(0));
-
-                final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
-                b2.setImageResource(Dummy.getInstance().popup.get(1));
-
-                final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
-                b3.setImageResource(Dummy.getInstance().popup.get(2));
-
-                final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
-                b4.setImageResource(Dummy.getInstance().popup.get(3));
+                                           final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+                                           b2.setImageResource(Dummy.getInstance().popup.get(1));
 
 
-                b1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
-                        show_vs1.setText("" + vs1_ptt);
-
-                        tv_show_result.setText("" + result_vs_popup);
-                        tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
+                                           final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
+                                           b3.setImageResource(Dummy.getInstance().popup.get(2));
 
 
-//                        img_vs2.setImageResource(Dummy.getInstance().popup.get(0));
-//
-//                        img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
-//                        img_vs2.setImageResource(Dummy.getInstance().popup.get(0));
-//
-//                        b1.setImageResource(Dummy.getInstance().popup.get(0));
-//                        b1.setImageResource(Dummy.getInstance().popup.get(2));
-//                        b1.setImageResource(Dummy.getInstance().popup.get(3));
+                                           final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
+                                           b4.setImageResource(Dummy.getInstance().popup.get(3));
 
-                        dialog.dismiss();
+                                           check_click_popup = "1";
 
-                    }
+                                           b1.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View view) {
+                                                   check_choice_popup1 = "1";
+                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
 
-                });
+                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
 
-
-                b2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
-                        show_vs1.setText("" + vs1_bangjak);
-                        tv_show_result.setText("" + result_vs_popup);
-                        tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
-                        dialog.dismiss();
-                        //   img_vs2.setImageResource(R.drawable.ic_bangjak);
-
-                        // img_vs2.setImageResource(R.drawable.ic_bangjak);
+                                                   tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
 
 
-                    }
-                });
+                                                   dialog.dismiss();
 
-                b3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        img_vs1.setImageResource(Dummy.getInstance().popup.get(2));
-                        show_vs1.setText("" + vs1_shell);
-                        tv_show_result.setText("" + result_vs_popup);
-                        dialog.dismiss();
-                    }
-                });
-                dialog.show();
 
-                b4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        img_vs1.setImageResource(Dummy.getInstance().popup.get(3));
-                        show_vs1.setText("" + vs1_esso);
-                        tv_show_result.setText("" + result_vs_popup);
-                        dialog.dismiss();
-                    }
-                });
-                dialog.show();
-            }
-        });
+                                               }
+
+                                           });
+
+
+                                           b2.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View view) {
+                                                   check_choice_popup1 = "2";
+                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
+
+                                                   tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
+                                                   dialog.dismiss();
+
+
+                                               }
+                                           });
+
+                                           b3.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View view) {
+                                                   check_choice_popup1 = "3";
+                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(2));
+
+                                                   dialog.dismiss();
+                                               }
+                                           });
+                                           dialog.show();
+
+                                           b4.setOnClickListener(new View.OnClickListener() {
+
+                                               @Override
+                                               public void onClick(View view) {
+                                                   check_choice_popup1 = "4";
+                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(3));
+
+                                                   dialog.dismiss();
+                                               }
+                                           });
+                                           dialog.show();
+
+
+                                       }
+                                   }
+
+
+        );
 
 
         img_vs2.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 final Dialog dialog = new Dialog(getActivity());
@@ -333,13 +345,15 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
                 final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
                 b4.setImageResource(Dummy.getInstance().popup.get(3));
+                check_click_popup = "2";
 
                 b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        check_choice_popup2 = "1";
+                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
                         img_vs2.setImageResource(Dummy.getInstance().popup.get(0));
-                        show_vs2.setText("" + vs2_ptt);
-                        tv_show_result.setText("" + result_vs_popup);
+
                         dialog.dismiss();
 
                     }
@@ -349,9 +363,10 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 b2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        check_choice_popup2 = "2";
+                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
                         img_vs2.setImageResource(Dummy.getInstance().popup.get(1));
-                        show_vs2.setText("" + vs2_bangjak);
-                        tv_show_result.setText("" + result_vs_popup);
+
                         dialog.dismiss();
 
                     }
@@ -361,9 +376,11 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 b3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        check_choice_popup2 = "3";
+                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
                         img_vs2.setImageResource(Dummy.getInstance().popup.get(2));
-                        show_vs2.setText("" + vs2_shell);
-                        tv_show_result.setText("" + result_vs_popup);
+
+
                         dialog.dismiss();
                     }
                 });
@@ -372,9 +389,11 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 b4.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        check_choice_popup2 = "4";
+                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
                         img_vs2.setImageResource(Dummy.getInstance().popup.get(3));
-                        show_vs2.setText("" + vs2_esso);
-                        tv_show_result.setText("" + result_vs_popup);
+
+
                         dialog.dismiss();
                     }
                 });
@@ -386,10 +405,12 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
     }
 
+    private void getvalue() {
+    }
+
 //    private void setShowResult() {
 //
 //    }
-
 
 
     private void setOilTypeSpiner() {
@@ -405,32 +426,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             @Override
             public void onItemSelected(AdapterView adapter, View v, int i, long lng) {
 
-                if (i == 0) {
-                    vs1 = 31.76;
-                    vs2 = 32.21;
-
-                } else if (i == 1) {
-                    vs1 = 35.76;
-                    vs2 = 31.21;
-
-
-                } else if (i == 2) {
-                    vs1 = 38.36;
-                    vs2 = 37.11;
-
-
-                } else if (i == 3) {
-                    vs1 = 11.54;
-                    vs2 = 23.55;
-
-
-                } else if (i == 4) {
-                    vs1 = 52.54;
-                    vs2 = 35.86;
-
-
-                }
-                setResult();
+                setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
             }
 
             @Override
@@ -438,26 +434,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
             }
         });
-
-    }
-
-
-    private void setResult() {
-        show_vs1.setText("" + vs1);
-        show_vs2.setText(" " + vs2);
-        result_change_spinner_and_datepicker = vs1 - vs2;
-        tv_show_result.setText(new DecimalFormat("0.00").format(+result_change_spinner_and_datepicker));
-        tv_show_result.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-
-
-        if (result_change_spinner_and_datepicker < 0) {
-            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-        } else if (result_change_spinner_and_datepicker > 0) {
-            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-        }
-
 
     }
 
