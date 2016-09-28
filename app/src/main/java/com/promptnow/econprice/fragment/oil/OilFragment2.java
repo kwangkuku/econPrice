@@ -47,7 +47,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     double vs1_day_18 = 31.56, vs2_day_18 = 29.91;
     double vs1_day_27 = 26.77, vs2_day_27 = 26.56;
     double result_change_spinner_and_datepicker;
-   
+
 
     double result_vs_popup;
     //ผู้ใช้เลือกค่าใน pop-up ตัวไหน
@@ -184,51 +184,74 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         Log.d("Show Month", day[1]);
         Log.d("Show Year", day[2]);
 
-        if ((day[0].equals("10")) && (spinner_oil_type == 0)) {
+        //if ((day[0].equals("10")) && (spinner_oil_type == 0)) {
 
-            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-                if (check_choice_popup1.equals("1")) { //เลือกอะไรใน pop-up //ptt pump
-                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //เอาค่ามาแสดง
-                }
+// เมื่อเปลี่ยนค่า date ใน date picker
+        //test case 1 : day = 10, spinner oil type = sohol 95 , popup = bg & ptt
+        if (day[0].equals("10")) { // date in date picker = 10 เปลี่ยนค่าวันที่เป็นวันที่10 , แต่ค่าเริ่มต้นยังเป็น เบนซิล(0) , pop-up "ptt" & "bangjak" อยู่
+            // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
+            show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //31.44 is ptt bansin day 10
+            show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); //32.25 is bangjak day10
+            setCompair();
+        }
+        if ((spinner_oil_type == 1)) { // ค่าใน spinner เป็น sohol 95 [โดยที่ Day = 10 และค่า pop-up ยังเป็น pop-up "ptt" & "bangjak" อยู่ ตามค่าเริ่มต้นตั้งแต่แรก]
+            show_vs1.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); //22.25 is ptt sohol95 day 10
+            show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
+            setCompair();
+        }
 
-
+        //เลือกค่าใน pop-up โดยที่ ค่า Day = 10 ,ค่าใน spinner เป็น sohol 95  ซึ่งค่าใน pop-up เป็น ค่า bangjak & ptt
+        if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
+            if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
+                show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //bangjak day10 sohol95
+                show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); // ptt dat10 sohol95
             }
-
-            if (check_click_popup.equals("2")) { //right
-                if (check_choice_popup2.equals("4"))
-                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(0) + " ");
-
-            }
-
 
             setCompair();
-
-            //}else if ()
-
         }
-        if ((day[0].equals("18")) && (spinner_oil_type == 2)) {
 
-            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up
-                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(0) + " "); //เอาค่ามาแสดง //23.66
-                }
-
-
-            }
-
-            if (check_click_popup.equals("2")) { //right
-                if (check_choice_popup2.equals("4"))
-                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(0) + " "); //22.59
-
-            }
-
-
-            setCompair();
-
-
-
-        }
     }
+//เมื่อเปลี่ยนค่าใน spinner
+//        if ((spinner_oil_type == 1)){
+//            show_vs1.setText("31..67");
+//            show_vs2.setText("27.77");
+//        }
+//
+//            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
+//                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
+//                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //เอาค่ามาแสดง
+//                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0)+" ");
+//                }
+//
+//
+//            }
+//
+//            if (check_click_popup.equals("3")) { //right
+//                if (check_choice_popup2.equals("4"))
+//                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(0) + " ");
+//
+//            }
+
+
+//        if ((day[0].equals("18")) && (spinner_oil_type == 2)) {
+//
+//            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
+//                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up
+//                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(0) + " "); //เอาค่ามาแสดง //23.66
+//                }
+//
+//            }
+//
+//            if (check_click_popup.equals("2")) { //right
+//                if (check_choice_popup2.equals("4"))
+//                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(0) + " "); //22.59
+//
+//            }
+//
+//            setCompair();
+//
+//        }
+
 
     private void setCompair() {
         double vs1 = Double.parseDouble(show_vs1.getText().toString());
@@ -435,7 +458,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private void setOilTypeSpiner() {
         oilTypeSpinner = (Spinner) rootView.findViewById(R.id.oilTypeSpinner);
         //  oilTypeSpinner.setEnabled(false);
-        String[] List = {"เบนซิล 95", "แก๊สโซฮอล์ 95", "E20", "E85", "ดีเซล"};
+        String[] List = {"เบนซิล 95", "แก๊สโซฮอล์ 95", "แก๊สโซฮอล์ 91", "E20", "E85", "ดีเซล"};
         CustomAdapterOil oilAdapter = new CustomAdapterOil(getActivity(), List);
         oilTypeSpinner.setAdapter(oilAdapter);
 
