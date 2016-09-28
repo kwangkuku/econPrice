@@ -223,8 +223,8 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         input.addTextChangedListener(watch);
         input.clearFocus();
 
-        input.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 
+        input.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
@@ -233,6 +233,8 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
                 } else {
                     InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
+
+
                 }
 
             }
