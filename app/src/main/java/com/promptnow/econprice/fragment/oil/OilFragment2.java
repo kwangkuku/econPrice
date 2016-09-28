@@ -47,7 +47,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     double vs1_day_18 = 31.56, vs2_day_18 = 29.91;
     double vs1_day_27 = 26.77, vs2_day_27 = 26.56;
     double result_change_spinner_and_datepicker;
-    
+   
+
     double result_vs_popup;
     //ผู้ใช้เลือกค่าใน pop-up ตัวไหน
     private String check_click_popup = "1"; //ฝั่งขวา img_vs1 = 1 ; ฝั่งซ้าย img_vs2 = 2;
@@ -186,7 +187,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         if ((day[0].equals("10")) && (spinner_oil_type == 0)) {
 
             if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-                if (check_choice_popup1.equals("1")) { //เลือกอะไรใน pop-up
+                if (check_choice_popup1.equals("1")) { //เลือกอะไรใน pop-up //ptt pump
                     show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //เอาค่ามาแสดง
                 }
 
@@ -202,10 +203,31 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
             setCompair();
 
-        } //else if () {
+            //}else if ()
 
-      //  }
+        }
+        if ((day[0].equals("18")) && (spinner_oil_type == 2)) {
 
+            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
+                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up
+                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(0) + " "); //เอาค่ามาแสดง //23.66
+                }
+
+
+            }
+
+            if (check_click_popup.equals("2")) { //right
+                if (check_choice_popup2.equals("4"))
+                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(0) + " "); //22.59
+
+            }
+
+
+            setCompair();
+
+
+
+        }
     }
 
     private void setCompair() {
@@ -265,10 +287,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                                                    setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
 
                                                    img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
-
-                                                   tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
-
-
                                                    dialog.dismiss();
 
 
@@ -286,6 +304,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
                                                    tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
                                                    dialog.dismiss();
+                                                   //   img_vs2.setImageResource(R.drawable.ic_bangjak);
+                                                   // img_vs2.setImageResource(R.drawable.ic_bangjak);
 
 
                                                }
@@ -379,7 +399,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                         check_choice_popup2 = "3";
                         setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
                         img_vs2.setImageResource(Dummy.getInstance().popup.get(2));
-
 
                         dialog.dismiss();
                     }
