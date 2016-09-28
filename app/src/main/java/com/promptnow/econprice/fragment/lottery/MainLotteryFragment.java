@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.view.HideKeyboard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,9 +64,7 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                final InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(
-                        Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(viewPager.getWindowToken(), 0);
+                HideKeyboard.hideKeyboard(getActivity());
             }
 
             @Override
