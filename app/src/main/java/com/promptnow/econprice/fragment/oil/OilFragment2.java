@@ -27,7 +27,7 @@ import java.util.Calendar;
  * Created by Whankung on 7/9/2559.
  */
 
-public class OilFragment2 extends Fragment  implements DatePickerFragment.onSetDateListener{
+public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDateListener {
     private View rootView;
     private Typeface font;
     private Spinner oilTypeSpinner;
@@ -152,7 +152,9 @@ public class OilFragment2 extends Fragment  implements DatePickerFragment.onSetD
 
     private void setData(String date) {
         // reset text กดปฏิทินแล้วเปลี่ยนค่าที่ไหน
+
         String d = date.substring(0, 2);
+
         if (d.equals("10")) {
             show_vs1.setText("" + vs1_day_10);
             show_vs2.setText("" + vs2_day_10);
@@ -169,10 +171,38 @@ public class OilFragment2 extends Fragment  implements DatePickerFragment.onSetD
                 show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
             }
 
-        }
-        }
+        } else if (d.equals("18")) {
+            show_vs1.setText("" + vs1_day_18);
+            show_vs2.setText("" + vs2_day_18);
+            result = vs1_day_18 - vs2_day_18;
 
+            tv_show_result.setText("" + result);
+            tv_show_result.setText(new DecimalFormat("0.00").format(+result));
+            if (result < 0) {
+                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+            } else if (result > 0) {
+                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+            }
+        } else if (d.equals("27")) {
+            show_vs1.setText("" + vs1_day_27);
+            show_vs2.setText("" + vs2_day_27);
 
+            result = vs1_day_27 - vs2_day_27;
+            
+            tv_show_result.setText("" + result);
+            tv_show_result.setText(new DecimalFormat("0.00").format(+result));
+            if (result < 0) {
+                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+            } else if (result > 0) {
+                show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+                show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+            }
+
+        }
+    }
 
 
     private void setVSpopup() {
