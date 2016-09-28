@@ -204,10 +204,13 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
             if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
                 show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //bangjak day10 sohol95
-                show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); // ptt dat10 sohol95
+//                show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); // ptt dat10 sohol95
+                setCompair();
             }
+            
 
-            setCompair();
+
+
         }
 
     }
