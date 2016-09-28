@@ -200,14 +200,15 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             setCompair();
         }
 
-        //เลือกค่าใน pop-up โดยที่ ค่า Day = 10 ,ค่าใน spinner เป็น sohol 95  ซึ่งค่าใน pop-up เป็น ค่า bangjak & ptt
+        //เลือกค่าใน pop-up ค่าซ้าย โดยที่ ค่า Day = 10 ,ค่าใน spinner เป็น sohol 95  ซึ่งค่าใน pop-up เป็น ค่า bangjak แต่ว่า pop-up ในค่าทางขวาจะยังเป็น bangjak อยู่จากค่าเดิม
         if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
             if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
                 show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //bangjak day10 sohol95
 //                show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); // ptt dat10 sohol95
+                show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //bangjak day10 sohol95
                 setCompair();
             }
-            
+
 
 
 
@@ -260,19 +261,23 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         double vs1 = Double.parseDouble(show_vs1.getText().toString());
         double vs2 = Double.parseDouble(show_vs2.getText().toString());
 
-        tv_show_result.setText(Double.toString(vs1 - vs2));
+//        tv_show_result.setText(Double.toString(vs1 - vs2));
+
 
         Log.d("Show ", show_vs1.getText().toString());
         Log.d("Show ", show_vs2.getText().toString());
         Log.d("Show ", String.valueOf(vs1 - vs2));
+        tv_show_result.setText(Double.toString(vs1 - vs2));
 
 
-        if (result_change_spinner_and_datepicker < 0) {
-            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-        } else if (result_change_spinner_and_datepicker > 0) {
+        if (tv_show_result.getText().length() < 0) {
             show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
             show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+        } else if (tv_show_result.getText().length()  > 0) {
+
+
+            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
         }
 
     }
