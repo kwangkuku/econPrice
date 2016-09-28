@@ -39,7 +39,6 @@ public class CustomAdapterLotto extends BaseAdapter {
 
     public Object getItem(int position) {
 
-
         return null;
     }
 

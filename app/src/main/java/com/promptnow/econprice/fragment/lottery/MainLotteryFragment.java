@@ -33,8 +33,7 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
     private View rootView;
     private TabLayout tabLayout;
 
-    // Fragment TabHost as mTabHost
-    //private FragmentTabHost mTabHost;
+
 
     @Nullable
     @Override
@@ -72,16 +71,7 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
 
             }
         });
-//        String[] List = {"ตรวจรางวัล", "เลขเด็ด"};
-//        CustomTabLayout tab= new CustomTabLayout(getActivity(),List);
-
-
-//        for (int i = 0; i < tabLayout.getTabCount(); i++) {
-//            TabLayout.Tab tab = tabLayout.getTabAt(i);
-//
-//           tab.setCustomView(SampleFragmentPagerAdapterLotto.getTabView(i));
-//        }
-      //  SampleFragmentPagerAdapterLotto.applyFontedTab(MainLotteryFragment.this, viewPager, tabLayout);
+//        เปลี่ยน font tab
       SampleFragmentPagerAdapterLotto.applyFontedTab(getActivity().getApplicationContext(),viewPager,tabLayout);
 
     }

@@ -57,31 +57,21 @@ public class SampleFragmentPagerAdapterLotto extends FragmentPagerAdapter {
 
         // Generate title based on item position
 
-
         return tabTitles[position];
 
     }
 
 
     public static void applyFontedTab(Context activity, ViewPager viewPager, TabLayout tabLayout) {
-
-
         Typeface font =Typeface.createFromAsset(activity.getAssets(), "tmedium.ttf");
         for (int i = 0; i < viewPager.getAdapter().getCount(); i++) {
            View v = LayoutInflater.from(activity).inflate(R.layout.custom_tab, null);
             TextView tv = (TextView) v.findViewById(R.id.textView);
-
-         //   TextView tv = (TextView) activity.getLayoutInflater().inflate(R.layout.custom_tab, null);
             if (i == viewPager.getCurrentItem()) tv.setSelected(true);
             tv.setText(viewPager.getAdapter().getPageTitle(i));
             tabLayout.getTabAt(i).setCustomView(tv);
             tv.setTypeface(font);
-
-
         }
-
-
     }
-
 }
 
