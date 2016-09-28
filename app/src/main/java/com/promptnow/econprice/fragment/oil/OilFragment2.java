@@ -266,11 +266,10 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         Log.d("Show ", show_vs2.getText().toString());
         Log.d("Show ", String.valueOf(vs1 - vs2));
         tv_show_result.setText(Double.toString(vs1 - vs2));
-        tv_show_result.setText(new DecimalFormat("0.00").format(+tv_show_result.getText().length()));
+//        tv_show_result.setText("" +  tv_show_result);
+//        tv_show_result.setText(new DecimalFormat("0.00").format(+tv_show_result.getText().length()));
 
-        TextView tv_show_result = (TextView) getActivity().findViewById(R.id.tv_show_result);
-        tv_show_result.setText("" +  tv_show_result);
-        tv_show_result.setText(new DecimalFormat("0.00").format(+ tv_show_result.length()));
+
 
         if (tv_show_result.getText().length() < 0) {
             show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
