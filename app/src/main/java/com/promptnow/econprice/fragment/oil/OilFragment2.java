@@ -42,10 +42,11 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private int selectedMonth;
     private int selectedDay;
     public DatePickerFragment.onSetDateListener mListener;
+    //Date Picker
     double vs1_day_10 = 23.45, vs2_day_10 = 25.77;
     double vs1_day_18 = 31.56, vs2_day_18 = 29.91;
     double vs1_day_27 = 26.77, vs2_day_27 = 26.56;
-    double result;
+    double result_change_spinner_and_datepicker;
     //popup
     double vs1_ptt = 10, vs2_ptt = 10;
     double vs1_bangjak = 20, vs2_bangjak = 20;
@@ -61,9 +62,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
         setView();
         setOilTypeSpiner();
-        setType();
         setVSpopup();
-        setShowResult();
+        //setShowResult();
         return rootView;
 
     }
@@ -166,14 +166,14 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             show_vs1.setText("" + vs1_day_10);
             show_vs2.setText("" + vs2_day_10);
 
-            result = vs1_day_10 - vs2_day_10;
+            result_change_spinner_and_datepicker = vs1_day_10 - vs2_day_10;
 
-            tv_show_result.setText("" + result);
-            tv_show_result.setText(new DecimalFormat("0.00").format(+result));
-            if (result < 0) {
+            tv_show_result.setText("" + result_change_spinner_and_datepicker);
+            tv_show_result.setText(new DecimalFormat("0.00").format(+result_change_spinner_and_datepicker));
+            if (result_change_spinner_and_datepicker < 0) {
                 show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
                 show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-            } else if (result > 0) {
+            } else if (result_change_spinner_and_datepicker > 0) {
                 show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
                 show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
             }
@@ -181,14 +181,14 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         } else if (d.equals("18")) {
             show_vs1.setText("" + vs1_day_18);
             show_vs2.setText("" + vs2_day_18);
-            result = vs1_day_18 - vs2_day_18;
+            result_change_spinner_and_datepicker = vs1_day_18 - vs2_day_18;
 
-            tv_show_result.setText("" + result);
-            tv_show_result.setText(new DecimalFormat("0.00").format(+result));
-            if (result < 0) {
+            tv_show_result.setText("" + result_change_spinner_and_datepicker);
+            tv_show_result.setText(new DecimalFormat("0.00").format(+result_change_spinner_and_datepicker));
+            if (result_change_spinner_and_datepicker < 0) {
                 show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
                 show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-            } else if (result > 0) {
+            } else if (result_change_spinner_and_datepicker > 0) {
                 show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
                 show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
             }
@@ -196,14 +196,14 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             show_vs1.setText("" + vs1_day_27);
             show_vs2.setText("" + vs2_day_27);
 
-            result = vs1_day_27 - vs2_day_27;
+            result_change_spinner_and_datepicker = vs1_day_27 - vs2_day_27;
 
-            tv_show_result.setText("" + result);
-            tv_show_result.setText(new DecimalFormat("0.00").format(+result));
-            if (result < 0) {
+            tv_show_result.setText("" + result_change_spinner_and_datepicker);
+            tv_show_result.setText(new DecimalFormat("0.00").format(+result_change_spinner_and_datepicker));
+            if (result_change_spinner_and_datepicker < 0) {
                 show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
                 show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-            } else if (result > 0) {
+            } else if (result_change_spinner_and_datepicker > 0) {
                 show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
                 show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
             }
@@ -386,19 +386,11 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
     }
 
-    private void setShowResult() {
-
-    }
-
-    private void setType() {
-//        oilTypeSpinner.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                oilTypeSpinner.performClick();
+//    private void setShowResult() {
 //
-//            }
-//        });
-    }
+//    }
+
+
 
     private void setOilTypeSpiner() {
         oilTypeSpinner = (Spinner) rootView.findViewById(R.id.oilTypeSpinner);
@@ -416,26 +408,26 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (i == 0) {
                     vs1 = 31.76;
                     vs2 = 32.21;
-                    result = vs1 - vs2;
+
                 } else if (i == 1) {
                     vs1 = 35.76;
                     vs2 = 31.21;
-                    result = vs1 - vs2;
+
 
                 } else if (i == 2) {
                     vs1 = 38.36;
                     vs2 = 37.11;
-                    result = vs1 - vs2;
+
 
                 } else if (i == 3) {
                     vs1 = 11.54;
                     vs2 = 23.55;
-                    result = vs1 - vs2;
+
 
                 } else if (i == 4) {
                     vs1 = 52.54;
                     vs2 = 35.86;
-                    result = vs1 - vs2;
+
 
                 }
                 setResult();
@@ -453,14 +445,15 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private void setResult() {
         show_vs1.setText("" + vs1);
         show_vs2.setText(" " + vs2);
-        tv_show_result.setText(new DecimalFormat("0.00").format(+result));
+        result_change_spinner_and_datepicker = vs1 - vs2;
+        tv_show_result.setText(new DecimalFormat("0.00").format(+result_change_spinner_and_datepicker));
         tv_show_result.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
 
 
-        if (result < 0) {
+        if (result_change_spinner_and_datepicker < 0) {
             show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
             show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-        } else if (result > 0) {
+        } else if (result_change_spinner_and_datepicker > 0) {
             show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
             show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
         }
