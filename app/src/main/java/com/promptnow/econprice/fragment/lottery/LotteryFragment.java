@@ -23,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.view.HideKeyboard;
 import com.promptnow.econprice.view.View_popup;
 
 import java.io.Closeable;
@@ -227,21 +228,16 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         input.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-                } else {
-                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
-
-
-                }
-
+//                if (hasFocus) {
+                getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+//                } else  {
+//                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+//                    imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
+                HideKeyboard.hideKeyboard(getActivity());
             }
         });
 
     }
-
 
     private TextWatcher watch = new TextWatcher() {
 

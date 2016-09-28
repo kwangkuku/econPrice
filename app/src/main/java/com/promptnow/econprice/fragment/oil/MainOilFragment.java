@@ -9,9 +9,11 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.fragment.lottery.SampleFragmentPagerAdapterLotto;
+import com.promptnow.econprice.view.HideKeyboard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +55,7 @@ public class MainOilFragment extends Fragment {
                 getFragments()));
         tabLayout.setupWithViewPager(viewPager);
         SampleFragmentPagerAdapterOil.applyFontedTab(getActivity().getApplicationContext(),viewPager,tabLayout);
+
     }
 
     private List<Fragment> getFragments() {
