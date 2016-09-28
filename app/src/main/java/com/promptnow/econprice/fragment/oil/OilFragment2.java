@@ -210,8 +210,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             }
 
 
-
-
         }
 
     }
@@ -268,12 +266,12 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         Log.d("Show ", show_vs2.getText().toString());
         Log.d("Show ", String.valueOf(vs1 - vs2));
         tv_show_result.setText(Double.toString(vs1 - vs2));
-
+        tv_show_result.setText(new DecimalFormat("0.00").format(+tv_show_result.length()));
 
         if (tv_show_result.getText().length() < 0) {
             show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
             show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-        } else if (tv_show_result.getText().length()  > 0) {
+        } else if (tv_show_result.getText().length() > 0) {
 
 
             show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
@@ -289,7 +287,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                                        @Override
                                        public void onClick(View view) {
 
-                                           final Dialog dialog = new Dialog(getActivity());
+      final Dialog dialog = new Dialog(getActivity());
                                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                            dialog.setContentView(R.layout.custom_dialog);
                                            dialog.setCancelable(true);
