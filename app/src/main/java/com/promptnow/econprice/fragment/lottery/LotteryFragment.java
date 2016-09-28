@@ -223,7 +223,6 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         input.addTextChangedListener(watch);
         input.clearFocus();
 
-
         input.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 
             @Override
@@ -240,8 +239,6 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         });
 
     }
-
-
 
 
     private TextWatcher watch = new TextWatcher() {
@@ -281,7 +278,6 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     public void setOnSubmitAlertDialogListener() {
 
     }
-
 
 }
 
