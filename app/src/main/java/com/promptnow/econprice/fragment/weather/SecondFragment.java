@@ -160,7 +160,7 @@ return true;
         int minutes = c.get(Calendar.MINUTE);
         int hour = c.get(Calendar.HOUR_OF_DAY);
         String curTime = String.format("%02d:%02d", hour, minutes);
-     String time = curTime  +" "+ "น.";
+     String time = curTime ;
 
 
 
@@ -180,7 +180,9 @@ return true;
         String date = day + "/" + month + "/" + year;
 
         //assuming that you need date and time in separate textview named txt_date and txt_time.
-
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        txt_time.setTypeface(font);
+        txt_date.setTypeface(font);
         txt_date.setText(date);
 
 

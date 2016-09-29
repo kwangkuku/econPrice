@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="กรุงเทพมหานครและปริมณฑล"
-android:background="@color/colorTop"
+        android:background="@color/colorTop"
         android:textColor="@color/bb_darkBackgroundColor"
         android:textSize="28dp"
        />
@@ -40,7 +40,8 @@ android:background="@color/colorTop"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/text_margin"
             android:layout_marginRight="@dimen/text_margin"
-            android:text="9/9/2559" />
+            android:text="9/9/2559"
+            android:textSize="18dp"/>
 
         <TextView
 
@@ -48,7 +49,8 @@ android:background="@color/colorTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/text_margin"
-            android:text="11:09" />
+            android:text="11:09"
+            android:textSize="18dp"/>
 
 
     </LinearLayout>

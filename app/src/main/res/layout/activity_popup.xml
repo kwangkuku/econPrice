@@ -33,7 +33,7 @@
 
         <Button
             android:id="@+id/btn_ok"
-            android:layout_width="121dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:textColor="#4f93e7"

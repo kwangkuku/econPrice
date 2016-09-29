@@ -69,10 +69,16 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
         lblListItem2.setTypeface(font);
         TextView lblListItem3 = (TextView) convertView.findViewById(R.id.lblListItem3);
         lblListItem3.setTypeface(font);
+        TextView txt_number1 = (TextView) convertView.findViewById(R.id.txt_number1);
+        txt_number1.setTypeface(font);
+        TextView txt_number2 = (TextView) convertView.findViewById(R.id.txt_number2);
+        txt_number2.setTypeface(font);
+        TextView txt_number3 = (TextView) convertView.findViewById(R.id.txt_number3);
+        txt_number3.setTypeface(font);
 
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.txt_number);
-
+        txtListChild.setTypeface(font);
         txtListChild.setText(childText);
 
 
@@ -115,6 +121,8 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
             convertView = infalInflater.inflate(R.layout.list_group, null);
         }
         Typeface font = Typeface.createFromAsset(_context.getAssets(), "tmedium.ttf");
+        TextView txt_num =(TextView) convertView.findViewById(R.id.txt_num);
+        txt_num.setTypeface(font);
         TextView lblListHeader = (TextView) convertView
                 .findViewById(R.id.lblListHeader);
         lblListHeader.setTypeface(font);
