@@ -35,7 +35,7 @@
             android:inputType="textPersonName"
             android:textAlignment="center"
             android:textColor="@color/color_gray_tv_oil_price"
-            android:textSize="18sp" />
+            android:textSize="24dp" />
 
 
     </LinearLayout>

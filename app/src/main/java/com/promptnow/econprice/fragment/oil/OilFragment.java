@@ -113,6 +113,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         tv5.setTypeface(font);
         tv6.setTypeface(font);
         tv7.setTypeface(font);
+        tv_date_oil_price.setTypeface(font);
 
         final Calendar c = Calendar.getInstance();
         year = c.get(Calendar.YEAR);

@@ -143,6 +143,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
         piker_year = (NumberPicker)piker.findViewById(R.id.piker_year);
         piker_year.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+//        ย้อน
         piker_year.setMinValue(calendar.get(Calendar.YEAR)-10);
         piker_year.setMaxValue(calendar.get(Calendar.YEAR)+10);
         piker_year.setValue(year);

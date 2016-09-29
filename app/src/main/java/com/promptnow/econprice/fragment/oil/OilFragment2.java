@@ -29,7 +29,7 @@ public class OilFragment2 extends Fragment {
     private View rootView;
     private Typeface font;
     private Spinner oilTypeSpinner;
-    private TextView tv_date_oil_vs, tv, tv2, tv3, tv4;
+    private TextView tv_date_oil_vs, tv, tv2, tv3, tv4,tv5,tv6,tv7;
     private TextView show_vs1, show_vs2, tv_show_result;
     private ImageView img_vs1, img_vs2 ;
     double vs1, vs2;
@@ -319,6 +319,9 @@ public class OilFragment2 extends Fragment {
         tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
         tv3 = (TextView) rootView.findViewById(R.id.tv3);
         tv4 = (TextView) rootView.findViewById(R.id.bath);
+        tv5 = (TextView) rootView.findViewById(R.id.show_vs1);
+        tv6 = (TextView) rootView.findViewById(R.id.show_vs2);
+        tv7 = (TextView) rootView.findViewById(R.id.tv_show_result);
 
         //        เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
@@ -326,6 +329,10 @@ public class OilFragment2 extends Fragment {
         tv2.setTypeface(font);
         tv3.setTypeface(font);
         tv4.setTypeface(font);
+        tv5.setTypeface(font);
+        tv6.setTypeface(font);
+        tv7.setTypeface(font);
+        tv_date_oil_vs.setTypeface(font);
 
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);

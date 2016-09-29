@@ -39,7 +39,7 @@
             android:onClick="onClick"
             android:textAlignment="textStart"
             style="@style/Widget.AppCompat.Spinner.Underlined"
-            android:textSize="18sp" />
+            android:textSize="24dp" />
 
 
     </LinearLayout>
@@ -136,7 +136,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="40dp"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:background="@drawable/result_shape"
             android:textAlignment="center"
             android:gravity="center" />
@@ -149,7 +149,7 @@
             android:layout_marginRight="20dp"
             android:textAlignment="center"
             android:background="@drawable/result_shape"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:gravity="center" />
 
     </TableRow>
@@ -176,7 +176,7 @@
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:background="@drawable/result_shape"/>
 
         <TextView
