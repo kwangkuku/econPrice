@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.fragment.lottery.SampleFragmentPagerAdapterLotto;
 
 import java.util.ArrayList;
 import java.util.List;

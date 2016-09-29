@@ -20,7 +20,7 @@ public class PageFragmentLotto extends Fragment {
 
 
 
-    public static PageFragmentLotto newInstance(int page) {
+    public static PageFragmentLotto getInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
         PageFragmentLotto fragment = new PageFragmentLotto();
