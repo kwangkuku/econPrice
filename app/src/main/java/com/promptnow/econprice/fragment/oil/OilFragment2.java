@@ -31,7 +31,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private View rootView;
     private Typeface font;
     private Spinner oilTypeSpinner;
-    private TextView tv_date_oil_vs, tv, tv2, tv3, tv4;
+    private TextView tv_date_oil_vs, tv, tv2, tv3, tv4, tv5, tv6, tv7;
     private TextView show_vs1, show_vs2, tv_show_result;
     private ImageView img_vs1, img_vs2;
     private int year;
@@ -42,11 +42,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private int selectedMonth;
     private int selectedDay;
     public DatePickerFragment.onSetDateListener mListener;
-    //Date Picker
-    double vs1_day_10 = 23.45, vs2_day_10 = 25.77;
-    double vs1_day_18 = 31.56, vs2_day_18 = 29.91;
-    double vs1_day_27 = 26.77, vs2_day_27 = 26.56;
-    double result_change_spinner_and_datepicker;
+    double resuit;
 
 
     double result_vs_popup;
@@ -96,6 +92,9 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
         tv3 = (TextView) rootView.findViewById(R.id.tv3);
         tv4 = (TextView) rootView.findViewById(R.id.bath);
+        tv5 = (TextView) rootView.findViewById(R.id.show_vs1);
+        tv6 = (TextView) rootView.findViewById(R.id.show_vs2);
+        tv7 = (TextView) rootView.findViewById(R.id.tv_show_result);
 
         //        เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
@@ -103,6 +102,10 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         tv2.setTypeface(font);
         tv3.setTypeface(font);
         tv4.setTypeface(font);
+        tv5.setTypeface(font);
+        tv6.setTypeface(font);
+        tv7.setTypeface(font);
+        tv_date_oil_vs.setTypeface(font);
 
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
@@ -192,6 +195,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
                 show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //31.44 is ptt bansin day 10
                 show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); //32.25 is bangjak day10
+
                 setCompair();
 
 
@@ -338,29 +342,31 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
 
     private void setCompair() {
+//เมธอด setCompair จะเอา ตัวแปร show_vs1 และ show_vs2 ที่มีชิดตัวแปรเป็น String มา getText() ให้เป็น Double
+
         double vs1 = Double.parseDouble(show_vs1.getText().toString());
         double vs2 = Double.parseDouble(show_vs2.getText().toString());
-
-//        tv_show_result.setText(Double.toString(vs1 - vs2));
+// เพื่อจะได้เอามาหา ผลต่างได้
+// แล้วเราจะหาผลต่าง จากการเอาค่า vs1 vs2 มาลบกัน โดยจะเก็บค่าที่ได้มาไว้ใน ตัวแปร result_num  ที่มีค่าเป็น double
+        double result_num = vs1 - vs2;
 
 
         Log.d("Show ", show_vs1.getText().toString());
         Log.d("Show ", show_vs2.getText().toString());
         Log.d("Show ", String.valueOf(vs1 - vs2));
-        tv_show_result.setText(Double.toString(vs1 - vs2));
-       // tv_show_result.setText(new DecimalFormat("0.00").format(+tv_show_result.getText().length()));
 
-     //   TextView tv_show_result = (TextView) getActivity().findViewById(R.id.tv_show_result);
-//        tv_show_result.setText("" + tv_show_result);
-//        tv_show_result.setText(new DecimalFormat("0.00").format(+tv_show_result.length()));
+
+        tv_show_result.setText(new DecimalFormat("0.00").format(+result_num));
+
 
         if (tv_show_result.getText().length() < 0) {
-            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
+            show_vs1.setBackground(rootView.getResources().getDrawable(R.drawable.result_shape));
+            show_vs2.setBackground(rootView.getResources().getDrawable(R.drawable.result_shape_sp));
         } else if (tv_show_result.getText().length() > 0) {
-            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
+            show_vs1.setBackground(rootView.getResources().getDrawable(R.drawable.result_shape_sp));
+            show_vs2.setBackground(rootView.getResources().getDrawable(R.drawable.result_shape));
         }
+
 
     }
 
