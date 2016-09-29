@@ -267,7 +267,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
             }
             if ((spinner_oil_type == 5)) { // ค่าใน spinner เป็น disel [โดยที่ Day = 18 และค่า pop-up ยังเป็น pop-up "shell" & "esso" อยู่ ตามค่าใน test case2
-                show_vs1.setText(Dummy.getInstance().shell_day_27.get(5) + " "); //24.63 is shell disel day27
+                show_vs1.setText(Dummy.getInstance().shell_day_27.get(5) + " "); //24.64 is shell disel day27
                 show_vs2.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
                 setCompair();
             }
