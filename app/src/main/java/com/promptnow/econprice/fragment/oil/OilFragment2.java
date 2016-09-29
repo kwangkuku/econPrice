@@ -256,6 +256,42 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             }
         }
 
+        {
+//        // ----> test case 3 : day = 27, spinner oil type = disel , popup = esso & shell
+            if (day[0].equals("27")) { // date in date picker = 27 เปลี่ยนค่าวันที่เป็นวันที่27 , แต่ค่าเริ่มต้นจาก test case2 ยังเป็น e20(3) , pop-up "shell" & "esso" อยู่
+                // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
+                show_vs1.setText(Dummy.getInstance().shell_day_27.get(3) + " "); //28.01 is shell e20 day27
+                show_vs2.setText(Dummy.getInstance().esso_day_27.get(3) + " "); //28.62 is esso e20 day27
+                setCompair();
+
+
+            }
+            if ((spinner_oil_type == 5)) { // ค่าใน spinner เป็น disel [โดยที่ Day = 18 และค่า pop-up ยังเป็น pop-up "shell" & "esso" อยู่ ตามค่าใน test case2
+                show_vs1.setText(Dummy.getInstance().shell_day_27.get(5) + " "); //24.63 is shell disel day27
+                show_vs2.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
+                setCompair();
+            }
+
+            //เลือกค่าใน pop-up ค่าซ้าย ปลี่ยนเป็น esso โดยที่ ค่า Day = 18 ,ค่าใน spinner เป็น disel   แต่ว่า pop-up ในค่าทางขวาจะยังเป็น esso อยู่จากค่าเดิมใน testcase2
+            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
+                if (check_choice_popup1.equals("4")) { //เลือกอะไรใน pop-up //esso pump
+                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
+                    show_vs2.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
+                    setCompair();
+                }
+
+
+            }
+            if (check_click_popup.equals("2")) { //left  เลือก pop-up ตัวไหน ขวา
+                if (check_choice_popup2.equals("3")) { //เลือกอะไรใน pop-up //shell pump
+                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
+                    show_vs2.setText(Dummy.getInstance().shell_day_27.get(5) + " "); //24.64 is shell disel day27
+                    setCompair();
+                }
+
+            }
+        }
+
         }
 
 
