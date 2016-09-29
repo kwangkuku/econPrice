@@ -34,7 +34,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="@dimen/text_view"
             android:text="55°C"
-            android:textSize="14dip"
+            android:textSize="18dip"
             />
     </LinearLayout>
 
@@ -66,7 +66,7 @@
             android:layout_marginLeft="@dimen/text_view"
             android:gravity="right"
             android:text="43°C"
-            android:textSize="14dip" />
+            android:textSize="18dip" />
     </LinearLayout>
 
     <LinearLayout
@@ -97,7 +97,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="@dimen/text_view"
             android:gravity="right"
-            android:textSize="14dip" />
+            android:textSize="18dip" />
     </LinearLayout>
 
     <LinearLayout
@@ -128,7 +128,7 @@
             android:layout_marginLeft="@dimen/text_view"
             android:gravity="right"
             android:text="43°C"
-            android:textSize="14dip" />
+            android:textSize="18dip" />
     </LinearLayout>
 
 
