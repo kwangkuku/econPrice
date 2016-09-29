@@ -79,56 +79,64 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     }
 
 
-//    //Date Picker
-//    private void setView() {
-//        tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
-//        show_vs1 = (TextView) rootView.findViewById(R.id.show_vs1);
-//        show_vs2 = (TextView) rootView.findViewById(R.id.show_vs2);
-//        tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
-//        img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
-//        img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
-//
-//        //
-//        textView5 = (TextView) rootView.findViewById(R.id.textView5);
-//
-//
-//        //        เปลี่ยน font
-//        tv = (TextView) rootView.findViewById(R.id.date);
-//        tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
-//        tv3 = (TextView) rootView.findViewById(R.id.tv3);
-//        tv4 = (TextView) rootView.findViewById(R.id.bath);
-//
-//        //        เปลี่ยน font
-//        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
-//        tv.setTypeface(font);
-//        tv2.setTypeface(font);
-//        tv3.setTypeface(font);
-//        tv4.setTypeface(font);
-//
-//        final Calendar c = Calendar.getInstance();
-//        int year = c.get(Calendar.YEAR);
-//        int month = c.get(Calendar.MONTH);
-//        month += 1;
-//        int day = c.get(Calendar.DAY_OF_MONTH);
-//        String stringOfDate = day + "/" + month + "/" + year;
-//
-//        tv_date_oil_vs.setText(stringOfDate);
-//        setCurrentDate();
-//
-//
-//        tv_date_oil_vs.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showDatePikkerDialog();
-//
-//            }
-//
-//
-//        });
-//        show_vs1.setText("31.76");
-//        show_vs2.setText("33.33");
-//
-//    }
+    //Date Picker
+    private void setView() {
+        tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
+        show_vs1 = (TextView) rootView.findViewById(R.id.show_vs1);
+        show_vs2 = (TextView) rootView.findViewById(R.id.show_vs2);
+        tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
+        img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
+        img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
+
+        //
+        textView5 = (TextView) rootView.findViewById(R.id.textView5);
+
+
+        //        เปลี่ยน font
+        tv = (TextView) rootView.findViewById(R.id.date);
+        tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
+        tv3 = (TextView) rootView.findViewById(R.id.tv3);
+        tv4 = (TextView) rootView.findViewById(R.id.bath);
+        tv5 = (TextView) rootView.findViewById(R.id.show_vs1);
+        tv6 = (TextView) rootView.findViewById(R.id.show_vs2);
+        tv7 = (TextView) rootView.findViewById(R.id.tv_show_result);
+
+
+        //        เปลี่ยน font
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
+        tv.setTypeface(font);
+        tv2.setTypeface(font);
+        tv3.setTypeface(font);
+        tv4.setTypeface(font);
+        tv5.setTypeface(font);
+        tv6.setTypeface(font);
+        tv7.setTypeface(font);
+        tv_date_oil_vs.setTypeface(font);
+
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        month += 1;
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        String stringOfDate = day + "/" + month + "/" + year;
+
+        tv_date_oil_vs.setText(stringOfDate);
+        setCurrentDate();
+
+
+        tv_date_oil_vs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePikkerDialog();
+
+            }
+
+
+        });
+        show_vs1.setText("31.76");
+        show_vs2.setText("33.33");
+
+    }
 
     private void showDatePikkerDialog() {
         DatePickerFragment picker = new DatePickerFragment(getActivity(), day, month, year);
@@ -583,57 +591,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
             show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
         }
-
-
-    }
-
-    //Date Picker
-    private void setView() {
-        tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
-
-        //        เปลี่ยน font
-        tv = (TextView) rootView.findViewById(R.id.date);
-        tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
-        tv3 = (TextView) rootView.findViewById(R.id.tv3);
-        tv4 = (TextView) rootView.findViewById(R.id.bath);
-        tv5 = (TextView) rootView.findViewById(R.id.show_vs1);
-        tv6 = (TextView) rootView.findViewById(R.id.show_vs2);
-        tv7 = (TextView) rootView.findViewById(R.id.tv_show_result);
-
-        //        เปลี่ยน font
-        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
-        tv.setTypeface(font);
-        tv2.setTypeface(font);
-        tv3.setTypeface(font);
-        tv4.setTypeface(font);
-        tv5.setTypeface(font);
-        tv6.setTypeface(font);
-        tv7.setTypeface(font);
-        tv_date_oil_vs.setTypeface(font);
-
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        month += 1;
-        int day = c.get(Calendar.DAY_OF_MONTH);
-        String stringOfDate = day + "/" + month + "/" + year;
-
-        tv_date_oil_vs.setText(stringOfDate);
-
-
-        tv_date_oil_vs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                // Initialize a new date picker dialog fragment
-//                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
-//
-//                // Show the date picker dialog fragment
-//                dFragment.show(getActivity().getFragmentManager(), "Date Picker");
-
-                show_vs1.setText("31.76");
-                show_vs2.setText("33.33");
-            }
-        });
 
 
     }
