@@ -157,7 +157,7 @@
                     android:gravity="center"
                     android:text="31.76"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum2"
@@ -167,7 +167,7 @@
                     android:gravity="center"
                     android:text="33.33"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum3"
@@ -177,7 +177,7 @@
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_bs_colum4"
@@ -187,7 +187,7 @@
                     android:gravity="center"
                     android:text="32.21"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
             </TableRow>
 
             <TableRow
@@ -217,7 +217,7 @@
                     android:gravity="center"
                     android:text="24.38"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh95_colum2"
@@ -227,7 +227,7 @@
                     android:gravity="center"
                     android:text="24.85"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh95_colum3"
@@ -237,7 +237,7 @@
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh95_colum4"
@@ -247,7 +247,7 @@
                     android:gravity="center"
                     android:text="24.65"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
             </TableRow>
             <TableRow
                 android:id="@+id/tableRow4"
@@ -277,7 +277,7 @@
                     android:gravity="center"
                     android:text="22.14"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh91_colum2"
@@ -287,7 +287,7 @@
                     android:gravity="center"
                     android:text="23.75"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh91_colum3"
@@ -297,7 +297,7 @@
                     android:gravity="center"
                     android:text="22.14"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_gsh91_colum4"
@@ -307,7 +307,7 @@
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
             </TableRow>
 
             <TableRow
@@ -337,7 +337,7 @@
                     android:gravity="center"
                     android:text="23.75"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_e20_colum2"
@@ -347,7 +347,7 @@
                     android:gravity="center"
                     android:text="23.75"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_e20_colum3"
@@ -357,7 +357,7 @@
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_e20_colum4"
@@ -367,7 +367,7 @@
                     android:gravity="center"
                     android:text="25.11"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
             </TableRow>
 
             <TableRow
@@ -398,7 +398,7 @@
                     android:gravity="center"
                     android:text="17.99"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_e85_colum2"
@@ -408,7 +408,7 @@
                     android:gravity="center"
                     android:text="23.75"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_e85_colum3"
@@ -418,7 +418,7 @@
                     android:gravity="center"
                     android:text="18.32"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_e85_colum4"
@@ -428,7 +428,7 @@
                     android:gravity="center"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
             </TableRow>
             <TableRow
                 android:id="@+id/tableRow7"
@@ -457,7 +457,7 @@
                     android:gravity="center"
                     android:text="24.19"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_disel_colum2"
@@ -467,7 +467,7 @@
                     android:gravity="center"
                     android:text="24.25"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_disel_colum3"
@@ -477,7 +477,7 @@
                     android:gravity="center"
                     android:text="24.62"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tv_disel_colum4"
@@ -487,7 +487,7 @@
                     android:gravity="center"
                     android:text="24.65"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
             </TableRow>
 
         </TableLayout>

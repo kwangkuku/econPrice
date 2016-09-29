@@ -31,7 +31,9 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_bs_colum1, tv_bs_colum2, tv_bs_colum3, tv_bs_colum4, tv_gsh95_colum1, tv_gsh95_colum2,
             tv_gsh95_colum3, tv_gsh95_colum4, tv_gsh91_colum1, tv_gsh91_colum2, tv_gsh91_colum3, tv_gsh91_colum4,
             tv_e20_colum1, tv_e20_colum2, tv_e20_colum3, tv_e20_colum4, tv_e85_colum1, tv_e85_colum2, tv_e85_colum3, tv_e85_colum4,
-            tv_ds_colum1, tv_ds_colum2, tv_ds_colum3, tv_ds_colum4, show_vs1, show_vs2, tv_show_result;
+            tv_ds_colum1, tv_ds_colum2, tv_ds_colum3, tv_ds_colum4, show_vs1, show_vs2, tv_show_result,
+            colum1, colum2, colum3, colum4, colum5, colum6, colum7, colum8, colum9, colum10, colum11, colum12, colum13, colum14,
+            colum15, colum16, colum17, colum18, colum19, colum20, colum21, colum22, colum23, colum24;
     private int selectedYear;
     private int selectedMonth;
     private int selectedDay;
@@ -90,6 +92,36 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         show_vs1 = (TextView) rootView.findViewById(R.id.show_vs1);
         show_vs2 = (TextView) rootView.findViewById(R.id.show_vs2);
         tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
+        colum1=(TextView) rootView.findViewById(R.id.tv_bs_colum1);
+        colum2=(TextView) rootView.findViewById(R.id.tv_bs_colum2);
+        colum3=(TextView) rootView.findViewById(R.id.tv_bs_colum3);
+        colum4=(TextView) rootView.findViewById(R.id.tv_bs_colum4);
+
+        colum5=(TextView) rootView.findViewById(R.id.tv_gsh95_colum1);
+        colum6=(TextView) rootView.findViewById(R.id.tv_gsh95_colum2);
+        colum7=(TextView) rootView.findViewById(R.id.tv_gsh95_colum3);
+        colum8=(TextView) rootView.findViewById(R.id.tv_gsh95_colum4);
+
+        colum9=(TextView) rootView.findViewById(R.id.tv_gsh91_colum1);
+        colum10=(TextView) rootView.findViewById(R.id.tv_gsh91_colum2);
+        colum11=(TextView) rootView.findViewById(R.id.tv_gsh91_colum3);
+        colum12=(TextView) rootView.findViewById(R.id.tv_gsh91_colum4);
+
+        colum13=(TextView) rootView.findViewById(R.id.tv_e20_colum1);
+        colum14=(TextView) rootView.findViewById(R.id.tv_e20_colum2);
+        colum15=(TextView) rootView.findViewById(R.id.tv_e20_colum3);
+        colum16=(TextView) rootView.findViewById(R.id.tv_e20_colum4);
+
+        colum17=(TextView) rootView.findViewById(R.id.tv_e85_colum1);
+        colum18=(TextView) rootView.findViewById(R.id.tv_e85_colum2);
+        colum19=(TextView) rootView.findViewById(R.id.tv_e85_colum3);
+        colum20=(TextView) rootView.findViewById(R.id.tv_e85_colum4);
+
+        colum21=(TextView) rootView.findViewById(R.id.tv_disel_colum1);
+        colum22=(TextView) rootView.findViewById(R.id.tv_disel_colum2);
+        colum23=(TextView) rootView.findViewById(R.id.tv_disel_colum3);
+        colum24=(TextView) rootView.findViewById(R.id.tv_disel_colum4);
+
 
 //        เปลี่ยน font
         date = (TextView) rootView.findViewById(R.id.date);
@@ -111,6 +143,30 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         tv6.setTypeface(font);
         tv7.setTypeface(font);
         tv_date_oil_price.setTypeface(font);
+        colum1.setTypeface(font);
+        colum2.setTypeface(font);
+        colum3.setTypeface(font);
+        colum4.setTypeface(font);
+        colum5.setTypeface(font);
+        colum6.setTypeface(font);
+        colum7.setTypeface(font);
+        colum8.setTypeface(font);
+        colum9.setTypeface(font);
+        colum10.setTypeface(font);
+        colum11.setTypeface(font);
+        colum12.setTypeface(font);
+        colum13.setTypeface(font);
+        colum14.setTypeface(font);
+        colum15.setTypeface(font);
+        colum16.setTypeface(font);
+        colum17.setTypeface(font);
+        colum18.setTypeface(font);
+        colum19.setTypeface(font);
+        colum20.setTypeface(font);
+        colum21.setTypeface(font);
+        colum22.setTypeface(font);
+        colum23.setTypeface(font);
+        colum24.setTypeface(font);
 
         final Calendar c = Calendar.getInstance();
         year = c.get(Calendar.YEAR);
@@ -181,9 +237,9 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
         String day[] = date.split("/");
 
-        Log.d("Show Day" ,day[0]);
-        Log.d("Show Month" ,day[1]);
-        Log.d("Show Year" ,day[2]);
+        Log.d("Show Day", day[0]);
+        Log.d("Show Month", day[1]);
+        Log.d("Show Year", day[2]);
 //       String d = date.substring(0, 2); ใช้ในกรณีที่วันที่มีค่าเป็น 23/1/2016 9 หลัก
 // แต่ถ้าเป็น case ที่        วันที่มีค่าเป็น 8/1/2016  8 หลัก จะใช้   String d = date.substring(0, ๅ);
 
