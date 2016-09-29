@@ -40,10 +40,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
     private int month;
     private int day;
     private String stringOfDate;
-    double vs1_day_10 = 23.45, vs2_day_10 = 25.77;
-    double vs1_day_18 = 31.56, vs2_day_18 = 29.91;
-    double vs1_day_27 = 26.77, vs2_day_27 = 26.56;
-    double result;
+
 
     public interface onSetDateListener {
 
@@ -128,11 +125,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         tv_date_oil_price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Initialize a new date picker dialog fragment
-//                android.app.DialogFragment dFragment = new DatePickerFragmentDialog();
-//
-//                // Show the date picker dialog fragment
-//                dFragment.show(getActivity().getFragmentManager(), "Date Picker");
+
                 showDatePikkerDialog();
 
             }
@@ -185,14 +178,18 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
     }
 
     private void setData(String date) {
-        String d = date.substring(0, 2);
 
+        String day[] = date.split("/");
+
+        Log.d("Show Day" ,day[0]);
+        Log.d("Show Month" ,day[1]);
+        Log.d("Show Year" ,day[2]);
 //       String d = date.substring(0, 2); ใช้ในกรณีที่วันที่มีค่าเป็น 23/1/2016 9 หลัก
 // แต่ถ้าเป็น case ที่        วันที่มีค่าเป็น 8/1/2016  8 หลัก จะใช้   String d = date.substring(0, ๅ);
 
-        Log.d(TAG, "perfeact day : " + d);
+        Log.d(TAG, "perfeact day : " + day[0]);
 
-        if (d.equals("10")) {
+        if (day[0].equals("10")) {
 
 //            // Row1
             tv_bs_colum1.setText(Dummy.getInstance().ptt_day_10.get(0) + " ");
@@ -231,8 +228,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_ds_colum4.setText(Dummy.getInstance().esso_day_10.get(5) + " ");
 
 
-        }
-        if (d.equals("18")) {
+        } else if (day[0].equals("18")) {
 
             // Row1
             tv_bs_colum1.setText(Dummy.getInstance().ptt_day_18.get(0) + " ");
@@ -271,11 +267,8 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_ds_colum4.setText(Dummy.getInstance().esso_day_18.get(05) + " ");
 
 
+        } else if (day[0].equals("27")) {
 
-
-        }
-
-        if (d.equals("27")) {
 
             // Row1
             tv_bs_colum1.setText(Dummy.getInstance().ptt_day_27.get(0) + " ");
