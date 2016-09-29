@@ -32,6 +32,7 @@ import static com.promptnow.econprice.R.id.tv;
  * Created by Whankung on 7/9/2559.
  */
 
+// หน้าเลขเด็ด
 public class LotteryFragment2 extends Fragment {
     private View rootView;
     private Typeface font;

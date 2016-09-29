@@ -1,41 +1,37 @@
 package com.promptnow.econprice.fragment.lottery;
 
-import android.app.Activity;
-import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.view.HideKeyboard;
 import com.promptnow.econprice.view.View_popup;
 
-import java.io.Closeable;
 
 /**
  * Created by Whankung on 7/9/2559.
  */
 
+// หน้าตรวจรางวัล
 public class LotteryFragment extends Fragment implements View_popup.onSubmitAlertDialogListener {
     private View rootView;
     EditText input, seach;
     private Typeface font;
-    private TextView tv, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9, tv10, tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20;
+    private TextView tv, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9, tv10,
+            tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20;
     private Spinner spin;
 
 
@@ -219,29 +215,21 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
 
     private void setNumber() {
+//        แถบค้นหาผลสลากกินแบ่งรัฐบาล
         input = (EditText) rootView.findViewById(R.id.seach_num);
         input.addTextChangedListener(watch);
         input.clearFocus();
 
-
+// hide keyboard
         input.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-                } else {
-                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
-
-
-                }
-
+                getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                HideKeyboard.hideKeyboard(getActivity());
             }
         });
 
     }
-
 
     private TextWatcher watch = new TextWatcher() {
 
@@ -256,10 +244,13 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
         }
 
+//            pop up
         @Override
         public void onTextChanged(CharSequence s, int a, int b, int c) {
             Log.d("log", "123");
+//            ตัวเลขถูกรางวัล
             String prefix = "000000";
+
             String strMsg = "";
             if (s.toString().endsWith(prefix)) {
                 strMsg = getResources().getString(R.string.str_msgTrue);

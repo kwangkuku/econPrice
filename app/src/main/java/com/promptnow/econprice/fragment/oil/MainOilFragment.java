@@ -52,6 +52,7 @@ public class MainOilFragment extends Fragment {
                 getFragments()));
         tabLayout.setupWithViewPager(viewPager);
         SampleFragmentPagerAdapterOil.applyFontedTab(getActivity().getApplicationContext(),viewPager,tabLayout);
+
     }
 
     private List<Fragment> getFragments() {

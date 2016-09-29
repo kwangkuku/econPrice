@@ -3,6 +3,7 @@ package com.promptnow.econprice.fragment.lottery;
 
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,24 +11,29 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
+import com.promptnow.econprice.view.HideKeyboard;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 public class MainLotteryFragment extends android.support.v4.app.Fragment {
     private Typeface font;
     private View rootView;
     private TabLayout tabLayout;
 
-    // Fragment TabHost as mTabHost
-    //private FragmentTabHost mTabHost;
+
 
     @Nullable
     @Override
@@ -39,6 +45,7 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
     }
 
     private void setView() {
+//        เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
 
         final ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
@@ -49,16 +56,23 @@ public class MainLotteryFragment extends android.support.v4.app.Fragment {
                 getFragments()));
         tabLayout.setupWithViewPager(viewPager);
 
-//        String[] List = {"ตรวจรางวัล", "เลขเด็ด"};
-//        CustomTabLayout tab= new CustomTabLayout(getActivity(),List);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
 
-//        for (int i = 0; i < tabLayout.getTabCount(); i++) {
-//            TabLayout.Tab tab = tabLayout.getTabAt(i);
-//
-//           tab.setCustomView(SampleFragmentPagerAdapterLotto.getTabView(i));
-//        }
-      //  SampleFragmentPagerAdapterLotto.applyFontedTab(MainLotteryFragment.this, viewPager, tabLayout);
+            @Override
+            public void onPageSelected(int position) {
+                HideKeyboard.hideKeyboard(getActivity());
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+//        เปลี่ยน font tab
       SampleFragmentPagerAdapterLotto.applyFontedTab(getActivity().getApplicationContext(),viewPager,tabLayout);
 
     }

@@ -22,7 +22,8 @@
         android:hint="ค้นหาผลสลากกินแบ่งรัฐบาล"
         android:inputType="number"
         android:maxLength="6"
-        android:focusableInTouchMode="true" />
+        android:focusableInTouchMode="true"
+        />
 
 
     <TextView
