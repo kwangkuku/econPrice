@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +31,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private View rootView;
     private Typeface font;
     private Spinner oilTypeSpinner;
-    private TextView tv_date_oil_vs, tv, tv2, tv3, tv4, tv5, tv6, tv7;
+    private TextView tv_date_oil_vs, tv, tv2, tv3, tv4;
     private TextView show_vs1, show_vs2, tv_show_result;
     private ImageView img_vs1, img_vs2;
     private int year;
@@ -52,9 +51,9 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
     double result_vs_popup;
     //ผู้ใช้เลือกค่าใน pop-up ตัวไหน
-    private String check_click_popup = " "; //ฝั่งขวา img_vs1 = 1 ; ฝั่งซ้าย img_vs2 = 2;
-    private String check_choice_popup1 = " "; //ค่าแรก ptt = 1; ค่าที่สอง bangjak = 2; ค่าที่สาม shell = 3; ค่าที่สี่ esso = 4;  ซ้าย
-    private String check_choice_popup2 = " "; // ขวา
+    private String check_click_popup = "1"; //ฝั่งขวา img_vs1 = 1 ; ฝั่งซ้าย img_vs2 = 2;
+    private String check_choice_popup1 = "1"; //ค่าแรก ptt = 1; ค่าที่สอง bangjak = 2; ค่าที่สาม shell = 3; ค่าที่สี่ esso = 4;  ซ้าย
+    private String check_choice_popup2 = "1"; // ขวา
     //
     private TextView textView5;
     //
@@ -97,10 +96,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         tv2 = (TextView) rootView.findViewById(R.id.txt_oil_type);
         tv3 = (TextView) rootView.findViewById(R.id.tv3);
         tv4 = (TextView) rootView.findViewById(R.id.bath);
-        tv5 = (TextView) rootView.findViewById(R.id.show_vs1);
-        tv6 = (TextView) rootView.findViewById(R.id.show_vs2);
-        tv7 = (TextView) rootView.findViewById(R.id.tv_show_result);
-
 
         //        เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
@@ -108,10 +103,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         tv2.setTypeface(font);
         tv3.setTypeface(font);
         tv4.setTypeface(font);
-        tv5.setTypeface(font);
-        tv6.setTypeface(font);
-        tv7.setTypeface(font);
-        tv_date_oil_vs.setTypeface(font);
 
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
@@ -277,7 +268,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
             }
             if ((spinner_oil_type == 5)) { // ค่าใน spinner เป็น disel [โดยที่ Day = 18 และค่า pop-up ยังเป็น pop-up "shell" & "esso" อยู่ ตามค่าใน test case2
-                show_vs1.setText(Dummy.getInstance().shell_day_27.get(5) + " "); //24.64 is shell disel day27
+                show_vs1.setText(Dummy.getInstance().shell_day_27.get(5) + " "); //24.63 is shell disel day27
                 show_vs2.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
                 setCompair();
             }
@@ -302,9 +293,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             }
         }
 
+
     }
-
-
 //เมื่อเปลี่ยนค่าใน spinner
 //        if ((spinner_oil_type == 1)){
 //            show_vs1.setText("31..67");
@@ -358,9 +348,11 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         Log.d("Show ", show_vs2.getText().toString());
         Log.d("Show ", String.valueOf(vs1 - vs2));
         tv_show_result.setText(Double.toString(vs1 - vs2));
-//        tv_show_result.setText("" +  tv_show_result);
-//        tv_show_result.setText(new DecimalFormat("0.00").format(+tv_show_result.getText().length()));
+       // tv_show_result.setText(new DecimalFormat("0.00").format(+tv_show_result.getText().length()));
 
+     //   TextView tv_show_result = (TextView) getActivity().findViewById(R.id.tv_show_result);
+//        tv_show_result.setText("" + tv_show_result);
+//        tv_show_result.setText(new DecimalFormat("0.00").format(+tv_show_result.length()));
 
         if (tv_show_result.getText().length() < 0) {
             show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
@@ -423,6 +415,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                                                    setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
                                                    img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
 
+                                                   tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
                                                    dialog.dismiss();
                                                    //   img_vs2.setImageResource(R.drawable.ic_bangjak);
                                                    // img_vs2.setImageResource(R.drawable.ic_bangjak);
@@ -577,23 +570,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     }
 
 
-    private void setResult() {
-        show_vs1.setText("" + vs1);
-        show_vs2.setText(" " + vs2);
-        tv_show_result.setText(new DecimalFormat("0.00").format(+result_change_spinner_and_datepicker));
-        tv_show_result.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-
-
-        if (result_change_spinner_and_datepicker < 0) {
-            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-        } else if (result_change_spinner_and_datepicker > 0) {
-            show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
-            show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
-        }
-
-
-    }
 }
 
 
