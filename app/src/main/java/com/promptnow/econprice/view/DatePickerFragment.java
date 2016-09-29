@@ -102,7 +102,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         piker_day = (NumberPicker)piker.findViewById(R.id.piker_day);
         piker_day.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
-       
+
         updateDay();
         piker_day.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
 
@@ -129,11 +129,11 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
             piker_month.setDisplayedValues(arrayMonthEN);
 
         //แก้ให้มันเลือกวันอนาคตไม่ได้
-        //////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////
           //  piker_month.setMaxValue(arrayMonthEN.length -1);
 
         piker_month.setMaxValue(calendar.get(Calendar.MONTH)+0);
-///////////////////////////////////////////////////////////////////
+       ///////////////////////////////////////////////////////////////////
 //        }
         piker_month.setValue(month);
         piker_month.setWrapSelectorWheel(false);
@@ -187,7 +187,10 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         c.set(Calendar.MONTH, month);
         piker_day.setMinValue(1);
         int dayOfMonth = c.getActualMaximum(Calendar.DATE);
-        piker_day.setMaxValue(dayOfMonth);
+
+        //piker_day.setMaxValue(dayOfMonth); แก้ให้ set วันในอนาคตไม่ได้
+        piker_day.setMaxValue(calendar.get(Calendar.DATE)+0);
+
         piker_day.setFormatter(new NumberPicker.Formatter() {
 
             @Override
