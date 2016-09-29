@@ -187,32 +187,61 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         //if ((day[0].equals("10")) && (spinner_oil_type == 0)) {
 
 // เมื่อเปลี่ยนค่า date ใน date picker
-        //test case 1 : day = 10, spinner oil type = sohol 95 , popup = bg & ptt
-        if (day[0].equals("10")) { // date in date picker = 10 เปลี่ยนค่าวันที่เป็นวันที่10 , แต่ค่าเริ่มต้นยังเป็น เบนซิล(0) , pop-up "ptt" & "bangjak" อยู่
-            // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
-            show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //31.44 is ptt bansin day 10
-            show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); //32.25 is bangjak day10
-            setCompair();
-        }
-        if ((spinner_oil_type == 1)) { // ค่าใน spinner เป็น sohol 95 [โดยที่ Day = 10 และค่า pop-up ยังเป็น pop-up "ptt" & "bangjak" อยู่ ตามค่าเริ่มต้นตั้งแต่แรก]
-            show_vs1.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); //22.25 is ptt sohol95 day 10
-            show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
-            setCompair();
-        }
-
-        //เลือกค่าใน pop-up ค่าซ้าย โดยที่ ค่า Day = 10 ,ค่าใน spinner เป็น sohol 95  ซึ่งค่าใน pop-up เป็น ค่า bangjak แต่ว่า pop-up ในค่าทางขวาจะยังเป็น bangjak อยู่จากค่าเดิม
-        if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-            if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
-                show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //bangjak day10 sohol95
-//                show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); // ptt dat10 sohol95
-                show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //bangjak day10 sohol95
+        {   // ----> test case 1 : day = 10, spinner oil type = sohol 95 , popup = bangjak & ptt
+            if (day[0].equals("10")) { // date in date picker = 10 เปลี่ยนค่าวันที่เป็นวันที่10 , แต่ค่าเริ่มต้นยังเป็น เบนซิล(0) , pop-up "ptt" & "bangjak" อยู่
+                // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
+                show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //31.44 is ptt bansin day 10
+                show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); //32.25 is bangjak day10
+                setCompair();
+            }
+            if ((spinner_oil_type == 1)) { // ค่าใน spinner เป็น sohol 95 [โดยที่ Day = 10 และค่า pop-up ยังเป็น pop-up "ptt" & "bangjak" อยู่ ตามค่าเริ่มต้นตั้งแต่แรก]
+                show_vs1.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); //22.25 is ptt sohol95 day 10
+                show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
                 setCompair();
             }
 
+            //เลือกค่าใน pop-up ค่าซ้าย โดยที่ ค่า Day = 10 ,ค่าใน spinner เป็น sohol 95  ซึ่งค่าใน pop-up เป็น ค่า bangjak แต่ว่า pop-up ในค่าทางขวาจะยังเป็น bangjak อยู่จากค่าเดิม
+            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
+                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //bangjak pump
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
+                    setCompair();
+                }
 
+                if (check_click_popup.equals("2")) { //left  เลือก pop-up ตัวไหน
+                    if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
+                        show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
+                        show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
+                        setCompair();
+                    }
+
+            }
+        }
+//        // ----> test case 2 : day = 18, spinner oil type = E20 , popup = shell & esso
+//
+//        }
+//            if (day[0].equals("18")) { // date in date picker = 18 เปลี่ยนค่าวันที่เป็นวันที่18 , แต่ค่ายังเป็นค่าตาม testcase1 คือ sohol95(1) , pop-up "bangjak" & "ptt" อยู่
+//                // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
+//                show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); //34.11 is bangjak sohol95 day 18
+//                show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); //29.99 is ptt sohol95 day18
+//                setCompair();
+//            }
+//
+//            if ((spinner_oil_type == 3)) { // ค่าใน spinner เป็น E20 [โดยที่ Day = 18 และค่า pop-up ยังเป็น pop-up "bangjak" & "ptt" อยู่ ตามค่าของ test case1]
+//                show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); //34.11 is bangjak sohol95 day 18
+//                show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); //29.99 is ptt sohol95 day18
+//                setCompair();
+//            }
+//            //เลือกค่าใน pop-up ค่าซ้าย เป็น shell โดยที่ ค่า Day = 18 ,ค่าใน spinner เป็น E20  ซึ่งค่าใน pop-up ทางซ้ายเป็น ค่า shell แต่ว่า pop-up ในค่าทางขวาจะยังเป็น ptt อยู่จากค่าเดิม
+//            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
+//                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
+//                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(1) + " "); //24.56 bangjak day10 sohol95
+//                    show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); //29.99 is ptt sohol95 day18
+//                    setCompair();
+//                }
+           }
         }
 
-    }
 //เมื่อเปลี่ยนค่าใน spinner
 //        if ((spinner_oil_type == 1)){
 //            show_vs1.setText("31..67");
