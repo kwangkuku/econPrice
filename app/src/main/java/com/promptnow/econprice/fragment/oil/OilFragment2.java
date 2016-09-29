@@ -20,7 +20,6 @@ import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
 import com.promptnow.econprice.view.DatePickerFragment;
 import com.promptnow.econprice.view.UtilCalendar;
 
-import java.text.DecimalFormat;
 import java.util.Calendar;
 
 /**
@@ -51,9 +50,9 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
     double result_vs_popup;
     //ผู้ใช้เลือกค่าใน pop-up ตัวไหน
-    private String check_click_popup = "1"; //ฝั่งขวา img_vs1 = 1 ; ฝั่งซ้าย img_vs2 = 2;
-    private String check_choice_popup1 = "1"; //ค่าแรก ptt = 1; ค่าที่สอง bangjak = 2; ค่าที่สาม shell = 3; ค่าที่สี่ esso = 4;  ซ้าย
-    private String check_choice_popup2 = "1"; // ขวา
+    private String check_click_popup = " "; //ฝั่งขวา img_vs1 = 1 ; ฝั่งซ้าย img_vs2 = 2;
+    private String check_choice_popup1 = " "; //ค่าแรก ptt = 1; ค่าที่สอง bangjak = 2; ค่าที่สาม shell = 3; ค่าที่สี่ esso = 4;  ซ้าย
+    private String check_choice_popup2 = " "; // ขวา
     //
     private TextView textView5;
     //
@@ -193,6 +192,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //31.44 is ptt bansin day 10
                 show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); //32.25 is bangjak day10
                 setCompair();
+
+
             }
             if ((spinner_oil_type == 1)) { // ค่าใน spinner เป็น sohol 95 [โดยที่ Day = 10 และค่า pop-up ยังเป็น pop-up "ptt" & "bangjak" อยู่ ตามค่าเริ่มต้นตั้งแต่แรก]
                 show_vs1.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); //22.25 is ptt sohol95 day 10
@@ -208,39 +209,56 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                     setCompair();
                 }
 
-                if (check_click_popup.equals("2")) { //left  เลือก pop-up ตัวไหน
-                    if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
-                        show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
-                        show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
-                        setCompair();
-                    }
+
+            }
+            if (check_click_popup.equals("2")) { //left  เลือก pop-up ตัวไหน
+                if (check_choice_popup2.equals("1")) { //เลือกอะไรใน pop-up //ptt pump
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
+                    show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); //22.25 is bangjak sohol95 day10
+                    setCompair();
+                }
 
             }
         }
+        {
 //        // ----> test case 2 : day = 18, spinner oil type = E20 , popup = shell & esso
-//
-//        }
-//            if (day[0].equals("18")) { // date in date picker = 18 เปลี่ยนค่าวันที่เป็นวันที่18 , แต่ค่ายังเป็นค่าตาม testcase1 คือ sohol95(1) , pop-up "bangjak" & "ptt" อยู่
-//                // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
-//                show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); //34.11 is bangjak sohol95 day 18
-//                show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); //29.99 is ptt sohol95 day18
-//                setCompair();
-//            }
-//
-//            if ((spinner_oil_type == 3)) { // ค่าใน spinner เป็น E20 [โดยที่ Day = 18 และค่า pop-up ยังเป็น pop-up "bangjak" & "ptt" อยู่ ตามค่าของ test case1]
-//                show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); //34.11 is bangjak sohol95 day 18
-//                show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); //29.99 is ptt sohol95 day18
-//                setCompair();
-//            }
-//            //เลือกค่าใน pop-up ค่าซ้าย เป็น shell โดยที่ ค่า Day = 18 ,ค่าใน spinner เป็น E20  ซึ่งค่าใน pop-up ทางซ้ายเป็น ค่า shell แต่ว่า pop-up ในค่าทางขวาจะยังเป็น ptt อยู่จากค่าเดิม
-//            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-//                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
-//                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(1) + " "); //24.56 bangjak day10 sohol95
-//                    show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); //29.99 is ptt sohol95 day18
-//                    setCompair();
-//                }
-           }
+            if (day[0].equals("18")) { // date in date picker = 18 เปลี่ยนค่าวันที่เป็นวันที่18 , แต่ค่าเริ่มต้นจาก test case1 ยังเป็น sohol95(1) , pop-up "bangjak" & "ptt" อยู่
+                // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
+                show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); //34.11 is bangjak sohol95 day18
+                show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); //29.99 is ptt sohol95 day18
+                setCompair();
+
+
+            }
+            if ((spinner_oil_type == 3)) { // ค่าใน spinner เป็น E20 [โดยที่ Day = 18 และค่า pop-up ยังเป็น pop-up "bangjak" & "ptt" อยู่ ตามค่าใน test case1
+                show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(3) + " "); //21.23 is bangjak E20 day18
+                show_vs2.setText(Dummy.getInstance().ptt_day_18.get(3) + " "); //21.29 is ptt E20 day18
+                setCompair();
+            }
+
+            //เลือกค่าใน pop-up ค่าซ้าย ดปลี่ยนเป็น shell โดยที่ ค่า Day = 18 ,ค่าใน spinner เป็น E20   แต่ว่า pop-up ในค่าทางขวาจะยังเป็น bangjak อยู่จากค่าเดิมใน testcase1
+            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
+                if (check_choice_popup1.equals("3")) { //เลือกอะไรใน pop-up //shell pump
+                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(3) + " "); //22.22 is shell e20 day18
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(3) + " "); //21.23 is bangjak E20 day18
+                    setCompair();
+                }
+
+
+            }
+            if (check_click_popup.equals("2")) { //left  เลือก pop-up ตัวไหน ขวา
+                if (check_choice_popup2.equals("4")) { //เลือกอะไรใน pop-up //esso pump
+                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(3) + " "); //22.22 is shell e20 day18
+                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(3) + " "); //20.63 is esso e20 day18
+                    setCompair();
+                }
+
+            }
         }
+
+        }
+
+
 
 //เมื่อเปลี่ยนค่าใน spinner
 //        if ((spinner_oil_type == 1)){
@@ -299,7 +317,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 //        tv_show_result.setText(new DecimalFormat("0.00").format(+tv_show_result.getText().length()));
 
 
-
         if (tv_show_result.getText().length() < 0) {
             show_vs1.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape));
             show_vs2.setBackground(getActivity().getResources().getDrawable(R.drawable.result_shape_sp));
@@ -317,7 +334,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                                        @Override
                                        public void onClick(View view) {
 
-      final Dialog dialog = new Dialog(getActivity());
+                                           final Dialog dialog = new Dialog(getActivity());
                                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                            dialog.setContentView(R.layout.custom_dialog);
                                            dialog.setCancelable(true);
@@ -361,7 +378,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                                                    setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
                                                    img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
 
-                                                   tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
                                                    dialog.dismiss();
                                                    //   img_vs2.setImageResource(R.drawable.ic_bangjak);
                                                    // img_vs2.setImageResource(R.drawable.ic_bangjak);
