@@ -37,7 +37,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private int year;
     private int month;
     private int day;
-    double vs1, vs2;
     private int selectedYear;
     private int selectedMonth;
     private int selectedDay;
@@ -52,13 +51,12 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private String check_choice_popup2 = "1"; // ขวา
 
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.oil2, container, false);
 
-        setView();
+        setView(); // All By id
         setOilTypeSpiner();
         setVSpopup();
         setShowResult();
@@ -72,7 +70,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     }
 
 
-    //Date Picker
     private void setView() {
         tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
         show_vs1 = (TextView) rootView.findViewById(R.id.show_vs1);
@@ -375,36 +372,36 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                                        @Override
                                        public void onClick(View view) {
 
-                                           final Dialog dialog = new Dialog(getActivity());
-                                           dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                                           dialog.setContentView(R.layout.custom_dialog);
-                                           dialog.setCancelable(true);
+                final Dialog dialog = new Dialog(getActivity());
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.custom_dialog);
+                dialog.setCancelable(true);
 
-                                           final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
-                                           b1.setImageResource(Dummy.getInstance().popup.get(0));
-
-
-                                           final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
-                                           b2.setImageResource(Dummy.getInstance().popup.get(1));
+                final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
+                b1.setImageResource(Dummy.getInstance().popup.get(0));
 
 
-                                           final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
-                                           b3.setImageResource(Dummy.getInstance().popup.get(2));
+                final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+                b2.setImageResource(Dummy.getInstance().popup.get(1));
 
 
-                                           final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
-                                           b4.setImageResource(Dummy.getInstance().popup.get(3));
+                final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
+                b3.setImageResource(Dummy.getInstance().popup.get(2));
 
-                                           check_click_popup = "1";
 
-                                           b1.setOnClickListener(new View.OnClickListener() {
-                                               @Override
-                                               public void onClick(View view) {
-                                                   check_choice_popup1 = "1";
-                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
+                b4.setImageResource(Dummy.getInstance().popup.get(3));
 
-                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
-                                                   dialog.dismiss();
+        check_click_popup = "1";
+
+                 b1.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View view) {
+                      check_choice_popup1 = "1";
+                      setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+
+                       img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
+                       dialog.dismiss();
 
 
                                                }
@@ -555,7 +552,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         String[] List = {"เบนซิล 95", "แก๊สโซฮอล์ 95", "แก๊สโซฮอล์ 91", "E20", "E85", "ดีเซล"};
         CustomAdapterOil oilAdapter = new CustomAdapterOil(getActivity(), List);
         oilTypeSpinner.setAdapter(oilAdapter);
-
 
         oilTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
