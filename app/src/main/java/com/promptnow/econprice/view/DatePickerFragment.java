@@ -188,8 +188,9 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         piker_day.setMinValue(1);
         int dayOfMonth = c.getActualMaximum(Calendar.DATE);
 
-        //piker_day.setMaxValue(dayOfMonth); แก้ให้ set วันในอนาคตไม่ได้
-        piker_day.setMaxValue(calendar.get(Calendar.DATE)+0);
+        piker_day.setMaxValue(dayOfMonth);// แก้ให้ set วันในอนาคตไม่ได้
+
+// piker_day.setMaxValue(calendar.get(Calendar.DATE)+0);  <--- ใช้การ set นี้จะทำให้เลือกวันในอนาคตไม่ได้ แต่ว่า ไม่สมบูรณ์ ex. Today is Day 3 เราจะเลือกวันที่ 4 เป็นต้นไปของเดือนก่อนหน้าไม่ได้ (วันที่ผ่านมาแล้ว)
 
         piker_day.setFormatter(new NumberPicker.Formatter() {
 

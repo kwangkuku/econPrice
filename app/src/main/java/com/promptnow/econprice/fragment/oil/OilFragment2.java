@@ -50,9 +50,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private String check_click_popup = "1"; //ฝั่งขวา img_vs1 = 1 ; ฝั่งซ้าย img_vs2 = 2;
     private String check_choice_popup1 = "1"; //ค่าแรก ptt = 1; ค่าที่สอง bangjak = 2; ค่าที่สาม shell = 3; ค่าที่สี่ esso = 4;  ซ้าย
     private String check_choice_popup2 = "1"; // ขวา
-    //
-    private TextView textView5;
-    //
+
 
 
     @Nullable
@@ -82,9 +80,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
-
-        //
-        textView5 = (TextView) rootView.findViewById(R.id.textView5);
 
 
         //        เปลี่ยน font
@@ -127,8 +122,11 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
 
         });
-        show_vs1.setText("31.76");
-        show_vs2.setText("33.33");
+        //ค่าเริ่มต้น defalf
+        //Day = ToDay
+
+        show_vs1.setText("31.76"); // ค่าที่ตั้งไว้ใน oil2.xml
+        show_vs2.setText("33.33"); // ค่าที่ตั้งไว้ใน oil2.xml
 
     }
 
@@ -178,7 +176,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private void setData(String date, Integer spinner_oil_type) {
         // reset text กดปฏิทินแล้วเปลี่ยนค่าที่ไหนบ้าง
 
-        String day[] = date.split("/");
+        String day[] = date.split("/"); //split คือการแยก "ข้อความ"
         Log.d("show result", day[0]);
         Log.d("show spinner", spinner_oil_type.toString());
 
@@ -355,7 +353,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         Log.d("Show ", show_vs2.getText().toString());
         Log.d("Show ", String.valueOf(vs1 - vs2));
 
-
+// หลังจากนั้น เราก็จะเอา result_num ที่ได้จากการหาผลต่างมา set format ให้เป็นค่าทศนิยมสองตำปหน่ง หลังจากนั้น ให้ set ค่านี้ลงไปที่ textview tv_show_result (แสดงค่า)
         tv_show_result.setText(new DecimalFormat("0.00").format(+result_num));
 
 
