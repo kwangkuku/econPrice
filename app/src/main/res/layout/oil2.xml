@@ -120,6 +120,7 @@
             android:layout_gravity="center"
             android:background="@drawable/bg_img_button"
             app:srcCompat="@drawable/ic_bangjak"
+
             />
     </TableRow>
 

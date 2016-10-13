@@ -23,10 +23,6 @@ import com.promptnow.econprice.view.UtilCalendar;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
-/**
- * Created by Whankung on 7/9/2559.
- */
-
 public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDateListener {
     private View rootView;
     private Typeface font;
@@ -37,6 +33,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private int year;
     private int month;
     private int day;
+    double vs1, vs2;
     private int selectedYear;
     private int selectedMonth;
     private int selectedDay;
@@ -70,6 +67,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     }
 
 
+    //Date Picker
     private void setView() {
         tv_date_oil_vs = (TextView) rootView.findViewById(R.id.tv_date_oil_vs);
         show_vs1 = (TextView) rootView.findViewById(R.id.show_vs1);
@@ -114,16 +112,12 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
             @Override
             public void onClick(View v) {
                 showDatePikkerDialog();
-
             }
-
-
         });
         //ค่าเริ่มต้น defalf
         //Day = ToDay
-
-        show_vs1.setText("31.76"); // ค่าที่ตั้งไว้ใน oil2.xml
-        show_vs2.setText("33.33"); // ค่าที่ตั้งไว้ใน oil2.xml
+        show_vs1.setText("31.76");
+        show_vs2.setText("33.33");
 
     }
 
@@ -177,163 +171,521 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         Log.d("show result", day[0]);
         Log.d("show spinner", spinner_oil_type.toString());
 
-
         Log.d("Show Day", day[0]);
         Log.d("Show Month", day[1]);
         Log.d("Show Year", day[2]);
 
-        //if ((day[0].equals("10")) && (spinner_oil_type == 0)) {
+        //RESET TEXT เมื่อมีค่าเปลี่ยนแปลง ( DatePicker , Spinner , Pop-up)ข้อมูลที่แสดงจะต้องเปลี่ยนค่าด้วย (show_vs1 , show_vs2 ,tv_show_result )
+        //<1>   DatePicker -->   Day10 , Day18 , Day27
+        //<2>   Spinner    -->   [0]Bensin  , [1]Sohol95  , [2]Sohol96  , [3]E20  , [4]E85  , [5]Disel
+        //<3>   Pop-up     -->   [0]ptt , [1]bangjak , [2]shell , [3]esso
+        //check ค่า สามอย่างแล้วเอามาแสดงผล <1> + <2> + <3> = SHOW!!!
+        // * ใช้ DAY เป็นหลัก
 
-// เมื่อเปลี่ยนค่า date ใน date picker
-        {   // ----> test case 1 : day = 10, spinner oil type = sohol 95 , popup = bangjak & ptt
-            if (day[0].equals("10")) { // date in date picker = 10 เปลี่ยนค่าวันที่เป็นวันที่10 , แต่ค่าเริ่มต้นยังเป็น เบนซิล(0) , pop-up "ptt" & "bangjak" อยู่
-                // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
-                show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //31.44 is ptt bansin day 10
-                show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); //32.25 is bangjak day10
+//DAY 10
+        //Day 10 , Spinner = [0]Bensin
+        if ((day[0].equals("10")) && (spinner_oil_type == 0)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); // ptt เบนซิล
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); // bangjak เบนซฺล
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_10.get(0) + " "); // shell เบนซิล
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_10.get(0) + " "); // esso เบนซิล
+                }
+                //setCompair();
 
-                setCompair();
-
-
-            }
-            if ((spinner_oil_type == 1)) { // ค่าใน spinner เป็น sohol 95 [โดยที่ Day = 10 และค่า pop-up ยังเป็น pop-up "ptt" & "bangjak" อยู่ ตามค่าเริ่มต้นตั้งแต่แรก]
-                show_vs1.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); //22.25 is ptt sohol95 day 10
-                show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
-                setCompair();
-            }
-
-            //เลือกค่าใน pop-up ค่าซ้าย โดยที่ ค่า Day = 10 ,ค่าใน spinner เป็น sohol 95  ซึ่งค่าใน pop-up เป็น ค่า bangjak แต่ว่า pop-up ในค่าทางขวาจะยังเป็น bangjak อยู่จากค่าเดิม
-            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //bangjak pump
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
-                    setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); // ptt เบนซิล
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); // bangjak เบนซฺล
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_10.get(0) + " "); // shell เบนซิล
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(0) + " "); // esso เบนซิล
                 }
 
-
             }
-            if (check_click_popup.equals("2")) { //left  เลือก pop-up ตัวไหน
-                if (check_choice_popup2.equals("1")) { //เลือกอะไรใน pop-up //ptt pump
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); //23.66 is bangjak sohol95 day10
-                    show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); //22.25 is bangjak sohol95 day10
-                    setCompair();
+
+            setCompair();
+        }
+        //Day 10 , Spinner = [1]Sohol95
+        else if ((day[0].equals("10")) && (spinner_oil_type == 1)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); // ptt  Sohol95
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); // bangjak  Sohol95
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_10.get(1) + " "); // shell  Sohol95
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_10.get(1) + " "); // esso  Sohol95
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); // ptt  Sohol95
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); // bangjak  Sohol95
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_10.get(1) + " "); // shell  Sohol95
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(1) + " "); // esso  Sohol95
                 }
 
+            }
+            setCompair();
+
+            //Day 10 , Spinner = [2]Sohol96
+        } else if ((day[0].equals("10")) && (spinner_oil_type == 2)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(2) + " "); // ptt Sohol96
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(2) + " "); // bangjak  Sohol96
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_10.get(2) + " "); // shell  Sohol96
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_10.get(2) + " "); // esso  Sohol96
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) {
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_10.get(2) + " "); // ptt  Sohol96
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(2) + " "); // bangjak  Sohol96
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_10.get(2) + " "); // shell  Sohol96
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(2) + " "); // esso  Sohol96
+                }
+                setCompair();
+            }
+
+        } //Day 10 , Spinner = [3]E20
+        else if ((day[0].equals("10")) && (spinner_oil_type == 3)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(3) + " "); // ptt E20
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(3) + " "); // bangjak E20
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_10.get(3) + " "); // shell E20
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_10.get(3) + " "); // esso E20
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_10.get(3) + " "); // ptt E20
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(3) + " "); // bangjak  E20
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_10.get(3) + " "); // shell  E20
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(3) + " "); // esso  E20
+                }
+                setCompair();
+            }
+
+        } else if ((day[0].equals("10")) && (spinner_oil_type == 4)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(4) + " "); // ptt E85
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(4) + " "); // bangjak E85
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_10.get(4) + " "); // shell E85
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_10.get(4) + " "); // esso E85
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_10.get(4) + " "); // ptt E85
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(4) + " "); // bangjak  E85
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_10.get(4) + " "); // shell  E85
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(4) + " "); // esso  E85
+                }
+                setCompair();
             }
         }
-        {
-//        // ----> test case 2 : day = 18, spinner oil type = E20 , popup = shell & esso
-            if (day[0].equals("18")) { // date in date picker = 18 เปลี่ยนค่าวันที่เป็นวันที่18 , แต่ค่าเริ่มต้นจาก test case1 ยังเป็น sohol95(1) , pop-up "bangjak" & "ptt" อยู่
-                // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
-                show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); //34.11 is bangjak sohol95 day18
-                show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); //29.99 is ptt sohol95 day18
-                setCompair();
-
-
-            }
-            if ((spinner_oil_type == 3)) { // ค่าใน spinner เป็น E20 [โดยที่ Day = 18 และค่า pop-up ยังเป็น pop-up "bangjak" & "ptt" อยู่ ตามค่าใน test case1
-                show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(3) + " "); //21.23 is bangjak E20 day18
-                show_vs2.setText(Dummy.getInstance().ptt_day_18.get(3) + " "); //21.29 is ptt E20 day18
-                setCompair();
-            }
-
-            //เลือกค่าใน pop-up ค่าซ้าย ดปลี่ยนเป็น shell โดยที่ ค่า Day = 18 ,ค่าใน spinner เป็น E20   แต่ว่า pop-up ในค่าทางขวาจะยังเป็น bangjak อยู่จากค่าเดิมใน testcase1
-            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-                if (check_choice_popup1.equals("3")) { //เลือกอะไรใน pop-up //shell pump
-                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(3) + " "); //22.22 is shell e20 day18
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(3) + " "); //21.23 is bangjak E20 day18
-                    setCompair();
+        //Day 10 , Spinner = [5]Disel
+        else if ((day[0].equals("10")) && (spinner_oil_type == 5)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(5) + " "); // ptt Disel
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(5) + " "); // bangjak Disel
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_10.get(5) + " "); // shell Disel
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_10.get(5) + " "); // esso Disel
                 }
-
-
-            }
-            if (check_click_popup.equals("2")) { //left  เลือก pop-up ตัวไหน ขวา
-                if (check_choice_popup2.equals("4")) { //เลือกอะไรใน pop-up //esso pump
-                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(3) + " "); //22.22 is shell e20 day18
-                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(3) + " "); //20.63 is esso e20 day18
-                    setCompair();
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_10.get(5) + " "); // ptt Disel
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(5) + " "); // bangjak  Disel
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_10.get(5) + " "); // shell  Disel
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(5) + " "); // esso  Disel
                 }
-
+                setCompair();
             }
         }
 
-        {
-//        // ----> test case 3 : day = 27, spinner oil type = disel , popup = esso & shell
-            if (day[0].equals("27")) { // date in date picker = 27 เปลี่ยนค่าวันที่เป็นวันที่27 , แต่ค่าเริ่มต้นจาก test case2 ยังเป็น e20(3) , pop-up "shell" & "esso" อยู่
-                // ดังนั้นค่าที่ตะแสดงใน show_vs1 และ show_vs2 จะเป็น
-                show_vs1.setText(Dummy.getInstance().shell_day_27.get(3) + " "); //28.01 is shell e20 day27
-                show_vs2.setText(Dummy.getInstance().esso_day_27.get(3) + " "); //28.62 is esso e20 day27
-                setCompair();
+//DAY 18
+        //Day 18 , Spinner = [0]Bensin
+        if ((day[0].equals("10")) && (spinner_oil_type == 0)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_18.get(0) + " "); // ptt เบนซิล
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(0) + " "); // bangjak เบนซฺล
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(0) + " "); // shell เบนซิล
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_18.get(0) + " "); // esso เบนซิล
+                }
+                //setCompair();
 
-
-            }
-            if ((spinner_oil_type == 5)) { // ค่าใน spinner เป็น disel [โดยที่ Day = 18 และค่า pop-up ยังเป็น pop-up "shell" & "esso" อยู่ ตามค่าใน test case2
-                show_vs1.setText(Dummy.getInstance().shell_day_27.get(5) + " "); //24.63 is shell disel day27
-                show_vs2.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
-                setCompair();
-            }
-
-            //เลือกค่าใน pop-up ค่าซ้าย ปลี่ยนเป็น esso โดยที่ ค่า Day = 18 ,ค่าใน spinner เป็น disel   แต่ว่า pop-up ในค่าทางขวาจะยังเป็น esso อยู่จากค่าเดิมใน testcase2
-            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-                if (check_choice_popup1.equals("4")) { //เลือกอะไรใน pop-up //esso pump
-                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
-                    show_vs2.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
-                    setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_18.get(0) + " "); // ptt เบนซิล
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(0) + " "); // bangjak เบนซฺล
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_18.get(0) + " "); // shell เบนซิล
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(0) + " "); // esso เบนซิล
                 }
 
-
             }
-            if (check_click_popup.equals("2")) { //left  เลือก pop-up ตัวไหน ขวา
-                if (check_choice_popup2.equals("3")) { //เลือกอะไรใน pop-up //shell pump
-                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(5) + " "); //26.63 is esso disel day27
-                    show_vs2.setText(Dummy.getInstance().shell_day_27.get(5) + " "); //24.64 is shell disel day27
-                    setCompair();
+
+            setCompair();
+        }
+        //Day 18 , Spinner = [1]Sohol95
+        else if ((day[0].equals("18")) && (spinner_oil_type == 1)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); // ptt  Sohol95
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); // bangjak  Sohol95
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(1) + " "); // shell  Sohol95
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_18.get(1) + " "); // esso  Sohol95
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); // ptt  Sohol95
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); // bangjak  Sohol95
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_18.get(1) + " "); // shell  Sohol95
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(1) + " "); // esso  Sohol95
                 }
 
+            }
+            setCompair();
+
+            //Day 18 , Spinner = [2]Sohol96
+        } else if ((day[0].equals("18")) && (spinner_oil_type == 2)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_18.get(2) + " "); // ptt Sohol96
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(2) + " "); // bangjak  Sohol96
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(2) + " "); // shell  Sohol96
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_18.get(2) + " "); // esso  Sohol96
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) {
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_18.get(2) + " "); // ptt  Sohol96
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(2) + " "); // bangjak  Sohol96
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_18.get(2) + " "); // shell  Sohol96
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(2) + " "); // esso  Sohol96
+                }
+                setCompair();
+            }
+
+        } //Day 18 , Spinner = [3]E20
+        else if ((day[0].equals("18")) && (spinner_oil_type == 3)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_18.get(3) + " "); // ptt E20
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(3) + " "); // bangjak E20
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(3) + " "); // shell E20
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_18.get(3) + " "); // esso E20
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_18.get(3) + " "); // ptt E20
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(3) + " "); // bangjak  E20
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_18.get(3) + " "); // shell  E20
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(3) + " "); // esso  E20
+                }
+                setCompair();
+            }
+
+        } else if ((day[0].equals("18")) && (spinner_oil_type == 4)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_18.get(4) + " "); // ptt E85
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(4) + " "); // bangjak E85
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(4) + " "); // shell E85
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_18.get(4) + " "); // esso E85
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_18.get(4) + " "); // ptt E85
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(4) + " "); // bangjak  E85
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_18.get(4) + " "); // shell  E85
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(4) + " "); // esso  E85
+                }
+                setCompair();
             }
         }
+        //Day 18 , Spinner = [5]Disel
+        else if ((day[0].equals("18")) && (spinner_oil_type == 5)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_18.get(5) + " "); // ptt Disel
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(5) + " "); // bangjak Disel
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(5) + " "); // shell Disel
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_18.get(5) + " "); // esso Disel
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_18.get(5) + " "); // ptt Disel
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(5) + " "); // bangjak  Disel
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_18.get(5) + " "); // shell  Disel
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(5) + " "); // esso  Disel
+                }
+                setCompair();
+            }
+        }
+        //DAY 27
+        //Day 27 , Spinner = [0]Bensin
+        if ((day[0].equals("27")) && (spinner_oil_type == 0)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_27.get(0) + " "); // ptt เบนซิล
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(0) + " "); // bangjak เบนซฺล
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_27.get(0) + " "); // shell เบนซิล
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(0) + " "); // esso เบนซิล
+                }
+                //setCompair();
 
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_27.get(0) + " "); // ptt เบนซิล
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(0) + " "); // bangjak เบนซฺล
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_27.get(0) + " "); // shell เบนซิล
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_27.get(0) + " "); // esso เบนซิล
+                }
+
+            }
+
+            setCompair();
+        }
+        //Day 27 , Spinner = [1]Sohol95
+        else if ((day[0].equals("27")) && (spinner_oil_type == 1)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_27.get(1) + " "); // ptt  Sohol95
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(1) + " "); // bangjak  Sohol95
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_27.get(1) + " "); // shell  Sohol95
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(1) + " "); // esso  Sohol95
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_27.get(1) + " "); // ptt  Sohol95
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(1) + " "); // bangjak  Sohol95
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_27.get(1) + " "); // shell  Sohol95
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_27.get(1) + " "); // esso  Sohol95
+                }
+
+            }
+            setCompair();
+
+            //Day 27 , Spinner = [2]Sohol96
+        } else if ((day[0].equals("27")) && (spinner_oil_type == 2)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_27.get(2) + " "); // ptt Sohol96
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(2) + " "); // bangjak  Sohol96
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_27.get(2) + " "); // shell  Sohol96
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(2) + " "); // esso  Sohol96
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) {
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_27.get(2) + " "); // ptt  Sohol96
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(2) + " "); // bangjak  Sohol96
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_27.get(2) + " "); // shell  Sohol96
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_27.get(2) + " "); // esso  Sohol96
+                }
+                setCompair();
+            }
+
+        } //Day 27 , Spinner = [3]E20
+        else if ((day[0].equals("27")) && (spinner_oil_type == 3)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_27.get(3) + " "); // ptt E20
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(3) + " "); // bangjak E20
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_27.get(3) + " "); // shell E20
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(3) + " "); // esso E20
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_27.get(3) + " "); // ptt E20
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(3) + " "); // bangjak  E20
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_27.get(3) + " "); // shell  E20
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_27.get(3) + " "); // esso  E20
+                }
+                setCompair();
+            }
+
+        } else if ((day[0].equals("27")) && (spinner_oil_type == 4)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_27.get(4) + " "); // ptt E85
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(4) + " "); // bangjak E85
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_27.get(4) + " "); // shell E85
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(4) + " "); // esso E85
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_27.get(4) + " "); // ptt E85
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(4) + " "); // bangjak  E85
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_27.get(4) + " "); // shell  E85
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_27.get(4) + " "); // esso  E85
+                }
+                setCompair();
+            }
+        }
+        //Day 27 , Spinner = [5]Disel
+        else if ((day[0].equals("27")) && (spinner_oil_type == 5)) {
+            if (check_click_popup.equals("1")) { //เลือก Pop-up ตัวไหน --> เลือกอันแรกฝั่งซ้าย
+                //เลือกค่าไหนใน Pop-up
+                if (check_choice_popup1.equals("1")) {
+                    show_vs1.setText(Dummy.getInstance().ptt_day_27.get(5) + " "); // ptt Disel
+                } else if (check_choice_popup1.equals("2")) {
+                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(5) + " "); // bangjak Disel
+                } else if (check_choice_popup1.equals("3")) {
+                    show_vs1.setText(Dummy.getInstance().shell_day_27.get(5) + " "); // shell Disel
+                } else if (check_choice_popup1.equals("4")) {
+                    show_vs1.setText(Dummy.getInstance().esso_day_27.get(5) + " "); // esso Disel
+                }
+                // setCompair();
+            } else if (check_click_popup.equals("2")) { //Pop-up ตัวที่สอง ฝั่งขวา
+                if (check_choice_popup2.equals("1")) {
+                    show_vs2.setText(Dummy.getInstance().ptt_day_27.get(5) + " "); // ptt Disel
+                } else if (check_choice_popup2.equals("2")) {
+                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(5) + " "); // bangjak  Disel
+                } else if (check_choice_popup2.equals("3")) {
+                    show_vs2.setText(Dummy.getInstance().shell_day_27.get(5) + " "); // shell  Disel
+                } else if (check_choice_popup2.equals("4")) {
+                    show_vs2.setText(Dummy.getInstance().esso_day_27.get(5) + " "); // esso  Disel
+                }
+                setCompair();
+            }
+        }
 
     }
-//เมื่อเปลี่ยนค่าใน spinner
-//        if ((spinner_oil_type == 1)){
-//            show_vs1.setText("31..67");
-//            show_vs2.setText("27.77");
-//        }
-//
-//            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-//                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up //ptt pump
-//                    show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); //เอาค่ามาแสดง
-//                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0)+" ");
-//                }
-//
-//
-//            }
-//
-//            if (check_click_popup.equals("3")) { //right
-//                if (check_choice_popup2.equals("4"))
-//                    show_vs2.setText(Dummy.getInstance().esso_day_10.get(0) + " ");
-//
-//            }
-
-
-//        if ((day[0].equals("18")) && (spinner_oil_type == 2)) {
-//
-//            if (check_click_popup.equals("1")) { //left  เลือก pop-up ตัวไหน
-//                if (check_choice_popup1.equals("2")) { //เลือกอะไรใน pop-up
-//                    show_vs1.setText(Dummy.getInstance().shell_day_18.get(0) + " "); //เอาค่ามาแสดง //23.66
-//                }
-//
-//            }
-//
-//            if (check_click_popup.equals("2")) { //right
-//                if (check_choice_popup2.equals("4"))
-//                    show_vs2.setText(Dummy.getInstance().esso_day_18.get(0) + " "); //22.59
-//
-//            }
-//
-//            setCompair();
-//
-//        }
 
 
     private void setCompair() {
@@ -360,11 +712,16 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         } else if (tv_show_result.getText().length() > 0) {
             show_vs1.setBackground(rootView.getResources().getDrawable(R.drawable.result_shape_sp));
             show_vs2.setBackground(rootView.getResources().getDrawable(R.drawable.result_shape));
+
+            // ในกรณีที่ค่าที่เปรียบเทียบทั้งสองฝั่งเท่ากัน ไม่มีการแสดงสีที่ล่าง pop-up
+        }else if (tv_show_result.getText().length() == 0){
+            show_vs1.setBackground(rootView.getResources().getDrawable(R.drawable.result_shape));
+            show_vs2.setBackground(rootView.getResources().getDrawable(R.drawable.result_shape));
+
         }
 
 
     }
-
 
     private void setVSpopup() {
 
@@ -372,78 +729,77 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                                        @Override
                                        public void onClick(View view) {
 
-                final Dialog dialog = new Dialog(getActivity());
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.custom_dialog);
-                dialog.setCancelable(true);
+                                           final Dialog dialog = new Dialog(getActivity());
+                                           dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                           dialog.setContentView(R.layout.custom_dialog);
+                                           dialog.setCancelable(true);
 
-                final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
-                b1.setImageResource(Dummy.getInstance().popup.get(0));
-
-
-                final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
-                b2.setImageResource(Dummy.getInstance().popup.get(1));
+                                           final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
+                                           b1.setImageResource(Dummy.getInstance().popup.get(0));
 
 
-                final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
-                b3.setImageResource(Dummy.getInstance().popup.get(2));
+                                           final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+                                           b2.setImageResource(Dummy.getInstance().popup.get(1));
 
 
-                final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
-                b4.setImageResource(Dummy.getInstance().popup.get(3));
-
-        check_click_popup = "1";
-
-                 b1.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View view) {
-                      check_choice_popup1 = "1";
-                      setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
-
-                       img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
-                       dialog.dismiss();
-                    }
-
-                    });
+                                           final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
+                                           b3.setImageResource(Dummy.getInstance().popup.get(2));
 
 
-                 b2.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View view) {
-                       check_choice_popup1 = "2";
-                       setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
-                       img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
+                                           final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
+                                           b4.setImageResource(Dummy.getInstance().popup.get(3));
 
-                       tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
-                       dialog.dismiss();
-                        //   img_vs2.setImageResource(R.drawable.ic_bangjak);
-                        // img_vs2.setImageResource(R.drawable.ic_bangjak);
-                        }
-                            });
+                                           check_click_popup = "1";
 
-                 b3.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View view) {
-                        check_choice_popup1 = "3";
-                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
-                        img_vs1.setImageResource(Dummy.getInstance().popup.get(2));
-                        dialog.dismiss();
-                        }
-                          });
+                                           b1.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View view) {
+                                                   check_choice_popup1 = "1";
+                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
+                                                   dialog.dismiss();
+                                               }
 
-                          dialog.show();
+                                           });
 
-                 b4.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View view) {
-                        check_choice_popup1 = "4";
-                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
-                        img_vs1.setImageResource(Dummy.getInstance().popup.get(3));
-                        dialog.dismiss();
-                          }
-                            });
-                        dialog.show();
-            }
+
+                                           b2.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View view) {
+                                                   check_choice_popup1 = "2";
+                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
+
+                                                   tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
+                                                   dialog.dismiss();
+                                                   //   img_vs2.setImageResource(R.drawable.ic_bangjak);
+                                                   // img_vs2.setImageResource(R.drawable.ic_bangjak);
+                                               }
+                                           });
+
+                                           b3.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View view) {
+                                                   check_choice_popup1 = "3";
+                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(2));
+                                                   dialog.dismiss();
+                                               }
+                                           });
+
+                                           dialog.show();
+
+                                           b4.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View view) {
+                                                   check_choice_popup1 = "4";
+                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(3));
+                                                   dialog.dismiss();
+                                               }
+                                           });
+                                           dialog.show();
+                                       }
                                    }
 
 
@@ -563,6 +919,12 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
 
 }
+
+
+
+
+
+
 
 
 
