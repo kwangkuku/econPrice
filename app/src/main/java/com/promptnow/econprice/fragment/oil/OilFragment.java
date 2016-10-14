@@ -19,11 +19,6 @@ import com.promptnow.econprice.view.UtilCalendar;
 import java.util.Calendar;
 
 import static android.content.ContentValues.TAG;
-
-/**
- * Created by Whankung on 7/9/2559.
- */
-
 public class OilFragment extends android.support.v4.app.DialogFragment implements DatePickerFragment.onSetDateListener {
     private View rootView;
     private Typeface font;
@@ -32,11 +27,14 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_gasohol95_ptt, tv_gasohol95_bangjak, tv_gasohol95_shell, tv_gasohol95_esso,
             tv_gasohol91_ptt, tv_gasohol91_bangjak, tv_gasohol91_shell, tv_gasohol91_esso,
             tv_e20_ptt, tv_e20_bangjak, tv_e20_shell, tv_e20_esso,
-            tv_85_ptt, tv_85_bangjak, tv_85_shell, tv_85_esso,
+            tv_e85_ptt, tv_e85_bangjak, tv_e85_shell, tv_e85_esso,
             tv_diesel_ptt, tv_diesel_bangjak, tv_diesel_shell, tv_diesel_esso,
             show_vs1, show_vs2, tv_show_result,
-            colum1, colum2, colum3, colum4, colum5, colum6, colum7, colum8, colum9, colum10, colum11, colum12, colum13, colum14,
-            colum15, colum16, colum17, colum18, colum19, colum20, colum21, colum22, colum23, colum24;
+    //เปลี่ยน font
+            colum1, colum2, colum3, colum4, colum5, colum6, colum7, colum8, colum9, colum10,
+            colum11, colum12, colum13, colum14,colum15, colum16, colum17, colum18, colum19,
+            colum20, colum21, colum22, colum23, colum24;
+
     private int selectedYear;
     private int selectedMonth;
     private int selectedDay;
@@ -51,14 +49,12 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
         void setDate(int year, int month, int day);
 
-
     }
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.oil, container, false);
         setView();
-
         return rootView;
     }
 
@@ -88,10 +84,10 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         tv_e20_shell = (TextView) rootView.findViewById(R.id.tv_e20_shell);
         tv_e20_esso = (TextView) rootView.findViewById(R.id.tv_e20_esso);
 
-        tv_85_ptt = (TextView) rootView.findViewById(R.id.tv_e85_ptt);
-        tv_85_bangjak = (TextView) rootView.findViewById(R.id.tv_e85_bangjak);
-        tv_85_shell = (TextView) rootView.findViewById(R.id.tv_e85_shell);
-        tv_85_esso = (TextView) rootView.findViewById(R.id.tv_e85_esso);
+        tv_e85_ptt = (TextView) rootView.findViewById(R.id.tv_e85_ptt);
+        tv_e85_bangjak = (TextView) rootView.findViewById(R.id.tv_e85_bangjak);
+        tv_e85_shell = (TextView) rootView.findViewById(R.id.tv_e85_shell);
+        tv_e85_esso = (TextView) rootView.findViewById(R.id.tv_e85_esso);
 
         tv_diesel_ptt = (TextView) rootView.findViewById(R.id.tv_diesel_ptt);
         tv_diesel_bangjak = (TextView) rootView.findViewById(R.id.tv_diesel_bangjak);
@@ -102,6 +98,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         show_vs2 = (TextView) rootView.findViewById(R.id.show_vs2);
         tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
 
+//เปลี่ยน font
         colum1 = (TextView) rootView.findViewById(R.id.tv_bensin_ptt);
         colum2 = (TextView) rootView.findViewById(R.id.tv_bensin_bangjak);
         colum3 = (TextView) rootView.findViewById(R.id.tv_bensin_shell);
@@ -131,7 +128,6 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         colum22 = (TextView) rootView.findViewById(R.id.tv_diesel_bangjak);
         colum23 = (TextView) rootView.findViewById(R.id.tv_diesel_shell);
         colum24 = (TextView) rootView.findViewById(R.id.tv_diesel_esso);
-
 
 //        เปลี่ยน font
         date = (TextView) rootView.findViewById(R.id.date);
@@ -239,7 +235,6 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 //            UtilLog.i("Boom", str_fromdate);
             tv_date_oil_price.setText(date);
             setData(date);
-
         }
     }
 
@@ -251,13 +246,13 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         Log.d("Show Month", day[1]);
         Log.d("Show Year", day[2]);
 //       String d = date.substring(0, 2); ใช้ในกรณีที่วันที่มีค่าเป็น 23/1/2016 9 หลัก
-// แต่ถ้าเป็น case ที่        วันที่มีค่าเป็น 8/1/2016  8 หลัก จะใช้   String d = date.substring(0, ๅ);
+// แต่ถ้าเป็น case ที่       วันที่มีค่าเป็น 8/1/2016  8 หลัก จะใช้   String d = date.substring(0, ๅ);
 
         Log.d(TAG, "perfeact day : " + day[0]);
 
         if (day[0].equals("10")) {
 
-//            // Row1
+            // Row1
             tv_bensin_ptt.setText(Dummy.getInstance().ptt_day_10.get(0) + " ");
             tv_bensin_bangjak.setText(Dummy.getInstance().bangjak_day_10.get(0) + " ");
             tv_bensin_shell.setText(Dummy.getInstance().shell_day_10.get(0) + " ");
@@ -282,10 +277,10 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_e20_esso.setText(Dummy.getInstance().esso_day_10.get(3) + " ");
 
             //Row5
-            tv_85_ptt.setText(Dummy.getInstance().ptt_day_10.get(4) + " ");
-            tv_85_bangjak.setText(Dummy.getInstance().bangjak_day_10.get(4) + " ");
-            tv_85_shell.setText(Dummy.getInstance().shell_day_10.get(4) + " ");
-            tv_85_esso.setText(Dummy.getInstance().esso_day_10.get(4) + " ");
+            tv_e85_ptt.setText(Dummy.getInstance().ptt_day_10.get(4) + " ");
+            tv_e85_bangjak.setText(Dummy.getInstance().bangjak_day_10.get(4) + " ");
+            tv_e85_shell.setText(Dummy.getInstance().shell_day_10.get(4) + " ");
+            tv_e85_esso.setText(Dummy.getInstance().esso_day_10.get(4) + " ");
 
             //Row6
             tv_diesel_ptt.setText(Dummy.getInstance().ptt_day_10.get(5) + " ");
@@ -321,10 +316,10 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_e20_esso.setText(Dummy.getInstance().esso_day_18.get(3) + " ");
 
             //Row5
-            tv_85_ptt.setText(Dummy.getInstance().ptt_day_18.get(4) + " ");
-            tv_85_bangjak.setText(Dummy.getInstance().bangjak_day_18.get(4) + " ");
-            tv_85_shell.setText(Dummy.getInstance().shell_day_18.get(4) + " ");
-            tv_85_esso.setText(Dummy.getInstance().esso_day_18.get(4) + " ");
+            tv_e85_ptt.setText(Dummy.getInstance().ptt_day_18.get(4) + " ");
+            tv_e85_bangjak.setText(Dummy.getInstance().bangjak_day_18.get(4) + " ");
+            tv_e85_shell.setText(Dummy.getInstance().shell_day_18.get(4) + " ");
+            tv_e85_esso.setText(Dummy.getInstance().esso_day_18.get(4) + " ");
 
             //Row6
             tv_diesel_ptt.setText(Dummy.getInstance().ptt_day_18.get(5) + " ");
@@ -362,10 +357,10 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_e20_esso.setText(Dummy.getInstance().esso_day_27.get(3) + " ");
 
             //Row5
-            tv_85_ptt.setText(Dummy.getInstance().ptt_day_27.get(4) + " ");
-            tv_85_bangjak.setText(Dummy.getInstance().bangjak_day_27.get(4) + " ");
-            tv_85_shell.setText(Dummy.getInstance().shell_day_27.get(4) + " ");
-            tv_85_esso.setText(Dummy.getInstance().esso_day_27.get(4) + " ");
+            tv_e85_ptt.setText(Dummy.getInstance().ptt_day_27.get(4) + " ");
+            tv_e85_bangjak.setText(Dummy.getInstance().bangjak_day_27.get(4) + " ");
+            tv_e85_shell.setText(Dummy.getInstance().shell_day_27.get(4) + " ");
+            tv_e85_esso.setText(Dummy.getInstance().esso_day_27.get(4) + " ");
 
             //Row6
             tv_diesel_ptt.setText(Dummy.getInstance().ptt_day_27.get(5) + " ");
