@@ -40,7 +40,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     public DatePickerFragment.onSetDateListener mListener;
     double resuit;
 
-
     double result_vs_popup;
     //ผู้ใช้เลือกค่าใน pop-up ตัวไหน
     private String check_click_popup = "1"; //ฝั่งขวา img_vs1 = 1 ; ฝั่งซ้าย img_vs2 = 2;
@@ -63,9 +62,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     }
 
     private void setShowResult() {
-
     }
-
 
     //Date Picker
     private void setView() {
@@ -75,7 +72,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         tv_show_result = (TextView) rootView.findViewById(R.id.tv_show_result);
         img_vs1 = (ImageView) rootView.findViewById(R.id.img_vs1);
         img_vs2 = (ImageView) rootView.findViewById(R.id.img_vs2);
-
 
         //        เปลี่ยน font
         tv = (TextView) rootView.findViewById(R.id.date);
@@ -114,6 +110,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 showDatePikkerDialog();
             }
         });
+
         //ค่าเริ่มต้น defalf
         //Day = ToDay
         show_vs1.setText("31.76");
@@ -697,7 +694,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 // แล้วเราจะหาผลต่าง จากการเอาค่า vs1 vs2 มาลบกัน โดยจะเก็บค่าที่ได้มาไว้ใน ตัวแปร result_num  ที่มีค่าเป็น double
         double result_num = vs1 - vs2;
 
-
         Log.d("Show ", show_vs1.getText().toString());
         Log.d("Show ", show_vs2.getText().toString());
         Log.d("Show ", String.valueOf(vs1 - vs2));
@@ -726,81 +722,80 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private void setVSpopup() {
 
         img_vs1.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
-                                           final Dialog dialog = new Dialog(getActivity());
-                                           dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                                           dialog.setContentView(R.layout.custom_dialog);
-                                           dialog.setCancelable(true);
+                final Dialog dialog = new Dialog(getActivity());
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.custom_dialog);
+                dialog.setCancelable(true);
 
-                                           final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
-                                           b1.setImageResource(Dummy.getInstance().popup.get(0));
-
-
-                                           final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
-                                           b2.setImageResource(Dummy.getInstance().popup.get(1));
+                final ImageView b1 = (ImageView) dialog.findViewById(R.id.b1);
+                b1.setImageResource(Dummy.getInstance().popup.get(0));
 
 
-                                           final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
-                                           b3.setImageResource(Dummy.getInstance().popup.get(2));
+                final ImageView b2 = (ImageView) dialog.findViewById(R.id.b2);
+                b2.setImageResource(Dummy.getInstance().popup.get(1));
 
 
-                                           final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
-                                           b4.setImageResource(Dummy.getInstance().popup.get(3));
-
-                                           check_click_popup = "1";
-
-                                           b1.setOnClickListener(new View.OnClickListener() {
-                                               @Override
-                                               public void onClick(View view) {
-                                                   check_choice_popup1 = "1";
-                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
-                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
-                                                   dialog.dismiss();
-                                               }
-
-                                           });
+                final ImageView b3 = (ImageView) dialog.findViewById(R.id.b3);
+                b3.setImageResource(Dummy.getInstance().popup.get(2));
 
 
-                                           b2.setOnClickListener(new View.OnClickListener() {
-                                               @Override
-                                               public void onClick(View view) {
-                                                   check_choice_popup1 = "2";
-                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
-                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
+                final ImageView b4 = (ImageView) dialog.findViewById(R.id.b4);
+                b4.setImageResource(Dummy.getInstance().popup.get(3));
 
-                                                   tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
-                                                   dialog.dismiss();
-                                                   //   img_vs2.setImageResource(R.drawable.ic_bangjak);
-                                                   // img_vs2.setImageResource(R.drawable.ic_bangjak);
-                                               }
-                                           });
+                check_click_popup = "1";
 
-                                           b3.setOnClickListener(new View.OnClickListener() {
-                                               @Override
-                                               public void onClick(View view) {
-                                                   check_choice_popup1 = "3";
-                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
-                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(2));
-                                                   dialog.dismiss();
-                                               }
-                                           });
+                b1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        check_choice_popup1 = "1";
+                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                        img_vs1.setImageResource(Dummy.getInstance().popup.get(0));
+                        dialog.dismiss();
+                    }
+                });
 
-                                           dialog.show();
 
-                                           b4.setOnClickListener(new View.OnClickListener() {
-                                               @Override
-                                               public void onClick(View view) {
-                                                   check_choice_popup1 = "4";
-                                                   setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
-                                                   img_vs1.setImageResource(Dummy.getInstance().popup.get(3));
-                                                   dialog.dismiss();
-                                               }
-                                           });
-                                           dialog.show();
-                                       }
-                                   }
+                b2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        check_choice_popup1 = "2";
+                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                        img_vs1.setImageResource(Dummy.getInstance().popup.get(1));
+
+                        tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
+                        dialog.dismiss();
+                        //   img_vs2.setImageResource(R.drawable.ic_bangjak);
+                        // img_vs2.setImageResource(R.drawable.ic_bangjak);
+                    }
+                });
+
+                b3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        check_choice_popup1 = "3";
+                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                        img_vs1.setImageResource(Dummy.getInstance().popup.get(2));
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+
+                b4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        check_choice_popup1 = "4";
+                        setData(tv_date_oil_vs.getText().toString(), oilTypeSpinner.getSelectedItemPosition());
+                        img_vs1.setImageResource(Dummy.getInstance().popup.get(3));
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        }
 
 
         );
@@ -889,11 +884,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     private void getvalue() {
     }
 
-//    private void setShowResult() {
-//
-//    }
-
-
     private void setOilTypeSpiner() {
         oilTypeSpinner = (Spinner) rootView.findViewById(R.id.oilTypeSpinner);
         //  oilTypeSpinner.setEnabled(false);
@@ -916,7 +906,6 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         });
 
     }
-
 
 }
 
