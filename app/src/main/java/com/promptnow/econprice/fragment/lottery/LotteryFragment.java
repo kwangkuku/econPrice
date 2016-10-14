@@ -31,7 +31,9 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     EditText input, seach;
     private Typeface font;
     private TextView tv, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9, tv10,
-            tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20;
+            tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20,
+            tv21,tv22,tv23,tv24,tv25,tv26,tv27,tv28,tv29,tv30,tv31,tv32,
+            tv33,tv34,tv35,tv36,tv37;
     private Spinner spin;
 
 
@@ -91,14 +93,30 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         tv2 = (TextView) rootView.findViewById(R.id.lot_num2);
 //        เลขหน้า 3 ตัว
         tv3 = (TextView) rootView.findViewById(R.id.lot_num3);
+        tv21 = (TextView) rootView.findViewById(R.id.lot_num3_);
 //         เลขท้าย 3 ตัว
         tv4 = (TextView) rootView.findViewById(R.id.lot_num4);
+        tv22 = (TextView) rootView.findViewById(R.id.lot_num4_);
 //        รางวัลใกล้เคียงรางวัลที่1
         tv5 = (TextView) rootView.findViewById(R.id.lot_num5);
+        tv23 = (TextView) rootView.findViewById(R.id.lot_num5_);
 //        รางวัลที่2
         tv6 = (TextView) rootView.findViewById(R.id.lot_num6);
+        tv24 = (TextView) rootView.findViewById(R.id.lot_num6_);
+        tv25 = (TextView) rootView.findViewById(R.id.lot_num6_1);
+        tv26 = (TextView) rootView.findViewById(R.id.lot_num6_2);
+        tv27 = (TextView) rootView.findViewById(R.id.lot_num6_3_);
 //        รางวัลที่3
         tv7 = (TextView) rootView.findViewById(R.id.lot_num7);
+        tv28 = (TextView) rootView.findViewById(R.id.lot_num7_);
+        tv29 = (TextView) rootView.findViewById(R.id.lot_num7_1);
+        tv30 = (TextView) rootView.findViewById(R.id.lot_num7_2);
+        tv31 = (TextView) rootView.findViewById(R.id.lot_num7_3);
+        tv32 = (TextView) rootView.findViewById(R.id.lot_num7_4);
+        tv33 = (TextView) rootView.findViewById(R.id.lot_num7_5);
+        tv34 = (TextView) rootView.findViewById(R.id.lot_num7_6);
+        tv35 = (TextView) rootView.findViewById(R.id.lot_num7_7);
+        tv36 = (TextView) rootView.findViewById(R.id.lot_num7_8);
 //        รางวัลที่4
         tv8 = (TextView) rootView.findViewById(R.id.lot_num8);
 //        รางวัลที่5
@@ -149,20 +167,50 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         tv18.setTypeface(font);
         tv19.setTypeface(font);
         tv20.setTypeface(font);
-
-
+        tv21.setTypeface(font);
+        tv22.setTypeface(font);
+        tv23.setTypeface(font);
+        tv24.setTypeface(font);
+        tv25.setTypeface(font);
+        tv26.setTypeface(font);
+        tv27.setTypeface(font);
+        tv28.setTypeface(font);
+        tv29.setTypeface(font);
+        tv30.setTypeface(font);
+        tv31.setTypeface(font);
+        tv32.setTypeface(font);
+        tv33.setTypeface(font);
+        tv34.setTypeface(font);
+        tv35.setTypeface(font);
+        tv36.setTypeface(font);
     }
 
     private void setDummy() {
         tv.setText("254004");
         tv2.setText("33");
-        tv3.setText("994 004");
-        tv4.setText("654 764");
-        tv5.setText("114505 000503");
-        tv6.setText("674107 002226 199098");
-        tv7.setText("000245 222214 110008");
-        tv8.setText("003111 034533 132999");
-        tv9.setText("276600 211111 001739");
+        tv3.setText("994");
+        tv21.setText("341");
+        tv4.setText("654");
+        tv22.setText("764");
+        tv5.setText("114505");
+        tv23.setText("000503");
+        tv6.setText("674107");
+        tv24.setText("002226");
+        tv25.setText("199098");
+        tv26.setText("454211");
+        tv27.setText("642000");
+        tv7.setText("000245");
+        tv28.setText("222148");
+        tv29.setText("110008");
+        tv30.setText("436321");
+        tv31.setText("562907");
+        tv32.setText("111222");
+        tv33.setText("333444");
+        tv34.setText("642665");
+        tv35.setText("324563");
+        tv36.setText("000742                                  ");
+        tv8.setText("348946");
+        tv9.setText("435451");
     }
 
     private void setContent() {
