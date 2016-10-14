@@ -32,8 +32,20 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     private Typeface font;
     private TextView tv, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9, tv10,
             tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20,
-            tv21,tv22,tv23,tv24,tv25,tv26,tv27,tv28,tv29,tv30,tv31,tv32,
-            tv33,tv34,tv35,tv36,tv37;
+            tv21, tv22, tv23, tv24, tv25, tv26, tv27, tv28, tv29, tv30, tv31, tv32,
+            tv33, tv34, tv35, tv36,
+
+//    รางวัลที่ 4 , รางวัลที่ 5
+            t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19,
+            t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t30, t31, t32, t33, t34, t35, t36, t37,
+            t38, t39, t40, t41, t42, t43, t44, t45, t46, t47, t48, t49, t50, t51, t52, t53, t54, t55,
+            t56, t57, t58, t59, t60, t61, t62, t63, t64, t65, t66, t67, t68, t69, t70, t71, t72, t73,
+            t74, t75, t76, t77, t78, t79, t80, t81, t82, t83, t84, t85, t86, t87, t88, t89, t90, t91,
+            t92, t93, t94, t95, t96, t97, t98, t99, t100, t101, t102, t103, t104, t105, t106, t107,
+            t108, t109, t110, t111, t112, t113, t114, t115, t116, t117, t118, t119, t120, t121, t122,
+            t123, t124, t125, t126, t127, t128, t129, t130, t131, t132, t133, t134, t135, t136, t137,
+            t138, t139, t140, t141, t142, t143, t144, t145, t146, t147, t148, t149, t150;
+
     private Spinner spin;
 
 
@@ -340,7 +352,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
         }
 
-//            pop up
+        //            pop up
         @Override
         public void onTextChanged(CharSequence s, int a, int b, int c) {
             Log.d("log", "123");
@@ -367,8 +379,6 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     public void setOnSubmitAlertDialogListener() {
 
     }
-
-
 
 
 }
