@@ -44,13 +44,9 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
     private int day;
     private String stringOfDate;
 
-
     public interface onSetDateListener {
-
         void setDate(int year, int month, int day);
-
     }
-
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.oil, container, false);
@@ -63,7 +59,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         final LinearLayout ll = (LinearLayout) rootView.findViewById(R.id.table);
         tv_date_oil_price = (TextView) rootView.findViewById(R.id.tv_date_oil_price);
 
-//        row
+//row
         tv_bensin_ptt = (TextView) rootView.findViewById(R.id.tv_bensin_ptt);
         tv_bensin_bangjak = (TextView) rootView.findViewById(R.id.tv_bensin_bangjak);
         tv_bensin_shell = (TextView) rootView.findViewById(R.id.tv_bensin_shell);
@@ -129,7 +125,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         colum23 = (TextView) rootView.findViewById(R.id.tv_diesel_shell);
         colum24 = (TextView) rootView.findViewById(R.id.tv_diesel_esso);
 
-//        เปลี่ยน font
+//เปลี่ยน font
         date = (TextView) rootView.findViewById(R.id.date);
         tv = (TextView) rootView.findViewById(R.id.oil);
         tv2 = (TextView) rootView.findViewById(R.id.txt_bensin);
@@ -138,7 +134,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         tv5 = (TextView) rootView.findViewById(R.id.txt_e20);
         tv6 = (TextView) rootView.findViewById(R.id.txt_e85);
         tv7 = (TextView) rootView.findViewById(R.id.txt_diesel);
-//        เปลี่ยน font
+//เปลี่ยน font
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         date.setTypeface(font);
         tv.setTypeface(font);
@@ -189,7 +185,6 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             public void onClick(View v) {
 
                 showDatePikkerDialog();
-
             }
         });
 
