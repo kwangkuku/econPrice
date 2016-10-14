@@ -79,12 +79,13 @@
 
             <TextView
                 android:id="@+id/lotto"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="รางวัลที่ 1"
                 android:textColor="@color/colorRed"
-                android:textSize="@dimen/text2" />
+                android:textSize="@dimen/text2"
+                android:background="@color/colorButtombar"/>
 
             <TextView
                 android:id="@+id/lot_num"
@@ -96,12 +97,13 @@
 
             <TextView
                 android:id="@+id/lotto2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="เลขท้าย 2 ตัว"
                 android:textColor="@color/colorRed"
-                android:textSize="@dimen/text2" />
+                android:textSize="@dimen/text2"
+                android:background="@color/colorButtombar"/>
 
             <TextView
 
@@ -115,12 +117,13 @@
 
             <TextView
                 android:id="@+id/lotto3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="เลขหน้า 3 ตัว"
                 android:textColor="@color/colorRed"
-                android:textSize="@dimen/text2" />
+                android:textSize="@dimen/text2"
+                android:background="@color/colorButtombar"/>
 
             <TextView
 
@@ -133,12 +136,13 @@
 
             <TextView
                 android:id="@+id/lotto4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="เลขท้าย 3 ตัว"
                 android:textColor="@color/colorRed"
-                android:textSize="@dimen/text2" />
+                android:textSize="@dimen/text2"
+                android:background="@color/colorButtombar"/>
 
             <TextView
 
@@ -152,12 +156,13 @@
 
             <TextView
                 android:id="@+id/lotto5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="รางวัลใกล้เคียงรางวัลที่ 1"
                 android:textColor="@color/colorRed"
-                android:textSize="@dimen/text2" />
+                android:textSize="@dimen/text2"
+                android:background="@color/colorButtombar"/>
 
             <TextView
 
@@ -170,12 +175,13 @@
 
             <TextView
                 android:id="@+id/lotto6"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="รางวัลที่ 2"
                 android:textColor="@color/colorRed"
-                android:textSize="@dimen/text2" />
+                android:textSize="@dimen/text2"
+                android:background="@color/colorButtombar"/>
 
             <TextView
 
@@ -188,12 +194,13 @@
 
             <TextView
                 android:id="@+id/lotto7"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="รางวัลที่ 3"
                 android:textColor="@color/colorRed"
-                android:textSize="@dimen/text2" />
+                android:textSize="@dimen/text2"
+                android:background="@color/colorButtombar"/>
 
             <TextView
 
@@ -206,12 +213,13 @@
 
             <TextView
                 android:id="@+id/lotto8"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="รางวัลที่ 4"
                 android:textColor="@color/colorRed"
-                android:textSize="@dimen/text2" />
+                android:textSize="@dimen/text2"
+                android:background="@color/colorButtombar"/>
 
             <TextView
 
@@ -224,12 +232,13 @@
 
             <TextView
                 android:id="@+id/lotto9"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="รางวัลที่ 5"
                 android:textColor="@color/colorRed"
-                android:textSize="@dimen/text2" />
+                android:textSize="@dimen/text2"
+                android:background="@color/colorButtombar"/>
 
             <TextView
 

@@ -272,6 +272,9 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
     }
 
+
+
+
 }
 
 
