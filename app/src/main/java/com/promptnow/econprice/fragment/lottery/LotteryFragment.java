@@ -994,7 +994,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         t118.setText("229944");
         t119.setText("076111");
         t120.setText("123452");
-        t121.setText("25555");
+        t121.setText("255505");
         t122.setText("600006");
         t123.setText("092332");
         t124.setText("444333");
@@ -1052,10 +1052,10 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         t1.setText("532146");
         t2.setText("000111");
         t3.setText("300007");
-        t4.setText("333946");
-        t5.setText("176946");
-        t6.setText("346546");
-        t7.setText("300000");
+        t4.setText("333116");
+        t5.setText("176446");
+        t6.setText("000546");
+        t7.setText("333000");
         t8.setText("111111");
         t9.setText("123456");
         t10.setText("666666");
