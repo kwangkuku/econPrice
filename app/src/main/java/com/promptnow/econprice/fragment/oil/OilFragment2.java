@@ -187,7 +187,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); // ptt เบนซิล
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); // bangjak เบนซฺล
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_10.get(0) + " "); // bangjak เบนซฺล
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_10.get(0) + " "); // shell เบนซิล
                 } else if (check_choice_popup1.equals("4")) {
@@ -200,7 +200,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); // ptt เบนซิล
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(0) + " "); // bangjak เบนซฺล
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_10.get(0) + " "); // bangchakak เบนซฺล
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_10.get(0) + " "); // shell เบนซิล
                 } else if (check_choice_popup2.equals("4")) {
@@ -218,7 +218,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); // ptt  Sohol95
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); // bangjak  Sohol95
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_10.get(1) + " "); // bangchak  Sohol95
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_10.get(1) + " "); // shell  Sohol95
                 } else if (check_choice_popup1.equals("4")) {
@@ -229,7 +229,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_10.get(1) + " "); // ptt  Sohol95
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(1) + " "); // bangjak  Sohol95
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_10.get(1) + " "); // bangchak  Sohol95
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_10.get(1) + " "); // shell  Sohol95
                 } else if (check_choice_popup2.equals("4")) {
@@ -246,7 +246,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_10.get(2) + " "); // ptt Sohol96
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(2) + " "); // bangjak  Sohol96
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_10.get(2) + " "); // bangchak  Sohol96
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_10.get(2) + " "); // shell  Sohol96
                 } else if (check_choice_popup1.equals("4")) {
@@ -257,7 +257,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_10.get(2) + " "); // ptt  Sohol96
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(2) + " "); // bangjak  Sohol96
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_10.get(2) + " "); // bangchak  Sohol96
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_10.get(2) + " "); // shell  Sohol96
                 } else if (check_choice_popup2.equals("4")) {
@@ -273,7 +273,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_10.get(3) + " "); // ptt E20
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(3) + " "); // bangjak E20
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_10.get(3) + " "); // bangchak E20
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_10.get(3) + " "); // shell E20
                 } else if (check_choice_popup1.equals("4")) {
@@ -284,7 +284,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_10.get(3) + " "); // ptt E20
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(3) + " "); // bangjak  E20
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_10.get(3) + " "); // bangchak  E20
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_10.get(3) + " "); // shell  E20
                 } else if (check_choice_popup2.equals("4")) {
@@ -299,7 +299,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_10.get(4) + " "); // ptt E85
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(4) + " "); // bangjak E85
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_10.get(4) + " "); // bangchak E85
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_10.get(4) + " "); // shell E85
                 } else if (check_choice_popup1.equals("4")) {
@@ -310,7 +310,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_10.get(4) + " "); // ptt E85
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(4) + " "); // bangjak  E85
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_10.get(4) + " "); // bangchak  E85
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_10.get(4) + " "); // shell  E85
                 } else if (check_choice_popup2.equals("4")) {
@@ -326,7 +326,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_10.get(5) + " "); // ptt Disel
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_10.get(5) + " "); // bangjak Disel
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_10.get(5) + " "); // bangchak Disel
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_10.get(5) + " "); // shell Disel
                 } else if (check_choice_popup1.equals("4")) {
@@ -337,7 +337,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_10.get(5) + " "); // ptt Disel
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_10.get(5) + " "); // bangjak  Disel
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_10.get(5) + " "); // bangchak  Disel
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_10.get(5) + " "); // shell  Disel
                 } else if (check_choice_popup2.equals("4")) {
@@ -355,7 +355,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_18.get(0) + " "); // ptt เบนซิล
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(0) + " "); // bangjak เบนซฺล
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_18.get(0) + " "); // bangchak เบนซฺล
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_18.get(0) + " "); // shell เบนซิล
                 } else if (check_choice_popup1.equals("4")) {
@@ -368,7 +368,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_18.get(0) + " "); // ptt เบนซิล
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(0) + " "); // bangjak เบนซฺล
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_18.get(0) + " "); // bangchak เบนซฺล
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_18.get(0) + " "); // shell เบนซิล
                 } else if (check_choice_popup2.equals("4")) {
@@ -386,7 +386,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); // ptt  Sohol95
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); // bangjak  Sohol95
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_18.get(1) + " "); // bangchak  Sohol95
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_18.get(1) + " "); // shell  Sohol95
                 } else if (check_choice_popup1.equals("4")) {
@@ -397,7 +397,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_18.get(1) + " "); // ptt  Sohol95
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(1) + " "); // bangjak  Sohol95
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_18.get(1) + " "); // bangchak  Sohol95
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_18.get(1) + " "); // shell  Sohol95
                 } else if (check_choice_popup2.equals("4")) {
@@ -414,7 +414,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_18.get(2) + " "); // ptt Sohol96
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(2) + " "); // bangjak  Sohol96
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_18.get(2) + " "); // bangchak  Sohol96
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_18.get(2) + " "); // shell  Sohol96
                 } else if (check_choice_popup1.equals("4")) {
@@ -425,7 +425,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_18.get(2) + " "); // ptt  Sohol96
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(2) + " "); // bangjak  Sohol96
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_18.get(2) + " "); // bangchak Sohol96
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_18.get(2) + " "); // shell  Sohol96
                 } else if (check_choice_popup2.equals("4")) {
@@ -441,7 +441,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_18.get(3) + " "); // ptt E20
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(3) + " "); // bangjak E20
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_18.get(3) + " "); // bangchak E20
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_18.get(3) + " "); // shell E20
                 } else if (check_choice_popup1.equals("4")) {
@@ -452,7 +452,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_18.get(3) + " "); // ptt E20
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(3) + " "); // bangjak  E20
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_18.get(3) + " "); // bangchak  E20
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_18.get(3) + " "); // shell  E20
                 } else if (check_choice_popup2.equals("4")) {
@@ -467,7 +467,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_18.get(4) + " "); // ptt E85
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(4) + " "); // bangjak E85
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_18.get(4) + " "); // bangchak E85
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_18.get(4) + " "); // shell E85
                 } else if (check_choice_popup1.equals("4")) {
@@ -478,7 +478,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_18.get(4) + " "); // ptt E85
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(4) + " "); // bangjak  E85
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_18.get(4) + " "); // bangchak  E85
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_18.get(4) + " "); // shell  E85
                 } else if (check_choice_popup2.equals("4")) {
@@ -494,7 +494,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_18.get(5) + " "); // ptt Disel
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_18.get(5) + " "); // bangjak Disel
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_18.get(5) + " "); // bangchak Disel
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_18.get(5) + " "); // shell Disel
                 } else if (check_choice_popup1.equals("4")) {
@@ -505,7 +505,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_18.get(5) + " "); // ptt Disel
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_18.get(5) + " "); // bangjak  Disel
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_18.get(5) + " "); // bangchak Disel
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_18.get(5) + " "); // shell  Disel
                 } else if (check_choice_popup2.equals("4")) {
@@ -522,7 +522,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_27.get(0) + " "); // ptt เบนซิล
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(0) + " "); // bangjak เบนซฺล
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_27.get(0) + " "); // bangchak เบนซฺล
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_27.get(0) + " "); // shell เบนซิล
                 } else if (check_choice_popup1.equals("4")) {
@@ -535,7 +535,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_27.get(0) + " "); // ptt เบนซิล
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(0) + " "); // bangjak เบนซฺล
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_27.get(0) + " "); // bangchak เบนซฺล
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_27.get(0) + " "); // shell เบนซิล
                 } else if (check_choice_popup2.equals("4")) {
@@ -553,7 +553,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_27.get(1) + " "); // ptt  Sohol95
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(1) + " "); // bangjak  Sohol95
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_27.get(1) + " "); // bangchak  Sohol95
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_27.get(1) + " "); // shell  Sohol95
                 } else if (check_choice_popup1.equals("4")) {
@@ -564,7 +564,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_27.get(1) + " "); // ptt  Sohol95
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(1) + " "); // bangjak  Sohol95
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_27.get(1) + " "); // bangchak  Sohol95
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_27.get(1) + " "); // shell  Sohol95
                 } else if (check_choice_popup2.equals("4")) {
@@ -581,7 +581,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_27.get(2) + " "); // ptt Sohol96
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(2) + " "); // bangjak  Sohol96
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_27.get(2) + " "); // bangchak  Sohol96
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_27.get(2) + " "); // shell  Sohol96
                 } else if (check_choice_popup1.equals("4")) {
@@ -592,7 +592,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_27.get(2) + " "); // ptt  Sohol96
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(2) + " "); // bangjak  Sohol96
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_27.get(2) + " "); // bangchak  Sohol96
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_27.get(2) + " "); // shell  Sohol96
                 } else if (check_choice_popup2.equals("4")) {
@@ -608,7 +608,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_27.get(3) + " "); // ptt E20
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(3) + " "); // bangjak E20
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_27.get(3) + " "); // bangchak E20
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_27.get(3) + " "); // shell E20
                 } else if (check_choice_popup1.equals("4")) {
@@ -619,7 +619,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_27.get(3) + " "); // ptt E20
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(3) + " "); // bangjak  E20
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_27.get(3) + " "); // bangchak  E20
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_27.get(3) + " "); // shell  E20
                 } else if (check_choice_popup2.equals("4")) {
@@ -634,7 +634,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_27.get(4) + " "); // ptt E85
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(4) + " "); // bangjak E85
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_27.get(4) + " "); // bangchak E85
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_27.get(4) + " "); // shell E85
                 } else if (check_choice_popup1.equals("4")) {
@@ -645,7 +645,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_27.get(4) + " "); // ptt E85
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(4) + " "); // bangjak  E85
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_27.get(4) + " "); // bangchak  E85
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_27.get(4) + " "); // shell  E85
                 } else if (check_choice_popup2.equals("4")) {
@@ -661,7 +661,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_27.get(5) + " "); // ptt Disel
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangjak_day_27.get(5) + " "); // bangjak Disel
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_27.get(5) + " "); // bangchak Disel
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_27.get(5) + " "); // shell Disel
                 } else if (check_choice_popup1.equals("4")) {
@@ -672,7 +672,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_27.get(5) + " "); // ptt Disel
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangjak_day_27.get(5) + " "); // bangjak  Disel
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_27.get(5) + " "); // bangchak  Disel
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_27.get(5) + " "); // shell  Disel
                 } else if (check_choice_popup2.equals("4")) {
