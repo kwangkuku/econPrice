@@ -43,7 +43,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
     double result_vs_popup;
     //ผู้ใช้เลือกค่าใน pop-up ตัวไหน
     private String check_click_popup = "1"; //ฝั่งขวา img_vs1 = 1 ; ฝั่งซ้าย img_vs2 = 2;
-    private String check_choice_popup1 = "1"; //ค่าแรก ptt = 1; ค่าที่สอง bangjak = 2; ค่าที่สาม shell = 3; ค่าที่สี่ esso = 4;  ซ้าย
+    private String check_choice_popup1 = "1"; //ค่าแรก ptt = 1; ค่าที่สอง bangchak = 2; ค่าที่สาม shell = 3; ค่าที่สี่ esso = 4;  ซ้าย
     private String check_choice_popup2 = "1"; // ขวา
 
 
@@ -175,7 +175,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
         //RESET TEXT เมื่อมีค่าเปลี่ยนแปลง ( DatePicker , Spinner , Pop-up)ข้อมูลที่แสดงจะต้องเปลี่ยนค่าด้วย (show_vs1 , show_vs2 ,tv_show_result )
         //<1>   DatePicker -->   Day10 , Day18 , Day27
         //<2>   Spinner    -->   [0]Bensin  , [1]Sohol95  , [2]Sohol96  , [3]E20  , [4]E85  , [5]Disel
-        //<3>   Pop-up     -->   [0]ptt , [1]bangjak , [2]shell , [3]esso
+        //<3>   Pop-up     -->   [0]ptt , [1]bangchak, [2]shell , [3]esso
         //check ค่า สามอย่างแล้วเอามาแสดงผล <1> + <2> + <3> = SHOW!!!
         // * ใช้ DAY เป็นหลัก
 
@@ -187,7 +187,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup1.equals("1")) {
                     show_vs1.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); // ptt เบนซิล
                 } else if (check_choice_popup1.equals("2")) {
-                    show_vs1.setText(Dummy.getInstance().bangchak_day_10.get(0) + " "); // bangjak เบนซฺล
+                    show_vs1.setText(Dummy.getInstance().bangchak_day_10.get(0) + " "); // bangchak เบนซฺล
                 } else if (check_choice_popup1.equals("3")) {
                     show_vs1.setText(Dummy.getInstance().shell_day_10.get(0) + " "); // shell เบนซิล
                 } else if (check_choice_popup1.equals("4")) {
@@ -200,7 +200,7 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
                 if (check_choice_popup2.equals("1")) {
                     show_vs2.setText(Dummy.getInstance().ptt_day_10.get(0) + " "); // ptt เบนซิล
                 } else if (check_choice_popup2.equals("2")) {
-                    show_vs2.setText(Dummy.getInstance().bangchak_day_10.get(0) + " "); // bangchakak เบนซฺล
+                    show_vs2.setText(Dummy.getInstance().bangchak_day_10.get(0) + " "); // bangchak เบนซฺล
                 } else if (check_choice_popup2.equals("3")) {
                     show_vs2.setText(Dummy.getInstance().shell_day_10.get(0) + " "); // shell เบนซิล
                 } else if (check_choice_popup2.equals("4")) {
@@ -767,8 +767,8 @@ public class OilFragment2 extends Fragment implements DatePickerFragment.onSetDa
 
                         tv_show_result.setText(new DecimalFormat("0.00").format(+result_vs_popup));
                         dialog.dismiss();
-                        //   img_vs2.setImageResource(R.drawable.ic_bangjak);
-                        // img_vs2.setImageResource(R.drawable.ic_bangjak);
+                        //   img_vs2.setImageResource(R.drawable.ic_bangchak);
+                        // img_vs2.setImageResource(R.drawable.ic_bangchak);
                     }
                 });
 
