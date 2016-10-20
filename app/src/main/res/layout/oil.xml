@@ -160,7 +160,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tv_bensin_bangjak"
+                    android:id="@+id/tv_bensin_bangchak"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
@@ -220,7 +220,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tv_gasohol95_bangjak"
+                    android:id="@+id/tv_gasohol95_bangchak"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
@@ -280,7 +280,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tv_gasohol91_bangjak"
+                    android:id="@+id/tv_gasohol91_bangchak"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
@@ -340,7 +340,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tv_e20_bangjak"
+                    android:id="@+id/tv_e20_bangchak"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
@@ -401,7 +401,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tv_e85_bangjak"
+                    android:id="@+id/tv_e85_bangchak"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
@@ -460,7 +460,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tv_diesel_bangjak"
+                    android:id="@+id/tv_diesel_bangchak"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.2"

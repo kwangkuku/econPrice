@@ -23,12 +23,12 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
     private View rootView;
     private Typeface font;
     private TextView tv_date_oil_price, date, tv, tv2, tv3, tv4, tv5, tv6, tv7,
-            tv_bensin_ptt, tv_bensin_bangjak, tv_bensin_shell, tv_bensin_esso,
-            tv_gasohol95_ptt, tv_gasohol95_bangjak, tv_gasohol95_shell, tv_gasohol95_esso,
-            tv_gasohol91_ptt, tv_gasohol91_bangjak, tv_gasohol91_shell, tv_gasohol91_esso,
-            tv_e20_ptt, tv_e20_bangjak, tv_e20_shell, tv_e20_esso,
-            tv_e85_ptt, tv_e85_bangjak, tv_e85_shell, tv_e85_esso,
-            tv_diesel_ptt, tv_diesel_bangjak, tv_diesel_shell, tv_diesel_esso,
+            tv_bensin_ptt, tv_bensin_bangchak, tv_bensin_shell, tv_bensin_esso,
+            tv_gasohol95_ptt, tv_gasohol95_bangchak, tv_gasohol95_shell, tv_gasohol95_esso,
+            tv_gasohol91_ptt, tv_gasohol91_bangchak, tv_gasohol91_shell, tv_gasohol91_esso,
+            tv_e20_ptt, tv_e20_bangchak, tv_e20_shell, tv_e20_esso,
+            tv_e85_ptt, tv_e85_bangchak, tv_e85_shell, tv_e85_esso,
+            tv_diesel_ptt, tv_diesel_bangchak, tv_diesel_shell, tv_diesel_esso,
             show_vs1, show_vs2, tv_show_result,
     //เปลี่ยน font
             colum1, colum2, colum3, colum4, colum5, colum6, colum7, colum8, colum9, colum10,
@@ -61,32 +61,32 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
 //row
         tv_bensin_ptt = (TextView) rootView.findViewById(R.id.tv_bensin_ptt);
-        tv_bensin_bangjak = (TextView) rootView.findViewById(R.id.tv_bensin_bangjak);
+        tv_bensin_bangchak = (TextView) rootView.findViewById(R.id.tv_bensin_bangchak);
         tv_bensin_shell = (TextView) rootView.findViewById(R.id.tv_bensin_shell);
         tv_bensin_esso = (TextView) rootView.findViewById(R.id.tv_bensin_esso);
 
         tv_gasohol95_ptt = (TextView) rootView.findViewById(R.id.tv_gasohol95_ptt);
-        tv_gasohol95_bangjak = (TextView) rootView.findViewById(R.id.tv_gasohol95_bangjak);
+        tv_gasohol95_bangchak = (TextView) rootView.findViewById(R.id.tv_gasohol95_bangchak);
         tv_gasohol95_shell = (TextView) rootView.findViewById(R.id.tv_gasohol95_shell);
         tv_gasohol95_esso = (TextView) rootView.findViewById(R.id.tv_gasohol95_esso);
 
         tv_gasohol91_ptt = (TextView) rootView.findViewById(R.id.tv_gasohol91_ptt);
-        tv_gasohol91_bangjak = (TextView) rootView.findViewById(R.id.tv_gasohol91_bangjak);
+        tv_gasohol91_bangchak = (TextView) rootView.findViewById(R.id.tv_gasohol91_bangchak);
         tv_gasohol91_shell = (TextView) rootView.findViewById(R.id.tv_gasohol91_shell);
         tv_gasohol91_esso = (TextView) rootView.findViewById(R.id.tv_gasohol91_esso);
 
         tv_e20_ptt = (TextView) rootView.findViewById(R.id.tv_e20_ptt);
-        tv_e20_bangjak = (TextView) rootView.findViewById(R.id.tv_e20_bangjak);
+        tv_e20_bangchak = (TextView) rootView.findViewById(R.id.tv_e20_bangchak);
         tv_e20_shell = (TextView) rootView.findViewById(R.id.tv_e20_shell);
         tv_e20_esso = (TextView) rootView.findViewById(R.id.tv_e20_esso);
 
         tv_e85_ptt = (TextView) rootView.findViewById(R.id.tv_e85_ptt);
-        tv_e85_bangjak = (TextView) rootView.findViewById(R.id.tv_e85_bangjak);
+        tv_e85_bangchak = (TextView) rootView.findViewById(R.id.tv_e85_bangchak);
         tv_e85_shell = (TextView) rootView.findViewById(R.id.tv_e85_shell);
         tv_e85_esso = (TextView) rootView.findViewById(R.id.tv_e85_esso);
 
         tv_diesel_ptt = (TextView) rootView.findViewById(R.id.tv_diesel_ptt);
-        tv_diesel_bangjak = (TextView) rootView.findViewById(R.id.tv_diesel_bangjak);
+        tv_diesel_bangchak = (TextView) rootView.findViewById(R.id.tv_diesel_bangchak);
         tv_diesel_shell = (TextView) rootView.findViewById(R.id.tv_diesel_shell);
         tv_diesel_esso = (TextView) rootView.findViewById(R.id.tv_diesel_esso);
 
@@ -96,32 +96,32 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
 //เปลี่ยน font
         colum1 = (TextView) rootView.findViewById(R.id.tv_bensin_ptt);
-        colum2 = (TextView) rootView.findViewById(R.id.tv_bensin_bangjak);
+        colum2 = (TextView) rootView.findViewById(R.id.tv_bensin_bangchak);
         colum3 = (TextView) rootView.findViewById(R.id.tv_bensin_shell);
         colum4 = (TextView) rootView.findViewById(R.id.tv_bensin_esso);
 
         colum5 = (TextView) rootView.findViewById(R.id.tv_gasohol95_ptt);
-        colum6 = (TextView) rootView.findViewById(R.id.tv_gasohol95_bangjak);
+        colum6 = (TextView) rootView.findViewById(R.id.tv_gasohol95_bangchak);
         colum7 = (TextView) rootView.findViewById(R.id.tv_gasohol95_shell);
         colum8 = (TextView) rootView.findViewById(R.id.tv_gasohol95_esso);
 
         colum9 = (TextView) rootView.findViewById(R.id.tv_gasohol91_ptt);
-        colum10 = (TextView) rootView.findViewById(R.id.tv_gasohol91_bangjak);
+        colum10 = (TextView) rootView.findViewById(R.id.tv_gasohol91_bangchak);
         colum11 = (TextView) rootView.findViewById(R.id.tv_gasohol91_shell);
         colum12 = (TextView) rootView.findViewById(R.id.tv_gasohol91_esso);
 
         colum13 = (TextView) rootView.findViewById(R.id.tv_e20_ptt);
-        colum14 = (TextView) rootView.findViewById(R.id.tv_e20_bangjak);
+        colum14 = (TextView) rootView.findViewById(R.id.tv_e20_bangchak);
         colum15 = (TextView) rootView.findViewById(R.id.tv_e20_shell);
         colum16 = (TextView) rootView.findViewById(R.id.tv_e20_esso);
 
         colum17 = (TextView) rootView.findViewById(R.id.tv_e85_ptt);
-        colum18 = (TextView) rootView.findViewById(R.id.tv_e85_bangjak);
+        colum18 = (TextView) rootView.findViewById(R.id.tv_e85_bangchak);
         colum19 = (TextView) rootView.findViewById(R.id.tv_e85_shell);
         colum20 = (TextView) rootView.findViewById(R.id.tv_e85_esso);
 
         colum21 = (TextView) rootView.findViewById(R.id.tv_diesel_ptt);
-        colum22 = (TextView) rootView.findViewById(R.id.tv_diesel_bangjak);
+        colum22 = (TextView) rootView.findViewById(R.id.tv_diesel_bangchak);
         colum23 = (TextView) rootView.findViewById(R.id.tv_diesel_shell);
         colum24 = (TextView) rootView.findViewById(R.id.tv_diesel_esso);
 
@@ -249,37 +249,37 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
             // Row1
             tv_bensin_ptt.setText(Dummy.getInstance().ptt_day_10.get(0) + " ");
-            tv_bensin_bangjak.setText(Dummy.getInstance().bangjak_day_10.get(0) + " ");
+            tv_bensin_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(0) + " ");
             tv_bensin_shell.setText(Dummy.getInstance().shell_day_10.get(0) + " ");
             tv_bensin_esso.setText(Dummy.getInstance().esso_day_10.get(0) + " ");
 
             // Row2
             tv_gasohol95_ptt.setText(Dummy.getInstance().ptt_day_10.get(1) + " ");
-            tv_gasohol95_bangjak.setText(Dummy.getInstance().bangjak_day_10.get(1) + " ");
+            tv_gasohol95_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(1) + " ");
             tv_gasohol95_shell.setText(Dummy.getInstance().shell_day_10.get(1) + " ");
             tv_gasohol95_esso.setText(Dummy.getInstance().esso_day_10.get(1) + " ");
 
             //Row3
             tv_gasohol91_ptt.setText(Dummy.getInstance().ptt_day_10.get(2) + " ");
-            tv_gasohol91_bangjak.setText(Dummy.getInstance().bangjak_day_10.get(2) + " ");
+            tv_gasohol91_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(2) + " ");
             tv_gasohol91_shell.setText(Dummy.getInstance().shell_day_10.get(2) + " ");
             tv_gasohol91_esso.setText(Dummy.getInstance().esso_day_10.get(2) + " ");
 
             // Row4
             tv_e20_ptt.setText(Dummy.getInstance().ptt_day_10.get(3) + " ");
-            tv_e20_bangjak.setText(Dummy.getInstance().bangjak_day_10.get(3) + " ");
+            tv_e20_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(3) + " ");
             tv_e20_shell.setText(Dummy.getInstance().shell_day_10.get(3) + " ");
             tv_e20_esso.setText(Dummy.getInstance().esso_day_10.get(3) + " ");
 
             //Row5
             tv_e85_ptt.setText(Dummy.getInstance().ptt_day_10.get(4) + " ");
-            tv_e85_bangjak.setText(Dummy.getInstance().bangjak_day_10.get(4) + " ");
+            tv_e85_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(4) + " ");
             tv_e85_shell.setText(Dummy.getInstance().shell_day_10.get(4) + " ");
             tv_e85_esso.setText(Dummy.getInstance().esso_day_10.get(4) + " ");
 
             //Row6
             tv_diesel_ptt.setText(Dummy.getInstance().ptt_day_10.get(5) + " ");
-            tv_diesel_bangjak.setText(Dummy.getInstance().bangjak_day_10.get(5) + " ");
+            tv_diesel_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(5) + " ");
             tv_diesel_shell.setText(Dummy.getInstance().shell_day_10.get(5) + " ");
             tv_diesel_esso.setText(Dummy.getInstance().esso_day_10.get(5) + " ");
 
@@ -288,37 +288,37 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
             // Row1
             tv_bensin_ptt.setText(Dummy.getInstance().ptt_day_18.get(0) + " ");
-            tv_bensin_bangjak.setText(Dummy.getInstance().bangjak_day_18.get(0) + " ");
+            tv_bensin_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(0) + " ");
             tv_bensin_shell.setText(Dummy.getInstance().shell_day_18.get(0) + " ");
             tv_bensin_esso.setText(Dummy.getInstance().esso_day_18.get(0) + " ");
 
             // Row2
             tv_gasohol95_ptt.setText(Dummy.getInstance().ptt_day_18.get(1) + " ");
-            tv_gasohol95_bangjak.setText(Dummy.getInstance().bangjak_day_18.get(1) + " ");
+            tv_gasohol95_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(1) + " ");
             tv_gasohol95_shell.setText(Dummy.getInstance().shell_day_18.get(1) + " ");
             tv_gasohol95_esso.setText(Dummy.getInstance().esso_day_18.get(1) + " ");
 
             //Row3
             tv_gasohol91_ptt.setText(Dummy.getInstance().ptt_day_18.get(2) + " ");
-            tv_gasohol91_bangjak.setText(Dummy.getInstance().bangjak_day_18.get(2) + " ");
+            tv_gasohol91_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(2) + " ");
             tv_gasohol91_shell.setText(Dummy.getInstance().shell_day_18.get(2) + " ");
             tv_gasohol91_esso.setText(Dummy.getInstance().esso_day_18.get(2) + " ");
 
             // Row4
             tv_e20_ptt.setText(Dummy.getInstance().ptt_day_18.get(3) + " ");
-            tv_e20_bangjak.setText(Dummy.getInstance().bangjak_day_18.get(3) + " ");
+            tv_e20_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(3) + " ");
             tv_e20_shell.setText(Dummy.getInstance().shell_day_18.get(3) + " ");
             tv_e20_esso.setText(Dummy.getInstance().esso_day_18.get(3) + " ");
 
             //Row5
             tv_e85_ptt.setText(Dummy.getInstance().ptt_day_18.get(4) + " ");
-            tv_e85_bangjak.setText(Dummy.getInstance().bangjak_day_18.get(4) + " ");
+            tv_e85_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(4) + " ");
             tv_e85_shell.setText(Dummy.getInstance().shell_day_18.get(4) + " ");
             tv_e85_esso.setText(Dummy.getInstance().esso_day_18.get(4) + " ");
 
             //Row6
             tv_diesel_ptt.setText(Dummy.getInstance().ptt_day_18.get(5) + " ");
-            tv_diesel_bangjak.setText(Dummy.getInstance().bangjak_day_18.get(5) + " ");
+            tv_diesel_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(5) + " ");
             tv_diesel_shell.setText(Dummy.getInstance().shell_day_18.get(5) + " ");
             tv_diesel_esso.setText(Dummy.getInstance().esso_day_18.get(5) + " ");
 
@@ -328,38 +328,38 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
             // Row1
             tv_bensin_ptt.setText(Dummy.getInstance().ptt_day_27.get(0) + " ");
-            tv_bensin_bangjak.setText(Dummy.getInstance().bangjak_day_27.get(0) + " ");
+            tv_bensin_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(0) + " ");
             tv_bensin_shell.setText(Dummy.getInstance().shell_day_27.get(0) + " ");
             tv_bensin_esso.setText(Dummy.getInstance().esso_day_27.get(0) + " ");
 
             // Row2
             tv_gasohol95_ptt.setText(Dummy.getInstance().ptt_day_27.get(1) + " ");
-            tv_gasohol95_bangjak.setText(Dummy.getInstance().bangjak_day_27.get(1) + " ");
+            tv_gasohol95_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(1) + " ");
             tv_gasohol95_shell.setText(Dummy.getInstance().shell_day_27.get(1) + " ");
             tv_gasohol95_esso.setText(Dummy.getInstance().esso_day_27.get(1) + " ");
 
             //Row3
             tv_gasohol91_ptt.setText(Dummy.getInstance().ptt_day_27.get(2) + " ");
-            tv_gasohol91_bangjak.setText(Dummy.getInstance().bangjak_day_27.get(2) + " ");
+            tv_gasohol91_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(2) + " ");
             tv_gasohol91_shell.setText(Dummy.getInstance().shell_day_27.get(2) + " ");
             tv_gasohol91_esso.setText(Dummy.getInstance().esso_day_27.get(2) + " ");
 
 
             // Row4
             tv_e20_ptt.setText(Dummy.getInstance().ptt_day_27.get(3) + " ");
-            tv_e20_bangjak.setText(Dummy.getInstance().bangjak_day_27.get(3) + " ");
+            tv_e20_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(3) + " ");
             tv_e20_shell.setText(Dummy.getInstance().shell_day_27.get(3) + " ");
             tv_e20_esso.setText(Dummy.getInstance().esso_day_27.get(3) + " ");
 
             //Row5
             tv_e85_ptt.setText(Dummy.getInstance().ptt_day_27.get(4) + " ");
-            tv_e85_bangjak.setText(Dummy.getInstance().bangjak_day_27.get(4) + " ");
+            tv_e85_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(4) + " ");
             tv_e85_shell.setText(Dummy.getInstance().shell_day_27.get(4) + " ");
             tv_e85_esso.setText(Dummy.getInstance().esso_day_27.get(4) + " ");
 
             //Row6
             tv_diesel_ptt.setText(Dummy.getInstance().ptt_day_27.get(5) + " ");
-            tv_diesel_bangjak.setText(Dummy.getInstance().bangjak_day_27.get(5) + " ");
+            tv_diesel_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(5) + " ");
             tv_diesel_shell.setText(Dummy.getInstance().shell_day_27.get(5) + " ");
             tv_diesel_esso.setText(Dummy.getInstance().esso_day_27.get(5) + " ");
 
