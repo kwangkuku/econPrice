@@ -941,7 +941,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         t65.setText("114444");
         t66.setText("566254");
         t67.setText("987432");
-        t68.setText("54878");
+        t68.setText("548758");
         t69.setText("611166");
         t70.setText("981118");
         t71.setText("657333");
