@@ -67,7 +67,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         setView();
         setNumber();
         //  setDummy();
-        setService();
+      //  setService();
         return rootView;
     }
 
@@ -81,40 +81,54 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
                           @Override
                           public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
 
+//
+//                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(0).getDatePast() +
+//                                      "   " + response.body().getLotteryModel().get(0).getPrize1() +
+//                                      "   " + response.body().getLotteryModel().get(0).getPrizeEnd2Digit() +
+//                                      "   " + response.body().getLotteryModel().get(0).getPrizeEnd3Digit() +
+//                                      "   " + response.body().getLotteryModel().get(0).getPrizeTop3Digit() +
+//                                      "   " + response.body().getLotteryModel().get(0).getPrizeNear1() +
+//                                      "   " + response.body().getLotteryModel().get(0).getPrize2() +
+//                                      "   " + response.body().getLotteryModel().get(0).getPrize3() +
+//                                      "   " + response.body().getLotteryModel().get(0).getPrize4() +
+//                                      "   " + response.body().getLotteryModel().get(0).getPrize5());
+//
+//                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(1).getDatePast() +
+//                                      "   " + response.body().getLotteryModel().get(1).getPrize1() +
+//                                      "   " + response.body().getLotteryModel().get(1).getPrizeEnd2Digit() +
+//                                      "   " + response.body().getLotteryModel().get(1).getPrizeEnd3Digit() +
+//                                      "   " + response.body().getLotteryModel().get(1).getPrizeTop3Digit() +
+//                                      "   " + response.body().getLotteryModel().get(1).getPrizeNear1() +
+//                                      "   " + response.body().getLotteryModel().get(1).getPrize2() +
+//                                      "   " + response.body().getLotteryModel().get(1).getPrize3() +
+//                                      "   " + response.body().getLotteryModel().get(1).getPrize4() +
+//                                      "   " + response.body().getLotteryModel().get(1).getPrize5());
+//
+//
+//                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(2).getDatePast() +
+//                                      "   " + response.body().getLotteryModel().get(2).getPrize1() +
+//                                      "   " + response.body().getLotteryModel().get(2).getPrizeEnd2Digit() +
+//                                      "   " + response.body().getLotteryModel().get(2).getPrizeEnd3Digit() +
+//                                      "   " + response.body().getLotteryModel().get(2).getPrizeTop3Digit() +
+//                                      "   " + response.body().getLotteryModel().get(2).getPrizeNear1() +
+//                                      "   " + response.body().getLotteryModel().get(2).getPrize2() +
+//                                      "   " + response.body().getLotteryModel().get(2).getPrize3() +
+//                                      "   " + response.body().getLotteryModel().get(2).getPrize4() +
+//                                      "   " + response.body().getLotteryModel().get(2).getPrize5());
+//
+//
+//                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(3).getDatePast() +
+//                                      "   " + response.body().getLotteryModel().get(3).getPrize1() +
+//                                      "   " + response.body().getLotteryModel().get(3).getPrizeEnd2Digit() +
+//                                      "   " + response.body().getLotteryModel().get(3).getPrizeEnd3Digit() +
+//                                      "   " + response.body().getLotteryModel().get(3).getPrizeTop3Digit() +
+//                                      "   " + response.body().getLotteryModel().get(3).getPrizeNear1() +
+//                                      "   " + response.body().getLotteryModel().get(3).getPrize2() +
+//                                      "   " + response.body().getLotteryModel().get(3).getPrize3() +
+//                                      "   " + response.body().getLotteryModel().get(3).getPrize4() +
+//                                      "   " + response.body().getLotteryModel().get(3).getPrize5());
 
-                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(0).getDatePast() +
-                                      "   " + response.body().getLotteryModel().get(0).getPrize1() +
-                                      "   " + response.body().getLotteryModel().get(0).getPrizeEnd2Digit() +
-                                      "   " + response.body().getLotteryModel().get(0).getPrizeEnd3Digit() +
-                                      "   " + response.body().getLotteryModel().get(0).getPrizeTop3Digit() +
-                                      "   " + response.body().getLotteryModel().get(0).getPrizeNear1() +
-                                      "   " + response.body().getLotteryModel().get(0).getPrize2() +
-                                      "   " + response.body().getLotteryModel().get(0).getPrize3() +
-                                      "   " + response.body().getLotteryModel().get(0).getPrize4() +
-                                      "   " + response.body().getLotteryModel().get(0).getPrize5());
 
-                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(1).getDatePast() +
-                                      "   " + response.body().getLotteryModel().get(1).getPrize1() +
-                                      "   " + response.body().getLotteryModel().get(1).getPrizeEnd2Digit() +
-                                      "   " + response.body().getLotteryModel().get(1).getPrizeEnd3Digit() +
-                                      "   " + response.body().getLotteryModel().get(1).getPrizeTop3Digit() +
-                                      "   " + response.body().getLotteryModel().get(1).getPrizeNear1() +
-                                      "   " + response.body().getLotteryModel().get(1).getPrize2() +
-                                      "   " + response.body().getLotteryModel().get(1).getPrize3() +
-                                      "   " + response.body().getLotteryModel().get(1).getPrize4() +
-                                      "   " + response.body().getLotteryModel().get(1).getPrize5());
-
-//                              TextView result = (TextView) rootView.findViewById(R.id.text);
-//                              result.setText(lotteryModel.getLotteryModel().getDatePast() +
-//                                      "   " + response.body().getLotteryModel().getPrize1() +
-//                                      "   " + response.body().getLotteryModel().getPrizeEnd2Digit() +
-//                                      "   " + response.body().getLotteryModel().getPrizeEnd3Digit() +
-//                                      "   " + response.body().getLotteryModel().getPrizeTop3Digit() +
-//                                      "   " + response.body().getLotteryModel().getPrizeNear1() +
-//                                      "   " + response.body().getLotteryModel().getPrize2() +
-//                                      "   " + response.body().getLotteryModel().getPrize3() +
-//                                      "   " + response.body().getLotteryModel().getPrize4() +
-//                                      "   " + response.body().getLotteryModel().getPrize5());
 //                          }
                           }
 
@@ -128,7 +142,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
 
     private void LottoSpinner() {
-        String[] List = {"1ุ6/9/2016", "1/9/2016", "16/8/2016", "1/8/2016"};
+        String[] List = {"16/9/2016", "1/9/2016", "16/8/2016", "1/8/2016"};
         CustomAdapterLotto lottoAdapter = new CustomAdapterLotto(getActivity(), List);
         spin = (Spinner) rootView.findViewById(R.id.spin);
 //        ArrayList<String> arrayList = new ArrayList<String>();
@@ -177,6 +191,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
                 );
                 if (i == 1) {
                     // setContent();
+                    LotteryUserRequest user2 = new LotteryUserRequest();
                     Call<LotteryModel> calls2 = HttpManager.getInstance().getUser().loadJson();
                     calls2.enqueue(new Callback<LotteryModel>()
 
@@ -185,16 +200,16 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
                                       public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
 
 
-                                          Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(1).getDatePast() +
-                                                  "   " + response.body().getLotteryModel().get(1).getPrize1() +
-                                                  "   " + response.body().getLotteryModel().get(1).getPrizeEnd2Digit() +
-                                                  "   " + response.body().getLotteryModel().get(1).getPrizeEnd3Digit() +
-                                                  "   " + response.body().getLotteryModel().get(1).getPrizeTop3Digit() +
-                                                  "   " + response.body().getLotteryModel().get(1).getPrizeNear1() +
-                                                  "   " + response.body().getLotteryModel().get(1).getPrize2() +
-                                                  "   " + response.body().getLotteryModel().get(1).getPrize3() +
-                                                  "   " + response.body().getLotteryModel().get(1).getPrize4() +
-                                                  "   " + response.body().getLotteryModel().get(1).getPrize5());
+//                                          Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(1).getDatePast() +
+//                                                  "   " + response.body().getLotteryModel().get(1).getPrize1() +
+//                                                  "   " + response.body().getLotteryModel().get(1).getPrizeEnd2Digit() +
+//                                                  "   " + response.body().getLotteryModel().get(1).getPrizeEnd3Digit() +
+//                                                  "   " + response.body().getLotteryModel().get(1).getPrizeTop3Digit() +
+//                                                  "   " + response.body().getLotteryModel().get(1).getPrizeNear1() +
+//                                                  "   " + response.body().getLotteryModel().get(1).getPrize2() +
+//                                                  "   " + response.body().getLotteryModel().get(1).getPrize3() +
+//                                                  "   " + response.body().getLotteryModel().get(1).getPrize4() +
+//                                                  "   " + response.body().getLotteryModel().get(1).getPrize5());
 
                                           tv.setText(response.body().getLotteryModel().get(1).getPrize1());
                                           tv2.setText(response.body().getLotteryModel().get(1).getPrizeEnd2Digit());
@@ -215,6 +230,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
                     );
                 } else if (i == 2) {
                     // setContent2();
+                    LotteryUserRequest user3 = new LotteryUserRequest();
                     Call<LotteryModel> calls3 = HttpManager.getInstance().getUser().loadJson();
                     calls3.enqueue(new Callback<LotteryModel>()
 
@@ -235,15 +251,15 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 //                                                  "   " + response.body().getLotteryModel().getPrize5());
 
 
-//                                          tv.setText(response.body().getLotteryModel().getPrize1());
-//                                          tv2.setText(response.body().getLotteryModel().getPrizeEnd2Digit());
-//                                          tv3.setText(response.body().getLotteryModel().getPrizeEnd3Digit());
-//                                          tv4.setText(response.body().getLotteryModel().getPrizeTop3Digit());
-//                                          tv5.setText(response.body().getLotteryModel().getPrizeNear1());
-//                                          tv6.setText(response.body().getLotteryModel().getPrize2());
-//                                          tv7.setText(response.body().getLotteryModel().getPrize3());
-//                                          tv8.setText(response.body().getLotteryModel().getPrize4());
-//                                          tv9.setText(response.body().getLotteryModel().getPrize5());
+                                          tv.setText(response.body().getLotteryModel().get(2).getPrize1());
+                                          tv2.setText(response.body().getLotteryModel().get(2).getPrizeEnd2Digit());
+                                          tv3.setText(response.body().getLotteryModel().get(2).getPrizeEnd3Digit());
+                                          tv4.setText(response.body().getLotteryModel().get(2).getPrizeTop3Digit());
+                                          tv5.setText(response.body().getLotteryModel().get(2).getPrizeNear1());
+                                          tv6.setText(response.body().getLotteryModel().get(2).getPrize2());
+                                          tv7.setText(response.body().getLotteryModel().get(2).getPrize3());
+                                          tv8.setText(response.body().getLotteryModel().get(2).getPrize4());
+                                          tv9.setText(response.body().getLotteryModel().get(2).getPrize5());
                                       }
 
                                       @Override
@@ -254,6 +270,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
                     );
                 } else if (i == 3) {
                     //   setContent3();
+                    LotteryUserRequest user4 = new LotteryUserRequest();
                     Call<LotteryModel> calls4 = HttpManager.getInstance().getUser().loadJson();
                     calls4.enqueue(new Callback<LotteryModel>()
 
@@ -274,15 +291,15 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 //                                                  "   " + response.body().getLotteryModel().getPrize5());
 
 
-//                                          tv.setText(response.body().getLotteryModel().getPrize1());
-//                                          tv2.setText(response.body().getLotteryModel().getPrizeEnd2Digit());
-//                                          tv3.setText(response.body().getLotteryModel().getPrizeEnd3Digit());
-//                                          tv4.setText(response.body().getLotteryModel().getPrizeTop3Digit());
-//                                          tv5.setText(response.body().getLotteryModel().getPrizeNear1());
-//                                          tv6.setText(response.body().getLotteryModel().getPrize2());
-//                                          tv7.setText(response.body().getLotteryModel().getPrize3());
-//                                          tv8.setText(response.body().getLotteryModel().getPrize4());
-//                                          tv9.setText(response.body().getLotteryModel().getPrize5());
+                                          tv.setText(response.body().getLotteryModel().get(3).getPrize1());
+                                          tv2.setText(response.body().getLotteryModel().get(3).getPrizeEnd2Digit());
+                                          tv3.setText(response.body().getLotteryModel().get(3).getPrizeEnd3Digit());
+                                          tv4.setText(response.body().getLotteryModel().get(3).getPrizeTop3Digit());
+                                          tv5.setText(response.body().getLotteryModel().get(3).getPrizeNear1());
+                                          tv6.setText(response.body().getLotteryModel().get(3).getPrize2());
+                                          tv7.setText(response.body().getLotteryModel().get(3).getPrize3());
+                                          tv8.setText(response.body().getLotteryModel().get(3).getPrize4());
+                                          tv9.setText(response.body().getLotteryModel().get(3).getPrize5());
                                       }
 
                                       @Override
