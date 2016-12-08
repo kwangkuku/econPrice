@@ -1,10 +1,8 @@
 package com.promptnow.econprice.service;
 
-/**
- * Created by Admin on 28/9/2559.
- */
 
-public class LotteryUserRequest {
+
+public class LotteryRequest {
 
 //    String status;
 

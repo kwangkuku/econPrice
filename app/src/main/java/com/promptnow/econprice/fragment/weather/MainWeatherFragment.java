@@ -2,7 +2,6 @@ package com.promptnow.econprice.fragment.weather;
 
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -17,23 +17,30 @@ import com.promptnow.econprice.R;
 import com.promptnow.econprice.activity.Menu;
 import com.promptnow.econprice.view.Singleton;
 
-import static java.security.AccessController.getContext;
 
 public class MainWeatherFragment extends Fragment {
     private View rootView;
+    private static final String TAG = "log";
+    private ExpandableListView expListView;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.stucture_weather, container, false);
+
         setView();
+
+
 
 
         return rootView;
     }
 
+
+
     private void setView() {
+
 
         final String[] list = {"กรุงเทพมหานครและปริมณฑล", "ภาคเหนือ", "ภาคตะวันออกเฉียงเหนือ"
                 , "ภาคกลาง", "ภาคตะวันออก", "ภาคใต้"};
@@ -53,8 +60,12 @@ public class MainWeatherFragment extends Fragment {
 
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
+
+
                 Intent intent = new Intent(getActivity(), SecondFragment.class);
-                switch (position) {
+
+//               simpleProgressBar.setVisibility(View.VISIBLE);
+         switch (position) {
                     case 0:
                         ((Menu) getActivity()).setFragment(new SecondFragment());
                         Singleton.getInstance().setIndexlist(list[0]);
@@ -90,6 +101,13 @@ public class MainWeatherFragment extends Fragment {
 
             }
 
+
         });
+
     }
 }
+
+
+
+
+

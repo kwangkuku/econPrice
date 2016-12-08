@@ -14,7 +14,11 @@ public class HttpManager {
 
     private static HttpManager instance;
 
+    Lottery lot;
     User user;
+    OilUser oilUser;
+    OilExcelUser oilExcelUser;
+
     public static HttpManager getInstance(){
 
         return new HttpManager();
@@ -30,10 +34,23 @@ public class HttpManager {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+        lot = retrofit.create(Lottery.class);
         user = retrofit.create(User.class);
+        oilUser = retrofit.create(OilUser.class);
+        oilExcelUser = retrofit.create(OilExcelUser.class);
+    }
+
+    public Lottery getLot() {
+        return lot;
     }
 
     public User getUser() {
         return user;
+    }
+    public OilUser getOilUser() {
+        return oilUser;
+    }
+
+    public OilExcelUser getOilExcelUser() {return oilExcelUser;
     }
 }

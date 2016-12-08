@@ -12,13 +12,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.promptnow.econprice.R;
-import com.promptnow.econprice.fragment.oil.data_dummy.Dummy;
+import com.promptnow.econprice.service.HttpManager;
+import com.promptnow.econprice.service.OilExcelModel;
+import com.promptnow.econprice.service.OilModel;
+import com.promptnow.econprice.service.OilUserRequest;
 import com.promptnow.econprice.view.DatePickerFragment;
 import com.promptnow.econprice.view.UtilCalendar;
 
 import java.util.Calendar;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 import static android.content.ContentValues.TAG;
+
 public class OilFragment extends android.support.v4.app.DialogFragment implements DatePickerFragment.onSetDateListener {
     private View rootView;
     private Typeface font;
@@ -31,8 +39,8 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
             tv_diesel_ptt, tv_diesel_bangchak, tv_diesel_shell, tv_diesel_esso,
             show_vs1, show_vs2, tv_show_result,
     //เปลี่ยน font
-            colum1, colum2, colum3, colum4, colum5, colum6, colum7, colum8, colum9, colum10,
-            colum11, colum12, colum13, colum14,colum15, colum16, colum17, colum18, colum19,
+    colum1, colum2, colum3, colum4, colum5, colum6, colum7, colum8, colum9, colum10,
+            colum11, colum12, colum13, colum14, colum15, colum16, colum17, colum18, colum19,
             colum20, colum21, colum22, colum23, colum24;
 
     private int selectedYear;
@@ -43,6 +51,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
     private int month;
     private int day;
     private String stringOfDate;
+    private OilExcelModel oilExcelModel;
 
     public interface onSetDateListener {
         void setDate(int year, int month, int day);
@@ -50,8 +59,170 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.oil, container, false);
+        setOilService();
         setView();
+
+        setDataService();
+        //setDataExcelService();
+
+
         return rootView;
+    }
+
+
+//    private void setDataExcelService() {
+//        //call data by ExcelService
+//        Call<OilExcelModel> call = HttpManager.getInstance().getOilExcelUser().loadJson();
+//        call.enqueue(new Callback<OilExcelModel>() {
+//            @Override
+//            public void onResponse(Call<OilExcelModel> call, Response<OilExcelModel> response) {
+//                 OilExcelModel oilExcelModel = response.body();
+//                Log.d(TAG, "onResponse: " + response.body().getOilExcelModel());
+//
+//
+//
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<OilExcelModel> call, Throwable t) {
+//                Log.d(TAG, "onFailure:  " + t.toString());
+//            }
+//        });
+//
+//    }
+
+    private void setOilExcelService(final String date) {
+        Call<OilExcelModel> call = HttpManager.getInstance().getOilExcelUser().loadJson();
+        call.enqueue(new Callback<OilExcelModel>() {
+            @Override
+            public void onResponse(Call<OilExcelModel> call, Response<OilExcelModel> response) {
+                oilExcelModel = response.body();
+                Log.d(TAG, "onResponse: " + response.body().getOilExcelModel());
+
+                //PTT
+                tv_bensin_ptt.setText(oilExcelModel.getOilExcelModel().get(0).getOilPrice()); //ptt //เบนซิล 95
+                tv_gasohol95_ptt.setText(oilExcelModel.getOilExcelModel().get(1).getOilPrice());
+                tv_gasohol91_ptt.setText(oilExcelModel.getOilExcelModel().get(2).getOilPrice());
+                tv_e20_ptt.setText(oilExcelModel.getOilExcelModel().get(3).getOilPrice());
+                tv_e85_ptt.setText(oilExcelModel.getOilExcelModel().get(4).getOilPrice());
+                tv_diesel_ptt.setText(oilExcelModel.getOilExcelModel().get(5).getOilPrice());
+
+                //BANGCHAK
+                tv_bensin_bangchak.setText("-");//ไม่ขาย
+                tv_gasohol95_bangchak.setText(oilExcelModel.getOilExcelModel().get(7).getOilPrice());
+                tv_gasohol91_bangchak.setText(oilExcelModel.getOilExcelModel().get(8).getOilPrice());
+                tv_e20_bangchak.setText(oilExcelModel.getOilExcelModel().get(9).getOilPrice());
+                tv_e85_bangchak.setText(oilExcelModel.getOilExcelModel().get(10).getOilPrice());
+                tv_diesel_bangchak.setText(oilExcelModel.getOilExcelModel().get(11).getOilPrice());
+
+                //SHELL
+                tv_bensin_shell.setText("-");//ไม่ขาย
+                tv_gasohol95_shell.setText("-");
+                tv_gasohol91_shell.setText(oilExcelModel.getOilExcelModel().get(14).getOilPrice());
+                tv_e20_shell.setText(oilExcelModel.getOilExcelModel().get(15).getOilPrice());
+                tv_e85_shell.setText("-"); // ไม่ขาย
+                tv_diesel_shell.setText(oilExcelModel.getOilExcelModel().get(17).getOilPrice());
+
+                //ESSO
+                tv_bensin_esso.setText(oilExcelModel.getOilExcelModel().get(18).getOilPrice());
+                tv_gasohol95_esso.setText(oilExcelModel.getOilExcelModel().get(19).getOilPrice());
+                tv_gasohol91_esso.setText(oilExcelModel.getOilExcelModel().get(20).getOilPrice());
+                tv_e20_esso.setText(oilExcelModel.getOilExcelModel().get(21).getOilPrice());
+                tv_e85_esso.setText("-");// ไม่ขาย
+                tv_diesel_esso.setText(oilExcelModel.getOilExcelModel().get(23).getOilPrice());
+
+
+            }
+
+            @Override
+            public void onFailure(Call<OilExcelModel> call, Throwable t) {
+                Log.d(TAG, "onFailure:  " + t.toString());
+            }
+        });
+
+
+    }
+
+
+    private void setDataService() {
+        //call data by service
+
+        Call<OilModel> call = HttpManager.getInstance().getOilUser().loadJson();
+        call.enqueue(new Callback<OilModel>() {
+            @Override
+            public void onResponse(Call<OilModel> call, Response<OilModel> response) {
+
+                OilModel oilModel = response.body();
+
+                for (int i = 0; i < 34; i++) {
+                    Log.d(TAG, "onResponse: " + oilModel.getOilModel().get(i).getOilPrice()
+
+                    );
+                }
+                //PTT
+                tv_bensin_ptt.setText(response.body().getOilModel().get(4).getOilPrice());
+                tv_gasohol95_ptt.setText(response.body().getOilModel().get(0).getOilPrice());
+                tv_gasohol91_ptt.setText(response.body().getOilModel().get(3).getOilPrice());
+                tv_e20_ptt.setText(response.body().getOilModel().get(1).getOilPrice());
+                tv_e85_ptt.setText(response.body().getOilModel().get(2).getOilPrice());
+                tv_diesel_ptt.setText(response.body().getOilModel().get(6).getOilPrice());
+
+                //BANGCHAK
+                tv_bensin_bangchak.setText("-");
+                //tv_bensin_bangchak.setText(response.body().getOilModel().get(13).getOilPrice());    //blank
+                tv_gasohol95_bangchak.setText(response.body().getOilModel().get(9).getOilPrice());
+                tv_gasohol91_bangchak.setText(response.body().getOilModel().get(12).getOilPrice());
+                tv_e20_bangchak.setText(response.body().getOilModel().get(10).getOilPrice());
+                tv_e85_bangchak.setText(response.body().getOilModel().get(11).getOilPrice());
+                tv_diesel_bangchak.setText(response.body().getOilModel().get(15).getOilPrice());
+
+                //SHELL
+                tv_bensin_shell.setText("-");
+                //tv_bensin_shell.setText(response.body().getOilModel().get(22).getOilPrice());   //blank
+                tv_gasohol95_shell.setText(response.body().getOilModel().get(18).getOilPrice());
+                tv_gasohol91_shell.setText(response.body().getOilModel().get(21).getOilPrice());
+                tv_e20_shell.setText(response.body().getOilModel().get(19).getOilPrice());
+                tv_e85_shell.setText("-");
+                //tv_e85_shell.setText(response.body().getOilModel().get(20).getOilPrice());  //blank
+                tv_diesel_shell.setText(response.body().getOilModel().get(24).getOilPrice());
+
+                //ESSO
+                tv_bensin_esso.setText(response.body().getOilModel().get(30).getOilPrice());
+                tv_gasohol95_esso.setText(response.body().getOilModel().get(26).getOilPrice());
+                tv_gasohol91_esso.setText(response.body().getOilModel().get(29).getOilPrice());
+                tv_e20_esso.setText(response.body().getOilModel().get(27).getOilPrice());
+                tv_e85_esso.setText("-");
+                //tv_e85_esso.setText(response.body().getOilModel().get(28).getOilPrice());   //blank
+                tv_diesel_esso.setText(response.body().getOilModel().get(32).getOilPrice());
+
+
+            }
+
+            @Override
+            public void onFailure(Call<OilModel> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    private void setOilService() {
+        OilUserRequest user = new OilUserRequest();
+        Call<OilModel> call = HttpManager.getInstance().getOilUser().loadJson();
+
+        call.enqueue(new Callback<OilModel>() {
+            @Override
+            public void onResponse(Call<OilModel> call, Response<OilModel> response) {
+                Log.d(TAG, "onResponse: " + response.body().getOilModel());
+
+            }
+
+            @Override
+            public void onFailure(Call<OilModel> call, Throwable t) {
+                Log.d(TAG, "onFailure:  " + t.toString());
+            }
+        });
     }
 
 
@@ -176,7 +347,7 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         month += 1;
         day = c.get(Calendar.DAY_OF_MONTH);
         stringOfDate = day + "/" + month + "/" + year;
-
+        Log.d(TAG, "DATE: " + stringOfDate);
         tv_date_oil_price.setText(stringOfDate);
         setCurrentDate();
 
@@ -194,9 +365,12 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 
         DatePickerFragment picker = new DatePickerFragment(getActivity(), day, month, year);
         picker.mListener = OilFragment.this;
+
 //        if (tv_date_oil_price.length()==0){
 //            picker.setRangeYear(20);
 //        }
+
+
         picker.show(getActivity().getFragmentManager(), "");
     }
 
@@ -205,6 +379,8 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
         year = c.get(Calendar.YEAR);
         month = c.get(Calendar.MONTH);  //0;
         day = c.get(Calendar.DAY_OF_MONTH); //1;
+
+
     }
 
     @Override
@@ -229,142 +405,35 @@ public class OilFragment extends android.support.v4.app.DialogFragment implement
 //            str_fromdate = dateFormat.substring(6,10)+dateFormat.substring(3,5)+dateFormat.substring(0,2);
 //            UtilLog.i("Boom", str_fromdate);
             tv_date_oil_price.setText(date);
-            setData(date);
+            setWhenDateChange(date);
+            //เมื่อมีการเปลี่ยนแปลงวันที่
+
         }
     }
 
-    private void setData(String date) {
+    private void setWhenDateChange(String date) {
+
+
+        String d = date.substring(0,10);
+        //String m = date.substring(3, 4);
 
         String day[] = date.split("/");
 
         Log.d("Show Day", day[0]);
         Log.d("Show Month", day[1]);
         Log.d("Show Year", day[2]);
-//       String d = date.substring(0, 2); ใช้ในกรณีที่วันที่มีค่าเป็น 23/1/2016 9 หลัก
-// แต่ถ้าเป็น case ที่       วันที่มีค่าเป็น 8/1/2016  8 หลัก จะใช้   String d = date.substring(0, ๅ);
+        Log.d(TAG, "perfect day : " + d);
 
-        Log.d(TAG, "perfeact day : " + day[0]);
-
-        if (day[0].equals("10")) {
-
-            // Row1
-            tv_bensin_ptt.setText(Dummy.getInstance().ptt_day_10.get(0) + " ");
-            tv_bensin_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(0) + " ");
-            tv_bensin_shell.setText(Dummy.getInstance().shell_day_10.get(0) + " ");
-            tv_bensin_esso.setText(Dummy.getInstance().esso_day_10.get(0) + " ");
-
-            // Row2
-            tv_gasohol95_ptt.setText(Dummy.getInstance().ptt_day_10.get(1) + " ");
-            tv_gasohol95_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(1) + " ");
-            tv_gasohol95_shell.setText(Dummy.getInstance().shell_day_10.get(1) + " ");
-            tv_gasohol95_esso.setText(Dummy.getInstance().esso_day_10.get(1) + " ");
-
-            //Row3
-            tv_gasohol91_ptt.setText(Dummy.getInstance().ptt_day_10.get(2) + " ");
-            tv_gasohol91_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(2) + " ");
-            tv_gasohol91_shell.setText(Dummy.getInstance().shell_day_10.get(2) + " ");
-            tv_gasohol91_esso.setText(Dummy.getInstance().esso_day_10.get(2) + " ");
-
-            // Row4
-            tv_e20_ptt.setText(Dummy.getInstance().ptt_day_10.get(3) + " ");
-            tv_e20_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(3) + " ");
-            tv_e20_shell.setText(Dummy.getInstance().shell_day_10.get(3) + " ");
-            tv_e20_esso.setText(Dummy.getInstance().esso_day_10.get(3) + " ");
-
-            //Row5
-            tv_e85_ptt.setText(Dummy.getInstance().ptt_day_10.get(4) + " ");
-            tv_e85_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(4) + " ");
-            tv_e85_shell.setText(Dummy.getInstance().shell_day_10.get(4) + " ");
-            tv_e85_esso.setText(Dummy.getInstance().esso_day_10.get(4) + " ");
-
-            //Row6
-            tv_diesel_ptt.setText(Dummy.getInstance().ptt_day_10.get(5) + " ");
-            tv_diesel_bangchak.setText(Dummy.getInstance().bangchak_day_10.get(5) + " ");
-            tv_diesel_shell.setText(Dummy.getInstance().shell_day_10.get(5) + " ");
-            tv_diesel_esso.setText(Dummy.getInstance().esso_day_10.get(5) + " ");
-
-
-        } else if (day[0].equals("18")) {
-
-            // Row1
-            tv_bensin_ptt.setText(Dummy.getInstance().ptt_day_18.get(0) + " ");
-            tv_bensin_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(0) + " ");
-            tv_bensin_shell.setText(Dummy.getInstance().shell_day_18.get(0) + " ");
-            tv_bensin_esso.setText(Dummy.getInstance().esso_day_18.get(0) + " ");
-
-            // Row2
-            tv_gasohol95_ptt.setText(Dummy.getInstance().ptt_day_18.get(1) + " ");
-            tv_gasohol95_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(1) + " ");
-            tv_gasohol95_shell.setText(Dummy.getInstance().shell_day_18.get(1) + " ");
-            tv_gasohol95_esso.setText(Dummy.getInstance().esso_day_18.get(1) + " ");
-
-            //Row3
-            tv_gasohol91_ptt.setText(Dummy.getInstance().ptt_day_18.get(2) + " ");
-            tv_gasohol91_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(2) + " ");
-            tv_gasohol91_shell.setText(Dummy.getInstance().shell_day_18.get(2) + " ");
-            tv_gasohol91_esso.setText(Dummy.getInstance().esso_day_18.get(2) + " ");
-
-            // Row4
-            tv_e20_ptt.setText(Dummy.getInstance().ptt_day_18.get(3) + " ");
-            tv_e20_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(3) + " ");
-            tv_e20_shell.setText(Dummy.getInstance().shell_day_18.get(3) + " ");
-            tv_e20_esso.setText(Dummy.getInstance().esso_day_18.get(3) + " ");
-
-            //Row5
-            tv_e85_ptt.setText(Dummy.getInstance().ptt_day_18.get(4) + " ");
-            tv_e85_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(4) + " ");
-            tv_e85_shell.setText(Dummy.getInstance().shell_day_18.get(4) + " ");
-            tv_e85_esso.setText(Dummy.getInstance().esso_day_18.get(4) + " ");
-
-            //Row6
-            tv_diesel_ptt.setText(Dummy.getInstance().ptt_day_18.get(5) + " ");
-            tv_diesel_bangchak.setText(Dummy.getInstance().bangchak_day_18.get(5) + " ");
-            tv_diesel_shell.setText(Dummy.getInstance().shell_day_18.get(5) + " ");
-            tv_diesel_esso.setText(Dummy.getInstance().esso_day_18.get(5) + " ");
-
-
-        } else if (day[0].equals("27")) {
-
-
-            // Row1
-            tv_bensin_ptt.setText(Dummy.getInstance().ptt_day_27.get(0) + " ");
-            tv_bensin_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(0) + " ");
-            tv_bensin_shell.setText(Dummy.getInstance().shell_day_27.get(0) + " ");
-            tv_bensin_esso.setText(Dummy.getInstance().esso_day_27.get(0) + " ");
-
-            // Row2
-            tv_gasohol95_ptt.setText(Dummy.getInstance().ptt_day_27.get(1) + " ");
-            tv_gasohol95_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(1) + " ");
-            tv_gasohol95_shell.setText(Dummy.getInstance().shell_day_27.get(1) + " ");
-            tv_gasohol95_esso.setText(Dummy.getInstance().esso_day_27.get(1) + " ");
-
-            //Row3
-            tv_gasohol91_ptt.setText(Dummy.getInstance().ptt_day_27.get(2) + " ");
-            tv_gasohol91_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(2) + " ");
-            tv_gasohol91_shell.setText(Dummy.getInstance().shell_day_27.get(2) + " ");
-            tv_gasohol91_esso.setText(Dummy.getInstance().esso_day_27.get(2) + " ");
-
-
-            // Row4
-            tv_e20_ptt.setText(Dummy.getInstance().ptt_day_27.get(3) + " ");
-            tv_e20_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(3) + " ");
-            tv_e20_shell.setText(Dummy.getInstance().shell_day_27.get(3) + " ");
-            tv_e20_esso.setText(Dummy.getInstance().esso_day_27.get(3) + " ");
-
-            //Row5
-            tv_e85_ptt.setText(Dummy.getInstance().ptt_day_27.get(4) + " ");
-            tv_e85_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(4) + " ");
-            tv_e85_shell.setText(Dummy.getInstance().shell_day_27.get(4) + " ");
-            tv_e85_esso.setText(Dummy.getInstance().esso_day_27.get(4) + " ");
-
-            //Row6
-            tv_diesel_ptt.setText(Dummy.getInstance().ptt_day_27.get(5) + " ");
-            tv_diesel_bangchak.setText(Dummy.getInstance().bangchak_day_27.get(5) + " ");
-            tv_diesel_shell.setText(Dummy.getInstance().shell_day_27.get(5) + " ");
-            tv_diesel_esso.setText(Dummy.getInstance().esso_day_27.get(5) + " ");
+        if (d.equals("23/11/2016")) {
+            setOilExcelService(date);
 
         }
+
+
+
     }
+
+
 }
 
 

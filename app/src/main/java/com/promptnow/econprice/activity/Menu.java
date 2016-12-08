@@ -20,8 +20,6 @@ import com.promptnow.econprice.view.Singleton;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
-import static java.security.AccessController.getContext;
-
 public class Menu extends AppCompatActivity {
     private Typeface font;
 

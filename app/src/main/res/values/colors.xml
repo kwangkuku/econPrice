@@ -36,6 +36,7 @@
 
     <!--OilPrice-->
     <color name="color_red_tv_header_lotto">#CC0000</color>
+    <color name="color_red_tv_remark">#ae0d0d</color>
     <color name="color_green_tv_header_oil_price">#33FF00</color>
     <color name="color_blue_tv_header_weather">#72edf9</color>
 

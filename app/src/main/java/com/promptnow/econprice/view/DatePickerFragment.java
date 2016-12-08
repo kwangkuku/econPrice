@@ -126,6 +126,9 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 //        }else {
         piker_month.setDisplayedValues(arrayMonthEN);
         piker_month.setMaxValue(arrayMonthEN.length -1);
+
+
+
 //        }
         piker_month.setValue(month);
         piker_month.setWrapSelectorWheel(false);
@@ -141,8 +144,8 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
         piker_year = (NumberPicker)piker.findViewById(R.id.piker_year);
         piker_year.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
-        piker_year.setMinValue(calendar.get(Calendar.YEAR)-10);
-        piker_year.setMaxValue(calendar.get(Calendar.YEAR)+10);
+        piker_year.setMinValue(calendar.get(Calendar.YEAR));
+        piker_year.setMaxValue(calendar.get(Calendar.YEAR));
         piker_year.setValue(year);
         piker_year.setWrapSelectorWheel(false);
         piker_year.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {

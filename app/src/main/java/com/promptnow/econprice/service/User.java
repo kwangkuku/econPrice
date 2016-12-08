@@ -11,10 +11,18 @@ import retrofit2.http.POST;
 
 public interface User {
 
-    @GET("LotteryAction")
-    Call<LotteryModel> loadJson();
 
-    @POST("")
-    Call<LotteryUserRequest> postJson(@Body LotteryUserRequest body);
+    @GET("WeatherAction")
+    Call<WeatherModel> loadJson();
+
+    @POST("/{path}")
+    Call<UserRequest> postJson(@Body UserRequest body);
+
+//    @GET("LotteryAction")
+//    Call<LotteryModel> loadJson();
+//
+//    @POST("")
+//    Call<LotteryUserRequest> postJson(@Body LotteryUserRequest body);
+
 
 }

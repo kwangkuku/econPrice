@@ -2,19 +2,17 @@ package com.promptnow.econprice.service;
 
 import java.util.List;
 
-/**
- * Created by Admin on 27/10/2559.
- */
+
 
 public class LotteryModel {
 
-    List<LotteryUserRequest> lotteryData;
+    List<LotteryRequest> lotteryData;
 
-    public  List<LotteryUserRequest> getLotteryModel() {
+    public  List<LotteryRequest> getLotteryModel() {
         return lotteryData;
     }
 
-    public void setLotteryModel( List<LotteryUserRequest> lotteryData) {
+    public void setLotteryModel( List<LotteryRequest> lotteryData) {
         this.lotteryData = lotteryData;
     }
 }

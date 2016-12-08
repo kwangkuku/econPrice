@@ -19,9 +19,11 @@ import android.widget.TextView;
 import com.promptnow.econprice.R;
 import com.promptnow.econprice.service.HttpManager;
 import com.promptnow.econprice.service.LotteryModel;
-import com.promptnow.econprice.service.LotteryUserRequest;
+import com.promptnow.econprice.service.LotteryRequest;
 import com.promptnow.econprice.view.HideKeyboard;
 import com.promptnow.econprice.view.View_popup;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,25 +40,41 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
     EditText input, seach;
     private Typeface font;
     private TextView tv, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9, tv10,
-            tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20,
-            tv21, tv22, tv23, tv24, tv25, tv26, tv27, tv28, tv29, tv30, tv31, tv32,
-            tv33, tv34, tv35, tv36,
+            tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20;
 
-    //    รางวัลที่ 4 , รางวัลที่ 5
-    t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19,
-            t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t30, t31, t32, t33, t34, t35, t36, t37,
-            t38, t39, t40, t41, t42, t43, t44, t45, t46, t47, t48, t49, t50, t51, t52, t53, t54, t55,
-            t56, t57, t58, t59, t60, t61, t62, t63, t64, t65, t66, t67, t68, t69, t70, t71, t72, t73,
-            t74, t75, t76, t77, t78, t79, t80, t81, t82, t83, t84, t85, t86, t87, t88, t89, t90, t91,
-            t92, t93, t94, t95, t96, t97, t98, t99, t100, t101, t102, t103, t104, t105, t106, t107,
-            t108, t109, t110, t111, t112, t113, t114, t115, t116, t117, t118, t119, t120, t121, t122,
-            t123, t124, t125, t126, t127, t128, t129, t130, t131, t132, t133, t134, t135, t136, t137,
-            t138, t139, t140, t141, t142, t143, t144, t145, t146, t147, t148, t149, t150;
+    private  String lotto,lotto2,lotto3,lotto3_,lotto4,lotto4_,lotto5,lotto5_,lotto6,lotto6_,lotto6_1,lotto6_2,lotto6_3,
+            lotto7,lotto7_,lotto7_1,lotto7_2,lotto7_3,lotto7_4,lotto7_5,lotto7_6,lotto7_7,lotto7_8,
+
+    lotto8,lotto8_,lotto8_1,lotto8_2,lotto8_3,lotto8_4,lotto8_5,lotto8_6,lotto8_7,lotto8_8,
+            lotto8_9,lotto8_10,lotto8_11,lotto8_12,lotto8_13,lotto8_14,lotto8_15,lotto8_16,lotto8_17,lotto8_18,
+            lotto8_19,lotto8_20,lotto8_21,lotto8_22,lotto8_23,lotto8_24,lotto8_25,lotto8_26,lotto8_27,lotto8_28,
+            lotto8_29,lotto8_30,lotto8_31,lotto8_32,lotto8_33,lotto8_34,lotto8_35,lotto8_36,lotto8_37,lotto8_38,
+            lotto8_39,lotto8_40,lotto8_41,lotto8_42,lotto8_43,lotto8_44,lotto8_45,lotto8_46,lotto8_47,lotto8_48,
+
+    lotto9,lotto9_,lotto9_1,lotto9_2,lotto9_3,lotto9_4,lotto9_5,lotto9_6,lotto9_7,lotto9_8,
+            lotto9_9,lotto9_10,lotto9_11,lotto9_12,lotto9_13,lotto9_14,lotto9_15,lotto9_16,lotto9_17,lotto9_18,
+            lotto9_19,lotto9_20,lotto9_21,lotto9_22,lotto9_23,lotto9_24,lotto9_25,lotto9_26,lotto9_27,lotto9_28,
+            lotto9_29,lotto9_30,lotto9_31,lotto9_32,lotto9_33,lotto9_34,lotto9_35,lotto9_36,lotto9_37,lotto9_38,
+            lotto9_39,lotto9_40,lotto9_41,lotto9_42,lotto9_43,lotto9_44,lotto9_45,lotto9_46,lotto9_47,lotto9_48,
+            lotto9_49,lotto9_50,lotto9_51,lotto9_52,lotto9_53,lotto9_54,lotto9_55,lotto9_56,lotto9_57,lotto9_58,
+            lotto9_59,lotto9_60,lotto9_61,lotto9_62,lotto9_63,lotto9_64,lotto9_65,lotto9_66,lotto9_67,lotto9_68,
+            lotto9_69,lotto9_70,lotto9_71,lotto9_72,lotto9_73,lotto9_74,lotto9_75,lotto9_76,lotto9_77,lotto9_78,
+            lotto9_79,lotto9_80,lotto9_81,lotto9_82,lotto9_83,lotto9_84,lotto9_85,lotto9_86,lotto9_87,lotto9_88,
+            lotto9_89,lotto9_90,lotto9_91,lotto9_92,lotto9_93,lotto9_94,lotto9_95,lotto9_96,lotto9_97,lotto9_98 ;
 
     private Spinner spin;
+
+
+
+
+
     //    service
-    public static final String BASE_URL = "http://192.168.4.77:8080/API_Econ-master/";
+    public static final String BASE_URL = "http://192.168.1.174:8080/API_Econ-master/";
     private static final String TAG = "log";
+    private ArrayList<String> lottory = new ArrayList<>();
+
+
+
 
 
     @Nullable
@@ -67,82 +85,14 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         setView();
         setNumber();
         //  setDummy();
-      //  setService();
         return rootView;
     }
 
-    private void setService() {
 
-        LotteryUserRequest user = new LotteryUserRequest();
-        Call<LotteryModel> calls = HttpManager.getInstance().getUser().loadJson();
-        calls.enqueue(new Callback<LotteryModel>()
-
-                      {
-                          @Override
-                          public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
-
-//
-//                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(0).getDatePast() +
-//                                      "   " + response.body().getLotteryModel().get(0).getPrize1() +
-//                                      "   " + response.body().getLotteryModel().get(0).getPrizeEnd2Digit() +
-//                                      "   " + response.body().getLotteryModel().get(0).getPrizeEnd3Digit() +
-//                                      "   " + response.body().getLotteryModel().get(0).getPrizeTop3Digit() +
-//                                      "   " + response.body().getLotteryModel().get(0).getPrizeNear1() +
-//                                      "   " + response.body().getLotteryModel().get(0).getPrize2() +
-//                                      "   " + response.body().getLotteryModel().get(0).getPrize3() +
-//                                      "   " + response.body().getLotteryModel().get(0).getPrize4() +
-//                                      "   " + response.body().getLotteryModel().get(0).getPrize5());
-//
-//                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(1).getDatePast() +
-//                                      "   " + response.body().getLotteryModel().get(1).getPrize1() +
-//                                      "   " + response.body().getLotteryModel().get(1).getPrizeEnd2Digit() +
-//                                      "   " + response.body().getLotteryModel().get(1).getPrizeEnd3Digit() +
-//                                      "   " + response.body().getLotteryModel().get(1).getPrizeTop3Digit() +
-//                                      "   " + response.body().getLotteryModel().get(1).getPrizeNear1() +
-//                                      "   " + response.body().getLotteryModel().get(1).getPrize2() +
-//                                      "   " + response.body().getLotteryModel().get(1).getPrize3() +
-//                                      "   " + response.body().getLotteryModel().get(1).getPrize4() +
-//                                      "   " + response.body().getLotteryModel().get(1).getPrize5());
-//
-//
-//                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(2).getDatePast() +
-//                                      "   " + response.body().getLotteryModel().get(2).getPrize1() +
-//                                      "   " + response.body().getLotteryModel().get(2).getPrizeEnd2Digit() +
-//                                      "   " + response.body().getLotteryModel().get(2).getPrizeEnd3Digit() +
-//                                      "   " + response.body().getLotteryModel().get(2).getPrizeTop3Digit() +
-//                                      "   " + response.body().getLotteryModel().get(2).getPrizeNear1() +
-//                                      "   " + response.body().getLotteryModel().get(2).getPrize2() +
-//                                      "   " + response.body().getLotteryModel().get(2).getPrize3() +
-//                                      "   " + response.body().getLotteryModel().get(2).getPrize4() +
-//                                      "   " + response.body().getLotteryModel().get(2).getPrize5());
-//
-//
-//                              Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(3).getDatePast() +
-//                                      "   " + response.body().getLotteryModel().get(3).getPrize1() +
-//                                      "   " + response.body().getLotteryModel().get(3).getPrizeEnd2Digit() +
-//                                      "   " + response.body().getLotteryModel().get(3).getPrizeEnd3Digit() +
-//                                      "   " + response.body().getLotteryModel().get(3).getPrizeTop3Digit() +
-//                                      "   " + response.body().getLotteryModel().get(3).getPrizeNear1() +
-//                                      "   " + response.body().getLotteryModel().get(3).getPrize2() +
-//                                      "   " + response.body().getLotteryModel().get(3).getPrize3() +
-//                                      "   " + response.body().getLotteryModel().get(3).getPrize4() +
-//                                      "   " + response.body().getLotteryModel().get(3).getPrize5());
-
-
-//                          }
-                          }
-
-                          @Override
-                          public void onFailure(Call<LotteryModel> call, Throwable t) {
-                              Log.d(TAG, "onFailure:  " + t.toString());
-                          }
-                      }
-        );
-    }
 
 
     private void LottoSpinner() {
-        String[] List = {"16/9/2016", "1/9/2016", "16/8/2016", "1/8/2016"};
+        String[] List = {"1/12/2016", "16/11/2016", "1/11/2016", "16/10/2016"};
         CustomAdapterLotto lottoAdapter = new CustomAdapterLotto(getActivity(), List);
         spin = (Spinner) rootView.findViewById(R.id.spin);
 //        ArrayList<String> arrayList = new ArrayList<String>();
@@ -158,24 +108,19 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView adapter, View v, int i, long lng) {
-            //   setService();
+                if (i == 0) {
                 //setDummy();
-
-                LotteryUserRequest user = new LotteryUserRequest();
-                Call<LotteryModel> calls = HttpManager.getInstance().getUser().loadJson();
+                LotteryRequest user = new LotteryRequest();
+                Call<LotteryModel> calls = HttpManager.getInstance().getLot().loadJson();
                 calls.enqueue(new Callback<LotteryModel>()
 
                               {
                                   @Override
                                   public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
-
-
-
-
                                       tv.setText(response.body().getLotteryModel().get(0).getPrize1());
                                       tv2.setText(response.body().getLotteryModel().get(0).getPrizeEnd2Digit());
-                                      tv3.setText(response.body().getLotteryModel().get(0).getPrizeEnd3Digit());
-                                      tv4.setText(response.body().getLotteryModel().get(0).getPrizeTop3Digit());
+                                      tv3.setText(response.body().getLotteryModel().get(0).getPrizeTop3Digit());
+                                      tv4.setText(response.body().getLotteryModel().get(0).getPrizeEnd3Digit());
                                       tv5.setText(response.body().getLotteryModel().get(0).getPrizeNear1());
                                       tv6.setText(response.body().getLotteryModel().get(0).getPrize2());
                                       tv7.setText(response.body().getLotteryModel().get(0).getPrize3());
@@ -189,124 +134,89 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
                                   }
                               }
                 );
-                if (i == 1) {
+            } else  if (i == 1) {
                     // setContent();
-                    LotteryUserRequest user2 = new LotteryUserRequest();
-                    Call<LotteryModel> calls2 = HttpManager.getInstance().getUser().loadJson();
+                    LotteryRequest user2 = new LotteryRequest();
+                    Call<LotteryModel> calls2 = HttpManager.getInstance().getLot().loadJson();
                     calls2.enqueue(new Callback<LotteryModel>()
 
-                                  {
-                                      @Override
-                                      public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
+                                   {
+                                       @Override
+                                       public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
 
 
-//                                          Log.d(TAG, "onResponse: " + response.body().getLotteryModel().get(1).getDatePast() +
-//                                                  "   " + response.body().getLotteryModel().get(1).getPrize1() +
-//                                                  "   " + response.body().getLotteryModel().get(1).getPrizeEnd2Digit() +
-//                                                  "   " + response.body().getLotteryModel().get(1).getPrizeEnd3Digit() +
-//                                                  "   " + response.body().getLotteryModel().get(1).getPrizeTop3Digit() +
-//                                                  "   " + response.body().getLotteryModel().get(1).getPrizeNear1() +
-//                                                  "   " + response.body().getLotteryModel().get(1).getPrize2() +
-//                                                  "   " + response.body().getLotteryModel().get(1).getPrize3() +
-//                                                  "   " + response.body().getLotteryModel().get(1).getPrize4() +
-//                                                  "   " + response.body().getLotteryModel().get(1).getPrize5());
 
-                                          tv.setText(response.body().getLotteryModel().get(1).getPrize1());
-                                          tv2.setText(response.body().getLotteryModel().get(1).getPrizeEnd2Digit());
-                                          tv3.setText(response.body().getLotteryModel().get(1).getPrizeEnd3Digit());
-                                          tv4.setText(response.body().getLotteryModel().get(1).getPrizeTop3Digit());
-                                          tv5.setText(response.body().getLotteryModel().get(1).getPrizeNear1());
-                                          tv6.setText(response.body().getLotteryModel().get(1).getPrize2());
-                                          tv7.setText(response.body().getLotteryModel().get(1).getPrize3());
-                                          tv8.setText(response.body().getLotteryModel().get(1).getPrize4());
-                                          tv9.setText(response.body().getLotteryModel().get(1).getPrize5());
-                                      }
+                                           tv.setText(response.body().getLotteryModel().get(1).getPrize1());
+                                           tv2.setText(response.body().getLotteryModel().get(1).getPrizeEnd2Digit());
+                                           tv3.setText(response.body().getLotteryModel().get(1).getPrizeTop3Digit());
+                                           tv4.setText(response.body().getLotteryModel().get(1).getPrizeEnd3Digit());
+                                           tv5.setText(response.body().getLotteryModel().get(1).getPrizeNear1());
+                                           tv6.setText(response.body().getLotteryModel().get(1).getPrize2());
+                                           tv7.setText(response.body().getLotteryModel().get(1).getPrize3());
+                                           tv8.setText(response.body().getLotteryModel().get(1).getPrize4());
+                                           tv9.setText(response.body().getLotteryModel().get(1).getPrize5());
+                                       }
 
-                                      @Override
-                                      public void onFailure(Call<LotteryModel> call, Throwable t) {
-                                          Log.d(TAG, "onFailure:  " + t.toString());
-                                      }
-                                  }
+                                       @Override
+                                       public void onFailure(Call<LotteryModel> call, Throwable t) {
+                                           Log.d(TAG, "onFailure:  " + t.toString());
+                                       }
+                                   }
                     );
                 } else if (i == 2) {
                     // setContent2();
-                    LotteryUserRequest user3 = new LotteryUserRequest();
-                    Call<LotteryModel> calls3 = HttpManager.getInstance().getUser().loadJson();
+                    LotteryRequest user3 = new LotteryRequest();
+                    Call<LotteryModel> calls3 = HttpManager.getInstance().getLot().loadJson();
                     calls3.enqueue(new Callback<LotteryModel>()
 
-                                  {
-                                      @Override
-                                      public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
+                                   {
+                                       @Override
+                                       public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
 
 
-//                                          Log.d(TAG, "onResponse: " + response.body().getLotteryModel().getDatePast() +
-//                                                  "   " + response.body().getLotteryModel().getPrize1() +
-//                                                  "   " + response.body().getLotteryModel().getPrizeEnd2Digit() +
-//                                                  "   " + response.body().getLotteryModel().getPrizeEnd3Digit() +
-//                                                  "   " + response.body().getLotteryModel().getPrizeTop3Digit() +
-//                                                  "   " + response.body().getLotteryModel().getPrizeNear1() +
-//                                                  "   " + response.body().getLotteryModel().getPrize2() +
-//                                                  "   " + response.body().getLotteryModel().getPrize3() +
-//                                                  "   " + response.body().getLotteryModel().getPrize4() +
-//                                                  "   " + response.body().getLotteryModel().getPrize5());
+                                           tv.setText(response.body().getLotteryModel().get(2).getPrize1());
+                                           tv2.setText(response.body().getLotteryModel().get(2).getPrizeEnd2Digit());
+                                           tv3.setText(response.body().getLotteryModel().get(2).getPrizeTop3Digit());
+                                           tv4.setText(response.body().getLotteryModel().get(2).getPrizeEnd3Digit());
+                                           tv5.setText(response.body().getLotteryModel().get(2).getPrizeNear1());
+                                           tv6.setText(response.body().getLotteryModel().get(2).getPrize2());
+                                           tv7.setText(response.body().getLotteryModel().get(2).getPrize3());
+                                           tv8.setText(response.body().getLotteryModel().get(2).getPrize4());
+                                           tv9.setText(response.body().getLotteryModel().get(2).getPrize5());
+                                       }
 
-
-                                          tv.setText(response.body().getLotteryModel().get(2).getPrize1());
-                                          tv2.setText(response.body().getLotteryModel().get(2).getPrizeEnd2Digit());
-                                          tv3.setText(response.body().getLotteryModel().get(2).getPrizeEnd3Digit());
-                                          tv4.setText(response.body().getLotteryModel().get(2).getPrizeTop3Digit());
-                                          tv5.setText(response.body().getLotteryModel().get(2).getPrizeNear1());
-                                          tv6.setText(response.body().getLotteryModel().get(2).getPrize2());
-                                          tv7.setText(response.body().getLotteryModel().get(2).getPrize3());
-                                          tv8.setText(response.body().getLotteryModel().get(2).getPrize4());
-                                          tv9.setText(response.body().getLotteryModel().get(2).getPrize5());
-                                      }
-
-                                      @Override
-                                      public void onFailure(Call<LotteryModel> call, Throwable t) {
-                                          Log.d(TAG, "onFailure:  " + t.toString());
-                                      }
-                                  }
+                                       @Override
+                                       public void onFailure(Call<LotteryModel> call, Throwable t) {
+                                           Log.d(TAG, "onFailure:  " + t.toString());
+                                       }
+                                   }
                     );
                 } else if (i == 3) {
                     //   setContent3();
-                    LotteryUserRequest user4 = new LotteryUserRequest();
-                    Call<LotteryModel> calls4 = HttpManager.getInstance().getUser().loadJson();
+                    LotteryRequest user4 = new LotteryRequest();
+                    Call<LotteryModel> calls4 = HttpManager.getInstance().getLot().loadJson();
                     calls4.enqueue(new Callback<LotteryModel>()
 
-                                  {
-                                      @Override
-                                      public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
+                                   {
+                                       @Override
+                                       public void onResponse(Call<LotteryModel> call, Response<LotteryModel> response) {
 
+                                           tv.setText(response.body().getLotteryModel().get(3).getPrize1());
+                                           tv2.setText(response.body().getLotteryModel().get(3).getPrizeEnd2Digit());
+                                           tv3.setText(response.body().getLotteryModel().get(3).getPrizeTop3Digit());
+                                           tv4.setText(response.body().getLotteryModel().get(3).getPrizeEnd3Digit());
+                                           tv5.setText(response.body().getLotteryModel().get(3).getPrizeNear1());
+                                           tv6.setText(response.body().getLotteryModel().get(3).getPrize2());
+                                           tv7.setText(response.body().getLotteryModel().get(3).getPrize3());
+                                           tv8.setText(response.body().getLotteryModel().get(3).getPrize4());
+                                           tv9.setText(response.body().getLotteryModel().get(3).getPrize5());
+                                       }
 
-//                                          Log.d(TAG, "onResponse: " + response.body().getLotteryModel().getDatePast() +
-//                                                  "   " + response.body().getLotteryModel().getPrize1() +
-//                                                  "   " + response.body().getLotteryModel().getPrizeEnd2Digit() +
-//                                                  "   " + response.body().getLotteryModel().getPrizeEnd3Digit() +
-//                                                  "   " + response.body().getLotteryModel().getPrizeTop3Digit() +
-//                                                  "   " + response.body().getLotteryModel().getPrizeNear1() +
-//                                                  "   " + response.body().getLotteryModel().getPrize2() +
-//                                                  "   " + response.body().getLotteryModel().getPrize3() +
-//                                                  "   " + response.body().getLotteryModel().getPrize4() +
-//                                                  "   " + response.body().getLotteryModel().getPrize5());
-
-
-                                          tv.setText(response.body().getLotteryModel().get(3).getPrize1());
-                                          tv2.setText(response.body().getLotteryModel().get(3).getPrizeEnd2Digit());
-                                          tv3.setText(response.body().getLotteryModel().get(3).getPrizeEnd3Digit());
-                                          tv4.setText(response.body().getLotteryModel().get(3).getPrizeTop3Digit());
-                                          tv5.setText(response.body().getLotteryModel().get(3).getPrizeNear1());
-                                          tv6.setText(response.body().getLotteryModel().get(3).getPrize2());
-                                          tv7.setText(response.body().getLotteryModel().get(3).getPrize3());
-                                          tv8.setText(response.body().getLotteryModel().get(3).getPrize4());
-                                          tv9.setText(response.body().getLotteryModel().get(3).getPrize5());
-                                      }
-
-                                      @Override
-                                      public void onFailure(Call<LotteryModel> call, Throwable t) {
-                                          Log.d(TAG, "onFailure:  " + t.toString());
-                                      }
-                                  }
+                                       @Override
+                                       public void onFailure(Call<LotteryModel> call, Throwable t) {
+                                           Log.d(TAG, "onFailure:  " + t.toString());
+                                       }
+                                   }
                     );
 
 
@@ -332,183 +242,183 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         tv2 = (TextView) rootView.findViewById(R.id.lot_num2);
 //        เลขหน้า 3 ตัว
         tv3 = (TextView) rootView.findViewById(R.id.lot_num3);
-        tv21 = (TextView) rootView.findViewById(R.id.lot_num3_);
+//        tv21 = (TextView) rootView.findViewById(R.id.lot_num3_);
 //         เลขท้าย 3 ตัว
         tv4 = (TextView) rootView.findViewById(R.id.lot_num4);
-        tv22 = (TextView) rootView.findViewById(R.id.lot_num4_);
+//        tv22 = (TextView) rootView.findViewById(R.id.lot_num4_);
 //        รางวัลใกล้เคียงรางวัลที่1
         tv5 = (TextView) rootView.findViewById(R.id.lot_num5);
-        tv23 = (TextView) rootView.findViewById(R.id.lot_num5_);
+//        tv23 = (TextView) rootView.findViewById(R.id.lot_num5_);
 //        รางวัลที่2
         tv6 = (TextView) rootView.findViewById(R.id.lot_num6);
-        tv24 = (TextView) rootView.findViewById(R.id.lot_num6_);
-        tv25 = (TextView) rootView.findViewById(R.id.lot_num6_1);
-        tv26 = (TextView) rootView.findViewById(R.id.lot_num6_2);
-        tv27 = (TextView) rootView.findViewById(R.id.lot_num6_3_);
+//        tv24 = (TextView) rootView.findViewById(R.id.lot_num6_);
+//        tv25 = (TextView) rootView.findViewById(R.id.lot_num6_1);
+//        tv26 = (TextView) rootView.findViewById(R.id.lot_num6_2);
+//        tv27 = (TextView) rootView.findViewById(R.id.lot_num6_3_);
 //        รางวัลที่3
         tv7 = (TextView) rootView.findViewById(R.id.lot_num7);
-        tv28 = (TextView) rootView.findViewById(R.id.lot_num7_);
-        tv29 = (TextView) rootView.findViewById(R.id.lot_num7_1);
-        tv30 = (TextView) rootView.findViewById(R.id.lot_num7_2);
-        tv31 = (TextView) rootView.findViewById(R.id.lot_num7_3);
-        tv32 = (TextView) rootView.findViewById(R.id.lot_num7_4);
-        tv33 = (TextView) rootView.findViewById(R.id.lot_num7_5);
-        tv34 = (TextView) rootView.findViewById(R.id.lot_num7_6);
-        tv35 = (TextView) rootView.findViewById(R.id.lot_num7_7);
-        tv36 = (TextView) rootView.findViewById(R.id.lot_num7_8);
+//        tv28 = (TextView) rootView.findViewById(R.id.lot_num7_);
+//        tv29 = (TextView) rootView.findViewById(R.id.lot_num7_1);
+//        tv30 = (TextView) rootView.findViewById(R.id.lot_num7_2);
+//        tv31 = (TextView) rootView.findViewById(R.id.lot_num7_3);
+//        tv32 = (TextView) rootView.findViewById(R.id.lot_num7_4);
+//        tv33 = (TextView) rootView.findViewById(R.id.lot_num7_5);
+//        tv34 = (TextView) rootView.findViewById(R.id.lot_num7_6);
+//        tv35 = (TextView) rootView.findViewById(R.id.lot_num7_7);
+//        tv36 = (TextView) rootView.findViewById(R.id.lot_num7_8);
 //        รางวัลที่4
         tv8 = (TextView) rootView.findViewById(R.id.lot_num8);
-        t1 = (TextView) rootView.findViewById(R.id.lot_num8_);
-        t2 = (TextView) rootView.findViewById(R.id.lot_num8_1);
-        t3 = (TextView) rootView.findViewById(R.id.lot_num8_2);
-        t4 = (TextView) rootView.findViewById(R.id.lot_num8_3);
-        t5 = (TextView) rootView.findViewById(R.id.lot_num8_4);
-        t6 = (TextView) rootView.findViewById(R.id.lot_num8_5);
-        t7 = (TextView) rootView.findViewById(R.id.lot_num8_6);
-        t8 = (TextView) rootView.findViewById(R.id.lot_num8_7);
-        t9 = (TextView) rootView.findViewById(R.id.lot_num8_8);
-        t10 = (TextView) rootView.findViewById(R.id.lot_num8_9);
-        t11 = (TextView) rootView.findViewById(R.id.lot_num8_10);
-        t12 = (TextView) rootView.findViewById(R.id.lot_num8_11);
-        t13 = (TextView) rootView.findViewById(R.id.lot_num8_12);
-        t14 = (TextView) rootView.findViewById(R.id.lot_num8_13);
-        t15 = (TextView) rootView.findViewById(R.id.lot_num8_14);
-        t16 = (TextView) rootView.findViewById(R.id.lot_num8_15);
-        t17 = (TextView) rootView.findViewById(R.id.lot_num8_16);
-        t18 = (TextView) rootView.findViewById(R.id.lot_num8_17);
-        t19 = (TextView) rootView.findViewById(R.id.lot_num8_18);
-        t20 = (TextView) rootView.findViewById(R.id.lot_num8_19);
-        t21 = (TextView) rootView.findViewById(R.id.lot_num8_20);
-        t22 = (TextView) rootView.findViewById(R.id.lot_num8_21);
-        t23 = (TextView) rootView.findViewById(R.id.lot_num8_22);
-        t24 = (TextView) rootView.findViewById(R.id.lot_num8_23);
-        t25 = (TextView) rootView.findViewById(R.id.lot_num8_24);
-        t26 = (TextView) rootView.findViewById(R.id.lot_num8_25);
-        t27 = (TextView) rootView.findViewById(R.id.lot_num8_26);
-        t28 = (TextView) rootView.findViewById(R.id.lot_num8_27);
-        t29 = (TextView) rootView.findViewById(R.id.lot_num8_28);
-        t30 = (TextView) rootView.findViewById(R.id.lot_num8_29);
-        t31 = (TextView) rootView.findViewById(R.id.lot_num8_30);
-        t32 = (TextView) rootView.findViewById(R.id.lot_num8_31);
-        t33 = (TextView) rootView.findViewById(R.id.lot_num8_32);
-        t34 = (TextView) rootView.findViewById(R.id.lot_num8_33);
-        t35 = (TextView) rootView.findViewById(R.id.lot_num8_34);
-        t36 = (TextView) rootView.findViewById(R.id.lot_num8_35);
-        t37 = (TextView) rootView.findViewById(R.id.lot_num8_36);
-        t38 = (TextView) rootView.findViewById(R.id.lot_num8_37);
-        t39 = (TextView) rootView.findViewById(R.id.lot_num8_38);
-        t40 = (TextView) rootView.findViewById(R.id.lot_num8_39);
-        t41 = (TextView) rootView.findViewById(R.id.lot_num8_40);
-        t42 = (TextView) rootView.findViewById(R.id.lot_num8_41);
-        t43 = (TextView) rootView.findViewById(R.id.lot_num8_42);
-        t44 = (TextView) rootView.findViewById(R.id.lot_num8_43);
-        t45 = (TextView) rootView.findViewById(R.id.lot_num8_44);
-        t46 = (TextView) rootView.findViewById(R.id.lot_num8_45);
-        t47 = (TextView) rootView.findViewById(R.id.lot_num8_46);
-        t48 = (TextView) rootView.findViewById(R.id.lot_num8_47);
-        t49 = (TextView) rootView.findViewById(R.id.lot_num8_48);
+//        t1 = (TextView) rootView.findViewById(R.id.lot_num8_);
+//        t2 = (TextView) rootView.findViewById(R.id.lot_num8_1);
+//        t3 = (TextView) rootView.findViewById(R.id.lot_num8_2);
+//        t4 = (TextView) rootView.findViewById(R.id.lot_num8_3);
+//        t5 = (TextView) rootView.findViewById(R.id.lot_num8_4);
+//        t6 = (TextView) rootView.findViewById(R.id.lot_num8_5);
+//        t7 = (TextView) rootView.findViewById(R.id.lot_num8_6);
+//        t8 = (TextView) rootView.findViewById(R.id.lot_num8_7);
+//        t9 = (TextView) rootView.findViewById(R.id.lot_num8_8);
+//        t10 = (TextView) rootView.findViewById(R.id.lot_num8_9);
+//        t11 = (TextView) rootView.findViewById(R.id.lot_num8_10);
+//        t12 = (TextView) rootView.findViewById(R.id.lot_num8_11);
+//        t13 = (TextView) rootView.findViewById(R.id.lot_num8_12);
+//        t14 = (TextView) rootView.findViewById(R.id.lot_num8_13);
+//        t15 = (TextView) rootView.findViewById(R.id.lot_num8_14);
+//        t16 = (TextView) rootView.findViewById(R.id.lot_num8_15);
+//        t17 = (TextView) rootView.findViewById(R.id.lot_num8_16);
+//        t18 = (TextView) rootView.findViewById(R.id.lot_num8_17);
+//        t19 = (TextView) rootView.findViewById(R.id.lot_num8_18);
+//        t20 = (TextView) rootView.findViewById(R.id.lot_num8_19);
+//        t21 = (TextView) rootView.findViewById(R.id.lot_num8_20);
+//        t22 = (TextView) rootView.findViewById(R.id.lot_num8_21);
+//        t23 = (TextView) rootView.findViewById(R.id.lot_num8_22);
+//        t24 = (TextView) rootView.findViewById(R.id.lot_num8_23);
+//        t25 = (TextView) rootView.findViewById(R.id.lot_num8_24);
+//        t26 = (TextView) rootView.findViewById(R.id.lot_num8_25);
+//        t27 = (TextView) rootView.findViewById(R.id.lot_num8_26);
+//        t28 = (TextView) rootView.findViewById(R.id.lot_num8_27);
+//        t29 = (TextView) rootView.findViewById(R.id.lot_num8_28);
+//        t30 = (TextView) rootView.findViewById(R.id.lot_num8_29);
+//        t31 = (TextView) rootView.findViewById(R.id.lot_num8_30);
+//        t32 = (TextView) rootView.findViewById(R.id.lot_num8_31);
+//        t33 = (TextView) rootView.findViewById(R.id.lot_num8_32);
+//        t34 = (TextView) rootView.findViewById(R.id.lot_num8_33);
+//        t35 = (TextView) rootView.findViewById(R.id.lot_num8_34);
+//        t36 = (TextView) rootView.findViewById(R.id.lot_num8_35);
+//        t37 = (TextView) rootView.findViewById(R.id.lot_num8_36);
+//        t38 = (TextView) rootView.findViewById(R.id.lot_num8_37);
+//        t39 = (TextView) rootView.findViewById(R.id.lot_num8_38);
+//        t40 = (TextView) rootView.findViewById(R.id.lot_num8_39);
+//        t41 = (TextView) rootView.findViewById(R.id.lot_num8_40);
+//        t42 = (TextView) rootView.findViewById(R.id.lot_num8_41);
+//        t43 = (TextView) rootView.findViewById(R.id.lot_num8_42);
+//        t44 = (TextView) rootView.findViewById(R.id.lot_num8_43);
+//        t45 = (TextView) rootView.findViewById(R.id.lot_num8_44);
+//        t46 = (TextView) rootView.findViewById(R.id.lot_num8_45);
+//        t47 = (TextView) rootView.findViewById(R.id.lot_num8_46);
+//        t48 = (TextView) rootView.findViewById(R.id.lot_num8_47);
+//        t49 = (TextView) rootView.findViewById(R.id.lot_num8_48);
 
 //        รางวัลที่5
         tv9 = (TextView) rootView.findViewById(R.id.lot_num9);
-        t50 = (TextView) rootView.findViewById(R.id.lot_num9_);
-        t51 = (TextView) rootView.findViewById(R.id.lot_num9_1);
-        t52 = (TextView) rootView.findViewById(R.id.lot_num9_2);
-        t53 = (TextView) rootView.findViewById(R.id.lot_num9_3);
-        t54 = (TextView) rootView.findViewById(R.id.lot_num9_4);
-        t55 = (TextView) rootView.findViewById(R.id.lot_num9_5);
-        t56 = (TextView) rootView.findViewById(R.id.lot_num9_6);
-        t57 = (TextView) rootView.findViewById(R.id.lot_num9_7);
-        t58 = (TextView) rootView.findViewById(R.id.lot_num9_8);
-        t59 = (TextView) rootView.findViewById(R.id.lot_num9_9);
-        t60 = (TextView) rootView.findViewById(R.id.lot_num9_10);
-        t61 = (TextView) rootView.findViewById(R.id.lot_num9_11);
-        t62 = (TextView) rootView.findViewById(R.id.lot_num9_12);
-        t63 = (TextView) rootView.findViewById(R.id.lot_num9_13);
-        t64 = (TextView) rootView.findViewById(R.id.lot_num9_14);
-        t65 = (TextView) rootView.findViewById(R.id.lot_num9_15);
-        t66 = (TextView) rootView.findViewById(R.id.lot_num9_16);
-        t67 = (TextView) rootView.findViewById(R.id.lot_num9_17);
-        t68 = (TextView) rootView.findViewById(R.id.lot_num9_18);
-        t69 = (TextView) rootView.findViewById(R.id.lot_num9_19);
-        t70 = (TextView) rootView.findViewById(R.id.lot_num9_20);
-        t71 = (TextView) rootView.findViewById(R.id.lot_num9_21);
-        t72 = (TextView) rootView.findViewById(R.id.lot_num9_22);
-        t73 = (TextView) rootView.findViewById(R.id.lot_num9_23);
-        t74 = (TextView) rootView.findViewById(R.id.lot_num9_24);
-        t75 = (TextView) rootView.findViewById(R.id.lot_num9_25);
-        t76 = (TextView) rootView.findViewById(R.id.lot_num9_26);
-        t77 = (TextView) rootView.findViewById(R.id.lot_num9_27);
-        t78 = (TextView) rootView.findViewById(R.id.lot_num9_28);
-        t79 = (TextView) rootView.findViewById(R.id.lot_num9_29);
-        t80 = (TextView) rootView.findViewById(R.id.lot_num9_30);
-        t81 = (TextView) rootView.findViewById(R.id.lot_num9_31);
-        t82 = (TextView) rootView.findViewById(R.id.lot_num9_32);
-        t83 = (TextView) rootView.findViewById(R.id.lot_num9_33);
-        t84 = (TextView) rootView.findViewById(R.id.lot_num9_34);
-        t85 = (TextView) rootView.findViewById(R.id.lot_num9_35);
-        t86 = (TextView) rootView.findViewById(R.id.lot_num9_36);
-        t87 = (TextView) rootView.findViewById(R.id.lot_num9_37);
-        t88 = (TextView) rootView.findViewById(R.id.lot_num9_38);
-        t89 = (TextView) rootView.findViewById(R.id.lot_num9_39);
-        t90 = (TextView) rootView.findViewById(R.id.lot_num9_40);
-        t91 = (TextView) rootView.findViewById(R.id.lot_num9_41);
-        t92 = (TextView) rootView.findViewById(R.id.lot_num9_42);
-        t93 = (TextView) rootView.findViewById(R.id.lot_num9_43);
-        t94 = (TextView) rootView.findViewById(R.id.lot_num9_44);
-        t95 = (TextView) rootView.findViewById(R.id.lot_num9_45);
-        t96 = (TextView) rootView.findViewById(R.id.lot_num9_46);
-        t97 = (TextView) rootView.findViewById(R.id.lot_num9_47);
-        t98 = (TextView) rootView.findViewById(R.id.lot_num9_48);
-        t99 = (TextView) rootView.findViewById(R.id.lot_num9_49);
-        t100 = (TextView) rootView.findViewById(R.id.lot_num9_50);
-        t101 = (TextView) rootView.findViewById(R.id.lot_num9_51);
-        t102 = (TextView) rootView.findViewById(R.id.lot_num9_52);
-        t103 = (TextView) rootView.findViewById(R.id.lot_num9_53);
-        t104 = (TextView) rootView.findViewById(R.id.lot_num9_54);
-        t105 = (TextView) rootView.findViewById(R.id.lot_num9_55);
-        t106 = (TextView) rootView.findViewById(R.id.lot_num9_56);
-        t107 = (TextView) rootView.findViewById(R.id.lot_num9_57);
-        t108 = (TextView) rootView.findViewById(R.id.lot_num9_58);
-        t109 = (TextView) rootView.findViewById(R.id.lot_num9_59);
-        t110 = (TextView) rootView.findViewById(R.id.lot_num9_60);
-        t111 = (TextView) rootView.findViewById(R.id.lot_num9_61);
-        t112 = (TextView) rootView.findViewById(R.id.lot_num9_62);
-        t113 = (TextView) rootView.findViewById(R.id.lot_num9_63);
-        t114 = (TextView) rootView.findViewById(R.id.lot_num9_64);
-        t115 = (TextView) rootView.findViewById(R.id.lot_num9_65);
-        t116 = (TextView) rootView.findViewById(R.id.lot_num9_66);
-        t117 = (TextView) rootView.findViewById(R.id.lot_num9_67);
-        t118 = (TextView) rootView.findViewById(R.id.lot_num9_68);
-        t119 = (TextView) rootView.findViewById(R.id.lot_num9_69);
-        t120 = (TextView) rootView.findViewById(R.id.lot_num9_70);
-        t121 = (TextView) rootView.findViewById(R.id.lot_num9_71);
-        t122 = (TextView) rootView.findViewById(R.id.lot_num9_72);
-        t123 = (TextView) rootView.findViewById(R.id.lot_num9_73);
-        t124 = (TextView) rootView.findViewById(R.id.lot_num9_74);
-        t125 = (TextView) rootView.findViewById(R.id.lot_num9_75);
-        t126 = (TextView) rootView.findViewById(R.id.lot_num9_76);
-        t127 = (TextView) rootView.findViewById(R.id.lot_num9_77);
-        t128 = (TextView) rootView.findViewById(R.id.lot_num9_78);
-        t129 = (TextView) rootView.findViewById(R.id.lot_num9_79);
-        t130 = (TextView) rootView.findViewById(R.id.lot_num9_80);
-        t131 = (TextView) rootView.findViewById(R.id.lot_num9_81);
-        t132 = (TextView) rootView.findViewById(R.id.lot_num9_82);
-        t133 = (TextView) rootView.findViewById(R.id.lot_num9_83);
-        t134 = (TextView) rootView.findViewById(R.id.lot_num9_84);
-        t135 = (TextView) rootView.findViewById(R.id.lot_num9_85);
-        t136 = (TextView) rootView.findViewById(R.id.lot_num9_86);
-        t137 = (TextView) rootView.findViewById(R.id.lot_num9_87);
-        t138 = (TextView) rootView.findViewById(R.id.lot_num9_88);
-        t139 = (TextView) rootView.findViewById(R.id.lot_num9_89);
-        t140 = (TextView) rootView.findViewById(R.id.lot_num9_90);
-        t141 = (TextView) rootView.findViewById(R.id.lot_num9_91);
-        t142 = (TextView) rootView.findViewById(R.id.lot_num9_92);
-        t143 = (TextView) rootView.findViewById(R.id.lot_num9_93);
-        t144 = (TextView) rootView.findViewById(R.id.lot_num9_94);
-        t145 = (TextView) rootView.findViewById(R.id.lot_num9_95);
-        t146 = (TextView) rootView.findViewById(R.id.lot_num9_96);
-        t147 = (TextView) rootView.findViewById(R.id.lot_num9_97);
-        t148 = (TextView) rootView.findViewById(R.id.lot_num9_98);
+//        t50 = (TextView) rootView.findViewById(R.id.lot_num9_);
+//        t51 = (TextView) rootView.findViewById(R.id.lot_num9_1);
+//        t52 = (TextView) rootView.findViewById(R.id.lot_num9_2);
+//        t53 = (TextView) rootView.findViewById(R.id.lot_num9_3);
+//        t54 = (TextView) rootView.findViewById(R.id.lot_num9_4);
+//        t55 = (TextView) rootView.findViewById(R.id.lot_num9_5);
+//        t56 = (TextView) rootView.findViewById(R.id.lot_num9_6);
+//        t57 = (TextView) rootView.findViewById(R.id.lot_num9_7);
+//        t58 = (TextView) rootView.findViewById(R.id.lot_num9_8);
+//        t59 = (TextView) rootView.findViewById(R.id.lot_num9_9);
+//        t60 = (TextView) rootView.findViewById(R.id.lot_num9_10);
+//        t61 = (TextView) rootView.findViewById(R.id.lot_num9_11);
+//        t62 = (TextView) rootView.findViewById(R.id.lot_num9_12);
+//        t63 = (TextView) rootView.findViewById(R.id.lot_num9_13);
+//        t64 = (TextView) rootView.findViewById(R.id.lot_num9_14);
+//        t65 = (TextView) rootView.findViewById(R.id.lot_num9_15);
+//        t66 = (TextView) rootView.findViewById(R.id.lot_num9_16);
+//        t67 = (TextView) rootView.findViewById(R.id.lot_num9_17);
+//        t68 = (TextView) rootView.findViewById(R.id.lot_num9_18);
+//        t69 = (TextView) rootView.findViewById(R.id.lot_num9_19);
+//        t70 = (TextView) rootView.findViewById(R.id.lot_num9_20);
+//        t71 = (TextView) rootView.findViewById(R.id.lot_num9_21);
+//        t72 = (TextView) rootView.findViewById(R.id.lot_num9_22);
+//        t73 = (TextView) rootView.findViewById(R.id.lot_num9_23);
+//        t74 = (TextView) rootView.findViewById(R.id.lot_num9_24);
+//        t75 = (TextView) rootView.findViewById(R.id.lot_num9_25);
+//        t76 = (TextView) rootView.findViewById(R.id.lot_num9_26);
+//        t77 = (TextView) rootView.findViewById(R.id.lot_num9_27);
+//        t78 = (TextView) rootView.findViewById(R.id.lot_num9_28);
+//        t79 = (TextView) rootView.findViewById(R.id.lot_num9_29);
+//        t80 = (TextView) rootView.findViewById(R.id.lot_num9_30);
+//        t81 = (TextView) rootView.findViewById(R.id.lot_num9_31);
+//        t82 = (TextView) rootView.findViewById(R.id.lot_num9_32);
+//        t83 = (TextView) rootView.findViewById(R.id.lot_num9_33);
+//        t84 = (TextView) rootView.findViewById(R.id.lot_num9_34);
+//        t85 = (TextView) rootView.findViewById(R.id.lot_num9_35);
+//        t86 = (TextView) rootView.findViewById(R.id.lot_num9_36);
+//        t87 = (TextView) rootView.findViewById(R.id.lot_num9_37);
+//        t88 = (TextView) rootView.findViewById(R.id.lot_num9_38);
+//        t89 = (TextView) rootView.findViewById(R.id.lot_num9_39);
+//        t90 = (TextView) rootView.findViewById(R.id.lot_num9_40);
+//        t91 = (TextView) rootView.findViewById(R.id.lot_num9_41);
+//        t92 = (TextView) rootView.findViewById(R.id.lot_num9_42);
+//        t93 = (TextView) rootView.findViewById(R.id.lot_num9_43);
+//        t94 = (TextView) rootView.findViewById(R.id.lot_num9_44);
+//        t95 = (TextView) rootView.findViewById(R.id.lot_num9_45);
+//        t96 = (TextView) rootView.findViewById(R.id.lot_num9_46);
+//        t97 = (TextView) rootView.findViewById(R.id.lot_num9_47);
+//        t98 = (TextView) rootView.findViewById(R.id.lot_num9_48);
+//        t99 = (TextView) rootView.findViewById(R.id.lot_num9_49);
+//        t100 = (TextView) rootView.findViewById(R.id.lot_num9_50);
+//        t101 = (TextView) rootView.findViewById(R.id.lot_num9_51);
+//        t102 = (TextView) rootView.findViewById(R.id.lot_num9_52);
+//        t103 = (TextView) rootView.findViewById(R.id.lot_num9_53);
+//        t104 = (TextView) rootView.findViewById(R.id.lot_num9_54);
+//        t105 = (TextView) rootView.findViewById(R.id.lot_num9_55);
+//        t106 = (TextView) rootView.findViewById(R.id.lot_num9_56);
+//        t107 = (TextView) rootView.findViewById(R.id.lot_num9_57);
+//        t108 = (TextView) rootView.findViewById(R.id.lot_num9_58);
+//        t109 = (TextView) rootView.findViewById(R.id.lot_num9_59);
+//        t110 = (TextView) rootView.findViewById(R.id.lot_num9_60);
+//        t111 = (TextView) rootView.findViewById(R.id.lot_num9_61);
+//        t112 = (TextView) rootView.findViewById(R.id.lot_num9_62);
+//        t113 = (TextView) rootView.findViewById(R.id.lot_num9_63);
+//        t114 = (TextView) rootView.findViewById(R.id.lot_num9_64);
+//        t115 = (TextView) rootView.findViewById(R.id.lot_num9_65);
+//        t116 = (TextView) rootView.findViewById(R.id.lot_num9_66);
+//        t117 = (TextView) rootView.findViewById(R.id.lot_num9_67);
+//        t118 = (TextView) rootView.findViewById(R.id.lot_num9_68);
+//        t119 = (TextView) rootView.findViewById(R.id.lot_num9_69);
+//        t120 = (TextView) rootView.findViewById(R.id.lot_num9_70);
+//        t121 = (TextView) rootView.findViewById(R.id.lot_num9_71);
+//        t122 = (TextView) rootView.findViewById(R.id.lot_num9_72);
+//        t123 = (TextView) rootView.findViewById(R.id.lot_num9_73);
+//        t124 = (TextView) rootView.findViewById(R.id.lot_num9_74);
+//        t125 = (TextView) rootView.findViewById(R.id.lot_num9_75);
+//        t126 = (TextView) rootView.findViewById(R.id.lot_num9_76);
+//        t127 = (TextView) rootView.findViewById(R.id.lot_num9_77);
+//        t128 = (TextView) rootView.findViewById(R.id.lot_num9_78);
+//        t129 = (TextView) rootView.findViewById(R.id.lot_num9_79);
+//        t130 = (TextView) rootView.findViewById(R.id.lot_num9_80);
+//        t131 = (TextView) rootView.findViewById(R.id.lot_num9_81);
+//        t132 = (TextView) rootView.findViewById(R.id.lot_num9_82);
+//        t133 = (TextView) rootView.findViewById(R.id.lot_num9_83);
+//        t134 = (TextView) rootView.findViewById(R.id.lot_num9_84);
+//        t135 = (TextView) rootView.findViewById(R.id.lot_num9_85);
+//        t136 = (TextView) rootView.findViewById(R.id.lot_num9_86);
+//        t137 = (TextView) rootView.findViewById(R.id.lot_num9_87);
+//        t138 = (TextView) rootView.findViewById(R.id.lot_num9_88);
+//        t139 = (TextView) rootView.findViewById(R.id.lot_num9_89);
+//        t140 = (TextView) rootView.findViewById(R.id.lot_num9_90);
+//        t141 = (TextView) rootView.findViewById(R.id.lot_num9_91);
+//        t142 = (TextView) rootView.findViewById(R.id.lot_num9_92);
+//        t143 = (TextView) rootView.findViewById(R.id.lot_num9_93);
+//        t144 = (TextView) rootView.findViewById(R.id.lot_num9_94);
+//        t145 = (TextView) rootView.findViewById(R.id.lot_num9_95);
+//        t146 = (TextView) rootView.findViewById(R.id.lot_num9_96);
+//        t147 = (TextView) rootView.findViewById(R.id.lot_num9_97);
+//        t148 = (TextView) rootView.findViewById(R.id.lot_num9_98);
 
 //        เลือกวันที่ย้อนหลัง
         tv10 = (TextView) rootView.findViewById(R.id.tv_date_show);
@@ -556,170 +466,170 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
         tv18.setTypeface(font);
         tv19.setTypeface(font);
         tv20.setTypeface(font);
-        tv21.setTypeface(font);
-        tv22.setTypeface(font);
-        tv23.setTypeface(font);
-        tv24.setTypeface(font);
-        tv25.setTypeface(font);
-        tv26.setTypeface(font);
-        tv27.setTypeface(font);
-        tv28.setTypeface(font);
-        tv29.setTypeface(font);
-        tv30.setTypeface(font);
-        tv31.setTypeface(font);
-        tv32.setTypeface(font);
-        tv33.setTypeface(font);
-        tv34.setTypeface(font);
-        tv35.setTypeface(font);
-        tv36.setTypeface(font);
-        t1.setTypeface(font);
-        t2.setTypeface(font);
-        t3.setTypeface(font);
-        t4.setTypeface(font);
-        t5.setTypeface(font);
-        t6.setTypeface(font);
-        t7.setTypeface(font);
-        t8.setTypeface(font);
-        t9.setTypeface(font);
-        t10.setTypeface(font);
-        t11.setTypeface(font);
-        t12.setTypeface(font);
-        t13.setTypeface(font);
-        t14.setTypeface(font);
-        t15.setTypeface(font);
-        t16.setTypeface(font);
-        t17.setTypeface(font);
-        t18.setTypeface(font);
-        t19.setTypeface(font);
-        t20.setTypeface(font);
-        t21.setTypeface(font);
-        t22.setTypeface(font);
-        t23.setTypeface(font);
-        t24.setTypeface(font);
-        t25.setTypeface(font);
-        t26.setTypeface(font);
-        t27.setTypeface(font);
-        t28.setTypeface(font);
-        t29.setTypeface(font);
-        t30.setTypeface(font);
-        t31.setTypeface(font);
-        t32.setTypeface(font);
-        t33.setTypeface(font);
-        t34.setTypeface(font);
-        t35.setTypeface(font);
-        t36.setTypeface(font);
-        t37.setTypeface(font);
-        t38.setTypeface(font);
-        t39.setTypeface(font);
-        t40.setTypeface(font);
-        t41.setTypeface(font);
-        t42.setTypeface(font);
-        t43.setTypeface(font);
-        t44.setTypeface(font);
-        t45.setTypeface(font);
-        t46.setTypeface(font);
-        t47.setTypeface(font);
-        t48.setTypeface(font);
-        t49.setTypeface(font);
-        t50.setTypeface(font);
-        t51.setTypeface(font);
-        t52.setTypeface(font);
-        t53.setTypeface(font);
-        t54.setTypeface(font);
-        t55.setTypeface(font);
-        t56.setTypeface(font);
-        t57.setTypeface(font);
-        t58.setTypeface(font);
-        t59.setTypeface(font);
-        t60.setTypeface(font);
-        t61.setTypeface(font);
-        t62.setTypeface(font);
-        t63.setTypeface(font);
-        t64.setTypeface(font);
-        t65.setTypeface(font);
-        t66.setTypeface(font);
-        t67.setTypeface(font);
-        t68.setTypeface(font);
-        t69.setTypeface(font);
-        t70.setTypeface(font);
-        t71.setTypeface(font);
-        t72.setTypeface(font);
-        t73.setTypeface(font);
-        t74.setTypeface(font);
-        t75.setTypeface(font);
-        t76.setTypeface(font);
-        t77.setTypeface(font);
-        t78.setTypeface(font);
-        t79.setTypeface(font);
-        t80.setTypeface(font);
-        t81.setTypeface(font);
-        t82.setTypeface(font);
-        t83.setTypeface(font);
-        t84.setTypeface(font);
-        t85.setTypeface(font);
-        t86.setTypeface(font);
-        t87.setTypeface(font);
-        t88.setTypeface(font);
-        t89.setTypeface(font);
-        t90.setTypeface(font);
-        t91.setTypeface(font);
-        t92.setTypeface(font);
-        t93.setTypeface(font);
-        t94.setTypeface(font);
-        t95.setTypeface(font);
-        t96.setTypeface(font);
-        t97.setTypeface(font);
-        t98.setTypeface(font);
-        t99.setTypeface(font);
-        t100.setTypeface(font);
-        t101.setTypeface(font);
-        t102.setTypeface(font);
-        t103.setTypeface(font);
-        t104.setTypeface(font);
-        t105.setTypeface(font);
-        t106.setTypeface(font);
-        t107.setTypeface(font);
-        t108.setTypeface(font);
-        t109.setTypeface(font);
-        t110.setTypeface(font);
-        t111.setTypeface(font);
-        t112.setTypeface(font);
-        t113.setTypeface(font);
-        t114.setTypeface(font);
-        t115.setTypeface(font);
-        t116.setTypeface(font);
-        t117.setTypeface(font);
-        t118.setTypeface(font);
-        t119.setTypeface(font);
-        t120.setTypeface(font);
-        t121.setTypeface(font);
-        t122.setTypeface(font);
-        t123.setTypeface(font);
-        t124.setTypeface(font);
-        t125.setTypeface(font);
-        t126.setTypeface(font);
-        t127.setTypeface(font);
-        t128.setTypeface(font);
-        t129.setTypeface(font);
-        t130.setTypeface(font);
-        t131.setTypeface(font);
-        t132.setTypeface(font);
-        t133.setTypeface(font);
-        t134.setTypeface(font);
-        t135.setTypeface(font);
-        t136.setTypeface(font);
-        t137.setTypeface(font);
-        t138.setTypeface(font);
-        t139.setTypeface(font);
-        t140.setTypeface(font);
-        t141.setTypeface(font);
-        t142.setTypeface(font);
-        t143.setTypeface(font);
-        t144.setTypeface(font);
-        t145.setTypeface(font);
-        t146.setTypeface(font);
-        t147.setTypeface(font);
-        t148.setTypeface(font);
+//        tv21.setTypeface(font);
+//        tv22.setTypeface(font);
+//        tv23.setTypeface(font);
+//        tv24.setTypeface(font);
+//        tv25.setTypeface(font);
+//        tv26.setTypeface(font);
+//        tv27.setTypeface(font);
+//        tv28.setTypeface(font);
+//        tv29.setTypeface(font);
+//        tv30.setTypeface(font);
+//        tv31.setTypeface(font);
+//        tv32.setTypeface(font);
+//        tv33.setTypeface(font);
+//        tv34.setTypeface(font);
+//        tv35.setTypeface(font);
+//        tv36.setTypeface(font);
+//        t1.setTypeface(font);
+//        t2.setTypeface(font);
+//        t3.setTypeface(font);
+//        t4.setTypeface(font);
+//        t5.setTypeface(font);
+//        t6.setTypeface(font);
+//        t7.setTypeface(font);
+//        t8.setTypeface(font);
+//        t9.setTypeface(font);
+//        t10.setTypeface(font);
+//        t11.setTypeface(font);
+//        t12.setTypeface(font);
+//        t13.setTypeface(font);
+//        t14.setTypeface(font);
+//        t15.setTypeface(font);
+//        t16.setTypeface(font);
+//        t17.setTypeface(font);
+//        t18.setTypeface(font);
+//        t19.setTypeface(font);
+//        t20.setTypeface(font);
+//        t21.setTypeface(font);
+//        t22.setTypeface(font);
+//        t23.setTypeface(font);
+//        t24.setTypeface(font);
+//        t25.setTypeface(font);
+//        t26.setTypeface(font);
+//        t27.setTypeface(font);
+//        t28.setTypeface(font);
+//        t29.setTypeface(font);
+//        t30.setTypeface(font);
+//        t31.setTypeface(font);
+//        t32.setTypeface(font);
+//        t33.setTypeface(font);
+//        t34.setTypeface(font);
+//        t35.setTypeface(font);
+//        t36.setTypeface(font);
+//        t37.setTypeface(font);
+//        t38.setTypeface(font);
+//        t39.setTypeface(font);
+//        t40.setTypeface(font);
+//        t41.setTypeface(font);
+//        t42.setTypeface(font);
+//        t43.setTypeface(font);
+//        t44.setTypeface(font);
+//        t45.setTypeface(font);
+//        t46.setTypeface(font);
+//        t47.setTypeface(font);
+//        t48.setTypeface(font);
+//        t49.setTypeface(font);
+//        t50.setTypeface(font);
+//        t51.setTypeface(font);
+//        t52.setTypeface(font);
+//        t53.setTypeface(font);
+//        t54.setTypeface(font);
+//        t55.setTypeface(font);
+//        t56.setTypeface(font);
+//        t57.setTypeface(font);
+//        t58.setTypeface(font);
+//        t59.setTypeface(font);
+//        t60.setTypeface(font);
+//        t61.setTypeface(font);
+//        t62.setTypeface(font);
+//        t63.setTypeface(font);
+//        t64.setTypeface(font);
+//        t65.setTypeface(font);
+//        t66.setTypeface(font);
+//        t67.setTypeface(font);
+//        t68.setTypeface(font);
+//        t69.setTypeface(font);
+//        t70.setTypeface(font);
+//        t71.setTypeface(font);
+//        t72.setTypeface(font);
+//        t73.setTypeface(font);
+//        t74.setTypeface(font);
+//        t75.setTypeface(font);
+//        t76.setTypeface(font);
+//        t77.setTypeface(font);
+//        t78.setTypeface(font);
+//        t79.setTypeface(font);
+//        t80.setTypeface(font);
+//        t81.setTypeface(font);
+//        t82.setTypeface(font);
+//        t83.setTypeface(font);
+//        t84.setTypeface(font);
+//        t85.setTypeface(font);
+//        t86.setTypeface(font);
+//        t87.setTypeface(font);
+//        t88.setTypeface(font);
+//        t89.setTypeface(font);
+//        t90.setTypeface(font);
+//        t91.setTypeface(font);
+//        t92.setTypeface(font);
+//        t93.setTypeface(font);
+//        t94.setTypeface(font);
+//        t95.setTypeface(font);
+//        t96.setTypeface(font);
+//        t97.setTypeface(font);
+//        t98.setTypeface(font);
+//        t99.setTypeface(font);
+//        t100.setTypeface(font);
+//        t101.setTypeface(font);
+//        t102.setTypeface(font);
+//        t103.setTypeface(font);
+//        t104.setTypeface(font);
+//        t105.setTypeface(font);
+//        t106.setTypeface(font);
+//        t107.setTypeface(font);
+//        t108.setTypeface(font);
+//        t109.setTypeface(font);
+//        t110.setTypeface(font);
+//        t111.setTypeface(font);
+//        t112.setTypeface(font);
+//        t113.setTypeface(font);
+//        t114.setTypeface(font);
+//        t115.setTypeface(font);
+//        t116.setTypeface(font);
+//        t117.setTypeface(font);
+//        t118.setTypeface(font);
+//        t119.setTypeface(font);
+//        t120.setTypeface(font);
+//        t121.setTypeface(font);
+//        t122.setTypeface(font);
+//        t123.setTypeface(font);
+//        t124.setTypeface(font);
+//        t125.setTypeface(font);
+//        t126.setTypeface(font);
+//        t127.setTypeface(font);
+//        t128.setTypeface(font);
+//        t129.setTypeface(font);
+//        t130.setTypeface(font);
+//        t131.setTypeface(font);
+//        t132.setTypeface(font);
+//        t133.setTypeface(font);
+//        t134.setTypeface(font);
+//        t135.setTypeface(font);
+//        t136.setTypeface(font);
+//        t137.setTypeface(font);
+//        t138.setTypeface(font);
+//        t139.setTypeface(font);
+//        t140.setTypeface(font);
+//        t141.setTypeface(font);
+//        t142.setTypeface(font);
+//        t143.setTypeface(font);
+//        t144.setTypeface(font);
+//        t145.setTypeface(font);
+//        t146.setTypeface(font);
+//        t147.setTypeface(font);
+//        t148.setTypeface(font);
 
     }
 
@@ -1442,6 +1352,7 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
 
     private void setNumber() {
+
 //        แถบค้นหาผลสลากกินแบ่งรัฐบาล
         input = (EditText) rootView.findViewById(R.id.seach_num);
         input.addTextChangedListener(watch);
@@ -1458,7 +1369,8 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
     }
 
-    private TextWatcher watch = new TextWatcher() {
+    protected TextWatcher watch = new TextWatcher() {
+
 
         @Override
         public void afterTextChanged(Editable arg0) {
@@ -1471,25 +1383,1118 @@ public class LotteryFragment extends Fragment implements View_popup.onSubmitAler
 
         }
 
-        //            pop up
+        //            pop up check lottery number
         @Override
-        public void onTextChanged(CharSequence s, int a, int b, int c) {
-            Log.d("log", "123");
-//            ตัวเลขถูกรางวัล
-            String prefix = "000000";
+        public void onTextChanged(final CharSequence s, int a, int b, int c) {
 
             String strMsg = "";
-            if (s.toString().endsWith(prefix)) {
-                strMsg = getResources().getString(R.string.str_msgTrue);
+            LotteryRequest user = new LotteryRequest();
+            Call<LotteryModel> calls = HttpManager.getInstance().getLot().loadJson();
+            calls.enqueue(new Callback<LotteryModel>()
+
+                          {
+                              @Override
+                              public void onResponse(Call<LotteryModel> call,Response<LotteryModel> response) {
+
+//                                      Log.d(TAG, "onResponse: " + response.body().getLotteryCheckModel().isCheckLottery());
+
+                                Log.d(TAG, "onResponse: " +response.body().getLotteryModel().get(0).getPrizeTop3Digit().substring(4,7));
+
+//                                  lotto.add(response.body().getLotteryModel().get(0).getPrize1());
+//                                  lottory.add(response.body().getLotteryModel().get(0).getPrizeEnd2Digit());
+//                                  lottory.add(response.body().getLotteryModel().get(0).getPrizeEnd3Digit() );
+//                                  lottory.add(response.body().getLotteryModel().get(0).getPrizeTop3Digit() );
+
+//                                  lottory.add(""+response.body().getLotteryModel().get(0).getPrize2() );
+//                                  lottory.add(""+response.body().getLotteryModel().get(0).getPrize3());
+//                                  lottory.add(""+response.body().getLotteryModel().get(0).getPrize4());
+//                                  lottory.add(""+response.body().getLotteryModel().get(0).getPrize5());
+
+
+                                  lotto=response.body().getLotteryModel().get(0).getPrize1();
+                                  lotto2=response.body().getLotteryModel().get(0).getPrizeEnd2Digit();
+
+                                  lotto3=response.body().getLotteryModel().get(0).getPrizeTop3Digit().substring(0,3);
+                                  lotto3_=response.body().getLotteryModel().get(0).getPrizeTop3Digit().substring(4,7);
+
+                                  lotto4=response.body().getLotteryModel().get(0).getPrizeEnd3Digit().substring(0,3);
+                                  lotto4_=response.body().getLotteryModel().get(0).getPrizeEnd3Digit().substring(4,7);
+
+                                  lotto5=response.body().getLotteryModel().get(0).getPrizeNear1().substring(0,6);
+                                  lotto5_=response.body().getLotteryModel().get(0).getPrizeNear1().substring(7,13);
+
+                                  lotto6=response.body().getLotteryModel().get(0).getPrize2().substring(0,6) ;
+                                  lotto6_=response.body().getLotteryModel().get(0).getPrize2().substring(7,13) ;
+                                  lotto6_1=response.body().getLotteryModel().get(0).getPrize2().substring(14,20) ;
+                                  lotto6_2=response.body().getLotteryModel().get(0).getPrize2().substring(21,27) ;
+                                  lotto6_3=response.body().getLotteryModel().get(0).getPrize2().substring(28,34) ;
+
+                                  lotto7=response.body().getLotteryModel().get(0).getPrize3().substring(0,6);
+                                  lotto7_=response.body().getLotteryModel().get(0).getPrize3().substring(7,13);
+                                  lotto7_1=response.body().getLotteryModel().get(0).getPrize3().substring(14,20);
+                                  lotto7_2=response.body().getLotteryModel().get(0).getPrize3().substring(21,27);
+                                  lotto7_3=response.body().getLotteryModel().get(0).getPrize3().substring(28,34);
+                                  lotto7_4=response.body().getLotteryModel().get(0).getPrize3().substring(35,41);
+                                  lotto7_5=response.body().getLotteryModel().get(0).getPrize3().substring(42,48);
+                                  lotto7_6=response.body().getLotteryModel().get(0).getPrize3().substring(49,55);
+                                  lotto7_7=response.body().getLotteryModel().get(0).getPrize3().substring(56,62);
+                                  lotto7_8=response.body().getLotteryModel().get(0).getPrize3().substring(63,69);
+
+                                  lotto8=response.body().getLotteryModel().get(0).getPrize4().substring(0,6);
+                                  lotto8_=response.body().getLotteryModel().get(0).getPrize4().substring(7,13);
+                                  lotto8_1=response.body().getLotteryModel().get(0).getPrize4().substring(14,20);
+                                  lotto8_2=response.body().getLotteryModel().get(0).getPrize4().substring(21,27);
+                                  lotto8_3=response.body().getLotteryModel().get(0).getPrize4().substring(28,34);
+                                  lotto8_4=response.body().getLotteryModel().get(0).getPrize4().substring(35,41);
+                                  lotto8_5=response.body().getLotteryModel().get(0).getPrize4().substring(42,48);
+                                  lotto8_6=response.body().getLotteryModel().get(0).getPrize4().substring(49,55);
+                                  lotto8_7=response.body().getLotteryModel().get(0).getPrize4().substring(56,62);
+                                  lotto8_8=response.body().getLotteryModel().get(0).getPrize4().substring(63,69);
+                                  lotto8_9=response.body().getLotteryModel().get(0).getPrize4().substring(70,76);
+                                  lotto8_10=response.body().getLotteryModel().get(0).getPrize4().substring(77,83);
+                                  lotto8_11=response.body().getLotteryModel().get(0).getPrize4().substring(84,90);
+                                  lotto8_12=response.body().getLotteryModel().get(0).getPrize4().substring(91,97);
+                                  lotto8_13=response.body().getLotteryModel().get(0).getPrize4().substring(98,104);
+                                  lotto8_14=response.body().getLotteryModel().get(0).getPrize4().substring(105,111);
+                                  lotto8_15=response.body().getLotteryModel().get(0).getPrize4().substring(112,118);
+                                  lotto8_16=response.body().getLotteryModel().get(0).getPrize4().substring(119,125);
+                                  lotto8_17=response.body().getLotteryModel().get(0).getPrize4().substring(126,132);
+                                  lotto8_18=response.body().getLotteryModel().get(0).getPrize4().substring(133,139);
+                                  lotto8_19=response.body().getLotteryModel().get(0).getPrize4().substring(140,146);
+                                  lotto8_20=response.body().getLotteryModel().get(0).getPrize4().substring(147,153);
+                                  lotto8_21=response.body().getLotteryModel().get(0).getPrize4().substring(154,160);
+                                  lotto8_22=response.body().getLotteryModel().get(0).getPrize4().substring(161,167);
+                                  lotto8_23=response.body().getLotteryModel().get(0).getPrize4().substring(168,174);
+                                  lotto8_24=response.body().getLotteryModel().get(0).getPrize4().substring(175,181);
+                                  lotto8_25=response.body().getLotteryModel().get(0).getPrize4().substring(182,188);
+                                  lotto8_26=response.body().getLotteryModel().get(0).getPrize4().substring(189,195);
+                                  lotto8_27=response.body().getLotteryModel().get(0).getPrize4().substring(196,202);
+                                  lotto8_28=response.body().getLotteryModel().get(0).getPrize4().substring(203,209);
+                                  lotto8_29=response.body().getLotteryModel().get(0).getPrize4().substring(210,216);
+                                  lotto8_30=response.body().getLotteryModel().get(0).getPrize4().substring(217,223);
+                                  lotto8_31=response.body().getLotteryModel().get(0).getPrize4().substring(224,230);
+                                  lotto8_32=response.body().getLotteryModel().get(0).getPrize4().substring(231,237);
+                                  lotto8_33=response.body().getLotteryModel().get(0).getPrize4().substring(238,244);
+                                  lotto8_34=response.body().getLotteryModel().get(0).getPrize4().substring(245,251);
+                                  lotto8_35=response.body().getLotteryModel().get(0).getPrize4().substring(252,258);
+                                  lotto8_36=response.body().getLotteryModel().get(0).getPrize4().substring(259,265);
+                                  lotto8_37=response.body().getLotteryModel().get(0).getPrize4().substring(266,272);
+                                  lotto8_38=response.body().getLotteryModel().get(0).getPrize4().substring(273,279);
+                                  lotto8_39=response.body().getLotteryModel().get(0).getPrize5().substring(280,286);
+                                  lotto8_40=response.body().getLotteryModel().get(0).getPrize4().substring(287,293);
+                                  lotto8_41=response.body().getLotteryModel().get(0).getPrize4().substring(294,300);
+                                  lotto8_42=response.body().getLotteryModel().get(0).getPrize4().substring(301,307);
+                                  lotto8_43=response.body().getLotteryModel().get(0).getPrize4().substring(308,314);
+                                  lotto8_44=response.body().getLotteryModel().get(0).getPrize4().substring(315,321);
+                                  lotto8_45=response.body().getLotteryModel().get(0).getPrize4().substring(322,328);
+                                  lotto8_46=response.body().getLotteryModel().get(0).getPrize4().substring(329,335);
+                                  lotto8_47=response.body().getLotteryModel().get(0).getPrize4().substring(336,342);
+                                  lotto8_48=response.body().getLotteryModel().get(0).getPrize4().substring(343,349);
+
+
+                                  lotto9=response.body().getLotteryModel().get(0).getPrize5().substring(0,6);
+                                  lotto9_=response.body().getLotteryModel().get(0).getPrize5().substring(7,13);
+                                  lotto9_1=response.body().getLotteryModel().get(0).getPrize5().substring(14,20);
+                                  lotto9_2=response.body().getLotteryModel().get(0).getPrize5().substring(21,27);
+                                  lotto9_3=response.body().getLotteryModel().get(0).getPrize5().substring(28,34);
+                                  lotto9_4=response.body().getLotteryModel().get(0).getPrize5().substring(35,41);
+                                  lotto9_5=response.body().getLotteryModel().get(0).getPrize5().substring(42,48);
+                                  lotto9_6=response.body().getLotteryModel().get(0).getPrize5().substring(49,55);
+                                  lotto9_7=response.body().getLotteryModel().get(0).getPrize5().substring(56,62);
+                                  lotto9_8=response.body().getLotteryModel().get(0).getPrize5().substring(63,69);
+                                  lotto9_9=response.body().getLotteryModel().get(0).getPrize5().substring(70,76);
+                                  lotto9_10=response.body().getLotteryModel().get(0).getPrize5().substring(77,83);
+                                  lotto9_11=response.body().getLotteryModel().get(0).getPrize5().substring(84,90);
+                                  lotto9_12=response.body().getLotteryModel().get(0).getPrize5().substring(91,97);
+                                  lotto9_13=response.body().getLotteryModel().get(0).getPrize5().substring(98,104);
+                                  lotto9_14=response.body().getLotteryModel().get(0).getPrize5().substring(105,111);
+                                  lotto9_15=response.body().getLotteryModel().get(0).getPrize5().substring(112,118);
+                                  lotto9_16=response.body().getLotteryModel().get(0).getPrize5().substring(119,125);
+                                  lotto9_17=response.body().getLotteryModel().get(0).getPrize5().substring(126,132);
+                                  lotto9_18=response.body().getLotteryModel().get(0).getPrize5().substring(133,139);
+                                  lotto9_19=response.body().getLotteryModel().get(0).getPrize5().substring(140,146);
+                                  lotto9_20=response.body().getLotteryModel().get(0).getPrize5().substring(147,153);
+                                  lotto9_21=response.body().getLotteryModel().get(0).getPrize5().substring(154,160);
+                                  lotto9_22=response.body().getLotteryModel().get(0).getPrize5().substring(161,167);
+                                  lotto9_23=response.body().getLotteryModel().get(0).getPrize5().substring(168,174);
+                                  lotto9_24=response.body().getLotteryModel().get(0).getPrize5().substring(175,181);
+                                  lotto9_25=response.body().getLotteryModel().get(0).getPrize5().substring(182,188);
+                                  lotto9_26=response.body().getLotteryModel().get(0).getPrize5().substring(189,195);
+                                  lotto9_27=response.body().getLotteryModel().get(0).getPrize5().substring(196,202);
+                                  lotto9_28=response.body().getLotteryModel().get(0).getPrize5().substring(203,209);
+                                  lotto9_29=response.body().getLotteryModel().get(0).getPrize5().substring(210,216);
+                                  lotto9_30=response.body().getLotteryModel().get(0).getPrize5().substring(217,223);
+                                  lotto9_31=response.body().getLotteryModel().get(0).getPrize5().substring(224,230);
+                                  lotto9_32=response.body().getLotteryModel().get(0).getPrize5().substring(231,237);
+                                  lotto9_33=response.body().getLotteryModel().get(0).getPrize5().substring(238,244);
+                                  lotto9_34=response.body().getLotteryModel().get(0).getPrize5().substring(245,251);
+                                  lotto9_35=response.body().getLotteryModel().get(0).getPrize5().substring(252,258);
+                                  lotto9_36=response.body().getLotteryModel().get(0).getPrize5().substring(259,265);
+                                  lotto9_37=response.body().getLotteryModel().get(0).getPrize5().substring(266,272);
+                                  lotto9_38=response.body().getLotteryModel().get(0).getPrize5().substring(273,279);
+                                  lotto9_39=response.body().getLotteryModel().get(0).getPrize5().substring(280,286);
+                                  lotto9_40=response.body().getLotteryModel().get(0).getPrize5().substring(287,293);
+                                  lotto9_41=response.body().getLotteryModel().get(0).getPrize5().substring(294,300);
+                                  lotto9_42=response.body().getLotteryModel().get(0).getPrize5().substring(301,307);
+                                  lotto9_43=response.body().getLotteryModel().get(0).getPrize5().substring(308,314);
+                                  lotto9_44=response.body().getLotteryModel().get(0).getPrize5().substring(315,321);
+                                  lotto9_45=response.body().getLotteryModel().get(0).getPrize5().substring(322,328);
+                                  lotto9_46=response.body().getLotteryModel().get(0).getPrize5().substring(329,335);
+                                  lotto9_47=response.body().getLotteryModel().get(0).getPrize5().substring(336,342);
+                                  lotto9_48=response.body().getLotteryModel().get(0).getPrize5().substring(343,349);
+                                  lotto9_49=response.body().getLotteryModel().get(0).getPrize5().substring(350,356);
+                                  lotto9_50=response.body().getLotteryModel().get(0).getPrize5().substring(357,363);
+                                  lotto9_51=response.body().getLotteryModel().get(0).getPrize5().substring(364,370);
+                                  lotto9_52=response.body().getLotteryModel().get(0).getPrize5().substring(371,377);
+                                  lotto9_53=response.body().getLotteryModel().get(0).getPrize5().substring(378,384);
+                                  lotto9_54=response.body().getLotteryModel().get(0).getPrize5().substring(385,391);
+                                  lotto9_55=response.body().getLotteryModel().get(0).getPrize5().substring(392,398);
+                                  lotto9_56=response.body().getLotteryModel().get(0).getPrize5().substring(399,405);
+                                  lotto9_57=response.body().getLotteryModel().get(0).getPrize5().substring(406,412);
+                                  lotto9_58=response.body().getLotteryModel().get(0).getPrize5().substring(413,419);
+                                  lotto9_59=response.body().getLotteryModel().get(0).getPrize5().substring(420,426);
+                                  lotto9_60=response.body().getLotteryModel().get(0).getPrize5().substring(427,433);
+                                  lotto9_61=response.body().getLotteryModel().get(0).getPrize5().substring(434,440);
+                                  lotto9_62=response.body().getLotteryModel().get(0).getPrize5().substring(441,447);
+                                  lotto9_63=response.body().getLotteryModel().get(0).getPrize5().substring(448,454);
+                                  lotto9_64=response.body().getLotteryModel().get(0).getPrize5().substring(455,461);
+                                  lotto9_65=response.body().getLotteryModel().get(0).getPrize5().substring(462,468);
+                                  lotto9_66=response.body().getLotteryModel().get(0).getPrize5().substring(469,475);
+                                  lotto9_67=response.body().getLotteryModel().get(0).getPrize5().substring(476,482);
+                                  lotto9_68=response.body().getLotteryModel().get(0).getPrize5().substring(483,489);
+                                  lotto9_69=response.body().getLotteryModel().get(0).getPrize5().substring(490,496);
+                                  lotto9_70=response.body().getLotteryModel().get(0).getPrize5().substring(497,503);
+                                  lotto9_71=response.body().getLotteryModel().get(0).getPrize5().substring(504,510);
+                                  lotto9_72=response.body().getLotteryModel().get(0).getPrize5().substring(511,517);
+                                  lotto9_73=response.body().getLotteryModel().get(0).getPrize5().substring(518,524);
+                                  lotto9_74=response.body().getLotteryModel().get(0).getPrize5().substring(525,531);
+                                  lotto9_75=response.body().getLotteryModel().get(0).getPrize5().substring(532,538);
+                                  lotto9_76=response.body().getLotteryModel().get(0).getPrize5().substring(539,545);
+                                  lotto9_77=response.body().getLotteryModel().get(0).getPrize5().substring(546,552);
+                                  lotto9_78=response.body().getLotteryModel().get(0).getPrize5().substring(553,559);
+                                  lotto9_79=response.body().getLotteryModel().get(0).getPrize5().substring(560,566);
+                                  lotto9_80=response.body().getLotteryModel().get(0).getPrize5().substring(567,573);
+                                  lotto9_81=response.body().getLotteryModel().get(0).getPrize5().substring(574,580);
+                                  lotto9_82=response.body().getLotteryModel().get(0).getPrize5().substring(581,587);
+                                  lotto9_83=response.body().getLotteryModel().get(0).getPrize5().substring(588,594);
+                                  lotto9_84=response.body().getLotteryModel().get(0).getPrize5().substring(595,601);
+                                  lotto9_85=response.body().getLotteryModel().get(0).getPrize5().substring(602,608);
+                                  lotto9_86=response.body().getLotteryModel().get(0).getPrize5().substring(609,615);
+                                  lotto9_87=response.body().getLotteryModel().get(0).getPrize5().substring(616,622);
+                                  lotto9_88=response.body().getLotteryModel().get(0).getPrize5().substring(623,629);
+                                  lotto9_89=response.body().getLotteryModel().get(0).getPrize5().substring(630,636);
+                                  lotto9_90=response.body().getLotteryModel().get(0).getPrize5().substring(637,643);
+                                  lotto9_91=response.body().getLotteryModel().get(0).getPrize5().substring(644,650);
+                                  lotto9_92=response.body().getLotteryModel().get(0).getPrize5().substring(651,657);
+                                  lotto9_93=response.body().getLotteryModel().get(0).getPrize5().substring(658,664);
+                                  lotto9_94=response.body().getLotteryModel().get(0).getPrize5().substring(665,671);
+                                  lotto9_95=response.body().getLotteryModel().get(0).getPrize5().substring(672,678);
+                                  lotto9_96=response.body().getLotteryModel().get(0).getPrize5().substring(679,685);
+                                  lotto9_97=response.body().getLotteryModel().get(0).getPrize5().substring(686,692);
+                                  lotto9_98=response.body().getLotteryModel().get(0).getPrize5().substring(693,699);
+
+
+
+                              }
+
+                              @Override
+                              public void onFailure(Call<LotteryModel> call, Throwable t) {
+                                  Log.d(TAG, "onFailure:  " + t.toString());
+
+                              }
+
+                          }
+
+            );
+
+            if (s.toString().endsWith(String.valueOf(lotto))) {
+                strMsg = "คุณถูกรางวัลที่ 1";
                 View_popup alertDialog = new View_popup(strMsg, "ตกลง");
                 alertDialog.mListener = LotteryFragment.this;
                 alertDialog.show(getFragmentManager(), "");
+
+//เลขท้าย เลขหน้า
+            } else if (s.toString().endsWith(String.valueOf(lotto2))) {
+                strMsg = "คุณถูกรางวัลเลขท้าย 2 ตัว";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+
+            } else if (s.toString().endsWith(String.valueOf(lotto3))) {
+                strMsg = "คุณถูกรางวัลเลขหน้า 3 ตัว";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto3_))) {
+                strMsg = "คุณถูกรางวัลเลขหน้า 3 ตัว";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+
+            } else if (s.toString().endsWith(String.valueOf(lotto4))) {
+                strMsg = "คุณถูกรางวัลเลขท้าย 3 ตัว";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto4_))) {
+                strMsg = "คุณถูกรางวัลเลขท้าย 3 ตัว";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+
+
+            }else if (s.toString().endsWith(String.valueOf(lotto5))) {
+                strMsg = "คุณถูกรางวัลใกล้เคียงรางวัลที่ 1";
+                final View_popup  alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+
+            } else if (s.toString().endsWith(String.valueOf(lotto5_)) ){
+                strMsg = "คุณถูกรางวัลใกล้เคียงรางวัลที่ 1";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+
+
+            } else if (s.toString().endsWith(String.valueOf(lotto6))) {
+                strMsg = "คุณถูกรางวัลที่ 2";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto6_))) {
+                strMsg = "คุณถูกรางวัลที่ 2";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto6_1))) {
+                strMsg = "คุณถูกรางวัลที่ 2";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto6_2))) {
+                strMsg = "คุณถูกรางวัลที่ 2";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto6_3))) {
+                strMsg = "คุณถูกรางวัลที่ 2";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+
+
+            } else if (s.toString().endsWith(String.valueOf(lotto7))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto7_))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto7_1))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto7_2))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto7_3))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto7_4))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto7_5))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto7_6))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto7_7))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto7_8))) {
+                strMsg = "คุณถูกรางวัลที่ 3";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+
+            } else if (s.toString().endsWith(String.valueOf(lotto8))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_1))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_2))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_3))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_4))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_5))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_6))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_7))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_8))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_9))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_10))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_11))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_12))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_13))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_14))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_15))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_16))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_17))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_18))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_19))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_20))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_21))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_22))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_23))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_24))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_25))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_26))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_27))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_28))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_29))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_30))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_31))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_32))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_33))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_34))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_35))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_36))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_37))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_38))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_39))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_40))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_41))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_42))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_43))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_44))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_45))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_46))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_47))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto8_48))) {
+                strMsg = "คุณถูกรางวัลที่ 4";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+
+
+
+            } else if (s.toString().endsWith(String.valueOf(lotto9))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_1))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_2))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_3))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_4))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_5))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_6))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_7))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_8))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_9))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_10))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_11))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_12))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_13))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_14))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_15))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_16))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_17))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_18))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_19))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_20))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_21))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_22))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_23))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_24))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_25))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_26))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_27))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_28))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_29))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_30))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_31))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_32))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_33))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_34))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_35))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_36))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_37))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_38))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_39))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_40))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_41))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_42))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_43))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_44))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_45))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_46))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_47))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_48))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_49))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_50))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_51))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_52))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_53))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_54))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_55))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_56))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_57))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_58))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_59))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_60))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_61))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_62))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_63))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_64))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_65))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_66))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_67))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_68))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_69))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_70))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_71))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_72))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_73))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_74))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_75))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_76))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_77))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_78))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_79))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_80))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_81))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_82))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_83))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_84))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_85))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_86))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_87))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_88))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_89))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_90))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_91))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_92))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_93))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_94))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_95))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_96))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_97))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+            } else if (s.toString().endsWith(String.valueOf(lotto9_98))) {
+                strMsg = "คุณถูกรางวัลที่ 5";
+                final View_popup alertDialog = new View_popup(strMsg, "ตกลง");
+                alertDialog.mListener = LotteryFragment.this;
+                alertDialog.show(getFragmentManager(), "");
+
+
             } else if (s.toString().length() == 6) {
                 strMsg = getResources().getString(R.string.str_msgFail);
-
                 View_popup alertDialog = new View_popup(strMsg, "ตกลง");
                 alertDialog.mListener = LotteryFragment.this;
                 alertDialog.show(getFragmentManager(), "");
+
             }
         }
     };

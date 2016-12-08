@@ -144,7 +144,7 @@
                     android:layout_height="50dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="  เบนซิล"
+                    android:text="  เบนซิล95"
                     android:textAlignment="textStart"
                     android:textSize="24dp"
                     android:textStyle="normal|bold" />
@@ -155,7 +155,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="31.76"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -165,7 +164,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="33.33"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -175,7 +173,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="-"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -185,7 +182,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="32.21"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </TableRow>
@@ -215,7 +211,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="24.38"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -225,7 +220,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="24.85"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -235,7 +229,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="-"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -245,7 +238,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="24.65"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </TableRow>
@@ -275,7 +267,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="22.14"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -285,7 +276,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="23.75"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -295,7 +285,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="22.14"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -305,7 +294,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="-"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </TableRow>
@@ -335,7 +323,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="23.75"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -345,7 +332,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="23.75"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -355,7 +341,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="-"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -365,7 +350,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="25.11"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </TableRow>
@@ -396,7 +380,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="17.99"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -406,7 +389,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="23.75"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -416,9 +398,11 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="18.32"
                     android:textAlignment="center"
                     android:textSize="20sp" />
+
+
+
 
                 <TextView
                     android:id="@+id/tv_e85_esso"
@@ -426,7 +410,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="-"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </TableRow>
@@ -455,7 +438,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="24.19"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -465,7 +447,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="24.25"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -475,7 +456,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="24.62"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -485,7 +465,6 @@
                     android:layout_height="40dp"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="24.65"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </TableRow>
